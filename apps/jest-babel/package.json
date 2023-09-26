@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@dream/foo": "*"
+    "@dream/utils": "*"
   },
   "devDependencies": {
     "@babel/core": "~7.22.0",

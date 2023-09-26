@@ -29,9 +29,9 @@ importers:
       '@dream/components':
         specifier: '*'
         version: link:../../packages/components
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
       react:
         specifier: ~18.2.0
         version: 18.2.0
@@ -99,9 +99,9 @@ importers:
 
   apps/jest-babel:
     dependencies:
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
     devDependencies:
       '@babel/core':
         specifier: ~7.22.0
@@ -124,9 +124,9 @@ importers:
 
   apps/jest-tsjest:
     dependencies:
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
     devDependencies:
       '@jest/types':
         specifier: ~29.6.0
@@ -152,9 +152,9 @@ importers:
 
   apps/nestjs:
     dependencies:
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
       '@nestjs/common':
         specifier: ~10.2.0
         version: 10.2.0(reflect-metadata@0.1.13)(rxjs@7.8.0)
@@ -226,9 +226,9 @@ importers:
 
   apps/rollup:
     dependencies:
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
     devDependencies:
       '@rollup/plugin-typescript':
         specifier: ~11.1.0
@@ -306,9 +306,9 @@ importers:
 
   apps/ts-node:
     dependencies:
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
     devDependencies:
       '@types/node':
         specifier: ~18.17.0
@@ -328,9 +328,9 @@ importers:
       '@dream/components':
         specifier: '*'
         version: link:../../packages/components
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../../packages/foo
+        version: link:../../packages/utils
       react:
         specifier: ~18.2.0
         version: 18.2.0
@@ -362,9 +362,9 @@ importers:
 
   apps/webpack:
     dependencies:
-      '@dream/bar':
+      '@dream/hooks':
         specifier: '*'
-        version: link:../../packages/bar
+        version: link:../../packages/hooks
     devDependencies:
       rimraf:
         specifier: ~5.0.0
@@ -385,24 +385,11 @@ importers:
         specifier: ~5.1.0
         version: 5.1.0(webpack@5.88.0)
 
-  packages/bar:
-    dependencies:
-      '@dream/foo':
-        specifier: ~1.0.0
-        version: link:../foo
-    devDependencies:
-      rimraf:
-        specifier: ~5.0.0
-        version: 5.0.0
-      typescript:
-        specifier: ~4.9.0
-        version: 4.9.3
-
   packages/components:
     dependencies:
-      '@dream/foo':
+      '@dream/utils':
         specifier: '*'
-        version: link:../foo
+        version: link:../utils
     devDependencies:
       '@types/react':
         specifier: ~18.0.0
@@ -417,7 +404,26 @@ importers:
         specifier: ~5.0.0
         version: 5.0.0
 
-  packages/foo:
+  packages/hooks:
+    dependencies:
+      '@dream/utils':
+        specifier: ~1.0.0
+        version: link:../utils
+      react:
+        specifier: ~18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.23
+        version: 18.2.23
+      rimraf:
+        specifier: ~5.0.0
+        version: 5.0.0
+      typescript:
+        specifier: ~4.9.0
+        version: 4.9.3
+
+  packages/utils:
     devDependencies:
       rimraf:
         specifier: ~5.0.0
@@ -5969,7 +5975,7 @@ packages:
   /@types/react-dom@18.0.0:
     resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
     dependencies:
-      '@types/react': 18.0.0
+      '@types/react': 18.0.26
     dev: true
 
   /@types/react-dom@18.0.10:
@@ -5996,6 +6002,14 @@ packages:
 
   /@types/react@18.0.26:
     resolution: {integrity: sha512-hCR3PJQsAIXyxhTNSiDFY//LhnMZWpNNr5etoCqx/iUfGc5gXWtQR2Phl908jVR6uPXacojQWTg4qRpkxTuGug==}
+    dependencies:
+      '@types/prop-types': 15.7.4
+      '@types/scheduler': 0.16.2
+      csstype: 3.0.10
+    dev: true
+
+  /@types/react@18.2.23:
+    resolution: {integrity: sha512-qHLW6n1q2+7KyBEYnrZpcsAmU/iiCh9WGCKgXvMxx89+TYdJWRjZohVIo9XTcoLhfX3+/hP0Pbulu3bCZQ9PSA==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2

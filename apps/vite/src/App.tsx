@@ -1,5 +1,5 @@
 import { Button } from "@dream/components/button";
-import { meaningOfLife } from "@dream/foo";
+import { meaningOfLife } from "@dream/utils";
 import React, { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";

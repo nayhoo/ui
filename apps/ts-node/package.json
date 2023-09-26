@@ -8,7 +8,7 @@
     "test": "pnpm run start"
   },
   "dependencies": {
-    "@dream/foo": "*"
+    "@dream/utils": "*"
   },
   "devDependencies": {
     "@types/node": "~18.17.0",

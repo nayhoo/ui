@@ -1,1 +1,1 @@
-import "@dream/bar";
+import "@dream/hooks";

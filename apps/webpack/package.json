@@ -8,7 +8,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@dream/bar": "*"
+    "@dream/hooks": "*"
   },
   "devDependencies": {
     "rimraf": "~5.0.0",
