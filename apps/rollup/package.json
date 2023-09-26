@@ -1,5 +1,5 @@
 {
-  "name": "@nighttrax/rollup-example",
+  "name": "@dream/rollup-example",
   "private": true,
   "version": "1.0.0",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "build": "rollup -c --bundleConfigAsCjs"
   },
   "dependencies": {
-    "@nighttrax/foo": "*"
+    "@dream/foo": "*"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "~11.1.0",

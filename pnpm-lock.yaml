@@ -26,10 +26,10 @@ importers:
 
   apps/cra:
     dependencies:
-      '@nighttrax/components':
+      '@dream/components':
         specifier: '*'
         version: link:../../packages/components
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../../packages/foo
       react:
@@ -99,7 +99,7 @@ importers:
 
   apps/jest-babel:
     dependencies:
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../../packages/foo
     devDependencies:
@@ -124,7 +124,7 @@ importers:
 
   apps/jest-tsjest:
     dependencies:
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../../packages/foo
     devDependencies:
@@ -152,6 +152,9 @@ importers:
 
   apps/nestjs:
     dependencies:
+      '@dream/foo':
+        specifier: '*'
+        version: link:../../packages/foo
       '@nestjs/common':
         specifier: ~10.2.0
         version: 10.2.0(reflect-metadata@0.1.13)(rxjs@7.8.0)
@@ -161,9 +164,6 @@ importers:
       '@nestjs/platform-express':
         specifier: ~10.2.0
         version: 10.2.0(@nestjs/common@10.2.0)(@nestjs/core@10.2.0)
-      '@nighttrax/foo':
-        specifier: '*'
-        version: link:../../packages/foo
       reflect-metadata:
         specifier: ~0.1.13
         version: 0.1.13
@@ -195,7 +195,7 @@ importers:
 
   apps/nextjs:
     dependencies:
-      '@nighttrax/components':
+      '@dream/components':
         specifier: '*'
         version: link:../../packages/components
       next:
@@ -226,7 +226,7 @@ importers:
 
   apps/rollup:
     dependencies:
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../../packages/foo
     devDependencies:
@@ -251,7 +251,7 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@nighttrax/components':
+      '@dream/components':
         specifier: '*'
         version: link:../../packages/components
       react:
@@ -306,7 +306,7 @@ importers:
 
   apps/ts-node:
     dependencies:
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../../packages/foo
     devDependencies:
@@ -325,10 +325,10 @@ importers:
 
   apps/vite:
     dependencies:
-      '@nighttrax/components':
+      '@dream/components':
         specifier: '*'
         version: link:../../packages/components
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../../packages/foo
       react:
@@ -362,7 +362,7 @@ importers:
 
   apps/webpack:
     dependencies:
-      '@nighttrax/bar':
+      '@dream/bar':
         specifier: '*'
         version: link:../../packages/bar
     devDependencies:
@@ -387,7 +387,7 @@ importers:
 
   packages/bar:
     dependencies:
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: ~1.0.0
         version: link:../foo
     devDependencies:
@@ -400,7 +400,7 @@ importers:
 
   packages/components:
     dependencies:
-      '@nighttrax/foo':
+      '@dream/foo':
         specifier: '*'
         version: link:../foo
     devDependencies:
