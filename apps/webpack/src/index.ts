@@ -1,1 +1,3 @@
-import "@dream/hooks";
+import { noop } from "@nayhoo/utils";
+
+noop();

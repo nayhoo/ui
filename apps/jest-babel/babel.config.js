@@ -1,15 +1,12 @@
 module.exports = {
-  presets: [
-    ["@babel/preset-env", { targets: { node: "current" } }],
-    "@babel/preset-typescript",
-  ],
+  presets: [["@babel/preset-env", { targets: { node: "current" } }], "@babel/preset-typescript"],
 
   plugins: [
     [
       "module-resolver",
       {
         alias: {
-          "^@dream/(.+)": "../../packages/\\1/src",
+          "^@nayhoo/(.+)": "../../packages/\\1/src",
         },
       },
     ],

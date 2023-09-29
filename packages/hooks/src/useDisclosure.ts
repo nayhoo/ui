@@ -1,4 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
+
+// https://github.com/alan2207/bulletproof-react/blob/master/src/hooks/useDisclosure.ts
 
 export const useDisclosure = (initial = false) => {
   const [isOpen, setIsOpen] = React.useState(initial);
@@ -9,5 +11,3 @@ export const useDisclosure = (initial = false) => {
 
   return { isOpen, open, close, toggle };
 };
-
-// https://github.com/alan2207/bulletproof-react/blob/master/src/hooks/useDisclosure.ts

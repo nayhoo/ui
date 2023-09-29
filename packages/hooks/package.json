@@ -1,5 +1,5 @@
 {
-  "name": "@dream/hooks",
+  "name": "@nayhoo/hooks",
   "version": "1.0.0",
   "main": "dist/index",
   "types": "dist/index",
@@ -13,7 +13,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@dream/utils": "~1.0.0",
+    "@nayhoo/utils": "~1.0.0",
     "react": "~18.2.0"
   },
   "devDependencies": {

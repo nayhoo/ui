@@ -1,5 +1,5 @@
 {
-  "name": "@dream/jest-babel-example",
+  "name": "@nayhoo/jest-babel-example",
   "description": "Example of using jest + babel with a TS monorepo",
   "private": true,
   "version": "1.0.0",
@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@dream/utils": "*"
+    "@nayhoo/utils": "*"
   },
   "devDependencies": {
     "@babel/core": "~7.22.0",

@@ -1,5 +1,5 @@
 {
-  "name": "@dream/jest-example",
+  "name": "@nayhoo/jest-example",
   "description": "Example of using jest with a TS monorepo",
   "private": true,
   "version": "1.0.0",
@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@dream/utils": "*"
+    "@nayhoo/utils": "*"
   },
   "devDependencies": {
     "@types/jest": "~29.5.0",

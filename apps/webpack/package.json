@@ -1,5 +1,5 @@
 {
-  "name": "@dream/webpack-example",
+  "name": "@nayhoo/webpack-example",
   "description": "Example of using webpack in a TS monorepo",
   "private": true,
   "version": "1.0.0",
@@ -8,7 +8,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@dream/hooks": "*"
+    "@nayhoo/utils": "*"
   },
   "devDependencies": {
     "rimraf": "~5.0.0",

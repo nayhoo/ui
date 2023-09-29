@@ -1,5 +1,5 @@
 {
-  "name": "@dream/components",
+  "name": "@nayhoo/components",
   "version": "1.0.0",
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
@@ -11,7 +11,8 @@
     "react": "~18.2.0"
   },
   "dependencies": {
-    "@dream/utils": "*"
+    "@nayhoo/utils": "*",
+    "clsx": "^2.0.0"
   },
   "devDependencies": {
     "@types/react": "~18.0.0",

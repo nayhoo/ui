@@ -3,8 +3,8 @@
     "baseUrl": ".",
 
     "paths": {
-      "@dream/components/*": ["../../packages/components/src/*"],
-      "@dream/*": ["../../packages/*/src"],
+      "@nayhoo/components/*": ["../../packages/components/src/*"],
+      "@nayhoo/*": ["../../packages/*/src"],
 
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"]

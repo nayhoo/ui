@@ -1,4 +1,4 @@
 import React from "react";
-import { Button } from "@dream/components/button";
+import { Button } from "@nayhoo/components/button";
 
 export default () => <Button />;
