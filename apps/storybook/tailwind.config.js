@@ -1,10 +1,6 @@
-// tailwind.config.js
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "../../packages/components/**/*.{js,ts,jsx,tsx}", // here is path to Tailwind CSS components package
-  ],
+  presets: [require("@nayhoo/tailwind-config")], // eslint-disable-line global-require
   // Toggle dark-mode based on data-mode="dark"
   darkMode: ["class", '[data-mode="dark"]'],
   theme: {

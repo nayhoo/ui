@@ -254,6 +254,9 @@ importers:
       '@nayhoo/components':
         specifier: '*'
         version: link:../../packages/components
+      '@nayhoo/tailwind-config':
+        specifier: '*'
+        version: link:../../packages/tailwind-config
       react:
         specifier: ~18.2.0
         version: 18.2.0
@@ -346,6 +349,9 @@ importers:
       '@nayhoo/components':
         specifier: '*'
         version: link:../../packages/components
+      '@nayhoo/tailwind-config':
+        specifier: '*'
+        version: link:../../packages/tailwind-config
       '@nayhoo/utils':
         specifier: '*'
         version: link:../../packages/utils
@@ -452,6 +458,8 @@ importers:
       typescript:
         specifier: ~4.9.0
         version: 4.9.3
+
+  packages/tailwind-config: {}
 
   packages/utils:
     devDependencies:

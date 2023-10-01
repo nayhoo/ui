@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@nayhoo/components": "*",
+    "@nayhoo/tailwind-config": "*",
     "react": "~18.2.0",
     "react-dom": "~18.2.0"
   },
