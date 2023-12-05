@@ -1,6 +1,6 @@
 {
-  "name": "ts-monorepo",
-  "description": "Template for setting up a TypeScript monorepo",
+  "name": "ui",
+  "description": "🌴 Component, hooks and utils",
   "private": true,
   "workspaces": [
     "packages/*",
