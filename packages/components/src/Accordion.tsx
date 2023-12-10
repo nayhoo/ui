@@ -1,7 +1,7 @@
 import React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { styled, keyframes } from "../stitches.config";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { styled, keyframes } from "../stitches.config";
 
 export const Accordion = styled(AccordionPrimitive.Root, {
   borderRadius: "$2",
@@ -68,6 +68,14 @@ const slideUp = keyframes({
   },
 });
 
+const StyledChevron = styled(ChevronDownIcon, {
+  transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+
+  "[data-state=open] &": {
+    transform: "rotate(180deg)",
+  },
+});
+
 const StyledContent = styled(AccordionPrimitive.Content, {
   fontSize: "$3",
   overflow: "hidden",
@@ -77,14 +85,6 @@ const StyledContent = styled(AccordionPrimitive.Content, {
   },
   '&[data-state="closed"]': {
     animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
-  },
-});
-
-const StyledChevron = styled(ChevronDownIcon, {
-  transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
-
-  "[data-state=open] &": {
-    transform: "rotate(180deg)",
   },
 });
 

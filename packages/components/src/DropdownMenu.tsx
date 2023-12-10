@@ -7,25 +7,23 @@ import { Flex } from "./Flex";
 import { panelStyles } from "./Panel";
 
 export const baseItemCss = css({
-  display: "flex",
   alignItems: "center",
-  justifyContent: "space-between",
-  fontVariantNumeric: "tabular-nums",
-  lineHeight: "1",
   cursor: "default",
+  display: "flex",
+  fontSize: "$2",
+  fontVariantNumeric: "tabular-nums",
+  height: "$6",
+  justifyContent: "space-between",
+  lineHeight: "1",
+  px: "$2",
   userSelect: "none",
   whiteSpace: "nowrap",
-
-  height: "$6",
-  fontSize: "$2",
-  px: "$2",
 });
 
 export const itemCss = css(baseItemCss, {
-  position: "relative",
-
-  lineHeight: 1,
   borderRadius: "$2",
+  lineHeight: 1,
+  position: "relative",
 
   "&:hover": {
     backgroundColor: "$cloud",
@@ -59,9 +57,9 @@ export const menuCss = css({
 });
 
 export const separatorCss = css({
+  backgroundColor: "$shark",
   height: 1,
   my: "$1",
-  backgroundColor: "$shark",
 });
 
 const DropdownMenu = DropdownMenuPrimitive.Root;

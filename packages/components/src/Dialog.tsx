@@ -1,46 +1,96 @@
 import React from "react";
-import { styled, CSS, css, VariantProps } from "../stitches.config";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Cross1Icon } from "@radix-ui/react-icons";
-import { panelStyles } from "./Panel";
-import { IconButton } from "./IconButton";
+import { Box } from "./Box";
 import { Flex } from "./Flex";
+import { panelStyles } from "./Panel";
+import { styled, CSS, css, VariantProps } from "../stitches.config";
 
-const Dialog = DialogPrimitive.Root;
-const DialogTrigger = DialogPrimitive.Trigger;
+/* --------------------------------- Dialog --------------------------------- */
+export const Dialog = DialogPrimitive.Root;
+
+/* ------------------------------ Dialog close ------------------------------ */
+export const DialogClose = DialogPrimitive.Close;
+
+/* ----------------------------- Dialog content ----------------------------- */
+type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
+type DialogContentVariants = VariantProps<typeof StyledContent>;
+type DialogContentProps = DialogContentPrimitiveProps &
+  DialogContentVariants & {
+    components?: { Footer?: React.ReactNode; Header?: React.ReactNode };
+    css?: CSS;
+  };
+
+export const DialogContent = React.forwardRef<
+  React.ElementRef<typeof StyledContent>,
+  DialogContentProps
+>(({ children, components, ...props }, forwardedRef) => (
+  <DialogPrimitive.Portal>
+    <StyledOverlay />
+    <StyledContent {...props} ref={forwardedRef}>
+      {components?.Header}
+
+      <Box css={{ p: "$4" }}>{children}</Box>
+
+      {components?.Footer}
+    </StyledContent>
+  </DialogPrimitive.Portal>
+));
+
+/* --------------------------- Dialog description --------------------------- */
+export const DialogDescription = styled(DialogPrimitive.Description, {
+  color: "$label",
+  fontSize: "$3",
+  mb: "$3",
+});
+
+/* ------------------------------ Dialog footer ----------------------------- */
+export const DialogFooter = styled(Flex, {
+  backgroundColor: "$panel",
+  borderTop: "1px solid $cloud",
+  bottom: 0,
+  gap: "$2",
+  position: "sticky",
+  px: "$4",
+  py: "$2",
+  zIndex: "$1",
+});
+
+/* ------------------------------ Dialog header ----------------------------- */
+export const DialogHeader = styled(Flex, {
+  backgroundColor: "$neutral",
+  position: "sticky",
+  px: "$4",
+  py: "$1",
+  top: 0,
+  zIndex: "$1",
+});
+
+/* ------------------------------ Dialog title ------------------------------ */
+export const DialogTitle = styled(DialogPrimitive.Title, {
+  m: "0 0 $3 0",
+});
+
+/* ----------------------------- Dialog trigger ----------------------------- */
+export const DialogTrigger = DialogPrimitive.Trigger;
 
 export const overlayStyles = css({
   backgroundColor: "rgba(0, 0, 0, .15)",
 });
 
-const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
-  position: "fixed",
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0,
-});
-
 const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
+  left: "50%",
+  marginTop: "-5vh",
+  maxHeight: "85vh",
+  minWidth: 200,
+  overflow: "auto",
   position: "fixed",
   top: "50%",
-  left: "50%",
   transform: "translate(-50%, -50%)",
-  minWidth: 200,
-  maxHeight: "85vh",
-
-  marginTop: "-5vh",
-  // animation: `${fadeIn} 125ms linear, ${moveDown} 125ms cubic-bezier(0.22, 1, 0.36, 1)`,
-
-  // Among other things, prevents text alignment inconsistencies when dialog can't be centered in the viewport evenly.
-  // Affects animated and non-animated dialogs alike.
   willChange: "transform",
 
   "&:focus": {
     outline: "none",
   },
-
-  overflow: "auto",
 
   variants: {
     fullWidth: {
@@ -68,76 +118,10 @@ const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   },
 });
 
-const DialogHeader = styled(Flex, {
-  backgroundColor: "$neutral",
-  position: "sticky",
-  px: "$4",
-  py: "$1",
-  zIndex: "$1",
-
+const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
+  bottom: 0,
+  left: 0,
+  position: "fixed",
+  right: 0,
   top: 0,
 });
-
-type DialogContentVariants = VariantProps<typeof StyledContent>;
-type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
-type DialogContentProps = DialogContentPrimitiveProps &
-  DialogContentVariants & {
-    css?: CSS;
-    components?: { Footer?: React.ReactNode };
-  };
-
-const DialogContent = React.forwardRef<React.ElementRef<typeof StyledContent>, DialogContentProps>(
-  ({ children, components, ...props }, forwardedRef) => (
-    <DialogPrimitive.Portal>
-      <StyledOverlay />
-      <StyledContent {...props} ref={forwardedRef}>
-        <DialogHeader justify="end">
-          <DialogPrimitive.Close asChild>
-            <IconButton variant="ghost">
-              <Cross1Icon />
-            </IconButton>
-          </DialogPrimitive.Close>
-        </DialogHeader>
-
-        <div style={{ padding: "20px" }}>{children}</div>
-
-        {components?.Footer}
-      </StyledContent>
-    </DialogPrimitive.Portal>
-  )
-);
-
-const DialogClose = DialogPrimitive.Close;
-
-const DialogTitle = styled(DialogPrimitive.Title, {
-  m: 0,
-  mb: "$3",
-});
-
-const DialogDescription = styled(DialogPrimitive.Description, {
-  mb: "$3",
-  fontSize: "$3",
-  color: "$label",
-});
-
-const DialogFooter = styled(Flex, {
-  backgroundColor: "$panel",
-  position: "sticky",
-  px: "$4",
-  py: "$2",
-  zIndex: "$1",
-
-  borderTop: "1px solid $cloud",
-  bottom: 0,
-  gap: "$2",
-});
-
-export {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogClose,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-};
