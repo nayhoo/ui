@@ -15,7 +15,7 @@ const spin = keyframes({
 const StyledSpinner = styled("div", {
   animation: `${spin} .8s linear infinite`,
 
-  border: "1px solid $cloud",
+  border: "1px solid $textDisabled",
   borderRadius: "$round",
   borderTop: "1px solid currentColor",
 

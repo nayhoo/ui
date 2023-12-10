@@ -11,18 +11,36 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
         ...colors,
 
         // Semantic colors
-        canvas: colors.white,
-        panel: colors.white,
-        transparentPanel: "hsl(0 0% 0% / 97%)",
+        primary: "#0000ff",
+        secondary: "#8f4000",
+        accent: "#ea3600",
+        neutral: "#080800",
 
-        // todo: make this just shadow and have it change in the themes
-        shadowLight: "hsl(206 22% 7% / 35%)",
-        shadowDark: "hsl(206 22% 7% / 20%)",
+        canvas: "#ffffff",
+
+        info: "#00edff",
+        success: "#00ca76",
+        warning: "#ff5800",
+        error: "#f5184c",
+
+        textPrimary: "#000000",
+        textSecondary: "",
+        textAccent: "#ea3600", // could this just be accent?
+        textDisabled: "rgba(0, 0, 0, 0.38)",
+
+        // can these all below be programmically calculated?
+        hover: "rgba(0, 0, 0, 0.04)",
+        focus: "rgba(0, 0, 0, 0.12)",
+        selected: "rgba(0, 0, 0, 0.04)", // of primary
+        activated: "rgba(0, 0, 0, 0.04)", // of primary
+        pressed: "rgba(0, 0, 0, 0.12)",
+        dragged: "rgba(0, 0, 0, 0.08)",
+        disabled: "rgba(0, 0, 0, 0.12)",
+
+        /** (dividers, button outlines etc ...) */
+        line: "rgba(0, 0, 0, 0.12)",
       },
-      fonts: {
-        untitled: "Untitled Sans, -apple-system, system-ui, sans-serif",
-        mono: "Söhne Mono, menlo, monospace",
-      },
+      fonts: {},
       fontSizes: {
         1: "11px",
         2: "13px",
@@ -33,6 +51,12 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
         7: "28px",
         8: "36px",
         9: "60px",
+      },
+      fontWeights: {
+        regular: 400,
+        medium: 500,
+        bold: 700,
+        black: 900,
       },
       radii: {
         1: "4px",
@@ -182,5 +206,7 @@ export const darkTheme = createTheme("dark", {
   colors: {
     canvas: "hsl(240 10% 3.9%)",
     panel: colors.black,
+
+    shadow: "hsl(206 22% 7% / 20%)",
   },
 });

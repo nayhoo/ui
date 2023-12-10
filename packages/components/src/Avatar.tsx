@@ -57,7 +57,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: "center",
   border: "none",
   boxSizing: "border-box",
-  color: "$hiContrast",
+  color: "$textPrimary",
   display: "flex",
   flexShrink: 0,
   fontFamily: "inherit",
@@ -75,7 +75,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   "&::before": {
     borderRadius: "inherit",
     bottom: 0,
-    boxShadow: "inset 0px 0px 1px rgba(0, 0, 0, 0.12)",
+    boxShadow: "inset 0px 0px 1px $colors$line",
     content: '""',
     left: 0,
     position: "absolute",
@@ -83,33 +83,25 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     top: 0,
   },
 
-  backgroundColor: "$cloud",
-
   variants: {
     size: {
       "1": {
-        height: "$3",
-        width: "$3",
+        size: "$3",
       },
       "2": {
-        height: "$5",
-        width: "$5",
+        size: "$5",
       },
       "3": {
-        height: "$6",
-        width: "$6",
+        size: "$6",
       },
       "4": {
-        height: "$7",
-        width: "$7",
+        size: "$7",
       },
       "5": {
-        height: "$8",
-        width: "$8",
+        size: "$8",
       },
       "6": {
-        height: "$9",
-        width: "$9",
+        size: "$9",
       },
     },
     shape: {
@@ -128,7 +120,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     interactive: {
       true: {
         "&::after": {
-          backgroundColor: "rgba(0,0,0,.08)",
+          backgroundColor: "rgba(0, 0, 0, 0.08)",
           bottom: "0",
           content: '""',
           left: "0",
@@ -148,7 +140,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         },
         '&[data-state="open"]': {
           "&::after": {
-            backgroundColor: "rgba(0,0,0,.12)",
+            backgroundColor: "rgba(0, 0, 0, 0.12)",
             opacity: "1",
           },
         },

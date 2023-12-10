@@ -34,6 +34,13 @@ export const Ghost: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    ...Default.args,
+    disabled: true,
+  },
+};
+
 export const Size1: Story = {
   args: {
     ...Default.args,

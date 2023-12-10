@@ -9,7 +9,7 @@ export const Button = React.forwardRef<React.ElementRef<"button">, ButtonProps>(
   (props, forwardedRef) => (
     <StyledButton {...props} disabled={props.disabled || Boolean(props.loading)} ref={forwardedRef}>
       {props.children}
-      {props.loading && <Spinner css={{ color: "$nimbus", position: "absolute" }} />}
+      {props.loading && <Spinner css={{ position: "absolute" }} />}
     </StyledButton>
   )
 );
@@ -22,10 +22,9 @@ const StyledButton = styled("button", {
   boxSizing: "border-box",
   display: "inline-flex",
   flexShrink: 0,
-  fontFamily: "$untitled",
   fontSize: "$2",
   fontVariantNumeric: "tabular-nums",
-  fontWeight: 500,
+  fontWeight: "$medium",
   height: "$5",
   justifyContent: "center",
   lineHeight: "1",
@@ -45,9 +44,9 @@ const StyledButton = styled("button", {
     boxSizing: "border-box",
   },
   "&:disabled": {
-    backgroundColor: "$cloud",
-    boxShadow: "inset 0 0 0 1px $colors$shadowLight",
-    color: "$smoke",
+    backgroundColor: "$disabled",
+    boxShadow: "none",
+    color: "$textDisabled",
     cursor: "not-allowed",
     pointerEvents: "none",
   },
@@ -87,54 +86,36 @@ const StyledButton = styled("button", {
     variant: {
       default: {
         color: "$white",
-        boxShadow: "inset 0 0 0 1px $colors$slate7",
-        backgroundColor: "$charcoal",
+        backgroundColor: "$primary",
 
         "@hover": {
-          "&:hover": {
-            // boxShadow: "inset 0 0 0 1px $colors$slate8",
-          },
+          "&:hover": {},
         },
-        "&:active": {
-          // backgroundColor: "$slate2",
-          // boxShadow: "inset 0 0 0 1px $colors$slate8",
-        },
-        // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-        //   {
-        //     backgroundColor: "$slate4",
-        //     boxShadow: "inset 0 0 0 1px $colors$slate8",
-        //   },
+        "&:active": {},
       },
       outline: {
         color: "$hiContrast",
-        boxShadow: "inset 0 0 0 1px $colors$outline",
-        backgroundColor: "$loContrast",
+        boxShadow: "inset 0 0 0 1px $colors$line",
 
         "@hover": {
           "&:hover": {
-            boxShadow: "inset 0 0 0 1px $colors$shadowLight",
+            backgroundColor: "$hover",
           },
         },
         "&:active": {
-          backgroundColor: "$loContrast",
-          boxShadow: "inset 0 0 0 1px $colors$shadowLight",
+          backgroundColor: "$pressed",
         },
-        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-          {
-            boxShadow: "inset 0 0 0 1px $colors$outlineActive",
-          },
       },
       ghost: {
         backgroundColor: "transparent",
-        boxShadow: "none",
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$cloud",
+            backgroundColor: "$hover",
           },
         },
         "&:active": {
-          backgroundColor: "$shark",
+          backgroundColor: "$pressed",
         },
       },
     },
