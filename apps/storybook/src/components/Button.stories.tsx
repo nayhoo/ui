@@ -75,3 +75,45 @@ export const Loading: Story = {
     loading: true,
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    ...Default.args,
+    color: "secondary",
+  },
+};
+
+export const Accent: Story = {
+  args: {
+    ...Default.args,
+    color: "accent",
+  },
+};
+
+export const Info: Story = {
+  args: {
+    ...Default.args,
+    color: "info",
+  },
+};
+
+export const Success: Story = {
+  args: {
+    ...Default.args,
+    color: "success",
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    ...Default.args,
+    color: "warning",
+  },
+};
+
+export const Error: Story = {
+  args: {
+    ...Default.args,
+    color: "error",
+  },
+};

@@ -3,6 +3,7 @@ import type * as Stitches from "@stitches/react";
 
 export type { VariantProps } from "@stitches/react";
 import * as colors from "./colors";
+// import { getContrastTextColor } from "@nayhoo/utils";
 
 export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes, config, reset } =
   createStitches({
@@ -25,7 +26,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
 
         textPrimary: "#000000",
         textSecondary: "",
-        textAccent: "#ea3600", // could this just be accent?
+        textAccent: "$accent", // could this just be accent?
         textDisabled: "rgba(0, 0, 0, 0.38)",
 
         // can these all below be programmically calculated?
@@ -180,6 +181,10 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
       gridRows: (value: number) => ({
         gridTemplateRows: `repeat(${value}, minmax(0, ${value}fr))`,
       }),
+      /** A property for applying the contrast text color for the supplied $bgColor  */
+      // contrastTextColor: (bgColor: string) => ({
+      //   color: getContrastTextColor(theme.colors[bgColor.slice(1)]),
+      // }),
     },
   });
 

@@ -52,10 +52,22 @@ const StyledButton = styled("button", {
   },
 
   variants: {
-    shape: {
-      square: {
-        // Default
+    color: {
+      primary: {},
+      secondary: {},
+      accent: {},
+      info: {},
+      success: {},
+      warning: {},
+      error: {},
+    },
+    loading: {
+      true: {
+        color: "transparent !important",
       },
+    },
+    shape: {
+      square: {},
       pill: {
         borderRadius: "$pill",
       },
@@ -119,14 +131,69 @@ const StyledButton = styled("button", {
         },
       },
     },
-    loading: {
-      true: {
-        color: "transparent !important",
-      },
-    },
   },
 
+  compoundVariants: [
+    {
+      variant: "default",
+      color: "primary",
+      css: {
+        backgroundColor: "$primary",
+        // contrastTextColor: "$primary",
+      },
+    },
+    {
+      variant: "default",
+      color: "secondary",
+      css: {
+        backgroundColor: "$secondary",
+        // contrastTextColor: "$secondary",
+      },
+    },
+    {
+      variant: "default",
+      color: "accent",
+      css: {
+        backgroundColor: "$accent",
+        // contrastTextColor: "$accent",
+      },
+    },
+    {
+      variant: "default",
+      color: "info",
+      css: {
+        backgroundColor: "$info",
+        // contrastTextColor: "$info",
+      },
+    },
+    {
+      variant: "default",
+      color: "success",
+      css: {
+        backgroundColor: "$success",
+        // contrastTextColor: "$success",
+      },
+    },
+    {
+      variant: "default",
+      color: "warning",
+      css: {
+        backgroundColor: "$warning",
+        // contrastTextColor: "$warning",
+      },
+    },
+    {
+      variant: "default",
+      color: "error",
+      css: {
+        backgroundColor: "$error",
+        // contrastTextColor: "$error",
+      },
+    },
+  ],
+
   defaultVariants: {
+    color: "primary",
     size: "2",
     variant: "default",
   },
