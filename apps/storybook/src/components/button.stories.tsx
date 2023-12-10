@@ -14,22 +14,57 @@ type Story = StoryObj<typeof Button>;
  * See https://storybook.js.org/docs/react/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    children: "Primary",
+    children: "Button",
   },
 };
 
-export const Outlined: Story = {
+export const Outline: Story = {
   args: {
-    children: "Outlined",
-    variant: "outlined",
+    ...Default.args,
+    variant: "outline",
   },
 };
 
-export const Danger: Story = {
+export const Ghost: Story = {
   args: {
-    children: "Danger",
-    variant: "danger",
+    ...Default.args,
+    variant: "ghost",
+  },
+};
+
+export const Size1: Story = {
+  args: {
+    ...Default.args,
+    size: "1",
+  },
+};
+
+export const Size2: Story = {
+  args: {
+    ...Default.args,
+    size: "2",
+  },
+};
+
+export const Size3: Story = {
+  args: {
+    ...Default.args,
+    size: "3",
+  },
+};
+
+export const Pill: Story = {
+  args: {
+    ...Default.args,
+    shape: "pill",
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    ...Default.args,
+    loading: true,
   },
 };

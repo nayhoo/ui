@@ -1,6 +1,5 @@
 // .storybook/preview.js
 
-import "../src/tailwind.css"; // replace with the name of your tailwind css file
 import { withThemeByDataAttribute } from "@storybook/addon-styling";
 
 export const parameters = {

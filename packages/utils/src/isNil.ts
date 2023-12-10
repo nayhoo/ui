@@ -1,10 +1,7 @@
 /**
- * Returns true if `item` is null or undefined.
+ * Checks if a variable is null or undefined.
+ * @param value - The variable to check.
+ * @returns {boolean} - Returns true if the variable is null or undefined, otherwise returns false.
  */
-export const isNil = (item: unknown): item is null | undefined => {
-  if (item === null || item === undefined) {
-    return true;
-  }
-
-  return false;
-};
+export const isNil = (value: any): value is null | undefined =>
+  value === null || value === undefined;

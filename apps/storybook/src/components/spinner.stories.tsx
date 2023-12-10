@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Spinner } from "@nayhoo/components/spinner";
+import { Spinner } from "@nayhoo/components";
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
@@ -14,12 +14,6 @@ type Story = StoryObj<typeof Spinner>;
  * See https://storybook.js.org/docs/react/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {
+export const Default: Story = {
   args: {},
-};
-
-export const Light: Story = {
-  args: {
-    variant: "light",
-  },
 };

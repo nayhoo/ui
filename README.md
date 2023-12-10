@@ -24,7 +24,6 @@ Template project for setting up a TypeScript monorepo
   - [Babel](#babel)
   - [webpack](#webpack)
   - [jest](#jest)
-  - [create-react-app](#create-react-app)
   - [Vite](#vite)
   - [NextJS](#nextjs)
   - [NestJS](#nestjs)
@@ -78,7 +77,7 @@ This repo contains two types of workspaces:
 - `packages`: meant to be published to npm and installed,
 - `apps`: meant to be executed.
 
-A good example to illustrate the difference is `create-react-app`: you wouldn't publish an app like this to npm, you would run it, more specifically you would build the JS bundle and then deploy that somewhere.
+A good example to illustrate the difference is `vite`: you wouldn't publish an app like this to npm, you would run it, more specifically you would build the JS bundle and then deploy that somewhere.
 
 For packages, you don't want to bundle all the monorepo dependencies, and instead publish them individually. That's why packages have a separate build `tsconfig.json` that resolves monorepo dependencies to `node_modules`.
 
@@ -161,35 +160,6 @@ module.exports = {
 ```
 
 See the full example [here](apps/jest-tsjest).
-
-### create-react-app
-
-Use [craco](https://www.npmjs.com/package/@craco/craco) or [react-app-rewired](https://www.npmjs.com/package/react-app-rewired) to extend CRA's webpack config and apply the [tsconfig-paths-webpack-plugin](https://www.npmjs.com/package/tsconfig-paths-webpack-plugin):
-
-```js
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-
-module.exports = (config) => {
-  // Remove the ModuleScopePlugin which throws when we
-  // try to import something outside of src/.
-  config.resolve.plugins.pop();
-
-  // Resolve the path aliases.
-  config.resolve.plugins.push(new TsconfigPathsPlugin());
-
-  // Let Babel compile outside of src/.
-  const oneOfRule = config.module.rules.find((rule) => rule.oneOf);
-    const tsRule = oneOfRule.oneOf.find((rule) =>
-      rule.test.toString().includes("ts|tsx")
-    );
-  tsRule.include = undefined;
-  tsRule.exclude = /node_modules/;
-
-  return config;
-};
-```
-
-See the full example [here](apps/cra). For tests, see the [jest example](#jest).
 
 ### Vite
 

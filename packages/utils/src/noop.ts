@@ -1,2 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-export const noop = () => {};
+/**
+ * An empty function that performs no operation.
+ * Can be used as a placeholder or default callback.
+ * @returns {void}
+ */
+export const noop = (): void => {
+  // This function intentionally performs no operation.
+};
