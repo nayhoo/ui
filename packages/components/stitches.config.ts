@@ -18,6 +18,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
         neutral: "#080800",
 
         canvas: "#ffffff",
+        panel: "#ffffff",
 
         info: "#00edff",
         success: "#00ca76",
@@ -25,7 +26,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
         error: "#f5184c",
 
         textPrimary: "#000000",
-        textSecondary: "",
+        textSecondary: "#808080",
         textAccent: "$accent", // could this just be accent?
         textDisabled: "rgba(0, 0, 0, 0.38)",
 
@@ -40,6 +41,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
 
         /** (dividers, button outlines etc ...) */
         line: "rgba(0, 0, 0, 0.12)",
+        shadow: "rgba(0, 0, 0, 0.12)",
       },
       fonts: {},
       fontSizes: {

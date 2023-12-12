@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Cross2Icon } from "@radix-ui/react-icons";
 
 import {
   Button,
@@ -7,8 +8,10 @@ import {
   DialogContent,
   DialogDescription,
   DialogFooter,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
+  IconButton,
 } from "@nayhoo/components";
 
 import React from "react";
@@ -42,7 +45,36 @@ export const Default: Story = {
   },
 };
 
-export const WithFooter: Story = {
+export const Header: Story = {
+  args: {
+    children: (
+      <>
+        <DialogTrigger asChild>
+          <Button>Click me!</Button>
+        </DialogTrigger>
+
+        <DialogContent
+          components={{
+            Header: (
+              <DialogHeader>
+                <DialogClose asChild>
+                  <IconButton css={{ ml: "auto" }}>
+                    <Cross2Icon />
+                  </IconButton>
+                </DialogClose>
+              </DialogHeader>
+            ),
+          }}
+        >
+          <DialogTitle>Title</DialogTitle>
+          <DialogDescription>Description</DialogDescription>
+        </DialogContent>
+      </>
+    ),
+  },
+};
+
+export const Footer: Story = {
   args: {
     children: (
       <>

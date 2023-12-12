@@ -38,7 +38,7 @@ export const DialogContent = React.forwardRef<
 
 /* --------------------------- Dialog description --------------------------- */
 export const DialogDescription = styled(DialogPrimitive.Description, {
-  color: "$label",
+  color: "$textSecondary",
   fontSize: "$3",
   mb: "$3",
 });
@@ -46,7 +46,7 @@ export const DialogDescription = styled(DialogPrimitive.Description, {
 /* ------------------------------ Dialog footer ----------------------------- */
 export const DialogFooter = styled(Flex, {
   backgroundColor: "$panel",
-  borderTop: "1px solid $cloud",
+  borderTop: "1px solid $line",
   bottom: 0,
   gap: "$2",
   position: "sticky",
