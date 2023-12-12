@@ -6,7 +6,6 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuItemIndicator,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
@@ -52,20 +51,14 @@ export const Default: Story = {
 
               <DropdownMenuSeparator />
 
-              <DropdownMenuItem>Developer Tools</DropdownMenuItem>
+              <DropdownMenuItem disabled>Developer Tools</DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
 
           <DropdownMenuSeparator />
 
-          <DropdownMenuCheckboxItem>
-            <DropdownMenuItemIndicator>{/* <CheckIcon /> */}</DropdownMenuItemIndicator>
-            Show Bookmarks
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>
-            <DropdownMenuItemIndicator>{/* <CheckIcon /> */}</DropdownMenuItemIndicator>
-            Show Full URLs
-          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem>Show Bookmarks</DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem>Show Full URLs</DropdownMenuCheckboxItem>
 
           <DropdownMenuSeparator />
 

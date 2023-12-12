@@ -26,38 +26,39 @@ export const itemCss = css(baseItemCss, {
   position: "relative",
 
   "&:hover": {
-    backgroundColor: "$cloud",
-    // cursor: "pointer",
+    backgroundColor: "$bgHover",
+    cursor: "pointer",
   },
 
   "&[data-disabled]": {
-    color: "$nimbus",
+    color: "$textDisabled",
+    cursor: "not-allowed",
     pointerEvents: "none",
   },
 
   "&[data-highlighted]": {
-    backgroundColor: "$cloud",
+    backgroundColor: "$bgHover",
     outline: "none",
   },
 
   "&[data-state=open]": {
-    backgroundColor: "$cloud",
+    backgroundColor: "$bgHover",
     outline: "none",
   },
 });
 
 export const labelCss = css(baseItemCss, {
-  color: "$label",
+  color: "$textSecondary",
 });
 
 export const menuCss = css({
   boxSizing: "border-box",
   minWidth: 120,
-  p: 5,
+  p: "$1",
 });
 
 export const separatorCss = css({
-  backgroundColor: "$shark",
+  backgroundColor: "$line",
   height: 1,
   my: "$1",
 });
@@ -89,7 +90,7 @@ type DropdownMenuContentProps = DropdownMenuContentPrimitiveProps & {
   hideArrow?: boolean;
 };
 
-const StyledArrow = styled(DropdownMenuPrimitive.Arrow, { fill: "white" });
+const StyledArrow = styled(DropdownMenuPrimitive.Arrow, { fill: "$panel" });
 
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
@@ -136,7 +137,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   DialogMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuCheckboxItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: "absolute", left: "$1" }}>
+    <Box as="span" css={{ left: "$1", position: "absolute" }}>
       <DropdownMenuPrimitive.ItemIndicator>
         <CheckIcon />
       </DropdownMenuPrimitive.ItemIndicator>
@@ -158,15 +159,15 @@ const DropdownMenuRadioItem = React.forwardRef<
   DialogMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuRadioItem {...props} ref={forwardedRef}>
-    <Box as="span" css={{ position: "absolute", left: "$1" }}>
+    <Box as="span" css={{ left: "$1", position: "absolute" }}>
       <DropdownMenuPrimitive.ItemIndicator>
-        <Flex css={{ width: "$3", height: "$3", alignItems: "center", justifyContent: "center" }}>
+        <Flex css={{ alignItems: "center", height: "$3", justifyContent: "center", width: "$3" }}>
           <Box
             css={{
-              width: "$1",
-              height: "$1",
               backgroundColor: "currentColor",
               borderRadius: "$round",
+              height: "$1",
+              width: "$1",
             }}
           />
         </Flex>
@@ -177,19 +178,21 @@ const DropdownMenuRadioItem = React.forwardRef<
 ));
 
 const DropdownMenuItemIndicator = styled(DropdownMenuPrimitive.ItemIndicator, {
-  position: "absolute",
-  left: 0,
-  width: 25,
-  display: "inline-flex",
   alignItems: "center",
+  display: "inline-flex",
   justifyContent: "center",
+  left: 0,
+  position: "absolute",
+  width: 25,
 });
 
 const RightSlot = styled("div", {
   marginLeft: "auto",
   paddingLeft: 20,
-  // "[data-highlighted] > &": { color: "white" },
-  "[data-disabled] &": { color: "$nimbus" },
+
+  "[data-disabled] &": {
+    color: "$textDisabled",
+  },
 });
 
 export {
