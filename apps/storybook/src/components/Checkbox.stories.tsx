@@ -36,12 +36,13 @@ export const Controlled: Story = {
 
 export const Disabled: Story = {
   args: {
+    checked: true,
     disabled: true,
   },
 };
 
-export const Label: Story = {
-  args: {
-    // label: "Airplane mode",
-  },
-};
+// export const Label: Story = {
+//   args: {
+//     label: "Airplane mode",
+//   },
+// };

@@ -30,13 +30,13 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
         textDisabled: "rgba(0, 0, 0, 0.38)",
 
         // can these all below be programmically calculated?
-        hover: "rgba(0, 0, 0, 0.04)",
-        focus: "rgba(0, 0, 0, 0.12)",
-        selected: "rgba(0, 0, 0, 0.04)", // of primary
-        activated: "rgba(0, 0, 0, 0.04)", // of primary
-        pressed: "rgba(0, 0, 0, 0.12)",
-        dragged: "rgba(0, 0, 0, 0.08)",
-        disabled: "rgba(0, 0, 0, 0.12)",
+        bgHover: "rgba(0, 0, 0, 0.04)",
+        bgFocus: "rgba(0, 0, 0, 0.12)",
+        bgSelected: "rgba(0, 0, 0, 0.04)", // of primary
+        bgActivated: "rgba(0, 0, 0, 0.04)", // of primary
+        bgPressed: "rgba(0, 0, 0, 0.12)",
+        bgDragged: "rgba(0, 0, 0, 0.08)",
+        bgDisabled: "rgba(0, 0, 0, 0.12)",
 
         /** (dividers, button outlines etc ...) */
         line: "rgba(0, 0, 0, 0.12)",

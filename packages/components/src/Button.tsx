@@ -44,7 +44,7 @@ const StyledButton = styled("button", {
     boxSizing: "border-box",
   },
   "&:disabled": {
-    backgroundColor: "$disabled",
+    backgroundColor: "$bgDisabled",
     boxShadow: "none",
     color: "$textDisabled",
     cursor: "not-allowed",
@@ -111,11 +111,11 @@ const StyledButton = styled("button", {
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$hover",
+            backgroundColor: "$bgHover",
           },
         },
         "&:active": {
-          backgroundColor: "$pressed",
+          backgroundColor: "$bgPressed",
         },
       },
       ghost: {
@@ -123,11 +123,11 @@ const StyledButton = styled("button", {
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$hover",
+            backgroundColor: "$bgHover",
           },
         },
         "&:active": {
-          backgroundColor: "$pressed",
+          backgroundColor: "$bgPressed",
         },
       },
     },

@@ -114,6 +114,6 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   padding: "0 20px",
 
   "&:hover": {
-    backgroundColor: "$hover",
+    backgroundColor: "$bgHover",
   },
 });

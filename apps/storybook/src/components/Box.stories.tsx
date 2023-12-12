@@ -16,6 +16,6 @@ type Story = StoryObj<typeof Box>;
  */
 export const Default: Story = {
   args: {
-    css: { backgroundColor: "$hover", borderRadius: "$2", size: 300 },
+    css: { backgroundColor: "$bgHover", borderRadius: "$2", size: 300 },
   },
 };
