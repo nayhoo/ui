@@ -1,13 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Box } from "@nayhoo/components";
+import {
+  Button,
+  Flex,
+  Form,
+  FormControl,
+  FormField,
+  FormLabel,
+  FormMessage,
+  FormSubmit,
+  TextArea,
+  TextField,
+} from "@nayhoo/components";
 
-const meta: Meta<typeof Box> = {
-  component: Box,
+import React from "react";
+
+const meta: Meta<typeof Form> = {
+  component: Form,
 };
 
 export default meta;
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof Form>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -16,9 +29,37 @@ type Story = StoryObj<typeof Box>;
  */
 export const Default: Story = {
   args: {
-    css: {
-      backgroundColor: "$cloud",
-      size: "$8",
-    },
+    children: (
+      <>
+        <FormField name="email">
+          <Flex align="baseline" justify="between">
+            <FormLabel>Email</FormLabel>
+            <FormMessage error match="valueMissing">
+              Please enter your email
+            </FormMessage>
+            <FormMessage error match="typeMismatch">
+              Please provide a valid email
+            </FormMessage>
+          </Flex>
+          <FormControl asChild>
+            <TextField type="email" required />
+          </FormControl>
+        </FormField>
+        <FormField name="question">
+          <Flex align="baseline" justify="between">
+            <FormLabel>Question</FormLabel>
+            <FormMessage error match="valueMissing">
+              Please enter a question
+            </FormMessage>
+          </Flex>
+          <FormControl asChild>
+            <TextArea required />
+          </FormControl>
+        </FormField>
+        <FormSubmit asChild>
+          <Button style={{ marginTop: 10 }}>Post question</Button>
+        </FormSubmit>
+      </>
+    ),
   },
 };
