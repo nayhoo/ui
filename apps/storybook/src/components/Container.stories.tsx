@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Container>;
  */
 export const Default: Story = {
   args: {
-    children: <Box css={{ backgroundColor: "$cloud", height: 300 }} />,
+    children: <Box css={{ backgroundColor: "$bgHover", height: 300 }} />,
   },
 };
 
