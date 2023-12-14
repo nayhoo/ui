@@ -1,89 +1,48 @@
 import { styled } from "../stitches.config";
 
 export const TextArea = styled("textarea", {
-  // Reset
+  WebkitTapHighlightColor: "rgba(0,0,0,0)",
   appearance: "none",
+  background: "transparent",
   borderWidth: "0",
   fontFamily: "inherit",
-  margin: "0",
-  outline: "none",
-  WebkitTapHighlightColor: "rgba(0,0,0,0)",
-  backgroundColor: "$loContrast",
-  boxShadow: "inset 0 0 0 1px $colors$slate7",
-  color: "$hiContrast",
   fontVariantNumeric: "tabular-nums",
-  position: "relative",
+  margin: "0",
   minHeight: 80,
+  outline: "none",
+  position: "relative",
   resize: "vertical",
 
   "@hover": {
     "&:hover": {
-      backgroundColor: "$cloud",
+      backgroundColor: "$bgHover",
     },
   },
 
+  "&:disabled": {
+    backgroundColor: "$bgDisabled",
+    color: "$textDisabled",
+    cursor: "not-allowed",
+    pointerEvents: "none",
+    resize: "none",
+  },
   "&:focus": {
-    outline: "1px solid $activeOutline",
+    outline: "1px solid $text",
     zIndex: "1",
   },
-  "&::placeholder": {
-    color: "$nimbus",
-  },
-  "&:disabled": {
-    pointerEvents: "none",
-    backgroundColor: "$slate2",
-    color: "$slate8",
-    cursor: "not-allowed",
-    resize: "none",
-    "&::placeholder": {
-      color: "$slate7",
-    },
-  },
   "&:read-only": {
-    backgroundColor: "$slate2",
+    backgroundColor: "$bgDisabled",
+
     "&:focus": {
-      boxShadow: "inset 0px 0px 0px 1px $colors$slate7",
+      // boxShadow: "inset 0px 0px 0px 1px $colors$line",
     },
   },
 
   variants: {
-    size: {
-      "1": {
-        borderRadius: "$1",
-        fontSize: "$1",
-        lineHeight: "16px",
-        p: "$1",
-      },
-      "2": {
-        borderRadius: "$1",
-        fontSize: "$2",
-        lineHeight: "20px",
-        p: "$1",
-      },
-      "3": {
-        borderRadius: "$2",
-        fontSize: "$3",
-        lineHeight: "23px",
-        p: "$2",
-      },
-    },
-    state: {
-      invalid: {
-        // boxShadow: "inset 0 0 0 1px $colors$red7",
-        "&:focus": {
-          // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
-        },
-      },
-      valid: {
-        // boxShadow: "inset 0 0 0 1px $colors$green7",
-        "&:focus": {
-          // boxShadow: "inset 0px 0px 0px 1px $colors$green8, 0px 0px 0px 1px $colors$green8",
-        },
-      },
-    },
     cursor: {
       default: {
         cursor: "default",
+
         "&:focus": {
           cursor: "text",
         },
@@ -92,8 +51,46 @@ export const TextArea = styled("textarea", {
         cursor: "text",
       },
     },
+    size: {
+      "1": {
+        borderRadius: "$1",
+        fontSize: "$1",
+        lineHeight: "$sizes$3",
+        p: "$1",
+      },
+      "2": {
+        borderRadius: "$1",
+        fontSize: "$2",
+        lineHeight: "$sizes$4",
+        p: "$1",
+      },
+      "3": {
+        borderRadius: "$2",
+        fontSize: "$3",
+        lineHeight: "$sizes$5",
+        p: "$2",
+      },
+    },
+    error: {
+      true: {
+        boxShadow: "inset 0px 0px 0px 1px $colors$error",
+
+        "&:focus": {
+          // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
+        },
+      },
+    },
+    variant: {
+      outline: {
+        boxShadow: "inset 0 0 0 1px $colors$line",
+      },
+      ghost: {
+        boxShadow: "none",
+      },
+    },
   },
   defaultVariants: {
     size: "3",
+    variant: "outline",
   },
 });

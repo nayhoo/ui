@@ -1,65 +1,50 @@
 import { styled } from "../stitches.config";
 
 export const TextField = styled("input", {
-  // Reset
+  WebkitTapHighlightColor: "rgba(0,0,0,0)",
   appearance: "none",
+  background: "transparent",
   borderWidth: "0",
   boxSizing: "border-box",
   fontFamily: "inherit",
+  fontVariantNumeric: "tabular-nums",
   margin: "0",
   outline: "none",
   padding: "0",
   width: "100%",
-  // WebkitTapHighlightColor: "rgba(0,0,0,0)",
-
-  color: "$text",
-
-  "&::before": {
-    boxSizing: "border-box",
-  },
-  "&::after": {
-    boxSizing: "border-box",
-  },
-
-  background: "transparent",
 
   "@hover": {
     "&:hover": {
-      backgroundColor: "$cloud",
+      backgroundColor: "$bgHover",
     },
   },
 
-  // Custom
-  boxShadow: "inset 0 0 0 1px $colors$slate7",
-  fontVariantNumeric: "tabular-nums",
-
   "&:-webkit-autofill": {},
-
   "&:-webkit-autofill::first-line": {
     fontFamily: "$untitled",
     color: "$hiContrast",
   },
-
+  "&::after": {
+    boxSizing: "border-box",
+  },
+  "&::before": {
+    boxSizing: "border-box",
+  },
+  "&:disabled": {
+    backgroundColor: "$bgDisabled",
+    color: "$textDisabled",
+    cursor: "not-allowed",
+    pointerEvents: "none",
+  },
   "&:focus": {
     outline: "1px solid $activeOutline",
     "&:-webkit-autofill": {},
   },
-  "&::placeholder": {
-    color: "$nimbus",
-  },
-  "&:disabled": {
-    pointerEvents: "none",
-    backgroundColor: "$slate2",
-    color: "$slate8",
-    cursor: "not-allowed",
-    "&::placeholder": {
-      color: "$slate7",
-    },
-  },
   "&:read-only": {
-    backgroundColor: "$slate2",
+    backgroundColor: "$bgDisabled",
+
     "&:focus": {
-      boxShadow: "inset 0px 0px 0px 1px $colors$slate7",
+      // boxShadow: "inset 0px 0px 0px 1px $colors$line",
     },
   },
 
@@ -69,8 +54,9 @@ export const TextField = styled("input", {
         borderRadius: "$1",
         fontSize: "$1",
         height: "$5",
-        lineHeight: "$sizes$5",
+        lineHeight: "$sizes$3",
         px: "$1",
+
         "&:-webkit-autofill::first-line": {
           fontSize: "$1",
         },
@@ -79,8 +65,9 @@ export const TextField = styled("input", {
         borderRadius: "$1",
         fontSize: "$2",
         height: "$6",
-        lineHeight: "$sizes$6",
+        lineHeight: "$sizes$4",
         px: "$1",
+
         "&:-webkit-autofill::first-line": {
           fontSize: "$2",
         },
@@ -88,25 +75,21 @@ export const TextField = styled("input", {
       "3": {
         borderRadius: "$2",
         fontSize: "$3",
-        lineHeight: "7px",
-        px: "$2",
         height: "$6",
+        lineHeight: "$sizes$5",
+        px: "$2",
+
         "&:-webkit-autofill::first-line": {
           fontSize: "$3",
         },
       },
     },
-    state: {
-      invalid: {
-        // boxShadow: "inset 0 0 0 1px $colors$red7",
+    error: {
+      true: {
+        boxShadow: "inset 0px 0px 0px 1px $colors$error",
+
         "&:focus": {
           // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
-        },
-      },
-      valid: {
-        // boxShadow: "inset 0 0 0 1px $colors$green7",
-        "&:focus": {
-          // boxShadow: "inset 0px 0px 0px 1px $colors$green8, 0px 0px 0px 1px $colors$green8",
         },
       },
     },
@@ -121,8 +104,17 @@ export const TextField = styled("input", {
         cursor: "text",
       },
     },
+    variant: {
+      outline: {
+        boxShadow: "inset 0 0 0 1px $colors$line",
+      },
+      ghost: {
+        boxShadow: "none",
+      },
+    },
   },
   defaultVariants: {
     size: "3",
+    variant: "outline",
   },
 });

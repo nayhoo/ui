@@ -32,7 +32,7 @@ export const Default: Story = {
     children: (
       <>
         <FormField name="email">
-          <Flex align="baseline" justify="between">
+          <Flex align="baseline" justify="between" css={{ mb: "$1" }}>
             <FormLabel>Email</FormLabel>
             <FormMessage error match="valueMissing">
               Please enter your email
@@ -46,7 +46,7 @@ export const Default: Story = {
           </FormControl>
         </FormField>
         <FormField name="question">
-          <Flex align="baseline" justify="between">
+          <Flex align="baseline" justify="between" css={{ mb: "$1" }}>
             <FormLabel>Question</FormLabel>
             <FormMessage error match="valueMissing">
               Please enter a question
