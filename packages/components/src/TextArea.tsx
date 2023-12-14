@@ -5,6 +5,7 @@ export const TextArea = styled("textarea", {
   appearance: "none",
   background: "transparent",
   borderWidth: "0",
+  color: "inherit",
   fontFamily: "inherit",
   fontVariantNumeric: "tabular-nums",
   margin: "0",

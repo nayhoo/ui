@@ -6,6 +6,7 @@ export const TextField = styled("input", {
   background: "transparent",
   borderWidth: "0",
   boxSizing: "border-box",
+  color: "inherit",
   fontFamily: "inherit",
   fontVariantNumeric: "tabular-nums",
   margin: "0",
