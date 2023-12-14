@@ -44,12 +44,19 @@ export const Ghost: Story = {
   },
 };
 
-export const Raised: Story = {
+export const Outline: Story = {
   args: {
     ...Default.args,
-    variant: "raised",
+    variant: "outline",
   },
 };
+
+// export const Raised: Story = {
+//   args: {
+//     ...Default.args,
+//     variant: "raised",
+//   },
+// };
 
 export const Small: Story = {
   args: {
