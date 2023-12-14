@@ -14,11 +14,12 @@ type SelectProps = SelectPrimitives.SelectProps & {
   items: SelectItemProps[];
   placeholder?: SelectPrimitives.SelectValueProps["placeholder"];
   side?: SelectPrimitives.PopperContentProps["side"];
+  size?: "1" | "2";
 };
 
-export const Select = ({ align, items = [], placeholder, side, ...props }: SelectProps) => (
+export const Select = ({ align, items = [], placeholder, side, size, ...props }: SelectProps) => (
   <SelectPrimitives.Root {...props}>
-    <StyledSelectTrigger>
+    <StyledSelectTrigger size={size}>
       <StyledSelectValue placeholder={placeholder} />
 
       <StyledSelectIcon>
@@ -32,7 +33,7 @@ export const Select = ({ align, items = [], placeholder, side, ...props }: Selec
         </StyledScrollUpButton> */}
         <StyledViewport>
           {items.map(({ disabled, label, value }) => (
-            <SelectItem disabled={disabled} label={label} value={value} />
+            <SelectItem disabled={disabled} label={label} size={size} value={value} />
           ))}
         </StyledViewport>
         {/* <StyledScrollDownButton>
@@ -47,22 +48,28 @@ const StyledSelectValue = styled(SelectPrimitives.Value, {});
 
 const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
   all: "unset",
+
+  alignItems: "center",
+  backgroundColor: "transparent",
   boxSizing: "border-box",
-  "&::before": {
-    boxSizing: "border-box",
-  },
+  display: "inline-flex",
+  gap: "$1",
+  justifyContent: "space-between",
+  lineHeight: 1,
+  transition: "all 100ms",
+
   "&::after": {
     boxSizing: "border-box",
   },
 
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  lineHeight: 1,
-  gap: 5,
-  backgroundColor: "transparent",
+  "&::before": {
+    boxSizing: "border-box",
+  },
 
-  transition: "all 100ms",
+  "&:focus": {
+    // boxShadow: "inset 0 0 0 1px currentColor",
+    zIndex: "1",
+  },
 
   // overflow: "hidden",
   // textOverflow: "ellipsis",
@@ -70,45 +77,71 @@ const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
 
   "@hover": {
     "&:hover": {
-      backgroundColor: "$cloud",
-      // cursor: "pointer",
+      cursor: "pointer",
     },
   },
 
-  "&:focus": {
-    //  outline: "1px solid $activeOutline",
-    zIndex: "1",
+  "&[data-state=open]": {
+    // boxShadow: "inset 0 0 0 1px currentColor",
   },
 
-  "&[data-state=open]": { outline: "1px solid $activeOutline" },
-  "&[data-disabled]": { backgroundColor: "$cloud", cursor: "not-allowed" },
-  "&[data-placeholder]": { color: "$nimbus" },
+  "&[data-disabled]": {
+    backgroundColor: "$bgDisabled",
+    boxShadow: "none",
+    color: "$textDisabled",
+    cursor: "not-allowed",
+    pointerEvents: "none",
+  },
 
-  // variants: {
-  //   size: {
-  //     "1": {
-  // borderRadius: 4,
-  //       height: "$5",
-  //       fontSize: "$1",
-  //       px: "$1",
-  //     },
-  //     "2": {
-  //       borderRadius: "$2",
-  //       height: "$6",
-  //       fontSize: "$2",
-  //       px: "$2",
-  //     },
-  //   },
-  // },
+  "&[data-placeholder]": {
+    // color: "$textSecondary",
+  },
 
-  borderRadius: "$2",
-  height: "$6",
-  fontSize: "$3",
-  px: "$2",
+  variants: {
+    variant: {
+      outline: {
+        boxShadow: "inset 0 0 0 1px $colors$line",
+
+        "@hover": {
+          "&:hover": {
+            backgroundColor: "$bgHover",
+          },
+        },
+      },
+      ghost: {
+        backgroundColor: "transparent",
+
+        "@hover": {
+          "&:hover": {
+            backgroundColor: "$bgHover",
+          },
+        },
+      },
+    },
+    size: {
+      "1": {
+        borderRadius: "$1",
+        height: "$5",
+        fontSize: "$1",
+        px: "$1",
+      },
+      "2": {
+        borderRadius: "$2",
+        height: "$6",
+        fontSize: "$2",
+        px: "$2",
+      },
+    },
+  },
+
+  defaultVariants: {
+    size: "2",
+    variant: "outline",
+  },
 });
 
 const StyledSelectIcon = styled(SelectPrimitives.SelectIcon, {
-  // color: "$text",
+  color: "$textPrimary",
 });
 
 const StyledContent = styled(SelectPrimitives.Content, menuCss, panelStyles);
@@ -120,12 +153,13 @@ const StyledViewport = styled(SelectPrimitives.Viewport, {
 type SelectItemProps = {
   disabled?: SelectPrimitives.SelectItemProps["disabled"];
   label: React.ReactNode;
+  size?: "1" | "2";
   value: SelectPrimitives.SelectItemProps["value"];
 };
 
 const SelectItem = React.forwardRef<React.ElementRef<typeof StyledItem>, SelectItemProps>(
   ({ ...props }, forwardedRef) => (
-    <StyledItem disabled={props.disabled} ref={forwardedRef} value={props.value}>
+    <StyledItem disabled={props.disabled} ref={forwardedRef} size={props.size} value={props.value}>
       <SelectPrimitives.ItemText>{props.label}</SelectPrimitives.ItemText>
       <StyledItemIndicator>
         <CheckIcon />
@@ -136,7 +170,6 @@ const SelectItem = React.forwardRef<React.ElementRef<typeof StyledItem>, SelectI
 
 const StyledItem = styled(SelectPrimitives.Item, {
   lineHeight: 1,
-  // borderRadius: 1,
   display: "flex",
   alignItems: "center",
   pr: "33px",
@@ -144,50 +177,49 @@ const StyledItem = styled(SelectPrimitives.Item, {
   userSelect: "none",
 
   "&:hover": {
-    backgroundColor: "$cloud",
+    backgroundColor: "$bgHover",
     // cursor: "pointer",
   },
 
   "&[data-disabled]": {
-    color: "$nimbus",
+    color: "$textDisabled",
     pointerEvents: "none",
   },
 
   "&[data-highlighted]": {
-    backgroundColor: "$cloud",
+    backgroundColor: "$bgHover",
     outline: "none",
   },
 
-  // variants: {
-  //   size: {
-  //     "1": {
-  //  borderRadius: 1,
-  //       height: "$5",
-  //       fontSize: "$1",
-  //       pl: "$1",
-  //     },
-  //     "2": {
-  //       borderRadius: "$2",
-  //       height: "$6",
-  //       fontSize: "$3",
-  //       pl: "$2",
-  //     },
-  //   },
-  // },
+  variants: {
+    size: {
+      "1": {
+        borderRadius: "$1",
+        height: "$5",
+        fontSize: "$1",
+        pl: "$1",
+      },
+      "2": {
+        borderRadius: "$2",
+        height: "$6",
+        fontSize: "$2",
+        pl: "$2",
+      },
+    },
+  },
 
-  borderRadius: "$2",
-  height: "$6",
-  fontSize: "$2",
-  pl: "$2",
+  defaultVariants: {
+    size: "2",
+  },
 });
 
 const StyledItemIndicator = styled(SelectPrimitives.ItemIndicator, {
+  alignItems: "center",
+  display: "inline-flex",
+  justifyContent: "center",
   position: "absolute",
   right: 0,
   width: 25,
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
 });
 
 // const scrollButtonStyles = {

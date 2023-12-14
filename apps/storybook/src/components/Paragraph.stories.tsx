@@ -26,3 +26,17 @@ export const Paragraph2: Story = {
     size: "2",
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    ...Default.args,
+    color: "secondary",
+  },
+};
+
+export const Accent: Story = {
+  args: {
+    ...Default.args,
+    color: "accent",
+  },
+};

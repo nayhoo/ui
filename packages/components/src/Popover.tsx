@@ -5,13 +5,15 @@ import { Box } from "./Box";
 import { panelStyles } from "./Panel";
 import { Heading } from "./Heading";
 
-const Popover = PopoverPrimitive.Root;
-const PopoverTrigger = PopoverPrimitive.Trigger;
+export const Popover = PopoverPrimitive.Root;
+
+export const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const StyledContent = styled(PopoverPrimitive.Content, panelStyles, {
-  minWidth: 200,
-  minHeight: "$6",
   maxWidth: 265,
+  minHeight: "$6",
+  minWidth: 200,
+
   "&:focus": {
     outline: "none",
   },
@@ -20,7 +22,7 @@ const StyledContent = styled(PopoverPrimitive.Content, panelStyles, {
 type PopoverContentPrimitiveProps = React.ComponentProps<typeof PopoverPrimitive.Content>;
 type PopoverContentProps = PopoverContentPrimitiveProps & { css?: CSS; hideArrow?: boolean };
 
-const PopoverContent = React.forwardRef<
+export const PopoverContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   PopoverContentProps
 >(({ children, hideArrow, ...props }, fowardedRef) => (
@@ -30,17 +32,15 @@ const PopoverContent = React.forwardRef<
 
       {!hideArrow && (
         <Box css={{ color: "$panel" }}>
-          <PopoverPrimitive.Arrow width={11} height={5} style={{ fill: "currentColor" }} />
+          <PopoverPrimitive.Arrow height={5} style={{ fill: "currentColor" }} width={11} />
         </Box>
       )}
     </StyledContent>
   </PopoverPrimitive.Portal>
 ));
 
-const PopoverClose = PopoverPrimitive.Close;
+export const PopoverClose = PopoverPrimitive.Close;
 
-const PopoverTitle = styled(Heading, {
+export const PopoverTitle = styled(Heading, {
   mb: "$4",
 });
-
-export { Popover, PopoverTrigger, PopoverContent, PopoverClose, PopoverTitle };

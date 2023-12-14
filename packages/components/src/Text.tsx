@@ -1,22 +1,21 @@
 import { styled } from "../stitches.config";
 
 export const Text = styled("span", {
-  // Reset
+  display: "block",
+  fontVariantNumeric: "tabular-nums",
   lineHeight: "1",
   margin: "0",
-  fontWeight: 400,
-  fontVariantNumeric: "tabular-nums",
-  display: "block",
-
-  // color: "$hiContrast",
 
   variants: {
     color: {
       primary: {
-        color: "$charcoal",
+        color: "$textPrimary",
       },
       secondary: {
-        color: "$smoke",
+        color: "$textSecondary",
+      },
+      accent: {
+        color: "$textAccent",
       },
     },
     size: {
@@ -54,6 +53,20 @@ export const Text = styled("span", {
         fontSize: "$9",
         letterSpacing: "-.055em",
         textIndent: "-.025em",
+      },
+    },
+    weight: {
+      regular: {
+        fontWeight: "$regular",
+      },
+      medium: {
+        fontWeight: "$medium",
+      },
+      bold: {
+        fontWeight: "$bold",
+      },
+      black: {
+        fontWeight: "$black",
       },
     },
   },

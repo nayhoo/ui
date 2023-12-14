@@ -56,3 +56,10 @@ export const Disabled: Story = {
     placeholder: "Disabled",
   },
 };
+
+export const Size1: Story = {
+  args: {
+    ...Default.args,
+    size: "1",
+  },
+};

@@ -13,7 +13,6 @@ type ParagraphProps = React.ComponentProps<typeof DEFAULT_TAG> &
 
 export const Paragraph = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, ParagraphProps>(
   (props, forwardedRef) => {
-    // '2' here is the default Paragraph size variant
     const { size = "1", ...textProps } = props;
 
     // This is the mapping of Paragraph Variants to Text variants
@@ -25,18 +24,16 @@ export const Paragraph = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, 
     // This is the mapping of Paragraph Variants to Text css
     const textCss: Record<ParagraphSizeVariants, CSS> = {
       1: { lineHeight: "25px", "@bp2": { lineHeight: "27px" } },
-      2: { color: "$text", lineHeight: "27px", "@bp2": { lineHeight: "30px" } },
+      2: { lineHeight: "27px", "@bp2": { lineHeight: "30px" } },
     };
 
     return (
       <Text
         as={DEFAULT_TAG}
         {...textProps}
+        css={{ ...merge(textCss[size], props.css ?? {}) }}
         ref={forwardedRef}
         size={textSize[size]}
-        css={{
-          ...merge(textCss[size], props.css ?? {}),
-        }}
       />
     );
   }

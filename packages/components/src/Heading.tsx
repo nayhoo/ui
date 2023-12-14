@@ -13,8 +13,8 @@ type HeadingProps = React.ComponentProps<typeof DEFAULT_TAG> &
 
 export const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingProps>(
   (props, forwardedRef) => {
-    // '2' here is the default heading size variant
     const { size = "1", ...textProps } = props;
+
     // This is the mapping of Heading Variants to Text variants
     const textSize: Record<HeadingSizeVariants, TextSizeVariants["size"]> = {
       1: { "@initial": "4", "@bp2": "5" },
@@ -35,12 +35,12 @@ export const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, He
       <Text
         as={DEFAULT_TAG}
         {...textProps}
-        ref={forwardedRef}
-        size={textSize[size]}
         css={{
           fontVariantNumeric: "proportional-nums",
           ...merge(textCss[size], props.css ?? {}),
         }}
+        ref={forwardedRef}
+        size={textSize[size]}
       />
     );
   }
