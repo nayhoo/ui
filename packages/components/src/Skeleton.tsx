@@ -1,22 +1,18 @@
-import { styled, keyframes } from "../stitches.config";
-
-const pulse = keyframes({
-  "0%": { opacity: 0 },
-  "100%": { opacity: "100%" },
-});
+import { pulse } from "../keyframes";
+import { styled } from "../stitches.config";
 
 export const Skeleton = styled("div", {
-  backgroundColor: "$cloud",
-  position: "relative",
+  backgroundColor: "$bgHover",
   overflow: "hidden",
+  position: "relative",
 
   "&::after": {
-    animationName: `${pulse}`,
-    animationDuration: "500ms",
     animationDirection: "alternate",
+    animationDuration: "500ms",
     animationIterationCount: "infinite",
+    animationName: `${pulse}`,
     animationTimingFunction: "ease-in-out",
-    backgroundColor: "$shark",
+    backgroundColor: "$bgPressed",
     borderRadius: "inherit",
     bottom: 0,
     content: '""',
