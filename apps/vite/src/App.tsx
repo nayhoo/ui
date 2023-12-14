@@ -9,7 +9,6 @@ import {
   Link,
   Paragraph,
   Text,
-  TextField,
   Tooltip,
 } from "@nayhoo/components";
 import reactLogo from "./assets/react.svg";
