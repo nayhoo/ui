@@ -1,7 +1,7 @@
 import { styled } from "../stitches.config";
 
 export const Text = styled("span", {
-  display: "block",
+  // display: "block",
   fontVariantNumeric: "tabular-nums",
   lineHeight: "1",
   margin: "0",
