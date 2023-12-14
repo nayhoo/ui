@@ -1,20 +1,14 @@
 import React from "react";
-import { styled, keyframes, CSS, VariantProps } from "../stitches.config";
+import { styled, CSS, VariantProps } from "../stitches.config";
+import { spin } from "../keyframes";
 
 type SpinnerVariants = VariantProps<typeof StyledSpinner>;
 type SpinnerProps = SpinnerVariants & { css?: CSS };
 
 export const Spinner = ({ ...props }: SpinnerProps) => <StyledSpinner {...props} />;
 
-const spin = keyframes({
-  to: {
-    transform: "rotate(360deg)",
-  },
-});
-
 const StyledSpinner = styled("div", {
   animation: `${spin} .8s linear infinite`,
-
   border: "1px solid $textDisabled",
   borderRadius: "$round",
   borderTop: "1px solid currentColor",
