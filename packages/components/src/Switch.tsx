@@ -3,15 +3,14 @@ import { styled, VariantProps, CSS } from "../stitches.config";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
-  position: "absolute",
-  left: 0,
-  width: 13,
-  height: 13,
   backgroundColor: "white",
   borderRadius: "$round",
   boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px;",
-  transition: "transform 100ms cubic-bezier(0.22, 1, 0.36, 1)",
+  left: 0,
+  position: "absolute",
+  size: 13,
   transform: "translateX(1px)",
+  transition: "transform 100ms cubic-bezier(0.22, 1, 0.36, 1)",
   willChange: "transform",
 
   '&[data-state="checked"]': {
@@ -21,44 +20,41 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
 
 const StyledSwitch = styled(SwitchPrimitive.Root, {
   all: "unset",
-  boxSizing: "border-box",
-  userSelect: "none",
-  "&::before": {
-    boxSizing: "border-box",
-  },
-  "&::after": {
-    boxSizing: "border-box",
-  },
 
-  // Reset
+  WebkitTapHighlightColor: "rgba(0,0,0,0)",
   alignItems: "center",
+  backgroundColor: "$line",
+  borderRadius: "$pill",
+  boxSizing: "border-box",
   display: "inline-flex",
+  flexShrink: 0,
   justifyContent: "center",
   lineHeight: "1",
   margin: "0",
   outline: "none",
-  WebkitTapHighlightColor: "rgba(0,0,0,0)",
-
-  backgroundColor: "$cloud",
-  borderRadius: "$pill",
   position: "relative",
+  userSelect: "none",
 
-  flexShrink: 0,
+  "&::after": {
+    boxSizing: "border-box",
+  },
+  "&::before": {
+    boxSizing: "border-box",
+  },
 
   "@hover": {
     "&:hover": {
-      // cursor: "pointer",
+      cursor: "pointer",
     },
   },
 
   "&:disabled": {
-    pointerEvents: "none",
-
     cursor: "not-allowed",
+    pointerEvents: "none",
   },
 
   '&[data-state="checked"]': {
-    backgroundColor: "$tertiary",
+    backgroundColor: "$accent",
   },
 
   variants: {
@@ -66,14 +62,24 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
       "1": {
         width: "$5",
         height: "$3",
+
+        [`& ${StyledThumb}`]: {
+          size: 12,
+          transform: "translateX(2px)",
+
+          '&[data-state="checked"]': {
+            transform: "translateX(10px)",
+          },
+        },
       },
       "2": {
         width: "$7",
         height: "$5",
+
         [`& ${StyledThumb}`]: {
-          width: 20,
-          height: 20,
+          size: 20,
           transform: "translateX(2px)",
+
           '&[data-state="checked"]': {
             transform: "translateX(26px)",
           },

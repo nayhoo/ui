@@ -30,9 +30,9 @@ export const Default: Story = {
   args: {},
 };
 
-export const Size2: Story = {
+export const Size1: Story = {
   args: {
-    size: "2",
+    size: "1",
   },
 };
 
@@ -46,8 +46,8 @@ export const Disabled: Story = {
   },
 };
 
-export const Label: Story = {
-  args: {
-    // label: "Airplane mode",
-  },
-};
+// export const Label: Story = {
+//   args: {
+//     // label: "Airplane mode",
+//   },
+// };
