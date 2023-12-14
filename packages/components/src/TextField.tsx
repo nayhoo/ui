@@ -22,7 +22,6 @@ export const TextField = styled("input", {
   "&:-webkit-autofill": {},
   "&:-webkit-autofill::first-line": {
     fontFamily: "$untitled",
-    color: "$hiContrast",
   },
   "&::after": {
     boxSizing: "border-box",

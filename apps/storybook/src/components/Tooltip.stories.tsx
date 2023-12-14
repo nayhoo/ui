@@ -20,5 +20,6 @@ export const Default: Story = {
   args: {
     children: <span>Hover over me!</span>,
     content: "Hello!",
+    delayDuration: 300,
   },
 };

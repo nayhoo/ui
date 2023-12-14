@@ -21,7 +21,7 @@ const StyledContent = styled(TooltipPrimitive.Content, {
     multiline: {
       true: {
         maxWidth: 250,
-        pb: 7,
+        pb: "$2",
       },
     },
   },
@@ -30,12 +30,12 @@ const StyledContent = styled(TooltipPrimitive.Content, {
 export function Tooltip({
   children,
   content,
-  open,
   defaultOpen,
-  onOpenChange,
   delayDuration,
   disableHoverableContent,
   multiline,
+  onOpenChange,
+  open,
   ...props
 }: TooltipProps) {
   const rootProps = { open, defaultOpen, onOpenChange, delayDuration, disableHoverableContent };
@@ -45,19 +45,16 @@ export function Tooltip({
       <TooltipPrimitive.Root {...rootProps}>
         <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
         <TooltipPrimitive.Portal>
-          <StyledContent side="top" align="center" sideOffset={5} {...props} multiline={multiline}>
+          <StyledContent align="center" side="top" sideOffset={5} {...props} multiline={multiline}>
             <Text
-              size="1"
               as="p"
-              css={{
-                color: "$loContrast",
-                lineHeight: multiline ? "20px" : (undefined as any),
-              }}
+              css={{ color: "white", lineHeight: multiline ? "20px" : (undefined as any) }}
+              size="1"
             >
               {content}
             </Text>
-            <Box css={{ color: "$transparentExtreme" }}>
-              <TooltipPrimitive.Arrow width={11} height={5} style={{ fill: "currentColor" }} />
+            <Box css={{ color: "$transparentPanel" }}>
+              <TooltipPrimitive.Arrow height={5} style={{ fill: "currentColor" }} width={11} />
             </Box>
           </StyledContent>
         </TooltipPrimitive.Portal>

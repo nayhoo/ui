@@ -19,6 +19,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
 
         canvas: "#ffffff",
         panel: "#ffffff",
+        transparentPanel: "hsl(0 0% 0% / 97%)",
 
         info: "#00edff",
         success: "#00ca76",
@@ -183,7 +184,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
       gridRows: (value: number) => ({
         gridTemplateRows: `repeat(${value}, minmax(0, ${value}fr))`,
       }),
-      /** A property for applying the contrast text color for the supplied $bgColor  */
+      // /** A property for applying the contrast text color for the supplied $bgColor  */
       // contrastTextColor: (bgColor: string) => ({
       //   color: getContrastTextColor(theme.colors[bgColor.slice(1)]),
       // }),
@@ -211,9 +212,36 @@ export type CSS = Stitches.CSS<typeof config>;
 
 export const darkTheme = createTheme("dark", {
   colors: {
-    canvas: "hsl(240 10% 3.9%)",
-    panel: colors.black,
+    primary: "#a500ff",
+    secondary: "#e34300",
+    accent: "#007b00",
+    neutral: "#1b0a08",
 
-    shadow: "hsl(206 22% 7% / 20%)",
+    canvas: "#1e2735",
+    panel: "#1e2735",
+    transparentPanel: "hsl(0 100% 100% / 97%)",
+
+    info: "#00cbff",
+    success: "#008229",
+    warning: "#ff5800",
+    error: "#ff7690",
+
+    textPrimary: "#ffffff",
+    textSecondary: "#808080",
+    textAccent: "$accent", // could this just be accent?
+    textDisabled: "rgba(255, 255, 255, 0.38)",
+
+    // can these all below be programmically calculated?
+    bgHover: "rgba(255, 255, 255, 0.04)",
+    bgFocus: "rgba(255, 255, 255, 0.12)",
+    bgSelected: "rgba(255, 255, 255, 0.04)", // of primary
+    bgActivated: "rgba(255, 255, 255, 0.04)", // of primary
+    bgPressed: "rgba(255, 255, 255, 0.12)",
+    bgDragged: "rgba(255, 255, 255, 0.08)",
+    bgDisabled: "rgba(255, 255, 255, 0.12)",
+
+    /** (dividers, button outlines etc ...) */
+    line: "rgba(255, 255, 255 0.12)",
+    shadow: "rgba(255, 255, 255 0.12)",
   },
 });
