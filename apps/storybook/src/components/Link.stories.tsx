@@ -16,8 +16,22 @@ type Story = StoryObj<typeof Link>;
  */
 export const Default: Story = {
   args: {
-    children: "Click me!",
-    href: "https://eatclub.com.au",
+    children: "View source code",
+    href: "https://github.com/nayhoo/ui",
     target: "_blank",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    ...Default.args,
+    color: "secondary",
+  },
+};
+
+export const Accent: Story = {
+  args: {
+    ...Default.args,
+    color: "accent",
   },
 };

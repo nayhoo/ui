@@ -2,54 +2,50 @@ import { styled } from "../stitches.config";
 import { Text } from "./Text";
 
 export const Link = styled("a", {
+  WebkitTapHighlightColor: "rgba(0,0,0,0)",
   alignItems: "center",
-  gap: "$1",
   flexShrink: 0,
+  gap: "$1",
+  lineHeight: "inherit",
   outline: "none",
+  textDecorationColor: "transparent",
   textDecorationLine: "none",
   textUnderlineOffset: "3px",
-  textDecorationColor: "$slate4",
-  WebkitTapHighlightColor: "rgba(0,0,0,0)",
-  lineHeight: "inherit",
+
+  "&:focus": {
+    outlineOffset: "2px",
+    outlineStyle: "solid",
+    outlineWidth: "2px",
+    textDecorationLine: "none",
+  },
+
+  [`& ${Text}`]: {
+    color: "inherit",
+  },
+
   "@hover": {
     "&:hover": {
       textDecorationLine: "underline",
     },
   },
-  "&:focus": {
-    outlineWidth: "2px",
-    outlineStyle: "solid",
-    outlineOffset: "2px",
-    textDecorationLine: "none",
-  },
-  [`& ${Text}`]: {
-    color: "inherit",
-  },
+
   variants: {
-    variant: {
-      subtle: {
-        color: "$slate11",
-        textDecorationColor: "$slate4",
-        "&:focus": {
-          outlineColor: "$slate8",
-        },
+    color: {
+      primary: {
+        color: "$textPrimary",
+        textDecorationColor: "$textPrimary",
       },
-      contrast: {
-        color: "$hiContrast",
-        textDecoration: "underline",
-        textDecorationColor: "$slate4",
-        "@hover": {
-          "&:hover": {
-            textDecorationColor: "$slate7",
-          },
-        },
-        "&:focus": {
-          outlineColor: "$slate8",
-        },
+      secondary: {
+        color: "$textSecondary",
+        textDecorationColor: "$textSecondary",
+      },
+      accent: {
+        color: "$textAccent",
+        textDecorationColor: "$textAccent",
       },
     },
   },
   defaultVariants: {
-    variant: "contrast",
+    color: "primary",
   },
 });

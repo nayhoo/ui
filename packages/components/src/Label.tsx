@@ -3,9 +3,8 @@ import { styled } from "../stitches.config";
 import { Text } from "./Text";
 
 export const Label = styled(LabelPrimitive.Root, Text, {
+  color: "$textSecondary",
+  cursor: "default",
   display: "inline-block",
   verticalAlign: "middle",
-  cursor: "default",
-
-  color: "$label",
 });
