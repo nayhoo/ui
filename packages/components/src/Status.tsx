@@ -1,10 +1,25 @@
 import { styled } from "../stitches.config";
 
 export const Status = styled("div", {
+  backgroundColor: "$line", // todo: could this be another theme token?
   borderRadius: "$round",
   flexShrink: 0,
 
   variants: {
+    color: {
+      info: {
+        backgroundColor: "$info",
+      },
+      success: {
+        backgroundColor: "$success",
+      },
+      warning: {
+        backgroundColor: "$warning",
+      },
+      error: {
+        backgroundColor: "$error",
+      },
+    },
     size: {
       "1": {
         size: 5,
@@ -13,23 +28,8 @@ export const Status = styled("div", {
         size: 9,
       },
     },
-    variant: {
-      gray: {
-        backgroundColor: "$slate7",
-      },
-      blue: {
-        // backgroundColor: "$blue9",
-      },
-      green: {
-        // backgroundColor: "$green9",
-      },
-      red: {
-        // backgroundColor: "$red9",
-      },
-    },
   },
   defaultVariants: {
     size: "2",
-    variant: "gray",
   },
 });

@@ -5,7 +5,7 @@ import { Box } from "./Box";
 import { Status } from "./Status";
 
 type StatusVariants = React.ComponentProps<typeof Status>;
-type StatusColors = Pick<StatusVariants, "variant">;
+type StatusColors = Pick<StatusVariants, "color">;
 
 type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
 type AvatarVariants = VariantProps<typeof StyledAvatar>;
@@ -15,7 +15,7 @@ type AvatarProps = AvatarPrimitiveProps &
     css?: CSS;
     fallback?: React.ReactNode;
     src?: string;
-    status?: StatusColors["variant"];
+    status?: StatusColors["color"];
   };
 
 export const Avatar = React.forwardRef<React.ElementRef<typeof StyledAvatar>, AvatarProps>(
@@ -39,14 +39,14 @@ export const Avatar = React.forwardRef<React.ElementRef<typeof StyledAvatar>, Av
           css={{
             borderRadius: "$round",
             bottom: "0",
-            boxShadow: "0 0 0 3px $colors$loContrast",
+            boxShadow: "0 0 0 3px $colors$shadow",
             mb: "-3px",
             mr: "-3px",
             position: "absolute",
             right: "0",
           }}
         >
-          <Status size={size && Number(size) > 2 ? "2" : "1"} variant={status} />
+          <Status size={size && Number(size) > 2 ? "2" : "1"} color={status} />
         </Box>
       )}
     </Box>

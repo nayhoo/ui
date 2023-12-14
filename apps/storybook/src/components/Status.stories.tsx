@@ -18,20 +18,26 @@ export const Default: Story = {
   args: {},
 };
 
-export const Blue: Story = {
+export const Info: Story = {
   args: {
-    variant: "blue",
+    color: "info",
   },
 };
 
-export const Red: Story = {
+export const Success: Story = {
   args: {
-    variant: "red",
+    color: "success",
   },
 };
 
-export const Green: Story = {
+export const Warning: Story = {
   args: {
-    variant: "green",
+    color: "warning",
+  },
+};
+
+export const Error: Story = {
+  args: {
+    color: "error",
   },
 };
