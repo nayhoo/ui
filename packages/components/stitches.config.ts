@@ -56,7 +56,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
         9: "60px",
       },
       fontWeights: {
-        regular: 400,
+        normal: 400,
         medium: 500,
         bold: 700,
         black: 900,

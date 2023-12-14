@@ -17,6 +17,18 @@ export const Text = styled("span", {
       accent: {
         color: "$textAccent",
       },
+      info: {
+        color: "$info",
+      },
+      success: {
+        color: "$success",
+      },
+      warning: {
+        color: "$warning",
+      },
+      error: {
+        color: "$error",
+      },
     },
     size: {
       "1": {
@@ -56,8 +68,8 @@ export const Text = styled("span", {
       },
     },
     weight: {
-      regular: {
-        fontWeight: "$regular",
+      normal: {
+        fontWeight: "$normal",
       },
       medium: {
         fontWeight: "$medium",
