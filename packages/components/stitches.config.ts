@@ -1,11 +1,10 @@
 import { createStitches } from "@stitches/react";
 import type * as Stitches from "@stitches/react";
+import * as colors from "./colors";
 
 export type { VariantProps } from "@stitches/react";
-import * as colors from "./colors";
-// import { getContrastTextColor } from "@nayhoo/utils";
 
-export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes, config, reset } =
+export const { config, createTheme, css, getCssText, globalCss, keyframes, reset, styled, theme } =
   createStitches({
     theme: {
       colors: {
@@ -42,6 +41,7 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
 
         /** (dividers, button outlines etc ...) */
         line: "rgba(0, 0, 0, 0.12)",
+
         shadow: "rgba(0, 0, 0, 0.12)",
       },
       fonts: {},
@@ -193,23 +193,6 @@ export const { styled, css, theme, createTheme, getCssText, globalCss, keyframes
 
 export type CSS = Stitches.CSS<typeof config>;
 
-// const injectGlobalStyles = globalCss({
-//   body: {
-//     margin: 0,
-//     padding: 0,
-
-//     backgroundColor: colors.white,
-
-//     // dark theme global overrides
-//     "&.dark": {
-//       backgroundColor: "hsl(240 10% 3.9%)",
-//       color: colors.white,
-//     },
-//   },
-// });
-
-// injectGlobalStyles();
-
 export const darkTheme = createTheme("dark", {
   colors: {
     primary: "#a500ff",
@@ -228,20 +211,35 @@ export const darkTheme = createTheme("dark", {
 
     textPrimary: "#ffffff",
     textSecondary: "#808080",
-    textAccent: "$accent", // could this just be accent?
+    textAccent: "$accent",
     textDisabled: "rgba(255, 255, 255, 0.38)",
 
-    // can these all below be programmically calculated?
     bgHover: "rgba(255, 255, 255, 0.04)",
     bgFocus: "rgba(255, 255, 255, 0.12)",
-    bgSelected: "rgba(255, 255, 255, 0.04)", // of primary
-    bgActivated: "rgba(255, 255, 255, 0.04)", // of primary
+    bgSelected: "rgba(255, 255, 255, 0.04)", // of primary?
+    bgActivated: "rgba(255, 255, 255, 0.04)", // of primary?
     bgPressed: "rgba(255, 255, 255, 0.12)",
     bgDragged: "rgba(255, 255, 255, 0.08)",
     bgDisabled: "rgba(255, 255, 255, 0.12)",
 
     /** (dividers, button outlines etc ...) */
-    line: "rgba(255, 255, 255 0.12)",
-    shadow: "rgba(255, 255, 255 0.12)",
+    line: "rgba(255, 255, 255, 0.12)",
+
+    shadow: "rgba(255, 255, 255, 0.12)",
+  },
+});
+
+export const globalStyles = globalCss({
+  body: {
+    margin: 0,
+    padding: 0,
+
+    backgroundColor: "$canvas",
+    color: "$textPrimary",
+
+    "&:has(.dark)": {
+      backgroundColor: "#1e2735", // can i select this from the dark theme?
+      color: "#ffffff",
+    },
   },
 });
