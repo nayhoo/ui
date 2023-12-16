@@ -9,22 +9,10 @@ export const Text = styled("span", {
   variants: {
     color: {
       primary: {
-        color: "$textPrimary",
+        color: "$primary",
       },
       secondary: {
-        color: "$textSecondary",
-      },
-      accent: {
-        color: "$textAccent",
-      },
-      info: {
-        color: "$info",
-      },
-      success: {
-        color: "$success",
-      },
-      warning: {
-        color: "$warning",
+        color: "$secondary",
       },
       error: {
         color: "$error",

@@ -18,21 +18,15 @@ export const Default: Story = {
   args: {},
 };
 
-export const Info: Story = {
+export const Primary: Story = {
   args: {
-    color: "info",
+    color: "primary",
   },
 };
 
-export const Success: Story = {
+export const Secondary: Story = {
   args: {
-    color: "success",
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    color: "warning",
+    color: "secondary",
   },
 };
 

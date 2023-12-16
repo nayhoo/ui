@@ -18,14 +18,15 @@ type DialogContentProps = DialogContentPrimitiveProps &
   DialogContentVariants & {
     components?: { Footer?: React.ReactNode; Header?: React.ReactNode };
     css?: CSS;
+    disableOverlayBlur?: boolean;
   };
 
 export const DialogContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   DialogContentProps
->(({ children, components, ...props }, forwardedRef) => (
+>(({ children, components, disableOverlayBlur = false, ...props }, forwardedRef) => (
   <DialogPrimitive.Portal>
-    <StyledOverlay />
+    <StyledOverlay disableOverlayBlur={disableOverlayBlur} />
     <StyledContent {...props} ref={forwardedRef}>
       {components?.Header}
 
@@ -38,15 +39,15 @@ export const DialogContent = React.forwardRef<
 
 /* --------------------------- Dialog description --------------------------- */
 export const DialogDescription = styled(DialogPrimitive.Description, {
-  color: "$textSecondary",
+  color: "$textDescription",
   fontSize: "$3",
   mb: "$3",
 });
 
 /* ------------------------------ Dialog footer ----------------------------- */
 export const DialogFooter = styled(Flex, {
-  backgroundColor: "$panel",
-  borderTop: "1px solid $line",
+  backgroundColor: "$surface",
+  borderTop: "1px solid $divider",
   bottom: 0,
   gap: "$2",
   position: "sticky",
@@ -57,7 +58,7 @@ export const DialogFooter = styled(Flex, {
 
 /* ------------------------------ Dialog header ----------------------------- */
 export const DialogHeader = styled(Flex, {
-  backgroundColor: "$neutral",
+  backgroundColor: "$surface",
   position: "sticky",
   px: "$4",
   py: "$1",
@@ -74,7 +75,7 @@ export const DialogTitle = styled(DialogPrimitive.Title, {
 export const DialogTrigger = DialogPrimitive.Trigger;
 
 export const overlayStyles = css({
-  backgroundColor: "rgba(0, 0, 0, .15)",
+  backgroundColor: "$transparentOverlay",
 });
 
 const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
@@ -124,4 +125,22 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   position: "fixed",
   right: 0,
   top: 0,
+
+  backdropFilter: "blur(10px)",
+  transition: "backdrop-filter 100ms linear",
+  willChange: "backdrop-filter",
+
+  "@hover": {
+    "&:hover": {
+      backdropFilter: "blur(0px)",
+    },
+  },
+
+  variants: {
+    disableOverlayBlur: {
+      true: {
+        backdropFilter: "blur(0px)",
+      },
+    },
+  },
 });

@@ -22,16 +22,16 @@ export const Default: Story = {
   },
 };
 
+export const Primary: Story = {
+  args: {
+    ...Default.args,
+    color: "primary",
+  },
+};
+
 export const Secondary: Story = {
   args: {
     ...Default.args,
     color: "secondary",
-  },
-};
-
-export const Accent: Story = {
-  args: {
-    ...Default.args,
-    color: "accent",
   },
 };

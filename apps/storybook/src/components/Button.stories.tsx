@@ -83,34 +83,6 @@ export const Secondary: Story = {
   },
 };
 
-export const Accent: Story = {
-  args: {
-    ...Default.args,
-    color: "accent",
-  },
-};
-
-export const Info: Story = {
-  args: {
-    ...Default.args,
-    color: "info",
-  },
-};
-
-export const Success: Story = {
-  args: {
-    ...Default.args,
-    color: "success",
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    ...Default.args,
-    color: "warning",
-  },
-};
-
 export const Error: Story = {
   args: {
     ...Default.args,

@@ -40,3 +40,24 @@ export const Heading4: Story = {
     size: "4",
   },
 };
+
+export const Primary: Story = {
+  args: {
+    ...Default.args,
+    color: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    ...Default.args,
+    color: "secondary",
+  },
+};
+
+export const Error: Story = {
+  args: {
+    ...Default.args,
+    color: "error",
+  },
+};

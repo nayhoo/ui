@@ -1,8 +1,15 @@
-import { meaningOfLife } from "@nayhoo/utils";
+import { meaningOfLife, sleep } from "@nayhoo/utils";
 import { darkTheme, globalStyles } from "@nayhoo/components/stitches.config";
 import {
   Box,
   Button,
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogTitle,
+  DialogTrigger,
   Flex,
   Heading,
   Image,
@@ -14,14 +21,20 @@ import {
 import reactLogo from "./assets/react.svg";
 import React, { useState } from "react";
 import "./App.css";
+import { useBodyClassToggle } from "@nayhoo/hooks";
 
 globalStyles();
 
 const App = () => {
   const [count, setCount] = useState(meaningOfLife);
+  const [loading, setLoading] = useState(false);
+
+  const isDarkTheme = count % 2 === 0;
+
+  useBodyClassToggle(darkTheme, isDarkTheme);
 
   return (
-    <Box className={count % 2 === 0 ? darkTheme : undefined}>
+    <Box>
       <Flex justify="center" css={{ mb: "$2" }}>
         <Link href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <Image src="/vite.svg" className="logo" alt="Vite logo" />
@@ -41,7 +54,43 @@ const App = () => {
           Edit <Text as="code">src/App.tsx</Text> and save to test HMR
         </Paragraph>
       </Box>
-      <Paragraph color="secondary">Click on the Vite and React logos to learn more</Paragraph>
+      <Paragraph color="secondary" css={{ mb: "$2" }}>
+        Click on the Vite and React logos to learn more
+      </Paragraph>
+
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>Click me!</Button>
+        </DialogTrigger>
+
+        <DialogContent
+          components={{
+            Footer: (
+              <DialogFooter justify="between">
+                <DialogClose asChild>
+                  <Button variant="outline">Cancel</Button>
+                </DialogClose>
+
+                <Button
+                  loading={loading}
+                  onClick={async () => {
+                    setLoading(true);
+                    await sleep(2000);
+                    setLoading(false);
+                  }}
+                >
+                  Ok!
+                </Button>
+              </DialogFooter>
+            ),
+          }}
+        >
+          <DialogTitle>Hello!</DialogTitle>
+          <DialogDescription>
+            You are viewing the {isDarkTheme ? "dark" : "light"} theme!
+          </DialogDescription>
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 };

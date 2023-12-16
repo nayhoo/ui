@@ -279,6 +279,9 @@ importers:
       '@nayhoo/components':
         specifier: '*'
         version: link:../../packages/components
+      '@nayhoo/hooks':
+        specifier: '*'
+        version: link:../../packages/hooks
       '@nayhoo/utils':
         specifier: '*'
         version: link:../../packages/utils

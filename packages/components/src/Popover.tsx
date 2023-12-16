@@ -31,7 +31,7 @@ export const PopoverContent = React.forwardRef<
       {children}
 
       {!hideArrow && (
-        <Box css={{ color: "$panel" }}>
+        <Box css={{ color: "$surface" }}>
           <PopoverPrimitive.Arrow height={5} style={{ fill: "currentColor" }} width={11} />
         </Box>
       )}

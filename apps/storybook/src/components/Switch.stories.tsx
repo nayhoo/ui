@@ -30,6 +30,18 @@ export const Default: Story = {
   args: {},
 };
 
+export const Pirmary: Story = {
+  args: {
+    color: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    color: "secondary",
+  },
+};
+
 export const Size1: Story = {
   args: {
     size: "1",

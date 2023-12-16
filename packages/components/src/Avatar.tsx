@@ -55,9 +55,10 @@ export const Avatar = React.forwardRef<React.ElementRef<typeof StyledAvatar>, Av
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: "center",
+  backgroundColor: "$surface",
   border: "none",
   boxSizing: "border-box",
-  color: "$textPrimary",
+  color: "$surfaceTextContrast",
   display: "flex",
   flexShrink: 0,
   fontFamily: "inherit",
@@ -75,7 +76,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   "&::before": {
     borderRadius: "inherit",
     bottom: 0,
-    boxShadow: "inset 0px 0px 1px $colors$line",
+    boxShadow: "inset 0px 0px 1px $colors$divider",
     content: '""',
     left: 0,
     position: "absolute",

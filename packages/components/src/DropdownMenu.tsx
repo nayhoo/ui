@@ -26,7 +26,7 @@ export const itemCss = css(baseItemCss, {
   position: "relative",
 
   "&:hover": {
-    backgroundColor: "$bgHover",
+    backgroundColor: "$transparentHover",
     cursor: "pointer",
   },
 
@@ -37,18 +37,18 @@ export const itemCss = css(baseItemCss, {
   },
 
   "&[data-highlighted]": {
-    backgroundColor: "$bgHover",
+    backgroundColor: "$transparentHover",
     outline: "none",
   },
 
   "&[data-state=open]": {
-    backgroundColor: "$bgHover",
+    backgroundColor: "$transparentHover",
     outline: "none",
   },
 });
 
 export const labelCss = css(baseItemCss, {
-  color: "$textSecondary",
+  color: "$textLabel",
 });
 
 export const menuCss = css({
@@ -58,7 +58,7 @@ export const menuCss = css({
 });
 
 export const separatorCss = css({
-  backgroundColor: "$line",
+  backgroundColor: "$divider",
   height: 1,
   my: "$1",
 });
@@ -90,7 +90,7 @@ type DropdownMenuContentProps = DropdownMenuContentPrimitiveProps & {
   hideArrow?: boolean;
 };
 
-const StyledArrow = styled(DropdownMenuPrimitive.Arrow, { fill: "$panel" });
+const StyledArrow = styled(DropdownMenuPrimitive.Arrow, { fill: "$surface" });
 
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
