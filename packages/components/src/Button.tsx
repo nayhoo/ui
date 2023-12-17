@@ -55,10 +55,6 @@ const StyledButton = styled("button", {
     color: {
       primary: {},
       secondary: {},
-      accent: {},
-      info: {},
-      success: {},
-      warning: {},
       error: {},
     },
     loading: {
