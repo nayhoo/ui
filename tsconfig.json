@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "@nayhoo/components/*": ["packages/components/src/*"],
-      "@nayhoo/*": ["packages/*/src"]
+      "@nayhoo/*": ["packages/*/src"],
     },
     "noEmit": true
   }
