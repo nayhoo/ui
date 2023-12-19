@@ -1,6 +1,6 @@
 {
   "name": "@nayhoo/utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -10,7 +10,8 @@
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rimraf ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "publish": "pnpm publish dist/ --access public"
   },
   "devDependencies": {
     "rimraf": "~5.0.0",
