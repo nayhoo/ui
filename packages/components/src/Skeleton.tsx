@@ -2,7 +2,7 @@ import { pulse } from "../keyframes";
 import { styled } from "../stitches.config";
 
 export const Skeleton = styled("div", {
-  backgroundColor: "$bgHover",
+  backgroundColor: "$transparentHover",
   overflow: "hidden",
   position: "relative",
 
@@ -12,7 +12,7 @@ export const Skeleton = styled("div", {
     animationIterationCount: "infinite",
     animationName: `${pulse}`,
     animationTimingFunction: "ease-in-out",
-    backgroundColor: "$bgPressed",
+    backgroundColor: "$transparentPressed",
     borderRadius: "inherit",
     bottom: 0,
     content: '""',

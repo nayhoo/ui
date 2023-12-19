@@ -23,7 +23,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
 
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   alignItems: "center",
-  backgroundColor: "$line",
+  backgroundColor: "$divider",
   borderRadius: "$pill",
   boxSizing: "border-box",
   display: "inline-flex",
@@ -53,11 +53,19 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     pointerEvents: "none",
   },
 
-  '&[data-state="checked"]': {
-    backgroundColor: "$accent",
-  },
-
   variants: {
+    color: {
+      primary: {
+        '&[data-state="checked"]': {
+          backgroundColor: "$primary",
+        },
+      },
+      secondary: {
+        '&[data-state="checked"]': {
+          backgroundColor: "$secondary",
+        },
+      },
+    },
     size: {
       "1": {
         width: "$5",
@@ -88,6 +96,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     },
   },
   defaultVariants: {
+    color: "primary",
     size: "2",
   },
 });

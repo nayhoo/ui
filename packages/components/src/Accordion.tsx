@@ -103,7 +103,7 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
 
   alignItems: "center",
   backgroundColor: "transparent",
-  boxShadow: `0 1px 0 $colors$line`,
+  boxShadow: `0 1px 0 $colors$divider`,
   display: "flex",
   flex: 1,
   fontFamily: "inherit",
@@ -114,6 +114,6 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   padding: "0 20px",
 
   "&:hover": {
-    backgroundColor: "$bgHover",
+    backgroundColor: "$transparentHover",
   },
 });

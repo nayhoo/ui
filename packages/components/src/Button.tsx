@@ -44,7 +44,7 @@ const StyledButton = styled("button", {
     boxSizing: "border-box",
   },
   "&:disabled": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
     boxShadow: "none",
     color: "$textDisabled",
     cursor: "not-allowed",
@@ -55,10 +55,6 @@ const StyledButton = styled("button", {
     color: {
       primary: {},
       secondary: {},
-      accent: {},
-      info: {},
-      success: {},
-      warning: {},
       error: {},
     },
     loading: {
@@ -97,8 +93,6 @@ const StyledButton = styled("button", {
     },
     variant: {
       default: {
-        color: "$white", // todo: this should be the contrast for bgColor
-        backgroundColor: "$primary",
         boxShadow: "$colors$shadow 0px 10px 38px -10px, $colors$shadow 0px 10px 20px -15px",
 
         "@hover": {
@@ -107,15 +101,15 @@ const StyledButton = styled("button", {
         "&:active": {},
       },
       outline: {
-        boxShadow: "inset 0 0 0 1px $colors$line",
+        boxShadow: "inset 0 0 0 1px $colors$divider",
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$bgHover",
+            backgroundColor: "$transparentHover",
           },
         },
         "&:active": {
-          backgroundColor: "$bgPressed",
+          backgroundColor: "$transparentPressed",
         },
       },
       ghost: {
@@ -123,11 +117,11 @@ const StyledButton = styled("button", {
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$bgHover",
+            backgroundColor: "$transparentHover",
           },
         },
         "&:active": {
-          backgroundColor: "$bgPressed",
+          backgroundColor: "$transparentPressed",
         },
       },
     },
@@ -139,7 +133,16 @@ const StyledButton = styled("button", {
       color: "primary",
       css: {
         backgroundColor: "$primary",
-        // contrastTextColor: "$primary",
+        color: "$primaryTextContrast",
+
+        "@hover": {
+          "&:hover": {
+            backgroundColor: "$primaryDarker",
+          },
+        },
+        "&:active": {
+          backgroundColor: "$primaryLighter",
+        },
       },
     },
     {
@@ -147,39 +150,16 @@ const StyledButton = styled("button", {
       color: "secondary",
       css: {
         backgroundColor: "$secondary",
-        // contrastTextColor: "$secondary",
-      },
-    },
-    {
-      variant: "default",
-      color: "accent",
-      css: {
-        backgroundColor: "$accent",
-        // contrastTextColor: "$accent",
-      },
-    },
-    {
-      variant: "default",
-      color: "info",
-      css: {
-        backgroundColor: "$info",
-        // contrastTextColor: "$info",
-      },
-    },
-    {
-      variant: "default",
-      color: "success",
-      css: {
-        backgroundColor: "$success",
-        // contrastTextColor: "$success",
-      },
-    },
-    {
-      variant: "default",
-      color: "warning",
-      css: {
-        backgroundColor: "$warning",
-        // contrastTextColor: "$warning",
+        color: "$secondaryTextContrast",
+
+        "@hover": {
+          "&:hover": {
+            backgroundColor: "$secondaryDarker",
+          },
+        },
+        "&:active": {
+          backgroundColor: "$secondaryLighter",
+        },
       },
     },
     {
@@ -187,7 +167,16 @@ const StyledButton = styled("button", {
       color: "error",
       css: {
         backgroundColor: "$error",
-        // contrastTextColor: "$error",
+        color: "$errorTextContrast",
+
+        "@hover": {
+          "&:hover": {
+            backgroundColor: "$errorDarker",
+          },
+        },
+        "&:active": {
+          backgroundColor: "$errorLighter",
+        },
       },
     },
   ],

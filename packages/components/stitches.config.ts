@@ -11,37 +11,48 @@ export const { config, createTheme, css, getCssText, globalCss, keyframes, reset
         ...colors,
 
         // Semantic colors
-        primary: "#0000ff",
-        secondary: "#8f4000",
-        accent: "#ea3600",
-        neutral: "#080800",
+        // reference: https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes
 
-        canvas: "#ffffff",
-        panel: "#ffffff",
-        transparentPanel: "hsl(0 0% 0% / 97%)",
+        // todo: turn this into a theme helper?
+        primary: "#6200ee",
+        primaryLighter: "#8133f1",
+        primaryDarker: "#4400a6",
+        primaryTextContrast: colors.white,
 
-        info: "#00edff",
-        success: "#00ca76",
-        warning: "#ff5800",
-        error: "#f5184c",
+        secondary: "#03dac6",
+        secondaryLighter: "#35e1d1",
+        secondaryDarker: "#02988a",
+        secondaryTextContrast: colors.black,
 
-        textPrimary: "#000000",
-        textSecondary: "#808080",
-        textAccent: "$accent", // could this just be accent?
-        textDisabled: "rgba(0, 0, 0, 0.38)",
+        error: "#b00020",
+        errorLighter: "#bf334c",
+        errorDarker: "#7b0016",
+        errorTextContrast: colors.white,
 
-        // can these all below be programmically calculated?
-        bgHover: "rgba(0, 0, 0, 0.04)",
-        bgFocus: "rgba(0, 0, 0, 0.12)",
-        bgSelected: "rgba(0, 0, 0, 0.04)", // of primary
-        bgActivated: "rgba(0, 0, 0, 0.04)", // of primary
-        bgPressed: "rgba(0, 0, 0, 0.12)",
-        bgDragged: "rgba(0, 0, 0, 0.08)",
-        bgDisabled: "rgba(0, 0, 0, 0.12)",
+        background: colors.white,
+        surface: colors.white,
+        transparentSurface: "hsl(0 0% 0% / 97%)",
 
-        /** (dividers, button outlines etc ...) */
-        line: "rgba(0, 0, 0, 0.12)",
+        backgroundTextContrast: colors.black,
+        surfaceTextContrast: colors.black,
 
+        textDescription: "#666666",
+        textDisabled: "#cccccc",
+        textLabel: "#666666",
+        textPlaceholder: "#999999",
+
+        // todo: can these all below be calculated with a theme helper?
+        transparentHover: "rgba(0, 0, 0, 0.04)",
+        transparentFocus: "rgba(0, 0, 0, 0.12)",
+        transparentSelected: "rgba(0, 0, 0, 0.04)",
+        transparentActivated: "rgba(0, 0, 0, 0.04)",
+        transparentPressed: "rgba(0, 0, 0, 0.12)",
+        transparentDragged: "rgba(0, 0, 0, 0.08)",
+        transparentDisabled: "#f2f2f2",
+
+        transparentOverlay: "rgba(0, 0, 0, .15)",
+
+        divider: "rgba(0, 0, 0, 0.12)",
         shadow: "rgba(0, 0, 0, 0.12)",
       },
       fonts: {},
@@ -195,36 +206,44 @@ export type CSS = Stitches.CSS<typeof config>;
 
 export const darkTheme = createTheme("dark", {
   colors: {
-    primary: "#a500ff",
-    secondary: "#e34300",
-    accent: "#007b00",
-    neutral: "#1b0a08",
+    primary: "#6200ee",
+    primaryLighter: "#8133f1",
+    primaryDarker: "#4400a6",
+    primaryTextContrast: colors.white,
 
-    canvas: "#1e2735",
-    panel: "#1e2735",
-    transparentPanel: "hsl(0 100% 100% / 97%)",
+    secondary: "#03dac6",
+    secondaryLighter: "#35e1d1",
+    secondaryDarker: "#02988a",
+    secondaryTextContrast: colors.black,
 
-    info: "#00cbff",
-    success: "#008229",
-    warning: "#ff5800",
-    error: "#ff7690",
+    error: "#b00020",
+    errorLighter: "#bf334c",
+    errorDarker: "#7b0016",
+    errorTextContrast: colors.white,
 
-    textPrimary: "#ffffff",
-    textSecondary: "#808080",
-    textAccent: "$accent",
-    textDisabled: "rgba(255, 255, 255, 0.38)",
+    background: "#121212",
+    surface: "#121212",
+    transparentSurface: "hsl(0 100% 100% / 97%)",
 
-    bgHover: "rgba(255, 255, 255, 0.04)",
-    bgFocus: "rgba(255, 255, 255, 0.12)",
-    bgSelected: "rgba(255, 255, 255, 0.04)", // of primary?
-    bgActivated: "rgba(255, 255, 255, 0.04)", // of primary?
-    bgPressed: "rgba(255, 255, 255, 0.12)",
-    bgDragged: "rgba(255, 255, 255, 0.08)",
-    bgDisabled: "rgba(255, 255, 255, 0.12)",
+    backgroundTextContrast: colors.white,
+    surfaceTextContrast: colors.white,
 
-    /** (dividers, button outlines etc ...) */
-    line: "rgba(255, 255, 255, 0.12)",
+    textDescription: "#666666",
+    textDisabled: "#cccccc",
+    textLabel: "#666666",
+    textPlaceholder: "#999999",
 
+    transparentHover: "rgba(255, 255, 255, 0.04)",
+    transparentFocus: "rgba(255, 255, 255, 0.12)",
+    transparentSelected: "rgba(255, 255, 255, 0.04)",
+    transparentActivated: "rgba(255, 255, 255, 0.04)",
+    transparentPressed: "rgba(255, 255, 255, 0.12)",
+    transparentDragged: "rgba(255, 255, 255, 0.08)",
+    transparentDisabled: "#f2f2f2",
+
+    transparentOverlay: "rgba(255, 255, 255, .15)",
+
+    divider: "rgba(255, 255, 255, 0.12)",
     shadow: "rgba(255, 255, 255, 0.12)",
   },
 });
@@ -234,12 +253,7 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
 
-    backgroundColor: "$canvas",
-    color: "$textPrimary",
-
-    "&:has(.dark)": {
-      backgroundColor: "#1e2735", // can i select this from the dark theme?
-      color: "#ffffff",
-    },
+    backgroundColor: "$background",
+    color: "$backgroundTextContrast",
   },
 });

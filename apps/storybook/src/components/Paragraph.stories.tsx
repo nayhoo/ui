@@ -27,6 +27,13 @@ export const Paragraph2: Story = {
   },
 };
 
+export const Primary: Story = {
+  args: {
+    ...Default.args,
+    color: "primary",
+  },
+};
+
 export const Secondary: Story = {
   args: {
     ...Default.args,
@@ -34,9 +41,9 @@ export const Secondary: Story = {
   },
 };
 
-export const Accent: Story = {
+export const Error: Story = {
   args: {
     ...Default.args,
-    color: "accent",
+    color: "error",
   },
 };

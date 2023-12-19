@@ -4,11 +4,12 @@ import { Text } from "./Text";
 export const Link = styled("a", {
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   alignItems: "center",
+  color: "$textBackgroundContrast",
   flexShrink: 0,
   gap: "$1",
   lineHeight: "inherit",
   outline: "none",
-  textDecorationColor: "transparent",
+  textDecorationColor: "$textBackgroundContrast",
   textDecorationLine: "none",
   textUnderlineOffset: "3px",
 
@@ -32,20 +33,14 @@ export const Link = styled("a", {
   variants: {
     color: {
       primary: {
-        color: "$textPrimary",
-        textDecorationColor: "$textPrimary",
+        color: "$primary",
+        textDecorationColor: "$primary",
       },
       secondary: {
-        color: "$textSecondary",
-        textDecorationColor: "$textSecondary",
-      },
-      accent: {
-        color: "$textAccent",
-        textDecorationColor: "$textAccent",
+        color: "$secondary",
+        textDecorationColor: "$secondary",
       },
     },
   },
-  defaultVariants: {
-    color: "primary",
-  },
+  defaultVariants: {},
 });

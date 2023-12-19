@@ -11,7 +11,7 @@ export const FormField = styled(FormPrimitive.Field, {
 });
 
 export const FormLabel = styled(FormPrimitive.Label, {
-  color: "$textSecondary",
+  color: "$textLabel",
   fontSize: "$3",
   fontWeight: "$medium",
   lineHeight: "$sizes$$6",

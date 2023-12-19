@@ -16,12 +16,12 @@ export const TextArea = styled("textarea", {
 
   "@hover": {
     "&:hover": {
-      backgroundColor: "$bgHover",
+      backgroundColor: "$transparentHover",
     },
   },
 
   "&:disabled": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
     color: "$textDisabled",
     cursor: "not-allowed",
     pointerEvents: "none",
@@ -32,11 +32,17 @@ export const TextArea = styled("textarea", {
     zIndex: "1",
   },
   "&:read-only": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
 
     "&:focus": {
-      // boxShadow: "inset 0px 0px 0px 1px $colors$line",
+      // boxShadow: "inset 0px 0px 0px 1px $colors$divider",
     },
+  },
+  "&[data-invalid]": {
+    boxShadow: "inset 0px 0px 0px 1px $colors$error",
+  },
+  "&[data-placeholder]": {
+    color: "$textPlaceholder",
   },
 
   variants: {
@@ -83,7 +89,7 @@ export const TextArea = styled("textarea", {
     },
     variant: {
       outline: {
-        boxShadow: "inset 0 0 0 1px $colors$line",
+        boxShadow: "inset 0 0 0 1px $colors$divider",
       },
       ghost: {
         boxShadow: "none",

@@ -23,7 +23,7 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   alignItems: "center",
   appearance: "none",
-  boxShadow: "inset 0 0 0 1px $colors$line",
+  boxShadow: "inset 0 0 0 1px $colors$divider",
   boxSizing: "border-box",
   display: "inline-flex",
   justifyContent: "center",
@@ -36,8 +36,8 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
 
   "@hover": {
     "&:hover": {
-      boxShadow: "inset 0 0 0 1px $colors$line",
-      backgroundColor: "$bgHover",
+      boxShadow: "inset 0 0 0 1px $colors$divider",
+      backgroundColor: "$transparentHover",
       cursor: "pointer",
     },
   },
@@ -48,7 +48,7 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
     boxSizing: "border-box",
   },
   "&:disabled": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
     color: "$textDisabled",
     cursor: "not-allowed",
     pointerEvents: "none",

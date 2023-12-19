@@ -86,7 +86,7 @@ const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
   },
 
   "&[data-disabled]": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
     boxShadow: "none",
     color: "$textDisabled",
     cursor: "not-allowed",
@@ -94,17 +94,17 @@ const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
   },
 
   "&[data-placeholder]": {
-    // color: "$textSecondary",
+    color: "$textPlaceholder",
   },
 
   variants: {
     variant: {
       outline: {
-        boxShadow: "inset 0 0 0 1px $colors$line",
+        boxShadow: "inset 0 0 0 1px $colors$divider",
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$bgHover",
+            backgroundColor: "$transparentHover",
           },
         },
       },
@@ -113,7 +113,7 @@ const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$bgHover",
+            backgroundColor: "$transparentHover",
           },
         },
       },
@@ -141,7 +141,7 @@ const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
 });
 
 const StyledSelectIcon = styled(SelectPrimitives.SelectIcon, {
-  color: "$textPrimary",
+  color: "$backgroundTextContrast",
 });
 
 const StyledContent = styled(SelectPrimitives.Content, menuCss, panelStyles);
@@ -177,7 +177,7 @@ const StyledItem = styled(SelectPrimitives.Item, {
   userSelect: "none",
 
   "&:hover": {
-    backgroundColor: "$bgHover",
+    backgroundColor: "$transparentHover",
     // cursor: "pointer",
   },
 
@@ -187,7 +187,7 @@ const StyledItem = styled(SelectPrimitives.Item, {
   },
 
   "&[data-highlighted]": {
-    backgroundColor: "$bgHover",
+    backgroundColor: "$transparentHover",
     outline: "none",
   },
 

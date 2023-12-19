@@ -16,7 +16,7 @@ export const TextField = styled("input", {
 
   "@hover": {
     "&:hover": {
-      backgroundColor: "$bgHover",
+      backgroundColor: "$transparentHover",
     },
   },
 
@@ -31,7 +31,7 @@ export const TextField = styled("input", {
     boxSizing: "border-box",
   },
   "&:disabled": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
     color: "$textDisabled",
     cursor: "not-allowed",
     pointerEvents: "none",
@@ -41,11 +41,17 @@ export const TextField = styled("input", {
     "&:-webkit-autofill": {},
   },
   "&:read-only": {
-    backgroundColor: "$bgDisabled",
+    backgroundColor: "$transparentDisabled",
 
     "&:focus": {
-      // boxShadow: "inset 0px 0px 0px 1px $colors$line",
+      // boxShadow: "inset 0px 0px 0px 1px $colors$divider",
     },
+  },
+  "&[data-invalid]": {
+    boxShadow: "inset 0px 0px 0px 1px $colors$error",
+  },
+  "&[data-placeholder]": {
+    color: "$textPlaceholder",
   },
 
   variants: {
@@ -106,7 +112,7 @@ export const TextField = styled("input", {
     },
     variant: {
       outline: {
-        boxShadow: "inset 0 0 0 1px $colors$line",
+        boxShadow: "inset 0 0 0 1px $colors$divider",
       },
       ghost: {
         boxShadow: "none",
