@@ -1,6 +1,9 @@
 {
   "name": "@nayhoo/hooks",
   "version": "0.1.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -10,8 +13,7 @@
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rimraf ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "pnpm run build",
-    "publish": "pnpm publish dist/ --access public"
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@nayhoo/utils": "*",
