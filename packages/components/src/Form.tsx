@@ -1,5 +1,5 @@
 import * as FormPrimitive from "@radix-ui/react-form";
-import { styled } from "../stitches.config";
+import { styled } from "./stitches.config";
 
 export const Form = FormPrimitive.Root;
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { styled, CSS, VariantProps } from "../stitches.config";
-import { spin } from "../keyframes";
+import { styled, CSS, VariantProps } from "./stitches.config";
+import { spin } from "./keyframes";
 
 type SpinnerVariants = VariantProps<typeof StyledSpinner>;
 type SpinnerProps = SpinnerVariants & { css?: CSS };

@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, VariantProps, CSS } from "../stitches.config";
+import { styled, VariantProps, CSS } from "./stitches.config";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 const StyledThumb = styled(SwitchPrimitive.Thumb, {

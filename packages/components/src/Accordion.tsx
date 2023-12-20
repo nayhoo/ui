@@ -1,7 +1,7 @@
 import React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
-import { styled, keyframes } from "../stitches.config";
+import { styled, keyframes } from "./stitches.config";
 
 export const Accordion = styled(AccordionPrimitive.Root, {
   borderRadius: "$2",

@@ -1,4 +1,4 @@
-import { css } from "../stitches.config";
+import { css } from "./stitches.config";
 
 export const panelStyles = css({
   backgroundColor: "$surface",

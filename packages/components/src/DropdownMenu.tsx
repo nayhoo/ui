@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckIcon, ChevronRightIcon } from "@radix-ui/react-icons";
-import { styled, CSS, VariantProps, css } from "../stitches.config";
+import { styled, CSS, VariantProps, css } from "./stitches.config";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Box } from "./Box";
 import { Flex } from "./Flex";

@@ -1,6 +1,6 @@
 import React from "react";
 import * as SelectPrimitives from "@radix-ui/react-select";
-import { styled } from "../stitches.config";
+import { styled } from "./stitches.config";
 import {
   CheckIcon,
   ChevronDownIcon,

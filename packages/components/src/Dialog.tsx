@@ -3,7 +3,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Box } from "./Box";
 import { Flex } from "./Flex";
 import { panelStyles } from "./Panel";
-import { styled, CSS, css, VariantProps } from "../stitches.config";
+import { styled, CSS, css, VariantProps } from "./stitches.config";
 
 /* --------------------------------- Dialog --------------------------------- */
 export const Dialog = DialogPrimitive.Root;

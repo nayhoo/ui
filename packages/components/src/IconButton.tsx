@@ -1,4 +1,4 @@
-import { CSS, VariantProps, styled } from "../stitches.config";
+import { CSS, VariantProps, styled } from "./stitches.config";
 import { Spinner } from "./Spinner";
 import React from "react";
 

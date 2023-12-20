@@ -57,3 +57,9 @@ export * from "./TextArea";
 export * from "./TextField";
 
 export * from "./Tooltip";
+
+export * from "./colors";
+
+export * from "./keyframes";
+
+export * from "./stitches.config";

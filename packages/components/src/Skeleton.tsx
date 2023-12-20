@@ -1,5 +1,5 @@
-import { pulse } from "../keyframes";
-import { styled } from "../stitches.config";
+import { pulse } from "./keyframes";
+import { styled } from "./stitches.config";
 
 export const Skeleton = styled("div", {
   backgroundColor: "$transparentHover",
