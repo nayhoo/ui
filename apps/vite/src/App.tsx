@@ -16,7 +16,9 @@ import {
   Link,
   Paragraph,
   Text,
+  ToastAction,
   Tooltip,
+  useToast,
 } from "@nayhoo/components";
 import reactLogo from "./assets/react.svg";
 import React, { useState } from "react";
@@ -26,6 +28,8 @@ import { useBodyClassToggle } from "@nayhoo/hooks";
 globalStyles();
 
 const App = () => {
+  const toast = useToast();
+
   const [count, setCount] = useState(meaningOfLife);
   const [loading, setLoading] = useState(false);
 
@@ -74,8 +78,29 @@ const App = () => {
                 <Button
                   loading={loading}
                   onClick={async () => {
+                    const now = new Date();
+                    const inOneWeek = now.setDate(now.getDate() + 7);
+
+                    const description = new Intl.DateTimeFormat("en-US", {
+                      dateStyle: "full",
+                      timeStyle: "short",
+                    }).format(inOneWeek);
+
                     setLoading(true);
                     await sleep(2000);
+
+                    toast({
+                      action: (
+                        <ToastAction altText="Goto schedule to undo" asChild>
+                          <Button size="1" variant="outline">
+                            Undo
+                          </Button>
+                        </ToastAction>
+                      ),
+                      description,
+                      title: "Scheduled: Catch up",
+                    });
+
                     setLoading(false);
                   }}
                 >

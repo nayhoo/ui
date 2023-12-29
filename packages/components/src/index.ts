@@ -56,6 +56,8 @@ export * from "./TextArea";
 
 export * from "./TextField";
 
+export * from "./Toast";
+
 export * from "./Tooltip";
 
 export * from "./colors";
