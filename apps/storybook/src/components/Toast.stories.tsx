@@ -1,21 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Box, Button, ToastAction, useToast } from "@nayhoo/components";
+import { Toast, Button, ToastAction, useToast } from "@nayhoo/components";
 
 import React from "react";
 
-const meta: Meta<typeof Box> = {
-  component: Box,
+const meta: Meta<typeof Toast> = {
+  component: Toast,
 };
 
 export default meta;
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof Toast>;
 
+// TODO: fix this
 const ToastWithHooks = () => {
-  const [toast, holder] = useToast();
+  const toast = useToast();
 
   return (
-    <Box>
+    <Toast>
       <Button
         onClick={() => {
           const now = new Date();
@@ -41,9 +42,7 @@ const ToastWithHooks = () => {
       >
         Add to calendar
       </Button>
-
-      {holder}
-    </Box>
+    </Toast>
   );
 };
 

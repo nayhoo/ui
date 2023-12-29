@@ -4,44 +4,60 @@ import { styled, keyframes } from "@stitches/react";
 import { hide } from "./keyframes";
 import { Flex } from "./Flex";
 
-type Message = {
+type Toast = {
   action?: JSX.Element;
   description?: string;
   title?: string;
 };
 
-export const useToast = () => {
+type ToastState = ({ action, description, title }: Toast) => void;
+
+const defaultToastState: ToastState = () => {
+  // eslint-disable-next-line no-console
+  console.error(
+    "Error: The 'useToast' hook is being used outside of the Toast provider. " +
+      "Make sure to wrap your application with Toast to enable toast functionality."
+  );
+};
+
+const ToastContext = React.createContext(defaultToastState);
+
+export const useToast = () => React.useContext(ToastContext);
+
+export const Toast = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = React.useState(false);
-  const messageRef = React.useRef<Message>({});
+  const messageRef = React.useRef<Toast>({});
   const timerRef = React.useRef(0);
 
   React.useEffect(() => () => clearTimeout(timerRef.current), []);
 
-  const toast = ({ action, description, title }: Message) => {
+  const toast = React.useCallback(({ action, description, title }: Toast) => {
     setOpen(false);
     window.clearTimeout(timerRef.current);
     timerRef.current = window.setTimeout(() => {
       messageRef.current = { action, description, title };
       setOpen(true);
     }, 100);
-  };
+  }, []);
 
-  const Toaster = () => (
-    <ToastPrimitives.Provider swipeDirection="right">
-      <ToastRoot open={open} onOpenChange={setOpen}>
-        <Flex direction="column" gap="2">
-          {messageRef.current.title && <ToastTitle>{messageRef.current.title}</ToastTitle>}
-          {messageRef.current.description && (
-            <ToastDescription>{messageRef.current.description}</ToastDescription>
-          )}
-        </Flex>
-        {messageRef.current.action}
-      </ToastRoot>
-      <ToastViewport />
-    </ToastPrimitives.Provider>
+  return (
+    <ToastContext.Provider value={toast}>
+      {children}
+
+      <ToastPrimitives.Provider swipeDirection="right">
+        <ToastRoot open={open} onOpenChange={setOpen}>
+          <Flex direction="column" gap="2">
+            {messageRef.current.title && <ToastTitle>{messageRef.current.title}</ToastTitle>}
+            {messageRef.current.description && (
+              <ToastDescription>{messageRef.current.description}</ToastDescription>
+            )}
+          </Flex>
+          {messageRef.current.action}
+        </ToastRoot>
+        <ToastViewport />
+      </ToastPrimitives.Provider>
+    </ToastContext.Provider>
   );
-
-  return [toast, <Toaster />] as const;
 };
 
 const VIEWPORT_PADDING = 25;
