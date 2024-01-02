@@ -11,40 +11,43 @@ const meta: Meta<typeof Toast> = {
 export default meta;
 type Story = StoryObj<typeof Toast>;
 
-// TODO: fix this
-const ToastWithHooks = () => {
+const ToastTrigger = () => {
   const toast = useToast();
 
   return (
-    <Toast>
-      <Button
-        onClick={() => {
-          const now = new Date();
-          const inOneWeek = now.setDate(now.getDate() + 7);
+    <Button
+      onClick={() => {
+        const now = new Date();
+        const inOneWeek = now.setDate(now.getDate() + 7);
 
-          const description = new Intl.DateTimeFormat("en-US", {
-            dateStyle: "full",
-            timeStyle: "short",
-          }).format(inOneWeek);
+        const description = new Intl.DateTimeFormat("en-US", {
+          dateStyle: "full",
+          timeStyle: "short",
+        }).format(inOneWeek);
 
-          toast({
-            action: (
-              <ToastAction altText="Goto schedule to undo" asChild>
-                <Button size="1" variant="outline">
-                  Undo
-                </Button>
-              </ToastAction>
-            ),
-            description,
-            title: "Scheduled: Catch up",
-          });
-        }}
-      >
-        Add to calendar
-      </Button>
-    </Toast>
+        toast({
+          action: (
+            <ToastAction altText="Goto schedule to undo" asChild>
+              <Button size="1" variant="outline">
+                Undo
+              </Button>
+            </ToastAction>
+          ),
+          description,
+          title: "Scheduled: Catch up",
+        });
+      }}
+    >
+      Add to calendar
+    </Button>
   );
 };
+
+const ToastWithHooks = () => (
+  <Toast>
+    <ToastTrigger />
+  </Toast>
+);
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
