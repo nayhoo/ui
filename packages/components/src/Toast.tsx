@@ -3,10 +3,12 @@ import * as ToastPrimitives from "@radix-ui/react-toast";
 import { styled, keyframes } from "@stitches/react";
 import { hide } from "./keyframes";
 import { Flex } from "./Flex";
+import { CrossCircledIcon } from "@radix-ui/react-icons";
 
 type Toast = {
   action?: JSX.Element;
   description?: string;
+  error?: boolean;
   title?: string;
 };
 
@@ -25,35 +27,33 @@ const ToastContext = React.createContext(defaultToastState);
 export const useToast = () => React.useContext(ToastContext);
 
 export const Toast = ({ children }: { children: React.ReactNode }) => {
-  const [open, setOpen] = React.useState(false);
-  const messageRef = React.useRef<Toast>({});
-  const timerRef = React.useRef(0);
+  const [toasts, setToasts] = React.useState<Toast[]>([]);
 
-  React.useEffect(() => () => clearTimeout(timerRef.current), []);
-
-  const toast = React.useCallback(({ action, description, title }: Toast) => {
-    setOpen(false);
-    window.clearTimeout(timerRef.current);
-    timerRef.current = window.setTimeout(() => {
-      messageRef.current = { action, description, title };
-      setOpen(true);
-    }, 100);
-  }, []);
+  const toast = React.useCallback(
+    ({ action, description, error, title }: Toast) => {
+      setToasts([{ action, description, error, title }, ...toasts]);
+    },
+    [toasts]
+  );
 
   return (
     <ToastContext.Provider value={toast}>
       {children}
 
-      <ToastPrimitives.Provider swipeDirection="right">
-        <ToastRoot open={open} onOpenChange={setOpen}>
-          <Flex direction="column" gap="2">
-            {messageRef.current.title && <ToastTitle>{messageRef.current.title}</ToastTitle>}
-            {messageRef.current.description && (
-              <ToastDescription>{messageRef.current.description}</ToastDescription>
-            )}
-          </Flex>
-          {messageRef.current.action}
-        </ToastRoot>
+      <ToastPrimitives.Provider>
+        {toasts.map(({ action, description, error, title }) => (
+          <ToastRoot defaultOpen error={error}>
+            <Flex direction="column" gap="2">
+              <Flex align="center" gap="2">
+                {error && <StyledCrossCircledIcon />}
+                {title && <ToastTitle>{title}</ToastTitle>}
+              </Flex>
+              {description && <ToastDescription>{description}</ToastDescription>}
+            </Flex>
+            {action}
+          </ToastRoot>
+        ))}
+
         <ToastViewport />
       </ToastPrimitives.Provider>
     </ToastContext.Provider>
@@ -115,6 +115,14 @@ const ToastRoot = styled(ToastPrimitives.Root, {
   '&[data-swipe="end"]': {
     animation: `${swipeOut} 100ms ease-out`,
   },
+
+  variants: {
+    error: {
+      true: {
+        boxShadow: "inset 0px 0px 0px 1px $colors$error",
+      },
+    },
+  },
 });
 
 const ToastTitle = styled(ToastPrimitives.Title, {
@@ -134,4 +142,8 @@ const ToastDescription = styled(ToastPrimitives.Description, {
 
 export const ToastAction = styled(ToastPrimitives.Action, {
   gridArea: "action",
+});
+
+const StyledCrossCircledIcon = styled(CrossCircledIcon, {
+  color: "$error",
 });

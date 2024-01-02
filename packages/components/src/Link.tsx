@@ -10,7 +10,7 @@ export const Link = styled("a", {
   lineHeight: "inherit",
   outline: "none",
   textDecorationColor: "$textBackgroundContrast",
-  textDecorationLine: "none",
+  // textDecorationLine: "none",
   textUnderlineOffset: "3px",
 
   "&:focus": {
@@ -24,11 +24,11 @@ export const Link = styled("a", {
     color: "inherit",
   },
 
-  "@hover": {
-    "&:hover": {
-      textDecorationLine: "underline",
-    },
-  },
+  // "@hover": {
+  // "&:hover": {
+  textDecorationLine: "underline",
+  // },
+  // },
 
   variants: {
     color: {
