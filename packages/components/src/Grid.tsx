@@ -1,5 +1,9 @@
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo grid component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Grid.stories.tsx
+ */
 export const Grid = styled("div", {
   boxSizing: "border-box",
   display: "grid",
@@ -66,6 +70,24 @@ export const Grid = styled("div", {
       4: {
         gridCols: 4,
       },
+      5: {
+        gridCols: 5,
+      },
+      6: {
+        gridCols: 6,
+      },
+      7: {
+        gridCols: 7,
+      },
+      8: {
+        gridCols: 8,
+      },
+      9: {
+        gridCols: 9,
+      },
+      10: {
+        gridCols: 10,
+      },
     },
     rows: {
       1: {
@@ -79,6 +101,24 @@ export const Grid = styled("div", {
       },
       4: {
         gridRows: 4,
+      },
+      5: {
+        gridRows: 5,
+      },
+      6: {
+        gridRows: 6,
+      },
+      7: {
+        gridRows: 7,
+      },
+      8: {
+        gridRows: 8,
+      },
+      9: {
+        gridRows: 9,
+      },
+      10: {
+        gridRows: 10,
       },
     },
     gap: {
@@ -109,6 +149,9 @@ export const Grid = styled("div", {
       9: {
         gap: "$9",
       },
+      10: {
+        gap: "$10",
+      },
     },
     gapX: {
       1: {
@@ -138,6 +181,9 @@ export const Grid = styled("div", {
       9: {
         columnGap: "$9",
       },
+      10: {
+        columnGap: "$10",
+      },
     },
     gapY: {
       1: {
@@ -166,6 +212,9 @@ export const Grid = styled("div", {
       },
       9: {
         rowGap: "$9",
+      },
+      10: {
+        rowGap: "$10",
       },
     },
   },

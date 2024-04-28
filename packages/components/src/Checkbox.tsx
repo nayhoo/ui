@@ -7,6 +7,10 @@ type CheckboxPrimitiveProps = React.ComponentProps<typeof CheckboxPrimitive.Root
 type CheckboxVariants = VariantProps<typeof StyledCheckbox>;
 type CheckboxProps = CheckboxPrimitiveProps & CheckboxVariants & { css?: CSS };
 
+/**
+ * Nayhoo checkbox component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Checkbox.stories.tsx
+ */
 export const Checkbox = React.forwardRef<React.ElementRef<typeof StyledCheckbox>, CheckboxProps>(
   (props, forwardedRef) => (
     <StyledCheckbox {...props} ref={forwardedRef}>
@@ -60,12 +64,12 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   variants: {
     size: {
       "1": {
-        borderRadius: "$1",
-        size: "$3",
+        borderRadius: "$lg",
+        size: "$4",
       },
       "2": {
-        borderRadius: "$2",
-        size: "$5",
+        borderRadius: "$xl",
+        size: "$6",
       },
     },
   },

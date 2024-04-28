@@ -1,5 +1,9 @@
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo status component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Status.stories.tsx
+ */
 export const Status = styled("div", {
   backgroundColor: "$divider",
   borderRadius: "$round",
@@ -19,10 +23,10 @@ export const Status = styled("div", {
     },
     size: {
       "1": {
-        size: 5,
+        size: "$1",
       },
       "2": {
-        size: 9,
+        size: "$2",
       },
     },
   },

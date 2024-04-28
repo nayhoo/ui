@@ -10,9 +10,9 @@ export const baseItemCss = css({
   alignItems: "center",
   cursor: "default",
   display: "flex",
-  fontSize: "$2",
+  fontSize: "$sm",
   fontVariantNumeric: "tabular-nums",
-  height: "$6",
+  height: "$8",
   justifyContent: "space-between",
   lineHeight: "1",
   px: "$2",
@@ -21,7 +21,7 @@ export const baseItemCss = css({
 });
 
 export const itemCss = css(baseItemCss, {
-  borderRadius: "$2",
+  borderRadius: "$xl",
   lineHeight: 1,
   position: "relative",
 
@@ -63,6 +63,10 @@ export const separatorCss = css({
   my: "$1",
 });
 
+/**
+ * Nayhoo dropdown menu component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/DropdownMenu.stories.tsx
+ */
 const DropdownMenu = DropdownMenuPrimitive.Root;
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 

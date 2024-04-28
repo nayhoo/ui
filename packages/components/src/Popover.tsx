@@ -5,13 +5,17 @@ import { Box } from "./Box";
 import { panelStyles } from "./Panel";
 import { Heading } from "./Heading";
 
+/**
+ * Nayhoo popover component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Popover.stories.tsx
+ */
 export const Popover = PopoverPrimitive.Root;
 
 export const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const StyledContent = styled(PopoverPrimitive.Content, panelStyles, {
   maxWidth: 265,
-  minHeight: "$6",
+  minHeight: "$8",
   minWidth: 200,
 
   "&:focus": {
@@ -42,5 +46,5 @@ export const PopoverContent = React.forwardRef<
 export const PopoverClose = PopoverPrimitive.Close;
 
 export const PopoverTitle = styled(Heading, {
-  mb: "$4",
+  mb: "$5",
 });

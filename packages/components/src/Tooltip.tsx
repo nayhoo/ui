@@ -14,7 +14,7 @@ type TooltipProps = TooltipPrimitiveProps &
 
 const StyledContent = styled(TooltipPrimitive.Content, {
   backgroundColor: "$transparentSurface",
-  borderRadius: "$1",
+  borderRadius: "$lg",
   padding: "$1 $2",
 
   variants: {
@@ -27,6 +27,10 @@ const StyledContent = styled(TooltipPrimitive.Content, {
   },
 });
 
+/**
+ * Nayhoo tooltip component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Tooltip.stories.tsx
+ */
 export function Tooltip({
   children,
   content,
@@ -48,7 +52,10 @@ export function Tooltip({
           <StyledContent align="center" side="top" sideOffset={5} {...props} multiline={multiline}>
             <Text
               as="p"
-              css={{ color: "white", lineHeight: multiline ? "20px" : (undefined as any) }}
+              css={{
+                color: "$transparentSurfaceTextContrast",
+                lineHeight: multiline ? "20px" : (undefined as any),
+              }}
               size="1"
             >
               {content}

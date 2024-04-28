@@ -3,8 +3,12 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { styled, keyframes } from "./stitches.config";
 
+/**
+ * Nayhoo accordion component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Accordion.stories.tsx
+ */
 export const Accordion = styled(AccordionPrimitive.Root, {
-  borderRadius: "$2",
+  borderRadius: "$lg",
   width: 300,
 });
 
@@ -22,14 +26,14 @@ export const AccordionItem = styled(AccordionPrimitive.Item, {
   overflow: "hidden",
 
   "&:first-child": {
-    borderTopLeftRadius: "$1",
-    borderTopRightRadius: "$1",
+    borderTopLeftRadius: "$md",
+    borderTopRightRadius: "$md",
     marginTop: 0,
   },
 
   "&:last-child": {
-    borderBottomLeftRadius: "$1",
-    borderBottomRightRadius: "$1",
+    borderBottomLeftRadius: "$md",
+    borderBottomRightRadius: "$md",
   },
 
   "&:focus-within": {
@@ -77,7 +81,7 @@ const StyledChevron = styled(ChevronDownIcon, {
 });
 
 const StyledContent = styled(AccordionPrimitive.Content, {
-  fontSize: "$3",
+  fontSize: "$base",
   overflow: "hidden",
 
   '&[data-state="open"]': {
@@ -89,7 +93,7 @@ const StyledContent = styled(AccordionPrimitive.Content, {
 });
 
 const StyledContentText = styled("div", {
-  padding: "15px 20px",
+  padding: "$4 $5",
 });
 
 const StyledHeader = styled(AccordionPrimitive.Header, {
@@ -107,11 +111,11 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   display: "flex",
   flex: 1,
   fontFamily: "inherit",
-  fontSize: "$3",
+  fontSize: "$base",
   height: 45,
   justifyContent: "space-between",
   lineHeight: 1,
-  padding: "0 20px",
+  padding: "0 $5",
 
   "&:hover": {
     backgroundColor: "$transparentHover",

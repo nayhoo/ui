@@ -5,6 +5,10 @@ import { spin } from "./keyframes";
 type SpinnerVariants = VariantProps<typeof StyledSpinner>;
 type SpinnerProps = SpinnerVariants & { css?: CSS };
 
+/**
+ * Nayhoo spinner component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Spinner.stories.tsx
+ */
 export const Spinner = ({ ...props }: SpinnerProps) => <StyledSpinner {...props} />;
 
 const StyledSpinner = styled("div", {
@@ -41,6 +45,9 @@ const StyledSpinner = styled("div", {
       },
       "9": {
         size: "$9",
+      },
+      "10": {
+        size: "$10",
       },
     },
   },

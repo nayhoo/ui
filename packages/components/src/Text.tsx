@@ -1,5 +1,9 @@
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo text component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Text.stories.tsx
+ */
 export const Text = styled("span", {
   // display: "block",
   fontVariantNumeric: "tabular-nums",
@@ -20,39 +24,34 @@ export const Text = styled("span", {
     },
     size: {
       "1": {
-        fontSize: "$1",
+        fontSize: "$xs",
       },
       "2": {
-        fontSize: "$2",
+        fontSize: "$sm",
       },
       "3": {
-        fontSize: "$3",
+        fontSize: "$base",
       },
       "4": {
-        fontSize: "$4",
+        fontSize: "$lg",
       },
       "5": {
-        fontSize: "$5",
-        letterSpacing: "-.015em",
+        fontSize: "$xl",
       },
       "6": {
-        fontSize: "$6",
-        letterSpacing: "-.016em",
+        fontSize: "$2xl",
       },
       "7": {
-        fontSize: "$7",
-        letterSpacing: "-.031em",
-        textIndent: "-.005em",
+        fontSize: "$3xl",
       },
       "8": {
-        fontSize: "$8",
-        letterSpacing: "-.034em",
-        textIndent: "-.018em",
+        fontSize: "$4xl",
       },
       "9": {
-        fontSize: "$9",
-        letterSpacing: "-.055em",
-        textIndent: "-.025em",
+        fontSize: "$5xl",
+      },
+      "10": {
+        fontSize: "$6xl",
       },
     },
     weight: {

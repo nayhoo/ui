@@ -54,12 +54,6 @@ export const Avatar6: Story = {
   },
 };
 
-export const Title: Story = {
-  args: {
-    variant: "title",
-  },
-};
-
 export const Heading: Story = {
   args: {
     variant: "heading",

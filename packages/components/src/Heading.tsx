@@ -11,6 +11,10 @@ type HeadingVariants = { size?: HeadingSizeVariants } & Omit<VariantProps<typeof
 type HeadingProps = React.ComponentProps<typeof DEFAULT_TAG> &
   HeadingVariants & { css?: CSS; as?: any };
 
+/**
+ * Nayhoo heading component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Heading.stories.tsx
+ */
 export const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingProps>(
   (props, forwardedRef) => {
     const { size = "1", ...textProps } = props;
@@ -25,10 +29,26 @@ export const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, He
 
     // This is the mapping of Heading Variants to Text css
     const textCss: Record<HeadingSizeVariants, CSS> = {
-      1: { fontWeight: 500, lineHeight: "20px", "@bp2": { lineHeight: "23px" } },
-      2: { fontWeight: 500, lineHeight: "25px", "@bp2": { lineHeight: "30px" } },
-      3: { fontWeight: 500, lineHeight: "33px", "@bp2": { lineHeight: "41px" } },
-      4: { fontWeight: 500, lineHeight: "35px", "@bp2": { lineHeight: "55px" } },
+      1: {
+        fontWeight: "$medium",
+        lineHeight: "$fontSizes$4",
+        "@bp2": { lineHeight: "$fontSizes$5" },
+      },
+      2: {
+        fontWeight: "$medium",
+        lineHeight: "$fontSizes$6",
+        "@bp2": { lineHeight: "$fontSizes$7" },
+      },
+      3: {
+        fontWeight: "$medium",
+        lineHeight: "$fontSizes$7",
+        "@bp2": { lineHeight: "$fontSizes$8" },
+      },
+      4: {
+        fontWeight: "$medium",
+        lineHeight: "$fontSizes$8",
+        "@bp2": { lineHeight: "$fontSizes$9" },
+      },
     };
 
     return (

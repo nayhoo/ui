@@ -5,6 +5,10 @@ import React from "react";
 type ButtonVariants = VariantProps<typeof StyledButton>;
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariants & { css?: CSS };
 
+/**
+ * Nayhoo button component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Button.stories.tsx
+ */
 export const Button = React.forwardRef<React.ElementRef<"button">, ButtonProps>(
   (props, forwardedRef) => (
     <StyledButton {...props} disabled={props.disabled || Boolean(props.loading)} ref={forwardedRef}>
@@ -22,10 +26,10 @@ const StyledButton = styled("button", {
   boxSizing: "border-box",
   display: "inline-flex",
   flexShrink: 0,
-  fontSize: "$2",
+  fontSize: "$sm",
   fontVariantNumeric: "tabular-nums",
   fontWeight: "$medium",
-  height: "$5",
+  height: "$6",
   justifyContent: "center",
   lineHeight: "1",
   px: "$2",
@@ -65,30 +69,35 @@ const StyledButton = styled("button", {
     shape: {
       square: {},
       pill: {
-        borderRadius: "$pill",
+        borderRadius: "$full",
       },
     },
     size: {
       "1": {
-        borderRadius: "$1",
-        fontSize: "$1",
-        height: "$5",
-        lineHeight: "$sizes$5",
+        borderRadius: "$lg",
+        fontSize: "$xs",
+        height: "$6",
+        lineHeight: "$sizes$6",
         px: "$2",
       },
       "2": {
-        borderRadius: "$2",
-        fontSize: "$3",
-        height: "$6",
-        lineHeight: "$sizes$6",
-        px: "$3",
+        borderRadius: "$xl",
+        fontSize: "$base",
+        height: "$8",
+        lineHeight: "$sizes$8",
+        px: "$4",
       },
       "3": {
-        borderRadius: "$2",
-        fontSize: "$4",
-        height: "$7",
-        lineHeight: "$sizes$7",
-        px: "$4",
+        borderRadius: "$xl",
+        fontSize: "$lg",
+        height: "$10",
+        lineHeight: "$sizes$10",
+        px: "$5",
+      },
+      fullWidth: {
+        true: {
+          width: "$full",
+        },
       },
     },
     variant: {

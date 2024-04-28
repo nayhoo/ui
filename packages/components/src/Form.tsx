@@ -1,6 +1,10 @@
 import * as FormPrimitive from "@radix-ui/react-form";
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo form component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Form.stories.tsx
+ */
 export const Form = FormPrimitive.Root;
 
 export const FormControl = FormPrimitive.Control;
@@ -12,9 +16,9 @@ export const FormField = styled(FormPrimitive.Field, {
 
 export const FormLabel = styled(FormPrimitive.Label, {
   color: "$textLabel",
-  fontSize: "$3",
+  fontSize: "$base",
   fontWeight: "$medium",
-  lineHeight: "$sizes$$6",
+  lineHeight: "$sizes$6",
 
   // "&[data-invalid]": {
   //   color: "$error",
@@ -25,7 +29,7 @@ export const FormLabel = styled(FormPrimitive.Label, {
 });
 
 export const FormMessage = styled(FormPrimitive.Message, {
-  fontSize: "$2",
+  fontSize: "$sm",
   opacity: 0.8,
 
   variants: {

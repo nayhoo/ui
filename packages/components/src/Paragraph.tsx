@@ -11,6 +11,10 @@ type ParagraphVariants = { size?: ParagraphSizeVariants } & Omit<VariantProps<ty
 type ParagraphProps = React.ComponentProps<typeof DEFAULT_TAG> &
   ParagraphVariants & { css?: CSS; as?: any };
 
+/**
+ * Nayhoo paragraph component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Paragraph.stories.tsx
+ */
 export const Paragraph = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, ParagraphProps>(
   (props, forwardedRef) => {
     const { size = "1", ...textProps } = props;
@@ -23,8 +27,8 @@ export const Paragraph = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, 
 
     // This is the mapping of Paragraph Variants to Text css
     const textCss: Record<ParagraphSizeVariants, CSS> = {
-      1: { lineHeight: "25px", "@bp2": { lineHeight: "27px" } },
-      2: { lineHeight: "27px", "@bp2": { lineHeight: "30px" } },
+      1: { lineHeight: "$fontSizes$2", "@bp2": { lineHeight: "$fontSizes$3" } },
+      2: { lineHeight: "$fontSizes$3", "@bp2": { lineHeight: "$fontSizes$4" } },
     };
 
     return (

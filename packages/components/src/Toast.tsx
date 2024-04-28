@@ -26,6 +26,10 @@ const ToastContext = React.createContext(defaultToastState);
 
 export const useToast = () => React.useContext(ToastContext);
 
+/**
+ * Nayhoo toast component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Toast.stories.tsx
+ */
 export const Toast = ({ children }: { children: React.ReactNode }) => {
   const [toasts, setToasts] = React.useState<Toast[]>([]);
 
@@ -91,13 +95,13 @@ const swipeOut = keyframes({
 const ToastRoot = styled(ToastPrimitives.Root, {
   alignItems: "center",
   backgroundColor: "$surface",
-  borderRadius: "$2",
+  borderRadius: "$lg",
   boxShadow: "$colors$shadow 0px 10px 38px -10px, $colors$shadow 0px 10px 20px -15px",
-  columnGap: "$3",
+  columnGap: "$4",
   display: "grid",
   gridTemplateAreas: '"title action" "description action"',
   gridTemplateColumns: "auto max-content",
-  padding: "$3",
+  padding: "$4",
 
   '&[data-state="open"]': {
     animation: `${slideIn} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
@@ -126,7 +130,7 @@ const ToastRoot = styled(ToastPrimitives.Root, {
 });
 
 const ToastTitle = styled(ToastPrimitives.Title, {
-  fontSize: "$3",
+  fontSize: "$base",
   fontWeight: "$medium",
   gridArea: "title",
   m: 0,
@@ -134,9 +138,8 @@ const ToastTitle = styled(ToastPrimitives.Title, {
 
 const ToastDescription = styled(ToastPrimitives.Description, {
   color: "$textDescription",
-  fontSize: "$2",
+  fontSize: "$sm",
   gridArea: "description",
-  lineHeight: 1.3,
   m: 0,
 });
 

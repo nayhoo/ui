@@ -1,6 +1,10 @@
 import { pulse } from "./keyframes";
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo skeleton component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Skeleton.stories.tsx
+ */
 export const Skeleton = styled("div", {
   backgroundColor: "$transparentHover",
   overflow: "hidden",
@@ -26,51 +30,48 @@ export const Skeleton = styled("div", {
     variant: {
       avatar1: {
         borderRadius: "$round",
-        size: "$3",
+        size: "$4",
       },
       avatar2: {
         borderRadius: "$round",
-        size: "$5",
+        size: "$6",
       },
       avatar3: {
         borderRadius: "$round",
-        size: "$6",
+        size: "$8",
       },
       avatar4: {
         borderRadius: "$round",
-        size: "$7",
+        size: "3rem",
       },
       avatar5: {
         borderRadius: "$round",
-        size: "$8",
+        size: "4rem",
       },
       avatar6: {
         borderRadius: "$round",
-        size: "$9",
+        size: "5rem",
       },
       text: {
         height: "$1",
-      },
-      title: {
-        height: "$5",
       },
       heading: {
         height: "$3",
       },
       button1: {
-        borderRadius: "$1",
-        height: "$5",
-        width: "$8",
+        borderRadius: "$lg",
+        height: "$6",
+        width: 64,
       },
       button2: {
-        borderRadius: "$2",
-        height: "$6",
-        width: "$9",
+        borderRadius: "$xl",
+        height: "$8",
+        width: 88,
       },
       button3: {
-        borderRadius: "$2",
-        height: "$7",
-        width: 94,
+        borderRadius: "$xl",
+        height: "$10",
+        width: 112,
       },
     },
   },

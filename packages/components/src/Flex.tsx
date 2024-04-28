@@ -1,5 +1,9 @@
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo flex component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Flex.stories.tsx
+ */
 export const Flex = styled("div", {
   boxSizing: "border-box",
   display: "flex",
@@ -88,6 +92,9 @@ export const Flex = styled("div", {
       },
       9: {
         gap: "$9",
+      },
+      10: {
+        gap: "$10",
       },
     },
   },

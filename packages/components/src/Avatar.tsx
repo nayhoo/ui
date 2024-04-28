@@ -18,14 +18,18 @@ type AvatarProps = AvatarPrimitiveProps &
     status?: StatusColors["color"];
   };
 
+/**
+ * Nayhoo avatar component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Avatar.stories.tsx
+ */
 export const Avatar = React.forwardRef<React.ElementRef<typeof StyledAvatar>, AvatarProps>(
   ({ alt, css, fallback, shape, size, src, status, ...props }, forwardedRef) => (
     <Box
       css={{
         ...css,
-        height: "fit-content",
+        height: "$fit",
         position: "relative",
-        width: "fit-content",
+        width: "$fit",
       }}
     >
       <StyledAvatar {...props} ref={forwardedRef} shape={shape} size={size}>
@@ -62,7 +66,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   display: "flex",
   flexShrink: 0,
   fontFamily: "inherit",
-  fontWeight: 500,
+  fontWeight: "$medium",
   justifyContent: "center",
   lineHeight: "1",
   margin: "0",
@@ -87,30 +91,30 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   variants: {
     size: {
       "1": {
-        size: "$3",
+        size: "$4",
       },
       "2": {
-        size: "$5",
-      },
-      "3": {
         size: "$6",
       },
-      "4": {
-        size: "$7",
-      },
-      "5": {
+      "3": {
         size: "$8",
       },
+      "4": {
+        size: "3rem",
+      },
+      "5": {
+        size: "4rem",
+      },
       "6": {
-        size: "$9",
+        size: "5rem",
       },
     },
     shape: {
       circle: {
-        borderRadius: "50%",
+        borderRadius: "$round",
       },
       square: {
-        borderRadius: "$2",
+        borderRadius: "$lg",
       },
     },
     inactive: {
@@ -169,23 +173,23 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
   variants: {
     size: {
       "1": {
-        fontSize: "10px",
+        fontSize: "$xs",
         lineHeight: "15px",
       },
       "2": {
-        fontSize: "$3",
+        fontSize: "$base",
       },
       "3": {
-        fontSize: "$6",
+        fontSize: "$2xl",
       },
       "4": {
-        fontSize: "$7",
+        fontSize: "$3xl",
       },
       "5": {
-        fontSize: "$8",
+        fontSize: "$4xl",
       },
       "6": {
-        fontSize: "$9",
+        fontSize: "$6xl",
       },
     },
   },
