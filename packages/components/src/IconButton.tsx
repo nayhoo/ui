@@ -6,6 +6,10 @@ type IconButtonVariants = VariantProps<typeof StyledButton>;
 type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   IconButtonVariants & { css?: CSS };
 
+/**
+ * Nayhoo icon button component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/IconButton.stories.tsx
+ */
 export const IconButton = React.forwardRef<React.ElementRef<"button">, IconButtonProps>(
   (props, forwardedRef) => (
     <StyledButton {...props} disabled={props.disabled || Boolean(props.loading)} ref={forwardedRef}>
@@ -23,7 +27,7 @@ const StyledButton = styled("button", {
   boxSizing: "border-box",
   display: "inline-flex",
   flexShrink: 0,
-  fontSize: "$2",
+  fontSize: "$sm",
   fontVariantNumeric: "tabular-nums",
   justifyContent: "center",
   lineHeight: "1",
@@ -55,20 +59,20 @@ const StyledButton = styled("button", {
   variants: {
     size: {
       "1": {
-        borderRadius: "$1",
-        size: "$5",
-      },
-      "2": {
-        borderRadius: "$2",
+        borderRadius: "$lg",
         size: "$6",
       },
+      "2": {
+        borderRadius: "$xl",
+        size: "$8",
+      },
       "3": {
-        borderRadius: "$2",
-        size: "$7",
+        borderRadius: "$xl",
+        size: "3rem",
       },
       "4": {
-        borderRadius: "$3",
-        size: "$8",
+        borderRadius: "$2xl",
+        size: "4rem",
       },
     },
     variant: {

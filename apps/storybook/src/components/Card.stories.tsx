@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Box } from "@nayhoo/components";
+import { Card } from "@nayhoo/components";
 
-const meta: Meta<typeof Box> = {
-  component: Box,
+const meta: Meta<typeof Card> = {
+  component: Card,
 };
 
 export default meta;
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof Card>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -16,6 +16,13 @@ type Story = StoryObj<typeof Box>;
  */
 export const Default: Story = {
   args: {
-    css: { backgroundColor: "$transparentHover", borderRadius: "$lg", size: 300 },
+    css: { size: 300 },
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    ...Default.args,
+    variant: "outline",
   },
 };

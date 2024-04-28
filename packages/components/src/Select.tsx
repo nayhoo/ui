@@ -17,6 +17,10 @@ type SelectProps = SelectPrimitives.SelectProps & {
   size?: "1" | "2";
 };
 
+/**
+ * Nayhoo select component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Select.stories.tsx
+ */
 export const Select = ({ align, items = [], placeholder, side, size, ...props }: SelectProps) => (
   <SelectPrimitives.Root {...props}>
     <StyledSelectTrigger size={size}>
@@ -120,15 +124,15 @@ const StyledSelectTrigger = styled(SelectPrimitives.SelectTrigger, {
     },
     size: {
       "1": {
-        borderRadius: "$1",
-        height: "$5",
-        fontSize: "$1",
+        borderRadius: "$lg",
+        height: "$6",
+        fontSize: "$xs",
         px: "$1",
       },
       "2": {
-        borderRadius: "$2",
-        height: "$6",
-        fontSize: "$2",
+        borderRadius: "$xl",
+        height: "$8",
+        fontSize: "$sm",
         px: "$2",
       },
     },
@@ -172,7 +176,7 @@ const StyledItem = styled(SelectPrimitives.Item, {
   lineHeight: 1,
   display: "flex",
   alignItems: "center",
-  pr: "33px",
+  pr: "$8",
   position: "relative",
   userSelect: "none",
 
@@ -194,15 +198,15 @@ const StyledItem = styled(SelectPrimitives.Item, {
   variants: {
     size: {
       "1": {
-        borderRadius: "$1",
-        height: "$5",
-        fontSize: "$1",
+        borderRadius: "$lg",
+        height: "$6",
+        fontSize: "$xs",
         pl: "$1",
       },
       "2": {
-        borderRadius: "$2",
-        height: "$6",
-        fontSize: "$2",
+        borderRadius: "$xl",
+        height: "$8",
+        fontSize: "$sm",
         pl: "$2",
       },
     },

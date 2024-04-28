@@ -4,7 +4,7 @@ export * from "./AspectRatio";
 
 export * from "./Avatar";
 
-// export * from "./Card";
+export * from "./Card";
 
 export * from "./Box";
 

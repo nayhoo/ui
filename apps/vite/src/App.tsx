@@ -1,26 +1,6 @@
-import { meaningOfLife, sleep } from "@nayhoo/utils";
+import { meaningOfLife } from "@nayhoo/utils";
 import { darkTheme, globalStyles } from "@nayhoo/components/stitches.config";
-import {
-  Box,
-  Button,
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogTitle,
-  DialogTrigger,
-  Flex,
-  Heading,
-  Image,
-  Link,
-  Paragraph,
-  Text,
-  ToastAction,
-  Tooltip,
-  useToast,
-} from "@nayhoo/components";
-import reactLogo from "./assets/react.svg";
+import { Button, Container } from "@nayhoo/components";
 import React, { useState } from "react";
 import "./App.css";
 import { useBodyClassToggle } from "@nayhoo/hooks";
@@ -28,95 +8,20 @@ import { useBodyClassToggle } from "@nayhoo/hooks";
 globalStyles();
 
 const App = () => {
-  const toast = useToast();
-
   const [count, setCount] = useState(meaningOfLife);
-  const [loading, setLoading] = useState(false);
 
   const isDarkTheme = count % 2 === 0;
 
   useBodyClassToggle(darkTheme, isDarkTheme);
 
   return (
-    <Box>
-      <Flex justify="center" css={{ mb: "$2" }}>
-        <Link href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <Image src="/vite.svg" className="logo" alt="Vite logo" />
-        </Link>
-        <Link href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <Image src={reactLogo} className="logo react" alt="React logo" />
-        </Link>
-      </Flex>
-      <Heading size="4">Vite + React</Heading>
-      <Box css={{ p: "$6" }}>
-        <Box css={{ mb: "$2" }}>
-          <Tooltip content="note: even 🌚, odd 🌝">
-            <Button onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
-          </Tooltip>
-        </Box>
-        <Paragraph>
-          Edit <Text as="code">src/App.tsx</Text> and save to test HMR
-        </Paragraph>
-      </Box>
-      <Paragraph color="secondary" css={{ mb: "$2" }}>
-        Click on the Vite and React logos to learn more
-      </Paragraph>
+    <Container size="1">
+      {/* TODO: example page */}
 
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button>Click me!</Button>
-        </DialogTrigger>
-
-        <DialogContent
-          components={{
-            Footer: (
-              <DialogFooter justify="between">
-                <DialogClose asChild>
-                  <Button variant="outline">Cancel</Button>
-                </DialogClose>
-
-                <Button
-                  loading={loading}
-                  onClick={async () => {
-                    const now = new Date();
-                    const inOneWeek = now.setDate(now.getDate() + 7);
-
-                    const description = new Intl.DateTimeFormat("en-US", {
-                      dateStyle: "full",
-                      timeStyle: "short",
-                    }).format(inOneWeek);
-
-                    setLoading(true);
-                    await sleep(2000);
-
-                    toast({
-                      action: (
-                        <ToastAction altText="Goto schedule to undo" asChild>
-                          <Button size="1" variant="outline">
-                            Undo
-                          </Button>
-                        </ToastAction>
-                      ),
-                      description,
-                      title: "Scheduled: Catch up",
-                    });
-
-                    setLoading(false);
-                  }}
-                >
-                  Ok!
-                </Button>
-              </DialogFooter>
-            ),
-          }}
-        >
-          <DialogTitle>Hello!</DialogTitle>
-          <DialogDescription>
-            You are viewing the {isDarkTheme ? "dark" : "light"} theme!
-          </DialogDescription>
-        </DialogContent>
-      </Dialog>
-    </Box>
+      <Button onClick={() => setCount((count) => count + 1)} variant="outline">
+        count is {count}
+      </Button>
+    </Container>
   );
 };
 

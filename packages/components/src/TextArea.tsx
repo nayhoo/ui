@@ -1,5 +1,9 @@
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo text area component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/TextArea.stories.tsx
+ */
 export const TextArea = styled("textarea", {
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   appearance: "none",
@@ -60,21 +64,21 @@ export const TextArea = styled("textarea", {
     },
     size: {
       "1": {
-        borderRadius: "$1",
-        fontSize: "$1",
-        lineHeight: "$sizes$3",
+        borderRadius: "$lg",
+        fontSize: "$xs",
+        lineHeight: "$fontSizes$xs",
         p: "$1",
       },
       "2": {
-        borderRadius: "$1",
-        fontSize: "$2",
-        lineHeight: "$sizes$4",
+        borderRadius: "$lg",
+        fontSize: "$sm",
+        lineHeight: "$fontSizes$sm",
         p: "$1",
       },
       "3": {
-        borderRadius: "$2",
-        fontSize: "$3",
-        lineHeight: "$sizes$5",
+        borderRadius: "$xl",
+        fontSize: "$base",
+        lineHeight: "$fontSizes$base",
         p: "$2",
       },
     },

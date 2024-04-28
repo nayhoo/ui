@@ -12,7 +12,7 @@ export default meta;
 type Story = StoryObj<typeof AspectRatio>;
 
 const AspectRatioWithWrapper = ({ ...props }) => (
-  <Box css={{ borderRadius: "$2", overflow: "hidden", width: 300 }}>
+  <Box css={{ borderRadius: "$lg", overflow: "hidden", width: 300 }}>
     <AspectRatio {...props} />
   </Box>
 );

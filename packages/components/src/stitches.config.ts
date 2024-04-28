@@ -35,6 +35,7 @@ export const { config, createTheme, css, getCssText, globalCss, keyframes, reset
 
         backgroundTextContrast: colors.black,
         surfaceTextContrast: colors.black,
+        transparentSurfaceTextContrast: colors.white,
 
         textDescription: "#666666",
         textDisabled: "#cccccc",
@@ -57,51 +58,90 @@ export const { config, createTheme, css, getCssText, globalCss, keyframes, reset
       },
       fonts: {},
       fontSizes: {
-        1: "11px",
-        2: "13px",
-        3: "15px",
-        4: "18px",
-        5: "20px",
-        6: "22px",
-        7: "28px",
-        8: "36px",
-        9: "60px",
+        /** 12px */
+        xs: "0.75rem",
+        /** 14px */
+        sm: "0.875rem",
+        /** 16px */
+        base: "1rem",
+        /** 18px */
+        lg: "1.125rem",
+        /** 20px */
+        xl: "1.25rem",
+        /** 24px */
+        "2xl": "1.5rem",
+        /** 30px */
+        "3xl": "1.875rem",
+        /** 36px */
+        "4xl": "2.25rem",
+        /** 48px */
+        "5xl": "3rem",
+        /** 60px */
+        "6xl": "3.75rem",
+        /** 72px */
+        "7xl": "4.5rem",
+        /** 96px */
+        "8xl": "6rem",
+        /** 128px */
+        "9xl": "8rem",
       },
       fontWeights: {
+        thin: 100,
+        extralight: 200,
+        light: 300,
         normal: 400,
         medium: 500,
+        semibold: 600,
         bold: 700,
+        extrabold: 800,
         black: 900,
       },
       radii: {
-        1: "4px",
-        2: "6px",
-        3: "8px",
-        4: "12px",
+        none: "0px",
+        /** 2px */
+        sm: "0.125rem",
+        /** 4px */
+        md: "0.25rem",
+        /** 6px */
+        lg: "0.375rem",
+        /** 8px */
+        xl: "0.5rem",
+        /** 12px */
+        "2xl": "0.75rem",
+        /** 16px */
+        "3xl": "1rem",
         round: "50%",
-        pill: "9999px",
+        full: "9999px",
       },
       sizes: {
-        1: "4px",
-        2: "8px",
-        3: "16px",
-        4: "20px",
-        5: "24px",
-        6: "32px",
-        7: "48px",
-        8: "64px",
-        9: "80px",
+        1: "0.25rem",
+        2: "0.5rem",
+        3: "0.75rem",
+        4: "1rem",
+        5: "1.25rem",
+        6: "1.5rem",
+        7: "1.75rem",
+        8: "2rem",
+        9: "2.25rem",
+        10: "2.5rem",
+        auto: "auto",
+        full: "100%",
+        min: "min-content",
+        max: "max-content",
+        fit: "fit-content",
       },
       space: {
-        1: "4px",
-        2: "8px",
-        3: "16px",
-        4: "20px",
-        5: "24px",
-        6: "32px",
-        7: "48px",
-        8: "64px",
-        9: "80px",
+        1: "0.25rem",
+        2: "0.5rem",
+        3: "0.75rem",
+        4: "1rem",
+        5: "1.25rem",
+        6: "1.5rem",
+        7: "1.75rem",
+        8: "2rem",
+        9: "2.25rem",
+        10: "2.5rem",
+        auto: "auto",
       },
       zIndices: {
         1: "100",
@@ -227,6 +267,7 @@ export const darkTheme = createTheme("dark", {
 
     backgroundTextContrast: colors.white,
     surfaceTextContrast: colors.white,
+    transparentSurfaceTextContrast: colors.black,
 
     textDescription: "#666666",
     textDisabled: "#cccccc",

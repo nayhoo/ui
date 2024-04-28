@@ -1,6 +1,10 @@
 import { styled } from "./stitches.config";
 import { Text } from "./Text";
 
+/**
+ * Nayhoo link component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Link.stories.tsx
+ */
 export const Link = styled("a", {
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   alignItems: "center",

@@ -5,13 +5,14 @@ import { Flex } from "./Flex";
 import { panelStyles } from "./Panel";
 import { styled, CSS, css, VariantProps } from "./stitches.config";
 
-/* --------------------------------- Dialog --------------------------------- */
+/**
+ * Nayhoo dialog component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Dialog.stories.tsx
+ */
 export const Dialog = DialogPrimitive.Root;
 
-/* ------------------------------ Dialog close ------------------------------ */
 export const DialogClose = DialogPrimitive.Close;
 
-/* ----------------------------- Dialog content ----------------------------- */
 type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
 type DialogContentVariants = VariantProps<typeof StyledContent>;
 type DialogContentProps = DialogContentPrimitiveProps &
@@ -30,48 +31,43 @@ export const DialogContent = React.forwardRef<
     <StyledContent {...props} ref={forwardedRef}>
       {components?.Header}
 
-      <Box css={{ p: "$4" }}>{children}</Box>
+      <Box css={{ p: "$5" }}>{children}</Box>
 
       {components?.Footer}
     </StyledContent>
   </DialogPrimitive.Portal>
 ));
 
-/* --------------------------- Dialog description --------------------------- */
 export const DialogDescription = styled(DialogPrimitive.Description, {
   color: "$textDescription",
-  fontSize: "$3",
-  mb: "$3",
+  fontSize: "$base",
+  mb: "$4",
 });
 
-/* ------------------------------ Dialog footer ----------------------------- */
 export const DialogFooter = styled(Flex, {
   backgroundColor: "$surface",
   borderTop: "1px solid $divider",
   bottom: 0,
   gap: "$2",
   position: "sticky",
-  px: "$4",
+  px: "$5",
   py: "$2",
   zIndex: "$1",
 });
 
-/* ------------------------------ Dialog header ----------------------------- */
 export const DialogHeader = styled(Flex, {
   backgroundColor: "$surface",
   position: "sticky",
-  px: "$4",
+  px: "$5",
   py: "$1",
   top: 0,
   zIndex: "$1",
 });
 
-/* ------------------------------ Dialog title ------------------------------ */
 export const DialogTitle = styled(DialogPrimitive.Title, {
-  m: "0 0 $3 0",
+  m: "0 0 $4 0",
 });
 
-/* ----------------------------- Dialog trigger ----------------------------- */
 export const DialogTrigger = DialogPrimitive.Trigger;
 
 export const overlayStyles = css({
@@ -96,7 +92,7 @@ const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   variants: {
     fullWidth: {
       true: {
-        width: "100%",
+        width: "$full",
       },
     },
     size: {

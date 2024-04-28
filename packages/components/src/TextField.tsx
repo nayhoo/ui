@@ -1,5 +1,9 @@
 import { styled } from "./stitches.config";
 
+/**
+ * Nayhoo text field component.
+ * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/TextField.stories.tsx
+ */
 export const TextField = styled("input", {
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
   appearance: "none",
@@ -57,36 +61,36 @@ export const TextField = styled("input", {
   variants: {
     size: {
       "1": {
-        borderRadius: "$1",
-        fontSize: "$1",
-        height: "$5",
-        lineHeight: "$sizes$3",
+        borderRadius: "$lg",
+        fontSize: "$xs",
+        lineHeight: "$fontSizes$xs",
+        height: "$6",
         px: "$1",
 
         "&:-webkit-autofill::first-line": {
-          fontSize: "$1",
+          fontSize: "$xs",
         },
       },
       "2": {
-        borderRadius: "$1",
-        fontSize: "$2",
-        height: "$6",
-        lineHeight: "$sizes$4",
+        borderRadius: "$lg",
+        fontSize: "$sm",
+        lineHeight: "$fontSizes$sm",
+        height: "$8",
         px: "$1",
 
         "&:-webkit-autofill::first-line": {
-          fontSize: "$2",
+          fontSize: "$sm",
         },
       },
       "3": {
-        borderRadius: "$2",
-        fontSize: "$3",
-        height: "$6",
-        lineHeight: "$sizes$5",
+        borderRadius: "$xl",
+        fontSize: "$base",
+        lineHeight: "$fontSizes$base",
+        height: "$8",
         px: "$2",
 
         "&:-webkit-autofill::first-line": {
-          fontSize: "$3",
+          fontSize: "$base",
         },
       },
     },
