@@ -38,18 +38,19 @@ export const { config, createTheme, css, getCssText, globalCss, keyframes, reset
         transparentSurfaceTextContrast: colors.white,
 
         textDescription: "#666666",
-        textDisabled: "#cccccc",
         textLabel: "#666666",
         textPlaceholder: "#999999",
 
         // todo: can these all below be calculated with a theme helper?
+        textDisabled: "rgba(0, 0, 0, .2)",
+
         transparentHover: "rgba(0, 0, 0, 0.04)",
         transparentFocus: "rgba(0, 0, 0, 0.12)",
         transparentSelected: "rgba(0, 0, 0, 0.04)",
         transparentActivated: "rgba(0, 0, 0, 0.04)",
         transparentPressed: "rgba(0, 0, 0, 0.12)",
         transparentDragged: "rgba(0, 0, 0, 0.08)",
-        transparentDisabled: "#f2f2f2",
+        transparentDisabled: "rgba(0, 0, 0, 0.04)",
 
         transparentOverlay: "rgba(0, 0, 0, .15)",
 
@@ -270,9 +271,10 @@ export const darkTheme = createTheme("dark", {
     transparentSurfaceTextContrast: colors.black,
 
     textDescription: "#666666",
-    textDisabled: "#cccccc",
     textLabel: "#666666",
     textPlaceholder: "#999999",
+
+    textDisabled: "rgba(255, 255, 255, .2)",
 
     transparentHover: "rgba(255, 255, 255, 0.04)",
     transparentFocus: "rgba(255, 255, 255, 0.12)",
@@ -280,12 +282,12 @@ export const darkTheme = createTheme("dark", {
     transparentActivated: "rgba(255, 255, 255, 0.04)",
     transparentPressed: "rgba(255, 255, 255, 0.12)",
     transparentDragged: "rgba(255, 255, 255, 0.08)",
-    transparentDisabled: "#f2f2f2",
+    transparentDisabled: "rgba(255, 255, 255, 0.04)",
 
     transparentOverlay: "rgba(255, 255, 255, .15)",
 
     divider: "rgba(255, 255, 255, 0.12)",
-    shadow: "rgba(255, 255, 255, 0.12)",
+    shadow: "rgba(0, 0, 0, 0.12)",
   },
 });
 
