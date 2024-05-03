@@ -1,6 +1,6 @@
 import React from "react";
 import * as SelectPrimitives from "@radix-ui/react-select";
-import { styled } from "./stitches.config";
+import { CSS, styled } from "./stitches.config";
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -11,6 +11,7 @@ import { panelStyles } from "./Panel";
 
 type SelectProps = SelectPrimitives.SelectProps & {
   align?: SelectPrimitives.PopperContentProps["align"];
+  css?: CSS;
   items: SelectItemProps[];
   placeholder?: SelectPrimitives.SelectValueProps["placeholder"];
   side?: SelectPrimitives.PopperContentProps["side"];
@@ -21,9 +22,17 @@ type SelectProps = SelectPrimitives.SelectProps & {
  * Nayhoo select component.
  * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Select.stories.tsx
  */
-export const Select = ({ align, items = [], placeholder, side, size, ...props }: SelectProps) => (
+export const Select = ({
+  align,
+  css,
+  items = [],
+  placeholder,
+  side,
+  size,
+  ...props
+}: SelectProps) => (
   <SelectPrimitives.Root {...props}>
-    <StyledSelectTrigger size={size}>
+    <StyledSelectTrigger css={css} size={size}>
       <StyledSelectValue placeholder={placeholder} />
 
       <StyledSelectIcon>
