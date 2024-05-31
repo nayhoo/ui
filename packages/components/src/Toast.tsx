@@ -85,7 +85,7 @@ const ToastViewport = styled(ToastPrimitives.Viewport, {
   padding: VIEWPORT_PADDING,
   position: "fixed",
   right: 0,
-  width: "100%",
+  width: `calc(100% - ${VIEWPORT_PADDING * 2}px`,
   zIndex: 2147483647,
 });
 
