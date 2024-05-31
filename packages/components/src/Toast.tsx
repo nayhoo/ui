@@ -10,9 +10,11 @@ type Toast = {
   description?: string;
   error?: boolean;
   title?: string;
+  /** The time in milliseconds that should elapse before automatically closing the toast. This will override the value supplied to the provider */
+  duration?: number;
 };
 
-type ToastState = ({ action, description, title }: Toast) => void;
+type ToastState = ({ action, description, error, title, duration }: Toast) => void;
 
 const defaultToastState: ToastState = () => {
   // eslint-disable-next-line no-console
@@ -26,16 +28,20 @@ const ToastContext = React.createContext(defaultToastState);
 
 export const useToast = () => React.useContext(ToastContext);
 
+type ToastProps = {
+  children: React.ReactNode;
+} & ToastPrimitives.ToastProviderProps;
+
 /**
  * Nayhoo toast component.
  * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Toast.stories.tsx
  */
-export const Toast = ({ children }: { children: React.ReactNode }) => {
+export const Toast = ({ children, ...props }: ToastProps) => {
   const [toasts, setToasts] = React.useState<Toast[]>([]);
 
   const toast = React.useCallback(
-    ({ action, description, error, title }: Toast) => {
-      setToasts([{ action, description, error, title }, ...toasts]);
+    ({ action, description, error, title, duration }: Toast) => {
+      setToasts([...toasts, { action, description, error, title, duration }]);
     },
     [toasts]
   );
@@ -44,9 +50,9 @@ export const Toast = ({ children }: { children: React.ReactNode }) => {
     <ToastContext.Provider value={toast}>
       {children}
 
-      <ToastPrimitives.Provider>
-        {toasts.map(({ action, description, error, title }) => (
-          <ToastRoot defaultOpen error={error}>
+      <ToastPrimitives.Provider {...props}>
+        {toasts.map(({ action, description, error, title, duration }) => (
+          <ToastRoot defaultOpen error={error} duration={duration}>
             <Flex direction="column" gap="2">
               <Flex align="center" gap="2">
                 {error && <StyledCrossCircledIcon />}
@@ -64,21 +70,22 @@ export const Toast = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const VIEWPORT_PADDING = 25;
+/** $2 spacing */
+const VIEWPORT_PADDING = 8;
 
 const ToastViewport = styled(ToastPrimitives.Viewport, {
   bottom: 0,
   display: "flex",
   flexDirection: "column",
-  gap: 10,
+  gap: "$2",
   listStyle: "none",
   margin: 0,
-  maxWidth: "100vw",
+  maxWidth: "390px",
   outline: "none",
   padding: VIEWPORT_PADDING,
   position: "fixed",
   right: 0,
-  width: 390,
+  width: "100%",
   zIndex: 2147483647,
 });
 

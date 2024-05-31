@@ -22,7 +22,7 @@ const ToastTrigger = () => {
 
         const description = new Intl.DateTimeFormat("en-US", {
           dateStyle: "full",
-          timeStyle: "short",
+          timeStyle: "full",
         }).format(inOneWeek);
 
         toast({
