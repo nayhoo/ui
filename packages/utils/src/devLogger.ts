@@ -23,8 +23,8 @@ export class DevLogger implements Logger {
 
   readonly warning: LogFn;
 
-  constructor(environment: string) {
-    if (environment === "development") {
+  constructor(enable: boolean) {
+    if (enable) {
       this.error = (message?: any, ...optionalParams: any[]) =>
         console.log("%c error", "color: red", message, ...optionalParams);
 
