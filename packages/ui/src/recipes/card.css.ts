@@ -6,7 +6,7 @@ export const cardRecipe = recipe({
   base: [
     panelRecipe({}),
     {
-      padding: `${theme.space[6]} ${theme.space[9]} ${theme.space[9]} ${theme.space[9]}`,
+      padding: `${theme.space[5]} ${theme.space[5]} ${theme.space[6]} ${theme.space[5]}`,
     },
   ],
 
