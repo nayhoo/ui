@@ -27,10 +27,10 @@ export const gridRecipe = recipe({
     },
     columns: {
       "1": {
-        gridTemplateRows: `repeat(1, minmax(0, 1fr))`,
+        gridTemplateColumns: `repeat(1, minmax(0, 1fr))`,
       },
       "2": {
-        gridTemplateRows: `repeat(2, minmax(0, 2fr))`,
+        gridTemplateColumns: `repeat(2, minmax(0, 2fr))`,
       },
       "3": {
         gridTemplateColumns: `repeat(3, minmax(0, 3fr))`,
