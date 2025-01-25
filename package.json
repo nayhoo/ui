@@ -1,7 +1,7 @@
 {
   "name": "ui",
   "version": "0.3.4",
-  "description": "🌴 Component, hooks and utils",
+  "description": "🌴 ui, hooks and utils",
   "workspaces": [
     "packages/*",
     "apps/*"
