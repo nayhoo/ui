@@ -1,4 +1,4 @@
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
 export const boxRecipe = recipe({
   base: {
@@ -8,3 +8,5 @@ export const boxRecipe = recipe({
   variants: {},
   defaultVariants: {},
 });
+
+export type BoxVariants = NonNullable<RecipeVariants<typeof boxRecipe>>;

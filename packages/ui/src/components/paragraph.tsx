@@ -1,3 +1,4 @@
+import React from "react";
 import { TextVariants, textRecipe } from "@/recipes/text.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -7,10 +8,7 @@ const defaultElement = "p";
 
 type ParagraphSizeVariants = "1" | "2";
 
-type ParagraphProps = ComponentProps<
-  typeof defaultElement,
-  Omit<TextVariants, "size">
-> & {
+type ParagraphProps = ComponentProps<typeof defaultElement, Omit<TextVariants, "size">> & {
   size?: ParagraphSizeVariants;
 };
 
@@ -19,15 +17,10 @@ const textSize: Record<ParagraphSizeVariants, TextVariants["size"]> = {
   2: "4",
 };
 
-export const Paragraph = ({
-  asChild,
-  color,
-  size = "1",
-  weight,
-  ...props
-}: ParagraphProps) => {
+export const Paragraph = ({ asChild, color, size = "1", weight, ...props }: ParagraphProps) => {
   const text = textRecipe({ color, size: textSize[size], weight });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(text, props.className)}>
       {props.children}

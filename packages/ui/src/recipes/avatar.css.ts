@@ -129,9 +129,7 @@ export const avatarImageRecipe = recipe({
   defaultVariants: {},
 });
 
-export type AvatarImageVariants = NonNullable<
-  RecipeVariants<typeof avatarImageRecipe>
->;
+export type AvatarImageVariants = NonNullable<RecipeVariants<typeof avatarImageRecipe>>;
 
 export const avatarFallbackRecipe = recipe({
   base: {
@@ -166,6 +164,4 @@ export const avatarFallbackRecipe = recipe({
   },
 });
 
-export type AvatarFallbackVariants = NonNullable<
-  RecipeVariants<typeof avatarFallbackRecipe>
->;
+export type AvatarFallbackVariants = NonNullable<RecipeVariants<typeof avatarFallbackRecipe>>;

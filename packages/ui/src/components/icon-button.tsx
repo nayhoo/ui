@@ -1,28 +1,18 @@
+import React from "react";
 import { Spinner } from "@/components/spinner";
-import {
-  IconButtonVariants,
-  iconButtonRecipe,
-} from "@/recipes/icon-button.css";
+import { IconButtonVariants, iconButtonRecipe } from "@/recipes/icon-button.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "button";
 
-type IconButtonProps = ComponentProps<
-  typeof defaultElement,
-  IconButtonVariants
->;
+type IconButtonProps = ComponentProps<typeof defaultElement, IconButtonVariants>;
 
-export const IconButton = ({
-  asChild,
-  loading,
-  size,
-  variant,
-  ...props
-}: IconButtonProps) => {
+export const IconButton = ({ asChild, loading, size, variant, ...props }: IconButtonProps) => {
   const iconButton = iconButtonRecipe({ loading, size, variant });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp
       {...props}

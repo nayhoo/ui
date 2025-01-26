@@ -1,3 +1,4 @@
+import React from "react";
 import { Spinner } from "@/components/spinner";
 import { ButtonVariants, buttonRecipe } from "@/recipes/button.css";
 import { ComponentProps } from "@/types/component-props";
@@ -30,6 +31,7 @@ export const Button = ({
     variant,
   });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp
       {...props}

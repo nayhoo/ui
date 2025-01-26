@@ -1,3 +1,4 @@
+import React from "react";
 import { GridVariants, gridRecipe } from "@/recipes/grid.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -30,6 +31,7 @@ export const Grid = ({
     rows,
   });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(grid, props.className)}>
       {props.children}

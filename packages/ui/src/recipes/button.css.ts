@@ -1,4 +1,5 @@
 import { theme } from "@/theme-contracts/theme-contract.css";
+// import { getTextContrast } from "@/utils/get-text-contrast";
 import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
 
 export const buttonRecipe = recipe({
@@ -138,17 +139,16 @@ export const buttonRecipe = recipe({
         color: "primary",
       },
       style: {
-        backgroundColor: theme.semanticColors.primary, // remember this 9 is button base
+        backgroundColor: theme.semanticColors.primary.primary9,
         color: theme.semanticColors.primaryTextContrast,
 
         selectors: {
           "&:hover": {
-            // might be better to just calc this
-            backgroundColor: theme.semanticColors.primaryLighter, // remember this 10 is button hover
+            backgroundColor: theme.semanticColors.primary.primary10,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.primaryLighter, // remember this 10 + filter is button press
-            filter: "brightness(0.92) saturate(1.1) ",
+            backgroundColor: theme.semanticColors.primary.primary10,
+            filter: "brightness(0.92) saturate(1.1)",
           },
         },
       },
@@ -159,16 +159,16 @@ export const buttonRecipe = recipe({
         color: "secondary",
       },
       style: {
-        backgroundColor: theme.semanticColors.secondary,
+        backgroundColor: theme.semanticColors.secondary.secondary9,
         color: theme.semanticColors.secondaryTextContrast,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.secondaryLighter,
+            backgroundColor: theme.semanticColors.secondary.secondary10,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.secondaryLighter,
-            filter: "brightness(0.92) saturate(1.1) ",
+            backgroundColor: theme.semanticColors.secondary.secondary10,
+            filter: "brightness(0.92) saturate(1.1)",
           },
         },
       },
@@ -179,16 +179,16 @@ export const buttonRecipe = recipe({
         color: "error",
       },
       style: {
-        backgroundColor: theme.semanticColors.error,
+        backgroundColor: theme.semanticColors.error.error9,
         color: theme.semanticColors.errorTextContrast,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.errorLighter,
+            backgroundColor: theme.semanticColors.error.error10,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.errorLighter,
-            filter: "brightness(0.92) saturate(1.1) ",
+            backgroundColor: theme.semanticColors.error.error10,
+            filter: "brightness(0.92) saturate(1.1)",
           },
         },
       },

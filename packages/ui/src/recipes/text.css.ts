@@ -15,13 +15,13 @@ export const textRecipe = recipe({
   variants: {
     color: {
       primary: {
-        color: theme.semanticColors.primary,
+        color: theme.semanticColors.primary.primary9,
       },
       secondary: {
-        color: theme.semanticColors.secondary,
+        color: theme.semanticColors.secondary.secondary9,
       },
       error: {
-        color: theme.semanticColors.error,
+        color: theme.semanticColors.error.error9,
       },
       subtle: {
         color: theme.semanticColors.textSubtle,

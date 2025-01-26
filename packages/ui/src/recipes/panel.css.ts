@@ -1,5 +1,5 @@
 import { theme } from "@/theme-contracts/theme-contract.css";
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
 export const panelRecipe = recipe({
   base: {
@@ -12,3 +12,5 @@ export const panelRecipe = recipe({
   variants: {},
   defaultVariants: {},
 });
+
+export type PanelVariants = NonNullable<RecipeVariants<typeof panelRecipe>>;

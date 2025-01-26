@@ -37,16 +37,16 @@ export const linkRecipe = recipe({
   variants: {
     color: {
       primary: {
-        color: theme.semanticColors.primary,
-        textDecorationColor: theme.semanticColors.primary,
+        color: theme.semanticColors.primary.primary9,
+        textDecorationColor: theme.semanticColors.primary.primary9,
       },
       secondary: {
-        color: theme.semanticColors.secondary,
-        textDecorationColor: theme.semanticColors.secondary,
+        color: theme.semanticColors.secondary.secondary9,
+        textDecorationColor: theme.semanticColors.secondary.secondary9,
       },
       error: {
-        color: theme.semanticColors.error,
-        textDecorationColor: theme.semanticColors.error,
+        color: theme.semanticColors.error.error9,
+        textDecorationColor: theme.semanticColors.error.error9,
       },
       subtle: {
         color: theme.semanticColors.textSubtle,

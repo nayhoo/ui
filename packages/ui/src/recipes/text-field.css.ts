@@ -139,6 +139,4 @@ export const textFieldRecipe = recipe({
   },
 });
 
-export type TextFieldVariants = NonNullable<
-  RecipeVariants<typeof textFieldRecipe>
->;
+export type TextFieldVariants = NonNullable<RecipeVariants<typeof textFieldRecipe>>;

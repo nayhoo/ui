@@ -22,6 +22,4 @@ export const separatorRecipe = recipe({
   defaultVariants: {},
 });
 
-export type SeparatorVariants = NonNullable<
-  RecipeVariants<typeof separatorRecipe>
->;
+export type SeparatorVariants = NonNullable<RecipeVariants<typeof separatorRecipe>>;

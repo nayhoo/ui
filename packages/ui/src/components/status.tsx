@@ -1,3 +1,4 @@
+import React from "react";
 import { StatusVariants, statusRecipe } from "@/recipes/status.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -10,6 +11,7 @@ type statusProps = ComponentProps<typeof defaultElement, StatusVariants>;
 export const Status = ({ asChild, ...props }: statusProps) => {
   const status = statusRecipe({});
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(status, props.className)}>
       {props.children}
