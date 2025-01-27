@@ -1,4 +1,3 @@
-import React from "react";
 import { boxRecipe, BoxVariants } from "@/recipes/box.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

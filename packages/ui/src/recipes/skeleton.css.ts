@@ -80,4 +80,6 @@ export const skeletonRecipe = recipe({
   },
 });
 
-export type SkeletonVariants = NonNullable<RecipeVariants<typeof skeletonRecipe>>;
+export type SkeletonVariants = NonNullable<
+  RecipeVariants<typeof skeletonRecipe>
+>;

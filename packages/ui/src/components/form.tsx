@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FormFieldVariants,
   FormLabelVariants,
@@ -14,21 +13,31 @@ export const Form = FormPrimitive.Root;
 
 export const FormControl = FormPrimitive.Control;
 
-export const FormField = ({ ...props }: FormPrimitive.FormFieldProps & FormFieldVariants) => {
+export const FormField = ({
+  ...props
+}: FormPrimitive.FormFieldProps & FormFieldVariants) => {
   const formField = formFieldRecipe({});
 
   return (
-    <FormPrimitive.Field {...props} className={mergeClasses(formField, props.className)}>
+    <FormPrimitive.Field
+      {...props}
+      className={mergeClasses(formField, props.className)}
+    >
       {props.children}
     </FormPrimitive.Field>
   );
 };
 
-export const FormLabel = ({ ...props }: FormPrimitive.FormLabelProps & FormLabelVariants) => {
+export const FormLabel = ({
+  ...props
+}: FormPrimitive.FormLabelProps & FormLabelVariants) => {
   const formLabel = formLabelRecipe({});
 
   return (
-    <FormPrimitive.Label {...props} className={mergeClasses(formLabel, props.className)}>
+    <FormPrimitive.Label
+      {...props}
+      className={mergeClasses(formLabel, props.className)}
+    >
       {props.children}
     </FormPrimitive.Label>
   );
@@ -41,7 +50,10 @@ export const FormMessage = ({
   const formMessage = formMessageRecipe({ error });
 
   return (
-    <FormPrimitive.Message {...props} className={mergeClasses(formMessage, props.className)}>
+    <FormPrimitive.Message
+      {...props}
+      className={mergeClasses(formMessage, props.className)}
+    >
       {props.children}
     </FormPrimitive.Message>
   );

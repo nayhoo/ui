@@ -1,7 +1,9 @@
 /**
  * Converts a hex color to RGB.
  */
-export const hexToRgb = (hex: string): { r: number; g: number; b: number } | null => {
+export const hexToRgb = (
+  hex: string,
+): { r: number; g: number; b: number } | null => {
   const match = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
 
   if (!match) {

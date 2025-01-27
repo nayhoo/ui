@@ -1,4 +1,3 @@
-import React from "react";
 import { SpinnerVariants, spinnerRecipe } from "@/recipes/spinner.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

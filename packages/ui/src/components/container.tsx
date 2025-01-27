@@ -1,4 +1,3 @@
-import React from "react";
 import { ContainerVariants, containerRecipe } from "@/recipes/container.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

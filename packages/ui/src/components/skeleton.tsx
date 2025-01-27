@@ -1,4 +1,3 @@
-import React from "react";
 import { SkeletonVariants, skeletonRecipe } from "@/recipes/skeleton.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

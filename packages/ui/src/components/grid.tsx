@@ -1,4 +1,3 @@
-import React from "react";
 import { GridVariants, gridRecipe } from "@/recipes/grid.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

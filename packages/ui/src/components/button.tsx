@@ -1,4 +1,3 @@
-import React from "react";
 import { Spinner } from "@/components/spinner";
 import { ButtonVariants, buttonRecipe } from "@/recipes/button.css";
 import { ComponentProps } from "@/types/component-props";

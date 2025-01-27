@@ -7,7 +7,7 @@
       "@nayhoo/components/*": ["packages/components/src/*"],
       "@nayhoo/hooks/*": ["packages/hooks/src/*"],
       "@nayhoo/utils/*": ["packages/utils/src/*"],
-      "@nayhoo/*": ["packages/*/src"],
+      "@nayhoo/*": ["packages/*/src"]
     },
     "noEmit": true
   }

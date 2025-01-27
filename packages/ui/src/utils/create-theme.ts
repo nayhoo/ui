@@ -71,7 +71,9 @@ export const createTheme = (mode: "light" | "dark") => {
         secondaryA11: colors[secondary][`${secondary}11`],
         secondaryA12: colors[secondary][`${secondary}12`],
       },
-      secondaryTextContrast: getTextContrast(colors[secondary][`${secondary}9`]),
+      secondaryTextContrast: getTextContrast(
+        colors[secondary][`${secondary}9`],
+      ),
 
       // - feedback colors
       error: {

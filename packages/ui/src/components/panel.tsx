@@ -1,4 +1,3 @@
-import React from "react";
 import { panelRecipe, PanelVariants } from "@/recipes/panel.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

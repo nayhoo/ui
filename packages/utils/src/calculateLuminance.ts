@@ -19,5 +19,9 @@ import { sRGB } from "./sRGB";
 export const calculateLuminance = (r: number, g: number, b: number): number => {
   const gammaCorrected = [sRGB(r), sRGB(g), sRGB(b)];
 
-  return 0.2126 * gammaCorrected[0] + 0.7152 * gammaCorrected[1] + 0.0722 * gammaCorrected[2];
+  return (
+    0.2126 * gammaCorrected[0] +
+    0.7152 * gammaCorrected[1] +
+    0.0722 * gammaCorrected[2]
+  );
 };

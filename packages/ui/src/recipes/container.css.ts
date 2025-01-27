@@ -35,4 +35,6 @@ export const containerRecipe = recipe({
   },
 });
 
-export type ContainerVariants = NonNullable<RecipeVariants<typeof containerRecipe>>;
+export type ContainerVariants = NonNullable<
+  RecipeVariants<typeof containerRecipe>
+>;

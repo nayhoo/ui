@@ -1,4 +1,3 @@
-import React from "react";
 import { TextFieldVariants, textFieldRecipe } from "@/recipes/text-field.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -8,7 +7,14 @@ const defaultElement = "input";
 
 type TextFieldProps = ComponentProps<typeof defaultElement, TextFieldVariants>;
 
-export const TextField = ({ asChild, cursor, error, size, variant, ...props }: TextFieldProps) => {
+export const TextField = ({
+  asChild,
+  cursor,
+  error,
+  size,
+  variant,
+  ...props
+}: TextFieldProps) => {
   const textField = textFieldRecipe({ cursor, error, size, variant });
   const Comp = asChild ? Slot : defaultElement;
 

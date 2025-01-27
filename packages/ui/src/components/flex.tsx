@@ -1,4 +1,3 @@
-import React from "react";
 import { FlexVariants, flexRecipe } from "@/recipes/flex.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -8,7 +7,15 @@ const defaultElement = "div";
 
 type FlexProps = ComponentProps<typeof defaultElement, FlexVariants>;
 
-export const Flex = ({ asChild, align, direction, gap, justify, wrap, ...props }: FlexProps) => {
+export const Flex = ({
+  asChild,
+  align,
+  direction,
+  gap,
+  justify,
+  wrap,
+  ...props
+}: FlexProps) => {
   const flex = flexRecipe({ align, direction, gap, justify, wrap });
   const Comp = asChild ? Slot : defaultElement;
 

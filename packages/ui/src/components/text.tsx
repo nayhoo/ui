@@ -1,4 +1,3 @@
-import React from "react";
 import { TextVariants, textRecipe } from "@/recipes/text.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";

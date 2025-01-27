@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@/components/box";
 import {
   AvatarFallbackVariants,
@@ -12,13 +11,19 @@ import { StatusVariants } from "@/recipes/status.css";
 import { theme } from "@/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import React from "react";
 import { Status } from "./status";
 
-const AvatarImage = ({ ...props }: AvatarPrimitive.AvatarImageProps & AvatarImageVariants) => {
+const AvatarImage = ({
+  ...props
+}: AvatarPrimitive.AvatarImageProps & AvatarImageVariants) => {
   const avatarImage = avatarImageRecipe({});
 
   return (
-    <AvatarPrimitive.Image {...props} className={mergeClasses(avatarImage, props.className)}>
+    <AvatarPrimitive.Image
+      {...props}
+      className={mergeClasses(avatarImage, props.className)}
+    >
       {props.children}
     </AvatarPrimitive.Image>
   );
@@ -30,7 +35,10 @@ const AvatarFallback = ({
   const avatarFallback = avatarFallbackRecipe({});
 
   return (
-    <AvatarPrimitive.Fallback {...props} className={mergeClasses(avatarFallback, props.className)}>
+    <AvatarPrimitive.Fallback
+      {...props}
+      className={mergeClasses(avatarFallback, props.className)}
+    >
       {props.children}
     </AvatarPrimitive.Fallback>
   );
@@ -63,7 +71,10 @@ export const Avatar = ({
         ...style,
       }}
     >
-      <AvatarPrimitive.Avatar {...props} className={mergeClasses(avatar, props.className)}>
+      <AvatarPrimitive.Avatar
+        {...props}
+        className={mergeClasses(avatar, props.className)}
+      >
         <AvatarImage alt={alt} src={src} />
         <AvatarFallback size={size} />
       </AvatarPrimitive.Avatar>
@@ -80,7 +91,10 @@ export const Avatar = ({
             marginBottom: "-3px",
           }}
         >
-          <Status size={size && Number(size) > 2 ? "2" : "1"} variant={status} />
+          <Status
+            size={size && Number(size) > 2 ? "2" : "1"}
+            variant={status}
+          />
         </Box>
       )}
     </Box>

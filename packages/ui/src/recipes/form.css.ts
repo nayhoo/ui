@@ -11,7 +11,9 @@ export const formFieldRecipe = recipe({
   defaultVariants: {},
 });
 
-export type FormFieldVariants = NonNullable<RecipeVariants<typeof formFieldRecipe>>;
+export type FormFieldVariants = NonNullable<
+  RecipeVariants<typeof formFieldRecipe>
+>;
 
 export const formLabelRecipe = recipe({
   base: {
@@ -25,7 +27,9 @@ export const formLabelRecipe = recipe({
   defaultVariants: {},
 });
 
-export type FormLabelVariants = NonNullable<RecipeVariants<typeof formLabelRecipe>>;
+export type FormLabelVariants = NonNullable<
+  RecipeVariants<typeof formLabelRecipe>
+>;
 
 export const formMessageRecipe = recipe({
   base: {
@@ -43,4 +47,6 @@ export const formMessageRecipe = recipe({
   defaultVariants: {},
 });
 
-export type FormMessageVariants = NonNullable<RecipeVariants<typeof formMessageRecipe>>;
+export type FormMessageVariants = NonNullable<
+  RecipeVariants<typeof formMessageRecipe>
+>;
