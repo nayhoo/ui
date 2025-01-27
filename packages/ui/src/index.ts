@@ -6,6 +6,8 @@ export * from "@/animations/spin.css";
 
 export * from "@/components/avatar";
 
+export * from "@/components/badge";
+
 export * from "@/components/box";
 
 export * from "@/components/button";

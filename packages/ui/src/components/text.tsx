@@ -10,6 +10,7 @@ type TextProps = ComponentProps<typeof defaultElement, TextVariants>;
 export const Text = ({ asChild, color, size, weight, ...props }: TextProps) => {
   const text = textRecipe({ color, size, weight });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(text, props.className)}>
       {props.children}

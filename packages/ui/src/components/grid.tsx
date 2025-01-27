@@ -30,6 +30,7 @@ export const Grid = ({
     rows,
   });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(grid, props.className)}>
       {props.children}

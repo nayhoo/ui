@@ -6,7 +6,10 @@ import { useEffect } from "react";
  * @param className - The class name to toggle on the document.body.
  * @param condition - The condition to determine whether to add or remove the class.
  */
-export const useBodyClassToggle = (className: string, condition: boolean): void => {
+export const useBodyClassToggle = (
+  className: string,
+  condition: boolean,
+): void => {
   useEffect(() => {
     // Get a reference to the document.body
     const { body } = document;

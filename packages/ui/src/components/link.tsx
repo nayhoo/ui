@@ -10,6 +10,7 @@ type LinkProps = ComponentProps<typeof defaultElement, LinkVariants>;
 export const Link = ({ asChild, color, ...props }: LinkProps) => {
   const link = linkRecipe({ color });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(link, props.className)}>
       {props.children}

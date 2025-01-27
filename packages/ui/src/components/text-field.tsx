@@ -17,6 +17,7 @@ export const TextField = ({
 }: TextFieldProps) => {
   const textField = textFieldRecipe({ cursor, error, size, variant });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(textField, props.className)}>
       {props.children}

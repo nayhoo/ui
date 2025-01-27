@@ -11,12 +11,14 @@ import { StatusVariants } from "@/recipes/status.css";
 import { theme } from "@/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
+import React from "react";
 import { Status } from "./status";
 
 const AvatarImage = ({
   ...props
 }: AvatarPrimitive.AvatarImageProps & AvatarImageVariants) => {
   const avatarImage = avatarImageRecipe({});
+
   return (
     <AvatarPrimitive.Image
       {...props}
@@ -31,6 +33,7 @@ const AvatarFallback = ({
   ...props
 }: AvatarPrimitive.AvatarFallbackProps & AvatarFallbackVariants) => {
   const avatarFallback = avatarFallbackRecipe({});
+
   return (
     <AvatarPrimitive.Fallback
       {...props}

@@ -10,6 +10,7 @@ type ContainerProps = ComponentProps<typeof defaultElement, ContainerVariants>;
 export const Container = ({ asChild, size, ...props }: ContainerProps) => {
   const container = containerRecipe({ size });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(container, props.className)}>
       {props.children}

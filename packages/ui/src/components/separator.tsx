@@ -6,6 +6,7 @@ export const Separator = ({
   ...props
 }: SeparatorPrimitive.SeparatorProps & SeparatorVariants) => {
   const separator = separatorRecipe({});
+
   return (
     <SeparatorPrimitive.Root
       {...props}

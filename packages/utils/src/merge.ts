@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Mergeable = Record<string, any>;
 
 /**
@@ -7,7 +8,10 @@ type Mergeable = Record<string, any>;
  * @param sources - The source objects to merge.
  * @returns The merged object.
  */
-export const merge = (target: Mergeable, ...sources: Mergeable[]): Mergeable => {
+export const merge = (
+  target: Mergeable,
+  ...sources: Mergeable[]
+): Mergeable => {
   // Create a new object to avoid modifying the original target
   const merged = { ...target };
 

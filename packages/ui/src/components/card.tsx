@@ -15,6 +15,7 @@ export const Card = ({
 }: CardProps) => {
   const card = cardRecipe({ disableElevation, variant });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(card, props.className)}>
       {props.children}

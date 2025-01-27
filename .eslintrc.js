@@ -1,3 +1,5 @@
+require("@nayhoo/eslint-config/patch");
+
 module.exports = {
-  extends: "@nighttrax/eslint-config-tsx",
+  extends: "@nayhoo/eslint-config",
 };

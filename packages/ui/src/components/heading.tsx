@@ -2,6 +2,7 @@ import { TextVariants, textRecipe } from "@/recipes/text.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
+import React from "react";
 
 type HeadingLevelVariants = "1" | "2" | "3" | "4" | "5" | "6";
 
@@ -39,6 +40,7 @@ export const Heading = ({
 }: HeadingProps) => {
   const text = textRecipe({ color, size: textSize[level], weight });
   const Comp = asChild ? Slot : textAs[level];
+
   return (
     <Comp {...props} className={mergeClasses(text, props.className)}>
       {props.children}

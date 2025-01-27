@@ -30,6 +30,7 @@ export const Button = ({
     variant,
   });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp
       {...props}

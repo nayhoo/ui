@@ -28,6 +28,7 @@ export const Paragraph = ({
 }: ParagraphProps) => {
   const text = textRecipe({ color, size: textSize[size], weight });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(text, props.className)}>
       {props.children}

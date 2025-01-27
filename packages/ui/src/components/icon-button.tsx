@@ -23,6 +23,7 @@ export const IconButton = ({
 }: IconButtonProps) => {
   const iconButton = iconButtonRecipe({ loading, size, variant });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp
       {...props}

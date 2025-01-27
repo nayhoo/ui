@@ -18,6 +18,7 @@ export const Flex = ({
 }: FlexProps) => {
   const flex = flexRecipe({ align, direction, gap, justify, wrap });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(flex, props.className)}>
       {props.children}

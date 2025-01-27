@@ -40,7 +40,7 @@ export const formMessageRecipe = recipe({
   variants: {
     error: {
       true: {
-        color: theme.semanticColors.error,
+        color: theme.semanticColors.error.error9,
       },
     },
   },

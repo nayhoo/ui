@@ -10,6 +10,7 @@ type SkeletonProps = ComponentProps<typeof defaultElement, SkeletonVariants>;
 export const Skeleton = ({ asChild, variant, ...props }: SkeletonProps) => {
   const skeleton = skeletonRecipe({ variant });
   const Comp = asChild ? Slot : defaultElement;
+
   return (
     <Comp {...props} className={mergeClasses(skeleton, props.className)}>
       {props.children}
