@@ -1,8 +1,8 @@
-name: "tag-and-release"
+name: Release
 
 on:
   workflow_run:
-    workflows: ["gh-action-bump-version"]
+    workflows: ['Bump Version']
     types:
       - completed
 
@@ -17,10 +17,7 @@ jobs:
         id: extract_version
         uses: Saionaro/extract-package-version@v1.0.6
 
-      - name: Print version
-        run: echo ${{ steps.extract_version.outputs.version }}
-
-      - name: Tag & release
+      - name: Tag and create release v${{ steps.extract_version.outputs.version }}
         uses: avakar/tag-and-release@v1
         with:
           tag_name: ${{ format('v{0}', steps.extract_version.outputs.version) }}
