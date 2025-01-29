@@ -19,7 +19,7 @@
     "@nayhoo/eslint-config": "workspace:*",
     "@nayhoo/prettier-config": "workspace:*",
     "doctoc": "~2.2.0",
-    "eslint": "~8.48.0",
+    "eslint": "~8.57.0",
     "prettier": "^3.4.2",
     "typescript": "~5.3.3"
   }
