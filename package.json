@@ -1,13 +1,12 @@
 {
   "name": "ui",
   "version": "0.6.0",
-  "description": "🌴 everything frontend for nayhoo apps",
+  "description": "🌴 Everything Front-End TypeScript monorepo for Nayhoo apps.",
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
   "scripts": {
-    "docs": "doctoc --title '**Table of content**' README.md",
     "clean": "pnpm run -r clean",
     "build": "pnpm run -r build",
     "test": "pnpm run -r test",
@@ -18,8 +17,7 @@
   "devDependencies": {
     "@nayhoo/eslint-config": "workspace:*",
     "@nayhoo/prettier-config": "workspace:*",
-    "doctoc": "~2.2.0",
-    "eslint": "~8.48.0",
+    "eslint": "~8.57.0",
     "prettier": "^3.4.2",
     "typescript": "~5.3.3"
   }

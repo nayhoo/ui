@@ -20,6 +20,7 @@ const responsiveProperties = defineProperties({
   defaultCondition: "initial",
   properties: {
     display: ["block", "flex", "initial", "none"],
+    flexDirection: ["column", "column-reverse", "row", "row-reverse"],
     gridTemplateColumns: {
       1: "repeat(1, minmax(0, 1fr))",
       2: "repeat(2, minmax(0, 2fr))",
