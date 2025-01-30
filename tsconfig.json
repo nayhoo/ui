@@ -4,8 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@nayhoo/components/*": ["packages/components/src/*"],
       "@nayhoo/hooks/*": ["packages/hooks/src/*"],
+      "@nayhoo/ui/*": ["packages/ui/src/*"],
       "@nayhoo/utils/*": ["packages/utils/src/*"],
       "@nayhoo/*": ["packages/*/src"]
     },
