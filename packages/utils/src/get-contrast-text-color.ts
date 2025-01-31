@@ -1,5 +1,5 @@
-import { calculateLuminance } from "./calculateLuminance";
-import { hexToRgb } from "./hexToRgb";
+import { calculateLuminance } from "./calculate-luminance";
+import { hexToRgb } from "./hex-to-rgb";
 
 /**
  * Calculate the contrast text color based on the background color.

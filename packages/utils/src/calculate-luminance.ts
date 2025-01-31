@@ -1,4 +1,4 @@
-import { sRGB } from "./sRGB";
+import { sRGB } from "./s-rgb";
 
 /**
  * Calculates the luminance of an RGB color using the sRGB gamma correction.

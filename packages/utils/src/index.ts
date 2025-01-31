@@ -1,14 +1,14 @@
 export const meaningOfLife = 42;
 
-export * from "./calculateLuminance";
+export * from "./calculate-luminance";
 
-export * from "./devLogger";
+export * from "./dev-logger";
 
-export * from "./getContrastTextColor";
+export * from "./get-contrast-text-color";
 
-export * from "./hexToRgb";
+export * from "./hex-to-rgb";
 
-export * from "./isNil";
+export * from "./is-nil";
 
 export * from "./merge";
 
@@ -16,6 +16,6 @@ export * from "./noop";
 
 export * from "./sleep";
 
-export * from "./sRGB";
+export * from "./s-rgb";
 
-export * from "./toKebabCase";
+export * from "./to-kebab-case";
