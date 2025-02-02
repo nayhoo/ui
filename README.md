@@ -19,11 +19,12 @@
   - [eslint-config](#eslint-config)
   - [hooks](#hooks)
   - [prettier-config](#prettier-config)
+  - [providers](#providers)
   - [tsconfig](#tsconfig)
   - [ui](#ui)
   - [utils](#utils)
 - [Apps](#apps)
-  - [Nextjs](#nextjs)
+  - [nextjs](#nextjs)
   - [react-cosmos](#react-cosmos)
 
 ## Setup
@@ -69,6 +70,13 @@ yada yada yada
 
 See the package [here](packages/prettier-config).
 
+### providers
+
+yada yada yada
+
+See the package [here](packages/providers).
+
+
 ### tsconfig
 
 yada yada yada
@@ -89,7 +97,7 @@ See the package [here](packages/utils).
 
 ## Apps
 
-### Nextjs
+### nextjs
 
 yada yada yada
 
