@@ -1,4 +1,4 @@
-import { Badge, Flex } from "@nayhoo/ui";
+import { Separator } from "@nayhoo/ui";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -21,16 +21,7 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <Flex gap="2">
-          <Badge label="Badge1" />
-          <Badge label="Badge2" size="2" />
-
-          <Badge label="Badge3" color="secondary" />
-          <Badge label="Badge4" color="secondary" size="2" />
-
-          <Badge label="Badge5" color="error" />
-          <Badge label="Badge6" color="error" size="2" />
-        </Flex>
+        <Separator />
 
         <div className={styles.ctas}>
           <a
