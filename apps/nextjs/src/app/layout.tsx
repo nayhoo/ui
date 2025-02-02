@@ -1,9 +1,9 @@
-import { lightTheme } from "@nayhoo/ui";
 import "@nayhoo/ui/dist/index.css";
 import type { Metadata } from "next";
 // eslint-disable-next-line camelcase
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AppProvider } from "./provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${lightTheme}`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <AppProvider theme="light">{children}</AppProvider>
       </body>
     </html>
   );

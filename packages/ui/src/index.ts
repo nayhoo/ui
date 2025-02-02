@@ -16,6 +16,8 @@ export * from "@/components/card";
 
 export * from "@/components/container";
 
+export * from "@/components/dropdown-menu";
+
 export * from "@/components/flex";
 
 export * from "@/components/form";
@@ -27,6 +29,8 @@ export * from "@/components/heading";
 export * from "@/components/icon-button";
 
 export * from "@/components/link";
+
+export * from "@/components/menu";
 
 export * from "@/components/panel";
 

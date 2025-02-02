@@ -1,0 +1,27 @@
+{
+  "name": "@nayhoo/providers",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && pnpm run compile",
+    "clean": "rimraf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "@nayhoo/ui": "^0.2.0",
+    "react": "~19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.2",
+    "rimraf": "~5.0.0",
+    "typescript": "~5.3.3"
+  }
+}
