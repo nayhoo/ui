@@ -15,11 +15,16 @@
 
 - [Setup](#setup)
 - [Packages vs apps](#packages-vs-apps)
-- [Integrations](#integrations)
-  - [ts-node](#ts-node)
-  - [Babel](#babel)
-  - [webpack](#webpack)
-  - [jest](#jest)
+- [Packages](#packages)
+  - [eslint-config](#eslint-config)
+  - [hooks](#hooks)
+  - [prettier-config](#prettier-config)
+  - [tsconfig](#tsconfig)
+  - [ui](#ui)
+  - [utils](#utils)
+- [Apps](#apps)
+  - [Nextjs](#nextjs)
+  - [react-cosmos](#react-cosmos)
 
 ## Setup
 
@@ -44,85 +49,57 @@ A good example to illustrate the difference is `vite`: you wouldn't publish an a
 
 For packages, you don't want to bundle all the monorepo dependencies, and instead publish them individually. That's why packages have a separate build `tsconfig.json` that resolves monorepo dependencies to `node_modules`.
 
-## Integrations
+## Packages
 
-### ts-node
+### eslint-config
 
-Use [tsconfig-paths](https://www.npmjs.com/package/tsconfig-paths) to resolve the path aliases at runtime:
+yada yada yada
 
-```json
-{
-  "scripts": {
-    "start": "ts-node -r tsconfig-paths/register src/index.ts"
-  }
-}
-```
+See the package [here](packages/eslint-config).
 
-See the full example [here](apps/ts-node).
+### hooks
 
-### Babel
+yada yada yada
 
-Use [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver) to resolve the path aliases:
+See the package [here](packages/hooks).
 
-```js
-module.exports = {
-  presets: [
-    ["@babel/preset-env", { targets: { node: "current" } }],
-    "@babel/preset-typescript",
-  ],
+### prettier-config
 
-  plugins: [
-    [
-      "module-resolver",
-      {
-        alias: {
-          "^@nighttrax/(.+)": "../\\1/src",
-        },
-      },
-    ],
-  ],
-};
-```
+yada yada yada
 
-See the full example [here](apps/jest-babel).
+See the package [here](packages/prettier-config).
 
-### webpack
+### tsconfig
 
-Use [tsconfig-paths-webpack-plugin](https://www.npmjs.com/package/tsconfig-paths-webpack-plugin) to resolve the path aliases:
+yada yada yada
 
-```js
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+See the package [here](packages/tsconfig).
 
-module.exports = {
-  resolve: {
-    plugins: [new TsconfigPathsPlugin()],
-  },
-};
-```
+### ui
 
-See the full example [here](apps/webpack).
+yada yada yada
 
-### jest
+See the package [here](packages/ui).
 
-If you use `Babel` then see [this example](apps/jest-babel) from the [Babel](#babel) section above.
+### utils
 
-If you use [ts-jest](https://github.com/kulshekhar/ts-jest) then you can use its `pathsToModuleNameMapper` helper:
+yada yada yada
 
-```js
-const { pathsToModuleNameMapper } = require("ts-jest");
-const { compilerOptions } = require("../../tsconfig.json");
+See the package [here](packages/utils).
 
-module.exports = {
-  preset: "ts-jest",
+## Apps
 
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    // This has to match the baseUrl defined in tsconfig.json.
-    prefix: "<rootDir>/../../",
-  }),
-};
-```
+### Nextjs
 
-See the full example [here](apps/jest-tsjest).
+yada yada yada
+
+See the full example [here](apps/nextjs).
+
+### react-cosmos
+
+yada yada yada
+
+See the full example [here](apps/react-cosmos).
 
 ## Credits
 
