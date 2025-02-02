@@ -1,13 +1,4 @@
-"use client"; // resolve this issue with theme-provider
-
-import {
-  Avatar,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@nayhoo/ui";
+import { Separator } from "@nayhoo/ui";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -30,18 +21,7 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Avatar fallback="T" interactive />
-          </DropdownMenuTrigger>
-
-          <DropdownMenuContent>
-            <DropdownMenuItem>Dashboard</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Log out</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Separator />
 
         <div className={styles.ctas}>
           <a

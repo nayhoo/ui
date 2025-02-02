@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeProvider } from "@nayhoo/ui";
+import { ThemeProvider } from "@nayhoo/providers";
 import React from "react";
 
 type AppProviderProps = {
