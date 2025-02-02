@@ -46,6 +46,8 @@ export * from "@/components/text-field";
 
 export * from "@/components/text";
 
+export * from "@/providers/theme-provider";
+
 export * from "@/sprinkles/sprinkles.css";
 
 export * from "@/theme-contracts/theme-contract.css";
