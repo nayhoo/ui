@@ -15,7 +15,7 @@
     "format": "npm run prettier -- --write",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:release": "pnpm run -r build && changeset publish"
+    "changeset:release": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
