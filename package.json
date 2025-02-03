@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "clean": "pnpm run -r clean",
-    "build": "pnpm run -r build",
+    "build": "pnpm --filter \"./packages/**\" run -r build",
     "test": "pnpm run -r test",
     "lint": "eslint --ext js,ts,tsx .",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
