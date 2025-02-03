@@ -57,12 +57,6 @@ export const buttonRecipe = recipe({
         color: "transparent !important",
       },
     },
-    shape: {
-      square: {},
-      pill: {
-        borderRadius: theme.radii.full,
-      },
-    },
     size: {
       "1": {
         borderRadius: theme.radii[1],
@@ -87,6 +81,12 @@ export const buttonRecipe = recipe({
         paddingRight: theme.space[4],
         fontSize: theme.fontSizes[4],
         lineHeight: theme.sizes[7],
+      },
+    },
+    shape: {
+      square: {},
+      pill: {
+        borderRadius: theme.radii.full,
       },
     },
     variant: {
