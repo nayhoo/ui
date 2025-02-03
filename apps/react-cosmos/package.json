@@ -1,7 +1,7 @@
 {
   "name": "@nayhoo/react-cosmos",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "cosmos": "cosmos",
@@ -19,6 +19,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "globals": "^15.14.0",
     "react-cosmos": "^6.2.3",
+    "react-cosmos-plugin-boolean-input": "^6.2.3",
     "react-cosmos-plugin-vite": "^6.2.0",
     "typescript": "~5.3.3",
     "vite": "^6.0.5"
