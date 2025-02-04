@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nayhoo/providers": "workspace:*",
     "@nayhoo/ui": "workspace:*",
     "@vanilla-extract/next-plugin": "^2.4.8",
     "next": "15.1.6",
