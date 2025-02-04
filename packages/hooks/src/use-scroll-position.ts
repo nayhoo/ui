@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-// TODO: add doco
+/**
+ * A React hook that returns the `window.scrollY` value on window scroll.
+ */
 export const useScrollPosition = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 

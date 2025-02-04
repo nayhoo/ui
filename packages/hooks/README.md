@@ -1,15 +1,21 @@
-# Hooks Library
+# @nayhoo/hooks
 
-A collection of reusable React hooks written in TypeScript for common use cases. Designed to enhance code readability and maintainability.
+A collection of React hooks.
 
 ## Installation
 
-To install the library, use your package manager of choice:
-
-```bash
+```sh
 npm install @nayhoo/hooks
-# or
-yarn add @nayhoo/hooks
-# or
-pnpm install @nayhoo/hooks
+```
+
+## Usage
+
+```tsx
+import { useScrollPosition } from "@nayhoo/hooks";
+
+export const Component = () => {
+  const scrollPosition = useScrollPosition();
+
+  return `Scroll position: ${scrollPosition}`;
+};
 ```
