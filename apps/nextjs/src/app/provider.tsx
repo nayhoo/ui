@@ -1,6 +1,6 @@
 "use client";
 
-import { lightTheme } from "@nayhoo/ui";
+import { ThemeProvider } from "@nayhoo/ui/providers";
 import React from "react";
 
 type AppProviderProps = {
@@ -8,5 +8,5 @@ type AppProviderProps = {
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  return <div className={lightTheme}>{children}</div>;
+  return <ThemeProvider>{children}</ThemeProvider>;
 };

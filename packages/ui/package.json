@@ -41,5 +41,16 @@
     "react-dom": "~19.0.0",
     "rimraf": "~5.0.0",
     "typescript": "~5.3.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./css": "./dist/index.css",
+    "./providers": {
+      "types": "./dist/providers/index.d.ts",
+      "default": "./dist/providers/index.js"
+    }
   }
 }

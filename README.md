@@ -19,7 +19,6 @@
   - [eslint-config](#eslint-config)
   - [hooks](#hooks)
   - [prettier-config](#prettier-config)
-  - [providers](#providers)
   - [tsconfig](#tsconfig)
   - [ui](#ui)
   - [utils](#utils)
@@ -54,44 +53,35 @@ For packages, you don't want to bundle all the monorepo dependencies, and instea
 
 ### eslint-config
 
-yada yada yada
+My personal ESLint config for TS projects.
 
 See the package [here](packages/eslint-config).
 
 ### hooks
 
-yada yada yada
+A collection of React hooks.
 
 See the package [here](packages/hooks).
 
 ### prettier-config
 
-yada yada yada
+My personal Prettier config for TS projects.
 
 See the package [here](packages/prettier-config).
 
-### providers
-
-yada yada yada
-
-See the package [here](packages/providers).
-
-
 ### tsconfig
-
-yada yada yada
 
 See the package [here](packages/tsconfig).
 
 ### ui
 
-yada yada yada
+A collection of React components, built with [Radix Primitives](https://www.radix-ui.com/primitives), styled with [vanilla-extract](https://vanilla-extract.style).
 
 See the package [here](packages/ui).
 
 ### utils
 
-yada yada yada
+A collection of utility functions.
 
 See the package [here](packages/utils).
 
@@ -99,13 +89,13 @@ See the package [here](packages/utils).
 
 ### nextjs
 
-yada yada yada
+Next.js 15 example using @nayhoo/ui.
 
 See the full example [here](apps/nextjs).
 
 ### react-cosmos
 
-yada yada yada
+@nayhoo/ui fixtures to develop and QA components.
 
 See the full example [here](apps/react-cosmos).
 

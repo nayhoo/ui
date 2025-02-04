@@ -1,4 +1,4 @@
-import "@nayhoo/ui/dist/index.css";
+import "@nayhoo/ui/css";
 import type { Metadata } from "next";
 // eslint-disable-next-line camelcase
 import { Geist, Geist_Mono } from "next/font/google";
