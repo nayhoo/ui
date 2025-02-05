@@ -10,6 +10,7 @@ import {
 import { StatusVariants } from "@/recipes/status.css";
 import { theme } from "@/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
+import { pick } from "@/utils/pick";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
 import { Status } from "./status";
@@ -17,7 +18,8 @@ import { Status } from "./status";
 const AvatarImage = ({
   ...props
 }: AvatarPrimitive.AvatarImageProps & AvatarImageVariants) => {
-  const avatarImage = avatarImageRecipe({});
+  const variants = pick(props, ...avatarImageRecipe.variants());
+  const avatarImage = avatarImageRecipe(variants);
 
   return (
     <AvatarPrimitive.Image
@@ -30,10 +32,10 @@ const AvatarImage = ({
 };
 
 const AvatarFallback = ({
-  size,
   ...props
 }: AvatarPrimitive.AvatarFallbackProps & AvatarFallbackVariants) => {
-  const avatarFallback = avatarFallbackRecipe({ size });
+  const variants = pick(props, ...avatarFallbackRecipe.variants());
+  const avatarFallback = avatarFallbackRecipe(variants);
 
   return (
     <AvatarPrimitive.Fallback
@@ -48,10 +50,6 @@ const AvatarFallback = ({
 export const Avatar = ({
   alt,
   fallback,
-  inactive,
-  interactive,
-  shape,
-  size,
   src,
   status,
   style,
@@ -63,7 +61,8 @@ export const Avatar = ({
     src?: string;
     status?: StatusVariants["variant"];
   }) => {
-  const avatar = avatarRecipe({ inactive, interactive, shape, size });
+  const variants = pick(props, ...avatarRecipe.variants());
+  const avatar = avatarRecipe(variants);
 
   return (
     <Box
@@ -81,7 +80,7 @@ export const Avatar = ({
         <AvatarImage alt={alt} src={src} />
 
         {/* TODO: fallback wont render - https://github.com/radix-ui/primitives/issues/1767 */}
-        <AvatarFallback size={size} delayMs={600}>
+        <AvatarFallback size={variants.size} delayMs={600}>
           {fallback}
         </AvatarFallback>
       </AvatarPrimitive.Avatar>
@@ -99,7 +98,7 @@ export const Avatar = ({
           }}
         >
           <Status
-            size={size && Number(size) > 2 ? "2" : "1"}
+            size={variants.size && Number(variants.size) > 2 ? "2" : "1"}
             variant={status}
           />
         </Box>
