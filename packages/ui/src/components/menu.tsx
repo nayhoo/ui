@@ -2,20 +2,29 @@ import { Box } from "@/components/box";
 import { Flex } from "@/components/flex";
 import {
   menuItemRecipe,
+  MenuItemVariants,
   menuLabelRecipe,
+  MenuLabelVariants,
   menuRecipe,
   menuSeparatorRecipe,
+  MenuSeparatorVariants,
+  MenuVariants,
 } from "@/recipes/menu.css";
-import { panelRecipe } from "@/recipes/panel.css";
+import { panelRecipe, PanelVariants } from "@/recipes/panel.css";
 import { theme } from "@/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
+import { pick } from "@/utils/pick";
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as MenuPrimitive from "@radix-ui/react-menu";
 
-export const Menu = ({
-  ...props
-}: MenuPrimitive.MenuProps & { className?: string }) => {
-  const menu = menuRecipe({});
+type MenuProps = MenuPrimitive.MenuProps &
+  MenuVariants & {
+    className?: string;
+  };
+
+export const Menu = ({ ...props }: MenuProps) => {
+  const variants = pick(props, ...menuRecipe.variants());
+  const menu = menuRecipe(variants);
 
   return (
     <MenuPrimitive.Root {...props}>
@@ -26,8 +35,11 @@ export const Menu = ({
   );
 };
 
-export const MenuContent = ({ ...props }: MenuPrimitive.MenuContentProps) => {
-  const panel = panelRecipe({});
+type MenuContentProps = MenuPrimitive.MenuContentProps & PanelVariants;
+
+export const MenuContent = ({ ...props }: MenuContentProps) => {
+  const variants = pick(props, ...panelRecipe.variants());
+  const panel = panelRecipe(variants);
 
   return (
     <MenuPrimitive.Content
@@ -39,10 +51,12 @@ export const MenuContent = ({ ...props }: MenuPrimitive.MenuContentProps) => {
   );
 };
 
-export const MenuSeparator = ({
-  ...props
-}: MenuPrimitive.MenuSeparatorProps) => {
-  const menuSeparator = menuSeparatorRecipe({});
+type MenuSeparatorProps = MenuPrimitive.MenuSeparatorProps &
+  MenuSeparatorVariants;
+
+export const MenuSeparator = ({ ...props }: MenuSeparatorProps) => {
+  const variants = pick(props, ...menuSeparatorRecipe.variants());
+  const menuSeparator = menuSeparatorRecipe(variants);
 
   return (
     <MenuPrimitive.Separator
@@ -54,8 +68,11 @@ export const MenuSeparator = ({
   );
 };
 
-export const MenuItem = ({ ...props }: MenuPrimitive.MenuItemProps) => {
-  const menuItem = menuItemRecipe({});
+type MenuItemProps = MenuPrimitive.MenuItemProps & MenuItemVariants;
+
+export const MenuItem = ({ ...props }: MenuItemProps) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <MenuPrimitive.MenuItem
@@ -67,10 +84,11 @@ export const MenuItem = ({ ...props }: MenuPrimitive.MenuItemProps) => {
   );
 };
 
-export const MenuRadioItem = ({
-  ...props
-}: MenuPrimitive.MenuRadioItemProps) => {
-  const menuItem = menuItemRecipe({});
+type MenuRadioItemProps = MenuPrimitive.MenuRadioItemProps & MenuItemVariants;
+
+export const MenuRadioItem = ({ ...props }: MenuRadioItemProps) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <MenuPrimitive.RadioItem
@@ -105,10 +123,12 @@ export const MenuRadioItem = ({
   );
 };
 
-export const MenuCheckboxItem = ({
-  ...props
-}: MenuPrimitive.MenuCheckboxItemProps) => {
-  const menuItem = menuItemRecipe({});
+type MenuCheckboxItemProps = MenuPrimitive.MenuCheckboxItemProps &
+  MenuItemVariants;
+
+export const MenuCheckboxItem = ({ ...props }: MenuCheckboxItemProps) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <MenuPrimitive.MenuCheckboxItem
@@ -127,8 +147,11 @@ export const MenuCheckboxItem = ({
   );
 };
 
-export const MenuLabel = ({ ...props }: MenuPrimitive.MenuLabelProps) => {
-  const menuLabel = menuLabelRecipe({});
+type MenuLabelProps = MenuPrimitive.MenuLabelProps & MenuLabelVariants;
+
+export const MenuLabel = ({ ...props }: MenuLabelProps) => {
+  const variants = pick(props, ...menuLabelRecipe.variants());
+  const menuLabel = menuLabelRecipe(variants);
 
   return (
     <MenuPrimitive.MenuLabel

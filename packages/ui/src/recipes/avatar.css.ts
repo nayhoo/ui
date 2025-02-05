@@ -92,16 +92,12 @@ export const avatarRecipe = recipe({
             pointerEvents: "none",
             transition: "opacity 100ms linear",
           },
-          "&:hover": {
-            // "&::after": {
-            //   opacity: "1",
-            // },
+          "&:hover::after": {
+            opacity: "1",
           },
-          '&[data-state="open"]': {
-            // "&::after": {
-            //   backgroundColor: "rgba(0, 0, 0, 0.12)",
-            //   opacity: "1",
-            // },
+          '&[data-state="open"]::after': {
+            backgroundColor: "rgba(0, 0, 0, 0.12)",
+            opacity: "1",
           },
         },
       },

@@ -5,6 +5,7 @@ import {
 } from "@/recipes/icon-button.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
+import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "button";
@@ -14,24 +15,19 @@ type IconButtonProps = ComponentProps<
   IconButtonVariants
 >;
 
-export const IconButton = ({
-  asChild,
-  loading,
-  size,
-  variant,
-  ...props
-}: IconButtonProps) => {
-  const iconButton = iconButtonRecipe({ loading, size, variant });
+export const IconButton = ({ asChild, ...props }: IconButtonProps) => {
+  const variants = pick(props, ...iconButtonRecipe.variants());
+  const iconButton = iconButtonRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
     <Comp
       {...props}
       className={mergeClasses(iconButton, props.className)}
-      disabled={props.disabled || Boolean(loading)}
+      disabled={props.disabled || Boolean(variants.loading)}
     >
       {props.children}
-      {loading && <Spinner style={{ position: "absolute" }} />}
+      {variants.loading && <Spinner style={{ position: "absolute" }} />}
     </Comp>
   );
 };
