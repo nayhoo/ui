@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lightTheme}>
+      <body>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
