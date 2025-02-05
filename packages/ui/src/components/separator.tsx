@@ -3,9 +3,9 @@ import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
-export const Separator = ({
-  ...props
-}: SeparatorPrimitive.SeparatorProps & SeparatorVariants) => {
+type SeparatorProps = SeparatorPrimitive.SeparatorProps & SeparatorVariants;
+
+export const Separator = ({ ...props }: SeparatorProps) => {
   const variants = pick(props, ...separatorRecipe.variants());
   const separator = separatorRecipe(variants);
 

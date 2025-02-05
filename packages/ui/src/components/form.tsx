@@ -14,9 +14,9 @@ export const Form = FormPrimitive.Root;
 
 export const FormControl = FormPrimitive.Control;
 
-export const FormField = ({
-  ...props
-}: FormPrimitive.FormFieldProps & FormFieldVariants) => {
+type FormFieldProps = FormPrimitive.FormFieldProps & FormFieldVariants;
+
+export const FormField = ({ ...props }: FormFieldProps) => {
   const variants = pick(props, ...formFieldRecipe.variants());
   const formField = formFieldRecipe(variants);
 
@@ -30,9 +30,9 @@ export const FormField = ({
   );
 };
 
-export const FormLabel = ({
-  ...props
-}: FormPrimitive.FormLabelProps & FormLabelVariants) => {
+type FormLabelProps = FormPrimitive.FormLabelProps & FormLabelVariants;
+
+export const FormLabel = ({ ...props }: FormLabelProps) => {
   const variants = pick(props, ...formLabelRecipe.variants());
   const formLabel = formLabelRecipe(variants);
 
@@ -46,9 +46,9 @@ export const FormLabel = ({
   );
 };
 
-export const FormMessage = ({
-  ...props
-}: FormPrimitive.FormMessageProps & FormMessageVariants) => {
+type FormMessageProps = FormPrimitive.FormMessageProps & FormMessageVariants;
+
+export const FormMessage = ({ ...props }: FormMessageProps) => {
   const variants = pick(props, ...formMessageRecipe.variants());
   const formMessage = formMessageRecipe(variants);
 

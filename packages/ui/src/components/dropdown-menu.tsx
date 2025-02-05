@@ -21,11 +21,11 @@ export const DropdownMenu = DropdownMenuPrimitive.Root;
 
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
-export const DropdownMenuContent = ({
-  ...props
-}: DropdownMenuPrimitive.DropdownMenuContentProps &
+type DropdownMenuContentProps = DropdownMenuPrimitive.DropdownMenuContentProps &
   MenuVariants &
-  PanelVariants) => {
+  PanelVariants;
+
+export const DropdownMenuContent = ({ ...props }: DropdownMenuContentProps) => {
   const menu = menuRecipe(pick(props, ...menuRecipe.variants()));
   const panel = panelRecipe(pick(props, ...panelRecipe.variants()));
 
@@ -39,9 +39,10 @@ export const DropdownMenuContent = ({
   );
 };
 
-export const DropdownMenuItem = ({
-  ...props
-}: DropdownMenuPrimitive.DropdownMenuItemProps & MenuItemVariants) => {
+type DropdownMenuItemProps = DropdownMenuPrimitive.DropdownMenuItemProps &
+  MenuItemVariants;
+
+export const DropdownMenuItem = ({ ...props }: DropdownMenuItemProps) => {
   const variants = pick(props, ...menuItemRecipe.variants());
   const menuItem = menuItemRecipe(variants);
 
@@ -57,9 +58,10 @@ export const DropdownMenuItem = ({
 
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 
-export const DropdownMenuLabel = ({
-  ...props
-}: DropdownMenuPrimitive.DropdownMenuLabelProps & MenuLabelVariants) => {
+type DropdownMenuLabelProps = DropdownMenuPrimitive.DropdownMenuLabelProps &
+  MenuLabelVariants;
+
+export const DropdownMenuLabel = ({ ...props }: DropdownMenuLabelProps) => {
   const variants = pick(props, ...menuLabelRecipe.variants());
   const menuLabel = menuLabelRecipe(variants);
 
@@ -73,10 +75,12 @@ export const DropdownMenuLabel = ({
   );
 };
 
+type DropdownMenuSeparatorProps =
+  DropdownMenuPrimitive.DropdownMenuSeparatorProps & MenuSeparatorVariants;
+
 export const DropdownMenuSeparator = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuSeparatorProps &
-  MenuSeparatorVariants) => {
+}: DropdownMenuSeparatorProps) => {
   const variants = pick(props, ...menuSeparatorRecipe.variants());
   const menuSeparator = menuSeparatorRecipe(variants);
 
@@ -90,9 +94,12 @@ export const DropdownMenuSeparator = ({
   );
 };
 
+type DropdownMenuCheckboxItemProps =
+  DropdownMenuPrimitive.DropdownMenuCheckboxItemProps & MenuItemVariants;
+
 export const DropdownMenuCheckboxItem = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuCheckboxItemProps & MenuItemVariants) => {
+}: DropdownMenuCheckboxItemProps) => {
   const variants = pick(props, ...menuItemRecipe.variants());
   const menuItem = menuItemRecipe(variants);
 
@@ -115,10 +122,13 @@ export const DropdownMenuCheckboxItem = ({
 
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
+type DropdownMenuRadioItemProps =
+  DropdownMenuPrimitive.DropdownMenuRadioItemProps & MenuItemVariants;
+
 export const DropdownMenuRadioItem = ({
   children,
   ...props
-}: DropdownMenuPrimitive.DropdownMenuRadioItemProps & MenuItemVariants) => {
+}: DropdownMenuRadioItemProps) => {
   const variants = pick(props, ...menuItemRecipe.variants());
   const menuItem = menuItemRecipe(variants);
 

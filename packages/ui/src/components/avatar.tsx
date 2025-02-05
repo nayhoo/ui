@@ -15,9 +15,9 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
 import { Status } from "./status";
 
-const AvatarImage = ({
-  ...props
-}: AvatarPrimitive.AvatarImageProps & AvatarImageVariants) => {
+type AvatarImageProps = AvatarPrimitive.AvatarImageProps & AvatarImageVariants;
+
+const AvatarImage = ({ ...props }: AvatarImageProps) => {
   const variants = pick(props, ...avatarImageRecipe.variants());
   const avatarImage = avatarImageRecipe(variants);
 
@@ -31,9 +31,10 @@ const AvatarImage = ({
   );
 };
 
-const AvatarFallback = ({
-  ...props
-}: AvatarPrimitive.AvatarFallbackProps & AvatarFallbackVariants) => {
+type AvatarFallbackProps = AvatarPrimitive.AvatarFallbackProps &
+  AvatarFallbackVariants;
+
+const AvatarFallback = ({ ...props }: AvatarFallbackProps) => {
   const variants = pick(props, ...avatarFallbackRecipe.variants());
   const avatarFallback = avatarFallbackRecipe(variants);
 
@@ -47,6 +48,14 @@ const AvatarFallback = ({
   );
 };
 
+type AvatarProps = AvatarPrimitive.AvatarProps &
+  AvatarVariants & {
+    alt?: string;
+    fallback?: React.ReactNode;
+    src?: string;
+    status?: StatusVariants["variant"];
+  };
+
 export const Avatar = ({
   alt,
   fallback,
@@ -54,13 +63,7 @@ export const Avatar = ({
   status,
   style,
   ...props
-}: AvatarPrimitive.AvatarProps &
-  AvatarVariants & {
-    alt?: string;
-    fallback?: React.ReactNode;
-    src?: string;
-    status?: StatusVariants["variant"];
-  }) => {
+}: AvatarProps) => {
   const variants = pick(props, ...avatarRecipe.variants());
   const avatar = avatarRecipe(variants);
 

@@ -7,7 +7,9 @@ import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
-export const SwitchThumb = ({ ...props }: SwitchPrimitive.SwitchThumbProps) => {
+type SwitchThumbProps = SwitchPrimitive.SwitchThumbProps;
+
+export const SwitchThumb = ({ ...props }: SwitchThumbProps) => {
   const variants = pick(props, ...switchThumbRecipe.variants());
   const switchThumb = switchThumbRecipe(variants);
 
@@ -19,9 +21,9 @@ export const SwitchThumb = ({ ...props }: SwitchPrimitive.SwitchThumbProps) => {
   );
 };
 
-export const Switch = ({
-  ...props
-}: SwitchPrimitive.SwitchProps & SwitchVariants) => {
+type SwitchProps = SwitchPrimitive.SwitchProps & SwitchVariants;
+
+export const Switch = ({ ...props }: SwitchProps) => {
   const variants = pick(props, ...switchRecipe.variants());
   const _switch = switchRecipe(variants); // 'switch' is not allowed as a variable declaration name.ts(1389)
 
