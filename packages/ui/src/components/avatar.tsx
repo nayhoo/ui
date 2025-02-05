@@ -30,9 +30,10 @@ const AvatarImage = ({
 };
 
 const AvatarFallback = ({
+  size,
   ...props
 }: AvatarPrimitive.AvatarFallbackProps & AvatarFallbackVariants) => {
-  const avatarFallback = avatarFallbackRecipe({});
+  const avatarFallback = avatarFallbackRecipe({ size });
 
   return (
     <AvatarPrimitive.Fallback
@@ -47,6 +48,8 @@ const AvatarFallback = ({
 export const Avatar = ({
   alt,
   fallback,
+  inactive,
+  interactive,
   shape,
   size,
   src,
@@ -60,7 +63,7 @@ export const Avatar = ({
     src?: string;
     status?: StatusVariants["variant"];
   }) => {
-  const avatar = avatarRecipe({ shape, size });
+  const avatar = avatarRecipe({ inactive, interactive, shape, size });
 
   return (
     <Box
@@ -76,7 +79,11 @@ export const Avatar = ({
         className={mergeClasses(avatar, props.className)}
       >
         <AvatarImage alt={alt} src={src} />
-        <AvatarFallback size={size} />
+
+        {/* TODO: fallback wont render - https://github.com/radix-ui/primitives/issues/1767 */}
+        <AvatarFallback size={size} delayMs={600}>
+          {fallback}
+        </AvatarFallback>
       </AvatarPrimitive.Avatar>
 
       {status && (
