@@ -6,9 +6,9 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type statusProps = ComponentProps<typeof defaultElement, StatusVariants>;
+type StatusProps = ComponentProps<typeof defaultElement, StatusVariants>;
 
-export const Status = ({ asChild, ...props }: statusProps) => {
+export const Status = ({ asChild, ...props }: StatusProps) => {
   const variants = pick(props, ...statusRecipe.variants());
   const status = statusRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
