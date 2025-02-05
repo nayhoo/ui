@@ -7,8 +7,8 @@ const defaultElement = "div";
 
 type statusProps = ComponentProps<typeof defaultElement, StatusVariants>;
 
-export const Status = ({ asChild, ...props }: statusProps) => {
-  const status = statusRecipe({});
+export const Status = ({ asChild, size, variant, ...props }: statusProps) => {
+  const status = statusRecipe({ size, variant });
   const Comp = asChild ? Slot : defaultElement;
 
   return (
