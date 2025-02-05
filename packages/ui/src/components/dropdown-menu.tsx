@@ -1,14 +1,19 @@
 import { Box } from "@/components/box";
 import { Flex } from "@/components/flex";
 import {
+  MenuItemVariants,
+  MenuLabelVariants,
+  MenuSeparatorVariants,
+  MenuVariants,
   menuItemRecipe,
   menuLabelRecipe,
   menuRecipe,
   menuSeparatorRecipe,
 } from "@/recipes/menu.css";
-import { panelRecipe } from "@/recipes/panel.css";
+import { PanelVariants, panelRecipe } from "@/recipes/panel.css";
 import { theme } from "@/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
+import { pick } from "@/utils/pick";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon } from "@radix-ui/react-icons";
 
@@ -18,9 +23,11 @@ export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
 export const DropdownMenuContent = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuContentProps) => {
-  const menu = menuRecipe({});
-  const panel = panelRecipe({});
+}: DropdownMenuPrimitive.DropdownMenuContentProps &
+  MenuVariants &
+  PanelVariants) => {
+  const menu = menuRecipe(pick(props, ...menuRecipe.variants()));
+  const panel = panelRecipe(pick(props, ...panelRecipe.variants()));
 
   return (
     <DropdownMenuPrimitive.Portal>
@@ -34,8 +41,9 @@ export const DropdownMenuContent = ({
 
 export const DropdownMenuItem = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuItemProps) => {
-  const menuItem = menuItemRecipe({});
+}: DropdownMenuPrimitive.DropdownMenuItemProps & MenuItemVariants) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <DropdownMenuPrimitive.Item
@@ -51,8 +59,9 @@ export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 
 export const DropdownMenuLabel = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuLabelProps) => {
-  const menuLabel = menuLabelRecipe({});
+}: DropdownMenuPrimitive.DropdownMenuLabelProps & MenuLabelVariants) => {
+  const variants = pick(props, ...menuLabelRecipe.variants());
+  const menuLabel = menuLabelRecipe(variants);
 
   return (
     <DropdownMenuPrimitive.Label
@@ -66,8 +75,10 @@ export const DropdownMenuLabel = ({
 
 export const DropdownMenuSeparator = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuSeparatorProps) => {
-  const menuSeparator = menuSeparatorRecipe({});
+}: DropdownMenuPrimitive.DropdownMenuSeparatorProps &
+  MenuSeparatorVariants) => {
+  const variants = pick(props, ...menuSeparatorRecipe.variants());
+  const menuSeparator = menuSeparatorRecipe(variants);
 
   return (
     <DropdownMenuPrimitive.Separator
@@ -81,8 +92,9 @@ export const DropdownMenuSeparator = ({
 
 export const DropdownMenuCheckboxItem = ({
   ...props
-}: DropdownMenuPrimitive.DropdownMenuCheckboxItemProps) => {
-  const menuItem = menuItemRecipe({});
+}: DropdownMenuPrimitive.DropdownMenuCheckboxItemProps & MenuItemVariants) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <DropdownMenuPrimitive.CheckboxItem
@@ -106,8 +118,9 @@ export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 export const DropdownMenuRadioItem = ({
   children,
   ...props
-}: DropdownMenuPrimitive.DropdownMenuRadioItemProps) => {
-  const menuItem = menuItemRecipe({});
+}: DropdownMenuPrimitive.DropdownMenuRadioItemProps & MenuItemVariants) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <DropdownMenuPrimitive.RadioItem

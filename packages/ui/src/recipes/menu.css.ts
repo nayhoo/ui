@@ -1,5 +1,5 @@
 import { theme } from "@/theme-contracts/theme-contract.css";
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
 const baseMenuItemRecipe = recipe({
   base: {
@@ -47,6 +47,10 @@ export const menuItemRecipe = recipe({
   defaultVariants: {},
 });
 
+export type MenuItemVariants = NonNullable<
+  RecipeVariants<typeof menuItemRecipe>
+>;
+
 export const menuLabelRecipe = recipe({
   base: [
     baseMenuItemRecipe({}),
@@ -60,6 +64,10 @@ export const menuLabelRecipe = recipe({
   defaultVariants: {},
 });
 
+export type MenuLabelVariants = NonNullable<
+  RecipeVariants<typeof menuLabelRecipe>
+>;
+
 export const menuRecipe = recipe({
   base: {
     boxSizing: "border-box",
@@ -72,6 +80,8 @@ export const menuRecipe = recipe({
   defaultVariants: {},
 });
 
+export type MenuVariants = NonNullable<RecipeVariants<typeof menuRecipe>>;
+
 export const menuSeparatorRecipe = recipe({
   base: {
     height: 1,
@@ -83,3 +93,7 @@ export const menuSeparatorRecipe = recipe({
   variants: {},
   defaultVariants: {},
 });
+
+export type MenuSeparatorVariants = NonNullable<
+  RecipeVariants<typeof menuSeparatorRecipe>
+>;

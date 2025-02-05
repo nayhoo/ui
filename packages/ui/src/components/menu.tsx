@@ -2,20 +2,26 @@ import { Box } from "@/components/box";
 import { Flex } from "@/components/flex";
 import {
   menuItemRecipe,
+  MenuItemVariants,
   menuLabelRecipe,
+  MenuLabelVariants,
   menuRecipe,
   menuSeparatorRecipe,
+  MenuSeparatorVariants,
+  MenuVariants,
 } from "@/recipes/menu.css";
-import { panelRecipe } from "@/recipes/panel.css";
+import { panelRecipe, PanelVariants } from "@/recipes/panel.css";
 import { theme } from "@/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
+import { pick } from "@/utils/pick";
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as MenuPrimitive from "@radix-ui/react-menu";
 
 export const Menu = ({
   ...props
-}: MenuPrimitive.MenuProps & { className?: string }) => {
-  const menu = menuRecipe({});
+}: MenuPrimitive.MenuProps & MenuVariants & { className?: string }) => {
+  const variants = pick(props, ...menuRecipe.variants());
+  const menu = menuRecipe(variants);
 
   return (
     <MenuPrimitive.Root {...props}>
@@ -26,8 +32,11 @@ export const Menu = ({
   );
 };
 
-export const MenuContent = ({ ...props }: MenuPrimitive.MenuContentProps) => {
-  const panel = panelRecipe({});
+export const MenuContent = ({
+  ...props
+}: MenuPrimitive.MenuContentProps & PanelVariants) => {
+  const variants = pick(props, ...panelRecipe.variants());
+  const panel = panelRecipe(variants);
 
   return (
     <MenuPrimitive.Content
@@ -41,8 +50,9 @@ export const MenuContent = ({ ...props }: MenuPrimitive.MenuContentProps) => {
 
 export const MenuSeparator = ({
   ...props
-}: MenuPrimitive.MenuSeparatorProps) => {
-  const menuSeparator = menuSeparatorRecipe({});
+}: MenuPrimitive.MenuSeparatorProps & MenuSeparatorVariants) => {
+  const variants = pick(props, ...menuSeparatorRecipe.variants());
+  const menuSeparator = menuSeparatorRecipe(variants);
 
   return (
     <MenuPrimitive.Separator
@@ -54,8 +64,11 @@ export const MenuSeparator = ({
   );
 };
 
-export const MenuItem = ({ ...props }: MenuPrimitive.MenuItemProps) => {
-  const menuItem = menuItemRecipe({});
+export const MenuItem = ({
+  ...props
+}: MenuPrimitive.MenuItemProps & MenuItemVariants) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <MenuPrimitive.MenuItem
@@ -69,8 +82,9 @@ export const MenuItem = ({ ...props }: MenuPrimitive.MenuItemProps) => {
 
 export const MenuRadioItem = ({
   ...props
-}: MenuPrimitive.MenuRadioItemProps) => {
-  const menuItem = menuItemRecipe({});
+}: MenuPrimitive.MenuRadioItemProps & MenuItemVariants) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <MenuPrimitive.RadioItem
@@ -107,8 +121,9 @@ export const MenuRadioItem = ({
 
 export const MenuCheckboxItem = ({
   ...props
-}: MenuPrimitive.MenuCheckboxItemProps) => {
-  const menuItem = menuItemRecipe({});
+}: MenuPrimitive.MenuCheckboxItemProps & MenuItemVariants) => {
+  const variants = pick(props, ...menuItemRecipe.variants());
+  const menuItem = menuItemRecipe(variants);
 
   return (
     <MenuPrimitive.MenuCheckboxItem
@@ -127,8 +142,11 @@ export const MenuCheckboxItem = ({
   );
 };
 
-export const MenuLabel = ({ ...props }: MenuPrimitive.MenuLabelProps) => {
-  const menuLabel = menuLabelRecipe({});
+export const MenuLabel = ({
+  ...props
+}: MenuPrimitive.MenuLabelProps & MenuLabelVariants) => {
+  const variants = pick(props, ...menuLabelRecipe.variants());
+  const menuLabel = menuLabelRecipe(variants);
 
   return (
     <MenuPrimitive.MenuLabel
