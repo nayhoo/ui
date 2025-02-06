@@ -13,6 +13,7 @@
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rimraf ./dist",
     "compile": "tsup",
+    "compile:watch": "tsup --watch",
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
