@@ -53,7 +53,7 @@ export const textFieldRecipe = recipe({
         // },
       },
       "&[data-invalid]": {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.error}`,
+        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.error.error9}`,
       },
       "&[data-placeholder]": {
         color: theme.semanticColors.textPlaceholder,
@@ -105,7 +105,7 @@ export const textFieldRecipe = recipe({
     },
     error: {
       true: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.error}`,
+        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.error.error9} !important`, // TODO: is this possible without !important?
         // "&:focus": {
         //   // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
         // },
