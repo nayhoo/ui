@@ -2,4 +2,4 @@
 "@nayhoo/nextjs": patch
 ---
 
-chore: using @nayhoo/tsconfig for nextjs app
+chore(nextjs): added @nayhoo/tsconfig

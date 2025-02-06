@@ -2,4 +2,4 @@
 "@nayhoo/react-cosmos": patch
 ---
 
-chore: added more fixtures for current components
+chore(react-cosmos): added card, container, flex, grid, heading, paragraph and text fixtures for current components
