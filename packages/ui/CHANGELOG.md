@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.4.2
+
+### Patch Changes
+
+- 893cb84: fix(ui): overridden current boxShadow when error is true for <TextField />
+
 ## 0.4.1
 
 ### Patch Changes

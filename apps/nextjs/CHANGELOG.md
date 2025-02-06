@@ -1,5 +1,13 @@
 # @nayhoo/nextjs
 
+## 0.1.3
+
+### Patch Changes
+
+- 9aa5448: chore(nextjs): added @nayhoo/tsconfig
+- Updated dependencies [893cb84]
+  - @nayhoo/ui@0.4.2
+
 ## 0.1.2
 
 ### Patch Changes

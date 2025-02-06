@@ -1,5 +1,14 @@
 # @nayhoo/react-cosmos
 
+## 0.1.5
+
+### Patch Changes
+
+- 9aa5448: chore(react-cosmos): added card, container, flex, grid, heading, paragraph and text fixtures for current components
+- 893cb84: chore(react-cosmos): added form, icon-button, link, separator, skeleton and spinner fixtures
+- Updated dependencies [893cb84]
+  - @nayhoo/ui@0.4.2
+
 ## 0.1.4
 
 ### Patch Changes
