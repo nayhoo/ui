@@ -7,6 +7,5 @@ export default () => {
     options: ["1", "2"],
   });
 
-  // TODO: styling broken
   return <Switch size={size} />;
 };
