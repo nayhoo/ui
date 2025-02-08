@@ -1,5 +1,16 @@
 # @nayhoo/ui
 
+## 0.5.0
+
+### Minor Changes
+
+- 90330fd: feat(ui): button color prop removed for variants; textContrast color removed; success color added
+
+### Patch Changes
+
+- 90330fd: fix: passed through size prop to SwitchThumb; tweaked switch styles
+- 90330fd: fix(ui): updated panel boxShadow to use theme colors
+
 ## 0.4.2
 
 ### Patch Changes

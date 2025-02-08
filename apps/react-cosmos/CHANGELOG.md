@@ -1,5 +1,18 @@
 # @nayhoo/react-cosmos
 
+## 0.1.6
+
+### Patch Changes
+
+- 90330fd: chore(react-cosmos): added TextField fixture
+- 90330fd: chore(react-cosmos): added Panel fixture
+- 90330fd: feat(ui): button color prop removed for variants; textContrast color removed; success color added
+- 90330fd: chore(react-cosmos): added Switch fixture
+- Updated dependencies [90330fd]
+- Updated dependencies [90330fd]
+- Updated dependencies [90330fd]
+  - @nayhoo/ui@0.5.0
+
 ## 0.1.5
 
 ### Patch Changes
