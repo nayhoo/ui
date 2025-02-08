@@ -1,5 +1,4 @@
 import { theme } from "@/theme-contracts/theme-contract.css";
-// import { getTextContrast } from "@/utils/get-text-contrast";
 import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
 
 export const buttonRecipe = recipe({
@@ -33,7 +32,6 @@ export const buttonRecipe = recipe({
       "&:disabled": {
         backgroundColor: theme.colors.slate.slate2,
         boxShadow: `inset 0 0 0 1px ${theme.colors.slateA.slateA7}`,
-        // boxShadow: "none",
         color: theme.colors.slate.slate8,
         cursor: "not-allowed",
         pointerEvents: "none",
@@ -42,11 +40,6 @@ export const buttonRecipe = recipe({
   },
 
   variants: {
-    color: {
-      primary: {},
-      secondary: {},
-      error: {},
-    },
     fullWidth: {
       true: {
         width: "100%",
@@ -90,12 +83,30 @@ export const buttonRecipe = recipe({
       },
     },
     variant: {
-      default: {
-        // boxShadow: `${vars.colors.slate.slate8} 0px 10px 38px -10px, ${vars.colors.slate.slate8} 0px 10px 20px -15px`,
+      primary: {
+        backgroundColor: theme.semanticColors.primary.primary4,
+        color: theme.semanticColors.primary.primary11,
 
         selectors: {
-          "&:hover": {},
-          "&:active": {},
+          "&:hover": {
+            backgroundColor: theme.semanticColors.primary.primary5,
+          },
+          "&:active": {
+            backgroundColor: theme.semanticColors.primary.primary6,
+          },
+        },
+      },
+      secondary: {
+        backgroundColor: theme.semanticColors.secondary.secondary4,
+        color: theme.semanticColors.secondary.secondary11,
+
+        selectors: {
+          "&:hover": {
+            backgroundColor: theme.semanticColors.secondary.secondary5,
+          },
+          "&:active": {
+            backgroundColor: theme.semanticColors.secondary.secondary6,
+          },
         },
       },
       outline: {
@@ -108,9 +119,6 @@ export const buttonRecipe = recipe({
           "&:active": {
             backgroundColor: theme.semanticColors.transparentActive,
           },
-          "&:focus": {
-            boxShadow: `inset 0 0 0 1px ${theme.colors.slateA.slateA8}, 0 0 0 1px ${theme.colors.slateA.slateA8}`,
-          },
         },
       },
       ghost: {
@@ -119,86 +127,44 @@ export const buttonRecipe = recipe({
         selectors: {
           "&:hover": {
             backgroundColor: theme.semanticColors.transparentHover,
-            boxShadow: "none",
           },
           "&:active": {
             backgroundColor: theme.semanticColors.transparentActive,
           },
-          "&:focus": {
-            boxShadow: `inset 0 0 0 1px ${theme.colors.slateA.slateA8}, 0 0 0 1px ${theme.colors.slateA.slateA8}`,
+        },
+      },
+      error: {
+        backgroundColor: theme.semanticColors.error.error4,
+        color: theme.semanticColors.error.error11,
+
+        selectors: {
+          "&:hover": {
+            backgroundColor: theme.semanticColors.error.error5,
+          },
+          "&:active": {
+            backgroundColor: theme.semanticColors.error.error6,
+          },
+        },
+      },
+      success: {
+        backgroundColor: theme.semanticColors.success.success4,
+        color: theme.semanticColors.success.success11,
+
+        selectors: {
+          "&:hover": {
+            backgroundColor: theme.semanticColors.success.success5,
+          },
+          "&:active": {
+            backgroundColor: theme.semanticColors.success.success6,
           },
         },
       },
     },
   },
 
-  compoundVariants: [
-    {
-      variants: {
-        variant: "default",
-        color: "primary",
-      },
-      style: {
-        backgroundColor: theme.semanticColors.primary.primary9,
-        color: theme.semanticColors.primaryTextContrast,
-
-        selectors: {
-          "&:hover": {
-            backgroundColor: theme.semanticColors.primary.primary10,
-          },
-          "&:active": {
-            backgroundColor: theme.semanticColors.primary.primary10,
-            filter: "brightness(0.92) saturate(1.1)",
-          },
-        },
-      },
-    },
-    {
-      variants: {
-        variant: "default",
-        color: "secondary",
-      },
-      style: {
-        backgroundColor: theme.semanticColors.secondary.secondary9,
-        color: theme.semanticColors.secondaryTextContrast,
-
-        selectors: {
-          "&:hover": {
-            backgroundColor: theme.semanticColors.secondary.secondary10,
-          },
-          "&:active": {
-            backgroundColor: theme.semanticColors.secondary.secondary10,
-            filter: "brightness(0.92) saturate(1.1)",
-          },
-        },
-      },
-    },
-    {
-      variants: {
-        variant: "default",
-        color: "error",
-      },
-      style: {
-        backgroundColor: theme.semanticColors.error.error9,
-        color: theme.semanticColors.errorTextContrast,
-
-        selectors: {
-          "&:hover": {
-            backgroundColor: theme.semanticColors.error.error10,
-          },
-          "&:active": {
-            backgroundColor: theme.semanticColors.error.error10,
-            filter: "brightness(0.92) saturate(1.1)",
-          },
-        },
-      },
-    },
-  ],
-
   defaultVariants: {
-    color: "primary",
     size: "2",
-    variant: "default",
+    variant: "primary",
   },
 });
 
