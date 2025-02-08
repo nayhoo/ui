@@ -2,12 +2,12 @@ import { theme } from "@/theme-contracts/theme-contract.css";
 import { baseTheme } from "@/themes/base-theme.css";
 import * as colors from "@radix-ui/colors";
 import { createTheme as ct } from "@vanilla-extract/css";
-import { getTextContrast } from "./get-text-contrast";
 
 export const createTheme = (mode: "light" | "dark") => {
   const primary = "violet";
   const secondary = "cyan";
   const error = "ruby";
+  const success = "green";
 
   return ct(theme, {
     ...baseTheme, // Use shared variables as a baseline
@@ -41,7 +41,6 @@ export const createTheme = (mode: "light" | "dark") => {
         primaryA11: colors[primary][`${primary}11`],
         primaryA12: colors[primary][`${primary}12`],
       },
-      primaryTextContrast: getTextContrast(colors[primary][`${primary}9`]), // TODO: make this applicable for all shades?
 
       secondary: {
         secondary1: colors[secondary][`${secondary}1`],
@@ -71,9 +70,6 @@ export const createTheme = (mode: "light" | "dark") => {
         secondaryA11: colors[secondary][`${secondary}11`],
         secondaryA12: colors[secondary][`${secondary}12`],
       },
-      secondaryTextContrast: getTextContrast(
-        colors[secondary][`${secondary}9`],
-      ),
 
       // - feedback colors
       error: {
@@ -104,9 +100,36 @@ export const createTheme = (mode: "light" | "dark") => {
         errorA11: colors[error][`${error}11`],
         errorA12: colors[error][`${error}12`],
       },
-      errorTextContrast: getTextContrast(colors[error][`${error}9`]),
 
-      // success: ,
+      success: {
+        success1: colors[success][`${success}1`],
+        success2: colors[success][`${success}2`],
+        success3: colors[success][`${success}3`],
+        success4: colors[success][`${success}4`],
+        success5: colors[success][`${success}5`],
+        success6: colors[success][`${success}6`],
+        success7: colors[success][`${success}7`],
+        success8: colors[success][`${success}8`],
+        success9: colors[success][`${success}9`],
+        success10: colors[success][`${success}10`],
+        success11: colors[success][`${success}11`],
+        success12: colors[success][`${success}12`],
+      },
+      successA: {
+        successA1: colors[success][`${success}1`],
+        successA2: colors[success][`${success}2`],
+        successA3: colors[success][`${success}3`],
+        successA4: colors[success][`${success}4`],
+        successA5: colors[success][`${success}5`],
+        successA6: colors[success][`${success}6`],
+        successA7: colors[success][`${success}7`],
+        successA8: colors[success][`${success}8`],
+        successA9: colors[success][`${success}9`],
+        successA10: colors[success][`${success}10`],
+        successA11: colors[success][`${success}11`],
+        successA12: colors[success][`${success}12`],
+      },
+
       // warning: ,
       // info: ,
 

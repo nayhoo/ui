@@ -30,7 +30,6 @@ export const semanticColorsContract = createThemeContract({
     primaryA11: null,
     primaryA12: null,
   },
-  primaryTextContrast: null,
 
   secondary: {
     secondary1: null,
@@ -60,7 +59,6 @@ export const semanticColorsContract = createThemeContract({
     secondaryA11: null,
     secondaryA12: null,
   },
-  secondaryTextContrast: null,
 
   error: {
     error1: null,
@@ -90,9 +88,36 @@ export const semanticColorsContract = createThemeContract({
     errorA11: null,
     errorA12: null,
   },
-  errorTextContrast: null,
 
-  // success: ,
+  success: {
+    success1: null,
+    success2: null,
+    success3: null,
+    success4: null,
+    success5: null,
+    success6: null,
+    success7: null,
+    success8: null,
+    success9: null,
+    success10: null,
+    success11: null,
+    success12: null,
+  },
+  successA: {
+    successA1: null,
+    successA2: null,
+    successA3: null,
+    successA4: null,
+    successA5: null,
+    successA6: null,
+    successA7: null,
+    successA8: null,
+    successA9: null,
+    successA10: null,
+    successA11: null,
+    successA12: null,
+  },
+
   // warning: ,
   // info: ,
 

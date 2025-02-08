@@ -3,10 +3,6 @@ import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name
 export default () => {
-  const [color] = useFixtureSelect("color", {
-    options: ["primary", "secondary", "error"],
-  });
-
   const [fullWidth] = useFixtureInput("fullWidth", false);
 
   const [loading, setLoading] = useFixtureInput("loading", false);
@@ -20,7 +16,7 @@ export default () => {
   });
 
   const [variant] = useFixtureSelect("variant", {
-    options: ["default", "ghost", "outline"],
+    options: ["primary", "secondary", "ghost", "outline", "error", "success"],
   });
 
   const handleOnClick = () => {
@@ -33,7 +29,6 @@ export default () => {
 
   return (
     <Button
-      color={color}
       fullWidth={fullWidth}
       loading={loading}
       shape={shape}
