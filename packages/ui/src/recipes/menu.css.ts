@@ -6,7 +6,6 @@ const baseMenuItemRecipe = recipe({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    // fontFamily: "$untitled",
     fontSize: theme.fontSizes[1],
     fontVariantNumeric: "tabular-nums",
     lineHeight: "1",
@@ -16,6 +15,7 @@ const baseMenuItemRecipe = recipe({
     height: theme.sizes[5],
     paddingLeft: theme.space[5],
     paddingRight: theme.space[5],
+    borderRadius: theme.radii[1],
   },
 
   variants: {},
@@ -27,17 +27,23 @@ export const menuItemRecipe = recipe({
     baseMenuItemRecipe({}),
     {
       position: "relative",
-      color: theme.semanticColors.primary.primary9,
+      backgroundColor: "transparent",
 
       selectors: {
+        "&:hover": {
+          backgroundColor: theme.semanticColors.transparentHover,
+        },
+
         "&[data-highlighted]": {
           outline: "none",
-          // backgroundColor: "$blue9",
-          color: "white",
+          backgroundColor: theme.semanticColors.transparentActive,
         },
 
         "&[data-disabled]": {
-          color: theme.colors.slate.slate9,
+          color: theme.colors.slate.slate8,
+          backgroundColor: theme.colors.slate.slate2,
+          cursor: "not-allowed",
+          pointerEvents: "none",
         },
       },
     },
@@ -72,8 +78,7 @@ export const menuRecipe = recipe({
   base: {
     boxSizing: "border-box",
     minWidth: 120,
-    paddingTop: theme.space[1],
-    paddingBottom: theme.space[1],
+    padding: theme.space[1],
   },
 
   variants: {},
