@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.5.1
+
+### Patch Changes
+
+- 00baad6: chore: updated dropdown menu styles
+
 ## 0.5.0
 
 ### Minor Changes
