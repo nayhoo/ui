@@ -28,6 +28,8 @@ export * from "@/components/heading";
 
 export * from "@/components/icon-button";
 
+export * from "@/components/label";
+
 export * from "@/components/link";
 
 export * from "@/components/menu";
