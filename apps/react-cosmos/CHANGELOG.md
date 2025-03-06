@@ -1,5 +1,13 @@
 # @nayhoo/react-cosmos
 
+## 0.1.7
+
+### Patch Changes
+
+- 3dce6e9: chore(react-cosmos): added DropdownMenu and Menu fixtures
+- Updated dependencies [00baad6]
+  - @nayhoo/ui@0.5.1
+
 ## 0.1.6
 
 ### Patch Changes
