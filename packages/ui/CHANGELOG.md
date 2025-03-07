@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.6.1
+
+### Patch Changes
+
+- a9ce637: fix(ui): corrected switch thumb position
+
 ## 0.6.0
 
 ### Minor Changes
