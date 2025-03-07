@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.6.0
+
+### Minor Changes
+
+- db7c734: feat(ui): added checkbox component
+- d35ced4: feat(ui): added Label component
+
 ## 0.5.1
 
 ### Patch Changes

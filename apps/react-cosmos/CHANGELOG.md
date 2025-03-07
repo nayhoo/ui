@@ -1,5 +1,15 @@
 # @nayhoo/react-cosmos
 
+## 0.1.8
+
+### Patch Changes
+
+- db7c734: chore(react-cosmos): added checkbox fixture
+- d35ced4: chore(react-cosmos): added fixture for Label
+- Updated dependencies [db7c734]
+- Updated dependencies [d35ced4]
+  - @nayhoo/ui@0.6.0
+
 ## 0.1.7
 
 ### Patch Changes
