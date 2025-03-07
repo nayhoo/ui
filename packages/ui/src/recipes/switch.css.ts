@@ -49,6 +49,10 @@ export const switchThumbRecipe = recipe({
     transition: "transform 100ms",
     transform: "translateX(2px)",
     willChange: "transform",
+
+    position: "absolute",
+    left: 0,
+    top: "2px",
   },
 
   variants: {
