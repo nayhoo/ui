@@ -54,6 +54,8 @@ export * from "@/components/text-field";
 
 export * from "@/components/text";
 
+export * from "@/components/tooltip";
+
 export * from "@/sprinkles/sprinkles.css";
 
 export * from "@/theme-contracts/theme-contract.css";
