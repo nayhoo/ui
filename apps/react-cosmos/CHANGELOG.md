@@ -1,5 +1,13 @@
 # @nayhoo/react-cosmos
 
+## 0.1.10
+
+### Patch Changes
+
+- d6cd1cd: chore: added tooltip fixture
+- Updated dependencies [d6cd1cd]
+  - @nayhoo/ui@0.7.0
+
 ## 0.1.9
 
 ### Patch Changes

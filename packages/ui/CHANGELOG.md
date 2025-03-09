@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.7.0
+
+### Minor Changes
+
+- d6cd1cd: feat: added tooltip component
+
 ## 0.6.1
 
 ### Patch Changes
