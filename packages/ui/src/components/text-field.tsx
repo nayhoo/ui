@@ -1,4 +1,7 @@
-import { TextFieldVariants, textFieldRecipe } from "@/recipes/text-field.css";
+import {
+  TextFieldVariants,
+  textFieldRecipe,
+} from "@/theme/recipes/text-field.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

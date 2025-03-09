@@ -1,4 +1,4 @@
-import { Switch } from "@nayhoo/ui";
+import { Switch } from "@nayhoo/ui/switch";
 import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

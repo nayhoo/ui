@@ -7,7 +7,7 @@ import {
   MenuRadioGroup,
   MenuRadioItem,
   MenuSeparator,
-} from "@nayhoo/ui";
+} from "@nayhoo/ui/menu";
 
 // eslint-disable-next-line react/display-name
 export default () => {

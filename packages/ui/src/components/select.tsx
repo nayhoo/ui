@@ -1,4 +1,4 @@
-import { ButtonVariants, buttonRecipe } from "@/recipes/button.css";
+import { ButtonVariants, buttonRecipe } from "@/theme/recipes/button.css";
 import {
   MenuItemVariants,
   MenuLabelVariants,
@@ -8,8 +8,8 @@ import {
   menuLabelRecipe,
   menuRecipe,
   menuSeparatorRecipe,
-} from "@/recipes/menu.css";
-import { PanelVariants, panelRecipe } from "@/recipes/panel.css";
+} from "@/theme/recipes/menu.css";
+import { PanelVariants, panelRecipe } from "@/theme/recipes/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as SelectPrimitive from "@radix-ui/react-Select";

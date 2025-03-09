@@ -1,4 +1,4 @@
-import { lightTheme } from "@nayhoo/ui";
+import { lightTheme } from "@nayhoo/ui/theme";
 import React from "react";
 
 function ThemeDecorator({ children }: { children: React.ReactNode }) {

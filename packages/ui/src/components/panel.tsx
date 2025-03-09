@@ -1,4 +1,4 @@
-import { panelRecipe, PanelVariants } from "@/recipes/panel.css";
+import { panelRecipe, PanelVariants } from "@/theme/recipes/panel.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

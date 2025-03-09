@@ -1,18 +1,18 @@
+import { Box } from "@nayhoo/ui/box";
+import { Button } from "@nayhoo/ui/button";
+import { Flex } from "@nayhoo/ui/flex";
 import {
-  Box,
-  Button,
-  Flex,
   Form,
   FormControl,
   FormField,
   FormLabel,
   FormMessage,
   FormSubmit,
-  Link,
-  Text,
-  TextField,
-  theme,
-} from "@nayhoo/ui";
+} from "@nayhoo/ui/form";
+import { Link } from "@nayhoo/ui/link";
+import { Text } from "@nayhoo/ui/text";
+import { TextField } from "@nayhoo/ui/text-field";
+import { theme } from "@nayhoo/ui/theme";
 import { useState } from "react";
 
 // eslint-disable-next-line react/display-name

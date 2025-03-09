@@ -1,4 +1,4 @@
-import { SkeletonVariants, skeletonRecipe } from "@/recipes/skeleton.css";
+import { SkeletonVariants, skeletonRecipe } from "@/theme/recipes/skeleton.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

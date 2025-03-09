@@ -1,4 +1,4 @@
 {
-  "globalImports": ["src/global.css", "@nayhoo/ui/css"],
+  "globalImports": ["src/global.css", "@nayhoo/ui/theme/index.css"],
   "plugins": ["react-cosmos-plugin-vite", "react-cosmos-plugin-boolean-input"]
 }

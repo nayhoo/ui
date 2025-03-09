@@ -1,5 +1,5 @@
-import { labelRecipe } from "@/recipes/label.css";
-import { TextVariants, textRecipe } from "@/recipes/text.css";
+import { labelRecipe } from "@/theme/recipes/label.css";
+import { TextVariants, textRecipe } from "@/theme/recipes/text.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as LabelPrimitive from "@radix-ui/react-label";

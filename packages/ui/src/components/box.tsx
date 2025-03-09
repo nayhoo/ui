@@ -1,4 +1,4 @@
-import { boxRecipe, BoxVariants } from "@/recipes/box.css";
+import { boxRecipe, BoxVariants } from "@/theme/recipes/box.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

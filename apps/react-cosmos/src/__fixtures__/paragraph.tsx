@@ -1,4 +1,4 @@
-import { Paragraph } from "@nayhoo/ui";
+import { Paragraph } from "@nayhoo/ui/paragraph";
 import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

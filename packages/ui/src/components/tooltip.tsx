@@ -3,8 +3,8 @@ import { Paragraph } from "@/components/paragraph";
 import {
   TooltipContentVariants,
   tooltipContentRecipe,
-} from "@/recipes/tooltip.css";
-import { theme } from "@/theme-contracts/theme-contract.css";
+} from "@/theme/recipes/tooltip.css";
+import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";

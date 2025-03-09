@@ -1,4 +1,6 @@
-import { Container, Heading, Text } from "@nayhoo/ui";
+import { Container } from "@nayhoo/ui/container";
+import { Heading } from "@nayhoo/ui/heading";
+import { Text } from "@nayhoo/ui/text";
 import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

@@ -1,4 +1,4 @@
-import { LinkVariants, linkRecipe } from "@/recipes/link.css";
+import { LinkVariants, linkRecipe } from "@/theme/recipes/link.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

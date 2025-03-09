@@ -1,4 +1,4 @@
-import { Label } from "@nayhoo/ui";
+import { Label } from "@nayhoo/ui/label";
 import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

@@ -1,4 +1,7 @@
-import { SeparatorVariants, separatorRecipe } from "@/recipes/separator.css";
+import {
+  SeparatorVariants,
+  separatorRecipe,
+} from "@/theme/recipes/separator.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";

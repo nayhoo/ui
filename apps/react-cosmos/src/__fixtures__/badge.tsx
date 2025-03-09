@@ -1,4 +1,4 @@
-import { Badge } from "@nayhoo/ui";
+import { Badge } from "@nayhoo/ui/badge";
 import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

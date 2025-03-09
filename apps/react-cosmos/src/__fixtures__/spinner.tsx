@@ -1,4 +1,4 @@
-import { Spinner } from "@nayhoo/ui";
+import { Spinner } from "@nayhoo/ui/spinner";
 import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

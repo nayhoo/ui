@@ -1,4 +1,7 @@
-import { Card, Heading, Separator, Text } from "@nayhoo/ui";
+import { Card } from "@nayhoo/ui/card";
+import { Heading } from "@nayhoo/ui/heading";
+import { Separator } from "@nayhoo/ui/separator";
+import { Text } from "@nayhoo/ui/text";
 import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

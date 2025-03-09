@@ -1,4 +1,7 @@
-import { ContainerVariants, containerRecipe } from "@/recipes/container.css";
+import {
+  ContainerVariants,
+  containerRecipe,
+} from "@/theme/recipes/container.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

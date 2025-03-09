@@ -9,9 +9,9 @@ import {
   menuSeparatorRecipe,
   MenuSeparatorVariants,
   MenuVariants,
-} from "@/recipes/menu.css";
-import { panelRecipe, PanelVariants } from "@/recipes/panel.css";
-import { theme } from "@/theme-contracts/theme-contract.css";
+} from "@/theme/recipes/menu.css";
+import { panelRecipe, PanelVariants } from "@/theme/recipes/panel.css";
+import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import { CheckIcon } from "@radix-ui/react-icons";

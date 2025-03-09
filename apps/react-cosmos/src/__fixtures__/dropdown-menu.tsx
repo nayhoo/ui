@@ -1,5 +1,5 @@
+import { Button } from "@nayhoo/ui/button";
 import {
-  Button,
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@nayhoo/ui";
+} from "@nayhoo/ui/dropdown-menu";
 
 // eslint-disable-next-line react/display-name
 export default () => {

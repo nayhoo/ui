@@ -1,4 +1,4 @@
-import { badgeRecipe, BadgeVariants } from "@/recipes/badge.css";
+import { badgeRecipe, BadgeVariants } from "@/theme/recipes/badge.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

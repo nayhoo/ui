@@ -1,4 +1,5 @@
-import { Box, Button } from "@nayhoo/ui";
+import { Box } from "@nayhoo/ui/box";
+import { Button } from "@nayhoo/ui/button";
 
 // eslint-disable-next-line react/display-name
 export default () => {

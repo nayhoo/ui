@@ -6,9 +6,9 @@ import {
   avatarFallbackRecipe,
   avatarImageRecipe,
   avatarRecipe,
-} from "@/recipes/avatar.css";
-import { StatusVariants } from "@/recipes/status.css";
-import { theme } from "@/theme-contracts/theme-contract.css";
+} from "@/theme/recipes/avatar.css";
+import { StatusVariants } from "@/theme/recipes/status.css";
+import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";

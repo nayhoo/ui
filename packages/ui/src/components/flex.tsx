@@ -1,4 +1,4 @@
-import { FlexVariants, flexRecipe } from "@/recipes/flex.css";
+import { FlexVariants, flexRecipe } from "@/theme/recipes/flex.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

@@ -5,7 +5,7 @@ import {
   formFieldRecipe,
   formLabelRecipe,
   formMessageRecipe,
-} from "@/recipes/form.css";
+} from "@/theme/recipes/form.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as FormPrimitive from "@radix-ui/react-form";

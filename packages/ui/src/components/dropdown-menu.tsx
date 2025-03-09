@@ -9,9 +9,9 @@ import {
   menuLabelRecipe,
   menuRecipe,
   menuSeparatorRecipe,
-} from "@/recipes/menu.css";
-import { PanelVariants, panelRecipe } from "@/recipes/panel.css";
-import { theme } from "@/theme-contracts/theme-contract.css";
+} from "@/theme/recipes/menu.css";
+import { PanelVariants, panelRecipe } from "@/theme/recipes/panel.css";
+import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";

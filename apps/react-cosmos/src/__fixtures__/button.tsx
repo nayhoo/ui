@@ -1,4 +1,4 @@
-import { Button } from "@nayhoo/ui";
+import { Button } from "@nayhoo/ui/button";
 import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

@@ -1,5 +1,5 @@
 import { Spinner } from "@/components/spinner";
-import { ButtonVariants, buttonRecipe } from "@/recipes/button.css";
+import { ButtonVariants, buttonRecipe } from "@/theme/recipes/button.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

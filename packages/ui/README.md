@@ -35,7 +35,7 @@ export default withVanillaExtract(nextConfig);
 ```tsx
 // src/app/layout.tsx
 
-import "@nayhoo/ui/css"; // REQUIRED
+import "@nayhoo/ui/theme/index.css"; // REQUIRED
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppProvider } from "./provider";
@@ -102,7 +102,7 @@ export default defineConfig({
 ```tsx
 // src/main.tsx
 
-import "@nayhoo/ui/css"; // REQUIRED
+import "@nayhoo/ui/theme/index.css"; // REQUIRED
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -130,7 +130,7 @@ function App({ children }: { children: React.ReactNode }) {
 ```tsx
 "use client";
 
-import { Button } from "@nayhoo/ui";
+import { Button } from "@nayhoo/ui/button";
 
 export const Component = () => {
   return <Button onClick={() => alert("Hello!")}>Press me</Button>;

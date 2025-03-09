@@ -1,4 +1,4 @@
-import { Avatar } from "@nayhoo/ui";
+import { Avatar } from "@nayhoo/ui/avatar";
 import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

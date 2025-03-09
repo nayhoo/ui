@@ -1,4 +1,4 @@
-import { TextVariants, textRecipe } from "@/recipes/text.css";
+import { TextVariants, textRecipe } from "@/theme/recipes/text.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

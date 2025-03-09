@@ -1,4 +1,4 @@
-import { Panel } from "@nayhoo/ui";
+import { Panel } from "@nayhoo/ui/panel";
 
 // eslint-disable-next-line react/display-name
 export default () => {

@@ -2,7 +2,7 @@ import { Spinner } from "@/components/spinner";
 import {
   IconButtonVariants,
   iconButtonRecipe,
-} from "@/recipes/icon-button.css";
+} from "@/theme/recipes/icon-button.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

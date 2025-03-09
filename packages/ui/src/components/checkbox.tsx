@@ -3,7 +3,7 @@ import {
   CheckboxVariants,
   checkboxIndicatorRecipe,
   checkboxRecipe,
-} from "@/recipes/checkbox.css";
+} from "@/theme/recipes/checkbox.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";

@@ -1,4 +1,4 @@
-import { TextField } from "@nayhoo/ui";
+import { TextField } from "@nayhoo/ui/text-field";
 import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

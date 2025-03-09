@@ -1,4 +1,4 @@
-import { CardVariants, cardRecipe } from "@/recipes/card.css";
+import { CardVariants, cardRecipe } from "@/theme/recipes/card.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";

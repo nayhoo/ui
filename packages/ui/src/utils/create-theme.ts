@@ -1,5 +1,5 @@
-import { theme } from "@/theme-contracts/theme-contract.css";
-import { baseTheme } from "@/themes/base-theme.css";
+import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { baseTheme } from "@/theme/themes/base-theme.css";
 import * as colors from "@radix-ui/colors";
 import { createTheme as ct } from "@vanilla-extract/css";
 

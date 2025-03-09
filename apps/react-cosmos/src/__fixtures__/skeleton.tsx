@@ -1,4 +1,4 @@
-import { Skeleton } from "@nayhoo/ui";
+import { Skeleton } from "@nayhoo/ui/skeleton";
 import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name

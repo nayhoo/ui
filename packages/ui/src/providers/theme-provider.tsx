@@ -1,6 +1,6 @@
-import { theme } from "@/theme-contracts/theme-contract.css";
-import { darkTheme } from "@/themes/dark-theme.css";
-import { lightTheme } from "@/themes/light-theme.css";
+import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { darkTheme } from "@/theme/themes/dark-theme.css";
+import { lightTheme } from "@/theme/themes/light-theme.css";
 import { ThemeMode } from "@/types/theme-mode";
 import React, { createContext } from "react";
 
