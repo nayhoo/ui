@@ -1,5 +1,14 @@
 # @nayhoo/react-cosmos
 
+## 0.1.11
+
+### Patch Changes
+
+- b8313f6: chore: added select fixture
+- Updated dependencies [b8313f6]
+- Updated dependencies [b8313f6]
+  - @nayhoo/ui@0.8.0
+
 ## 0.1.10
 
 ### Patch Changes

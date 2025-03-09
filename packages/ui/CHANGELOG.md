@@ -1,5 +1,15 @@
 # @nayhoo/ui
 
+## 0.8.0
+
+### Minor Changes
+
+- b8313f6: feat: added select component
+
+### Patch Changes
+
+- b8313f6: refactor: updated package exports
+
 ## 0.7.0
 
 ### Minor Changes
