@@ -7,7 +7,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "button";
 
-type ButtonProps = ComponentProps<typeof defaultElement, ButtonVariants>;
+export type ButtonProps = ComponentProps<typeof defaultElement, ButtonVariants>;
 
 export const Button = ({ asChild, ...props }: ButtonProps) => {
   const variants = pick(props, ...buttonRecipe.variants());
