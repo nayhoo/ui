@@ -1,5 +1,16 @@
 # @nayhoo/ui
 
+## 0.9.2
+
+### Patch Changes
+
+- d15193c: fix(ui): decreased text size for tooltip content
+- d15193c: fix(ui): using theme tokens for html/body background & color properties
+- d15193c: chore: added global styles via globalStyle
+- d15193c: fix: fixed panel text and shadow color for dark mode
+- d15193c: fix(ui): applied the theme class to the document.body programmatically
+- d15193c: chore(ui): added default duration (10 mins) for error toasts
+
 ## 0.9.1
 
 ### Patch Changes
