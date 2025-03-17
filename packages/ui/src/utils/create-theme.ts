@@ -155,6 +155,8 @@ const lightModeColors = {
 
   transparentHover: colors.slateA.slateA3,
   transparentActive: colors.slateA.slateA4,
+
+  shadow: "hsl(206 22% 7% / 35%)",
 };
 
 const darkModeColors = {
@@ -174,4 +176,6 @@ const darkModeColors = {
 
   transparentHover: colors.whiteA.whiteA3,
   transparentActive: colors.whiteA.whiteA4,
+
+  shadow: "hsl(206 22% 7% / 20%)",
 };

@@ -138,4 +138,6 @@ export const semanticColorsContract = createThemeContract({
 
   transparentHover: null,
   transparentActive: null,
+
+  shadow: null,
 });
