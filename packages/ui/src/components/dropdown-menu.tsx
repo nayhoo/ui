@@ -1,19 +1,14 @@
 import { Box } from "@/components/box";
 import { Flex } from "@/components/flex";
 import {
-  MenuItemVariants,
-  MenuLabelVariants,
-  MenuSeparatorVariants,
-  MenuVariants,
-  menuItemRecipe,
-  menuLabelRecipe,
-  menuRecipe,
-  menuSeparatorRecipe,
-} from "@/theme/recipes/menu.css";
-import { PanelVariants, panelRecipe } from "@/theme/recipes/panel.css";
+  menu,
+  menuItem,
+  menuLabel,
+  menuSeparator,
+} from "@/theme/styles/menu.css";
+import { panel } from "@/theme/styles/panel.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon } from "@radix-ui/react-icons";
 
@@ -21,14 +16,9 @@ export const DropdownMenu = DropdownMenuPrimitive.Root;
 
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
-type DropdownMenuContentProps = DropdownMenuPrimitive.DropdownMenuContentProps &
-  MenuVariants &
-  PanelVariants;
+type DropdownMenuContentProps = DropdownMenuPrimitive.DropdownMenuContentProps;
 
 export const DropdownMenuContent = ({ ...props }: DropdownMenuContentProps) => {
-  const menu = menuRecipe(pick(props, ...menuRecipe.variants()));
-  const panel = panelRecipe(pick(props, ...panelRecipe.variants()));
-
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
@@ -39,13 +29,9 @@ export const DropdownMenuContent = ({ ...props }: DropdownMenuContentProps) => {
   );
 };
 
-type DropdownMenuItemProps = DropdownMenuPrimitive.DropdownMenuItemProps &
-  MenuItemVariants;
+type DropdownMenuItemProps = DropdownMenuPrimitive.DropdownMenuItemProps;
 
 export const DropdownMenuItem = ({ ...props }: DropdownMenuItemProps) => {
-  const variants = pick(props, ...menuItemRecipe.variants());
-  const menuItem = menuItemRecipe(variants);
-
   return (
     <DropdownMenuPrimitive.Item
       {...props}
@@ -58,13 +44,9 @@ export const DropdownMenuItem = ({ ...props }: DropdownMenuItemProps) => {
 
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 
-type DropdownMenuLabelProps = DropdownMenuPrimitive.DropdownMenuLabelProps &
-  MenuLabelVariants;
+type DropdownMenuLabelProps = DropdownMenuPrimitive.DropdownMenuLabelProps;
 
 export const DropdownMenuLabel = ({ ...props }: DropdownMenuLabelProps) => {
-  const variants = pick(props, ...menuLabelRecipe.variants());
-  const menuLabel = menuLabelRecipe(variants);
-
   return (
     <DropdownMenuPrimitive.Label
       {...props}
@@ -76,14 +58,11 @@ export const DropdownMenuLabel = ({ ...props }: DropdownMenuLabelProps) => {
 };
 
 type DropdownMenuSeparatorProps =
-  DropdownMenuPrimitive.DropdownMenuSeparatorProps & MenuSeparatorVariants;
+  DropdownMenuPrimitive.DropdownMenuSeparatorProps;
 
 export const DropdownMenuSeparator = ({
   ...props
 }: DropdownMenuSeparatorProps) => {
-  const variants = pick(props, ...menuSeparatorRecipe.variants());
-  const menuSeparator = menuSeparatorRecipe(variants);
-
   return (
     <DropdownMenuPrimitive.Separator
       {...props}
@@ -95,14 +74,11 @@ export const DropdownMenuSeparator = ({
 };
 
 type DropdownMenuCheckboxItemProps =
-  DropdownMenuPrimitive.DropdownMenuCheckboxItemProps & MenuItemVariants;
+  DropdownMenuPrimitive.DropdownMenuCheckboxItemProps;
 
 export const DropdownMenuCheckboxItem = ({
   ...props
 }: DropdownMenuCheckboxItemProps) => {
-  const variants = pick(props, ...menuItemRecipe.variants());
-  const menuItem = menuItemRecipe(variants);
-
   return (
     <DropdownMenuPrimitive.CheckboxItem
       {...props}
@@ -123,15 +99,12 @@ export const DropdownMenuCheckboxItem = ({
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
 type DropdownMenuRadioItemProps =
-  DropdownMenuPrimitive.DropdownMenuRadioItemProps & MenuItemVariants;
+  DropdownMenuPrimitive.DropdownMenuRadioItemProps;
 
 export const DropdownMenuRadioItem = ({
   children,
   ...props
 }: DropdownMenuRadioItemProps) => {
-  const variants = pick(props, ...menuItemRecipe.variants());
-  const menuItem = menuItemRecipe(variants);
-
   return (
     <DropdownMenuPrimitive.RadioItem
       {...props}

@@ -2,8 +2,6 @@ export * from "./avatar.css";
 
 export * from "./badge.css";
 
-export * from "./box.css";
-
 export * from "./button.css";
 
 export * from "./card.css";
@@ -20,15 +18,7 @@ export * from "./grid.css";
 
 export * from "./icon-button.css";
 
-export * from "./label.css";
-
 export * from "./link.css";
-
-export * from "./menu.css";
-
-export * from "./panel.css";
-
-export * from "./separator.css";
 
 export * from "./skeleton.css";
 
