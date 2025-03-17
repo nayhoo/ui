@@ -1,5 +1,7 @@
 export * from "./animations";
 
+export * from "./globalStyle.css";
+
 export * from "./recipes";
 
 export * from "./sprinkles";
