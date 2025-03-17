@@ -1,4 +1,4 @@
-import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { useBodyClassToggle } from "@/hooks/use-body-class-toggle";
 import { darkTheme } from "@/theme/themes/dark-theme.css";
 import { lightTheme } from "@/theme/themes/light-theme.css";
 import { ThemeMode } from "@/types/theme-mode";
@@ -20,19 +20,11 @@ export const ThemeProvider = ({
   children,
   themeMode = defaultThemeMode,
 }: ThemeProviderProps) => {
-  const isDarkMode = themeMode === "dark";
+  // light theme handler
+  useBodyClassToggle(lightTheme, themeMode === "light");
 
-  return (
-    <ThemeContext value={themeMode}>
-      <div
-        className={isDarkMode ? darkTheme : lightTheme}
-        style={{
-          backgroundColor: theme.semanticColors.background,
-          color: theme.semanticColors.backgroundTextContrast,
-        }}
-      >
-        {children}
-      </div>
-    </ThemeContext>
-  );
+  // dark theme handler
+  useBodyClassToggle(darkTheme, themeMode === "dark");
+
+  return <ThemeContext value={themeMode}>{children}</ThemeContext>;
 };
