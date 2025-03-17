@@ -1,5 +1,14 @@
 # @nayhoo/react-cosmos
 
+## 0.1.12
+
+### Patch Changes
+
+- cc23ca2: fix(react-cosmos): fixed import paths for flex fixture
+- Updated dependencies [f757a52]
+- Updated dependencies [cc23ca2]
+  - @nayhoo/ui@0.9.0
+
 ## 0.1.11
 
 ### Patch Changes

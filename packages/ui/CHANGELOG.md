@@ -1,5 +1,15 @@
 # @nayhoo/ui
 
+## 0.9.0
+
+### Minor Changes
+
+- f757a52: feat(ui): added toaster provider
+
+### Patch Changes
+
+- cc23ca2: chore(ui): removed main and types from package.json
+
 ## 0.8.0
 
 ### Minor Changes

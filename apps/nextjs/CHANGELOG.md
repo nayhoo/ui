@@ -1,5 +1,14 @@
 # @nayhoo/nextjs
 
+## 0.1.10
+
+### Patch Changes
+
+- f757a52: chore(nextjs): added toaster to nextjs example
+- Updated dependencies [f757a52]
+- Updated dependencies [cc23ca2]
+  - @nayhoo/ui@0.9.0
+
 ## 0.1.9
 
 ### Patch Changes
