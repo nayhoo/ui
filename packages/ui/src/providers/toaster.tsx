@@ -116,7 +116,8 @@ export const Toaster = ({
 
   const handleDispatchError = React.useCallback(
     (payload: AddToastPayload) =>
-      handleAddToast({ ...payload, status: "error" }),
+      // default duration of 10 mins for `status: "error"`.
+      handleAddToast({ duration: 60 * 1000 * 10, ...payload, status: "error" }),
     [handleAddToast],
   );
 
