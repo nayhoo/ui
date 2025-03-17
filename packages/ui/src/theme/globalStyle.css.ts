@@ -1,6 +1,7 @@
 // Credit: https://github.com/safethecode/breakbase.dev/blob/fa85c0cbdccf98136609ddf40f9e38613ef73003/src/styles/globalStyle.css.ts
 
 import { globalStyle } from "@vanilla-extract/css";
+import { theme } from "./theme-contracts";
 
 const parentElement = [
   "html",
@@ -139,25 +140,25 @@ globalStyle("*, *::before, *::after", {
 
 /**
  * this is reset css for html and body elements
- * '--font-inter' is a custom variable applied in the globalFontsStyle file.
- * @file src/styles/globalFontsStyle.css.ts
  */
 globalStyle("html, body", {
   width: "100%",
   height: "100%",
-  fontFamily: `
-    var(--font-pretendard),
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Helvetica Neue,
-    Helvetica,
-    Arial,
-    sans-serif
-  `,
+  // fontFamily: `
+  //   -apple-system,
+  //   BlinkMacSystemFont,
+  //   Segoe UI,
+  //   Roboto,
+  //   Helvetica Neue,
+  //   Helvetica,
+  //   Arial,
+  //   sans-serif
+  // `,
   margin: 0,
   padding: 0,
   WebkitFontSmoothing: "antialiased",
-  background: "#000",
+
+  // custom
+  background: theme.semanticColors.background,
+  color: theme.semanticColors.backgroundTextContrast,
 });
