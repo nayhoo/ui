@@ -1,5 +1,5 @@
 import { Box } from "@/components/box";
-import { Paragraph } from "@/components/paragraph";
+import { Text } from "@/components/text";
 import {
   TooltipContentVariants,
   tooltipContentRecipe,
@@ -48,14 +48,14 @@ export function Tooltip({
             {...props}
             className={mergeClasses(tooltipContent, props.className)}
           >
-            <Paragraph
+            <Text
               size="1"
               style={{
                 lineHeight: props.multiline ? "20px" : undefined,
               }}
             >
               {content}
-            </Paragraph>
+            </Text>
             <Box>
               <TooltipPrimitive.Arrow
                 width={11}
