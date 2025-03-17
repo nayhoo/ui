@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.9.1
+
+### Patch Changes
+
+- c326c96: refactor: use vanilla-extract style when recipe is not required
+
 ## 0.9.0
 
 ### Minor Changes
