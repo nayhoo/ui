@@ -1,10 +1,10 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
-import { panelRecipe } from "./panel.css";
+import { panel } from "../styles/panel.css";
 
 export const cardRecipe = recipe({
   base: [
-    panelRecipe({}),
+    panel,
     {
       padding: `${theme.space[5]} ${theme.space[5]} ${theme.space[6]} ${theme.space[5]}`,
     },

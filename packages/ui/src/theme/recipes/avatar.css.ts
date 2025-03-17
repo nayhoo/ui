@@ -111,24 +111,6 @@ export const avatarRecipe = recipe({
 
 export type AvatarVariants = NonNullable<RecipeVariants<typeof avatarRecipe>>;
 
-export const avatarImageRecipe = recipe({
-  base: {
-    display: "flex",
-    objectFit: "cover",
-    boxSizing: "border-box",
-    height: "100%",
-    verticalAlign: "middle",
-    width: "100%",
-  },
-
-  variants: {},
-  defaultVariants: {},
-});
-
-export type AvatarImageVariants = NonNullable<
-  RecipeVariants<typeof avatarImageRecipe>
->;
-
 export const avatarFallbackRecipe = recipe({
   base: {
     textTransform: "uppercase",

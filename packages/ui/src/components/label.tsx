@@ -1,7 +1,6 @@
-import { labelRecipe } from "@/theme/recipes/label.css";
 import { TextVariants, textRecipe } from "@/theme/recipes/text.css";
+import { label } from "@/theme/styles/label.css";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import * as LabelPrimitive from "@radix-ui/react-label";
 
 type LabelSizeVariants = "1" | "2";
@@ -17,9 +16,7 @@ const textSize: Record<LabelSizeVariants, TextVariants["size"]> = {
 };
 
 export const Label = ({ color, size = "1", weight, ...props }: LabelProps) => {
-  console.log(textSize, textSize[size], size);
   const text = textRecipe({ color, size: textSize[size], weight });
-  const label = labelRecipe(pick(props, ...labelRecipe.variants()));
 
   return (
     <LabelPrimitive.Root

@@ -60,20 +60,3 @@ export const checkboxRecipe = recipe({
 export type CheckboxVariants = NonNullable<
   RecipeVariants<typeof checkboxRecipe>
 >;
-
-export const checkboxIndicatorRecipe = recipe({
-  base: {
-    alignItems: "center",
-    display: "flex",
-    height: "100%",
-    justifyContent: "center",
-    width: "100%",
-  },
-
-  variants: {},
-  defaultVariants: {},
-});
-
-export type CheckboxIndicatorVariants = NonNullable<
-  RecipeVariants<typeof checkboxIndicatorRecipe>
->;

@@ -1,13 +1,12 @@
 import { Box } from "@/components/box";
 import {
   AvatarFallbackVariants,
-  AvatarImageVariants,
   AvatarVariants,
   avatarFallbackRecipe,
-  avatarImageRecipe,
   avatarRecipe,
 } from "@/theme/recipes/avatar.css";
 import { StatusVariants } from "@/theme/recipes/status.css";
+import { avatarImage } from "@/theme/styles/avatar.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
@@ -15,12 +14,9 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
 import { Status } from "./status";
 
-type AvatarImageProps = AvatarPrimitive.AvatarImageProps & AvatarImageVariants;
+type AvatarImageProps = AvatarPrimitive.AvatarImageProps;
 
 const AvatarImage = ({ ...props }: AvatarImageProps) => {
-  const variants = pick(props, ...avatarImageRecipe.variants());
-  const avatarImage = avatarImageRecipe(variants);
-
   return (
     <AvatarPrimitive.Image
       {...props}

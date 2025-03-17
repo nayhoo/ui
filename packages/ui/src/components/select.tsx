@@ -1,15 +1,11 @@
 import { ButtonVariants, buttonRecipe } from "@/theme/recipes/button.css";
 import {
-  MenuItemVariants,
-  MenuLabelVariants,
-  MenuSeparatorVariants,
-  MenuVariants,
-  menuItemRecipe,
-  menuLabelRecipe,
-  menuRecipe,
-  menuSeparatorRecipe,
-} from "@/theme/recipes/menu.css";
-import { PanelVariants, panelRecipe } from "@/theme/recipes/panel.css";
+  menu,
+  menuItem,
+  menuLabel,
+  menuSeparator,
+} from "@/theme/styles/menu.css";
+import { panel } from "@/theme/styles/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as SelectPrimitive from "@radix-ui/react-Select";
@@ -45,14 +41,9 @@ export const SelectTrigger = ({
   );
 };
 
-type SelectContentProps = SelectPrimitive.SelectContentProps &
-  MenuVariants &
-  PanelVariants;
+type SelectContentProps = SelectPrimitive.SelectContentProps;
 
 export const SelectContent = ({ ...props }: SelectContentProps) => {
-  const menu = menuRecipe(pick(props, ...menuRecipe.variants()));
-  const panel = panelRecipe(pick(props, ...panelRecipe.variants()));
-
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
@@ -63,12 +54,9 @@ export const SelectContent = ({ ...props }: SelectContentProps) => {
   );
 };
 
-type SelectItemProps = SelectPrimitive.SelectItemProps & MenuItemVariants;
+type SelectItemProps = SelectPrimitive.SelectItemProps;
 
 export const SelectItem = ({ ...props }: SelectItemProps) => {
-  const variants = pick(props, ...menuItemRecipe.variants());
-  const menuItem = menuItemRecipe(variants);
-
   return (
     <SelectPrimitive.Item
       {...props}
@@ -83,12 +71,9 @@ export const SelectViewport = SelectPrimitive.Viewport;
 
 export const SelectGroup = SelectPrimitive.Group;
 
-type SelectLabelProps = SelectPrimitive.SelectLabelProps & MenuLabelVariants;
+type SelectLabelProps = SelectPrimitive.SelectLabelProps;
 
 export const SelectLabel = ({ ...props }: SelectLabelProps) => {
-  const variants = pick(props, ...menuLabelRecipe.variants());
-  const menuLabel = menuLabelRecipe(variants);
-
   return (
     <SelectPrimitive.Label
       {...props}
@@ -99,13 +84,9 @@ export const SelectLabel = ({ ...props }: SelectLabelProps) => {
   );
 };
 
-type SelectSeparatorProps = SelectPrimitive.SelectSeparatorProps &
-  MenuSeparatorVariants;
+type SelectSeparatorProps = SelectPrimitive.SelectSeparatorProps;
 
 export const SelectSeparator = ({ ...props }: SelectSeparatorProps) => {
-  const variants = pick(props, ...menuSeparatorRecipe.variants());
-  const menuSeparator = menuSeparatorRecipe(variants);
-
   return (
     <SelectPrimitive.Separator
       {...props}
