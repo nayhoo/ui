@@ -25,17 +25,17 @@ type Toast = {
 
 type AddToastPayload = Omit<Toast, "status">;
 
-type ToastProviderContextProps = ((payload: AddToastPayload) => void) & {
+type ToastContextProps = ((payload: AddToastPayload) => void) & {
   error: (payload: AddToastPayload) => void;
   success: (payload: AddToastPayload) => void;
 };
 
-const defaultToast: ToastProviderContextProps = Object.assign(() => {}, {
+const defaultToast: ToastContextProps = Object.assign(() => {}, {
   success: () => {},
   error: () => {},
 });
 
-export const ToastProviderContext = React.createContext(defaultToast);
+export const ToastContext = React.createContext(defaultToast);
 
 type ToastContextImplProps = {
   toastElementsMapRef: React.RefObject<Map<string, HTMLLIElement> | null>;
@@ -164,7 +164,7 @@ export const ToastProvider = ({
   );
 
   return (
-    <ToastProviderContext.Provider value={toastApi}>
+    <ToastContext.Provider value={toastApi}>
       <ToastContextImpl.Provider
         value={React.useMemo(
           () => ({
@@ -201,7 +201,7 @@ export const ToastProvider = ({
           />
         </ToastPrimitives.Provider>
       </ToastContextImpl.Provider>
-    </ToastProviderContext.Provider>
+    </ToastContext.Provider>
   );
 };
 
