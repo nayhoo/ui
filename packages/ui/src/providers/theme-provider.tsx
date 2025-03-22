@@ -1,30 +1,94 @@
-import { useBodyClassToggle } from "@/hooks/use-body-class-toggle";
 import { darkTheme } from "@/theme/themes/dark-theme.css";
 import { lightTheme } from "@/theme/themes/light-theme.css";
-import { ThemeMode } from "@/types/theme-mode";
-import React, { createContext } from "react";
+import { theme as Theme } from "@/types/theme";
+import React, { createContext, useEffect, useState } from "react";
 
-const defaultThemeMode: ThemeMode = "light";
+const themes: Theme[] = ["light", "dark", "system"];
+const storageKey = "nayhoo-theme";
 
-export const ThemeContext = createContext<ThemeMode>(defaultThemeMode);
+type ThemeContextProps = {
+  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  themes: Theme[];
+};
+
+export const ThemeContext = createContext<ThemeContextProps>({
+  theme: "system",
+  setTheme: () => {},
+  themes,
+});
 
 type ThemeProviderProps = {
   children: React.ReactNode;
-  themeMode?: ThemeMode;
+  defaultTheme?: Theme;
 };
 
-/**
- * This component applies the theme css. It should preferably be used at the root of your component tree.
- */
-export const ThemeProvider = ({
-  children,
-  themeMode = defaultThemeMode,
-}: ThemeProviderProps) => {
-  // light theme handler
-  useBodyClassToggle(lightTheme, themeMode === "light");
+const defaultTheme = "system";
 
-  // dark theme handler
-  useBodyClassToggle(darkTheme, themeMode === "dark");
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+  const [theme, setTheme] = useState(() => getTheme());
 
-  return <ThemeContext value={themeMode}>{children}</ThemeContext>;
+  const applyTheme = (theme: Theme) => {
+    const isDark = theme === "dark";
+    const isSystem = theme === "system";
+
+    if (
+      isDark ||
+      ((isSystem || !(storageKey in localStorage)) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.querySelector("html")?.classList.add(darkTheme);
+      document.querySelector("html")?.classList.remove(lightTheme);
+    } else {
+      document.querySelector("html")?.classList.add(lightTheme);
+      document.querySelector("html")?.classList.remove(darkTheme);
+    }
+  };
+
+  useEffect(() => {
+    applyTheme(theme);
+
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch {}
+  }, [theme]);
+
+  return (
+    <ThemeContext value={{ theme, setTheme, themes }}>
+      <script>
+        {`    
+          const isDark = localStorage.getItem("${storageKey}") === "dark";
+          const isSystem = localStorage.getItem("${storageKey}") === "system";
+
+          if (
+            isDark ||
+            ((isSystem || !("${storageKey}" in localStorage)) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.querySelector("html")?.classList.add("${darkTheme}");
+            document.querySelector("html")?.classList.remove("${lightTheme}");
+          } else {
+            document.querySelector("html")?.classList.add("${lightTheme}");
+            document.querySelector("html")?.classList.remove("${darkTheme}");
+          }
+        `}
+      </script>
+
+      {children}
+    </ThemeContext>
+  );
+};
+
+const getTheme = () => {
+  if (typeof window === "undefined") {
+    return defaultTheme;
+  }
+
+  let theme: string | undefined;
+
+  try {
+    theme = localStorage.getItem(storageKey) || undefined;
+  } catch {}
+
+  return themes.find((t) => t === theme) ?? defaultTheme;
 };
