@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.9.3
+
+### Patch Changes
+
+- bed89c4: refactor(ui): improved theme provider. added setTheme and themes context values, no FOUC, added system theme
+- bed89c4: refactor(ui): renamed toaster to toastprovider
+
 ## 0.9.2
 
 ### Patch Changes
