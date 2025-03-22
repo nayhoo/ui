@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeProvider, Toaster } from "@nayhoo/ui/providers";
+import { ThemeProvider, ToastProvider } from "@nayhoo/ui/providers";
 import React from "react";
 
 type AppProviderProps = {
@@ -10,7 +10,7 @@ type AppProviderProps = {
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <ThemeProvider>
-      <Toaster>{children}</Toaster>
+      <ToastProvider>{children}</ToastProvider>
     </ThemeProvider>
   );
 };

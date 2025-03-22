@@ -25,17 +25,17 @@ type Toast = {
 
 type AddToastPayload = Omit<Toast, "status">;
 
-type ToasterContextProps = ((payload: AddToastPayload) => void) & {
+type ToastProviderContextProps = ((payload: AddToastPayload) => void) & {
   error: (payload: AddToastPayload) => void;
   success: (payload: AddToastPayload) => void;
 };
 
-const defaultToaster: ToasterContextProps = Object.assign(() => {}, {
+const defaultToast: ToastProviderContextProps = Object.assign(() => {}, {
   success: () => {},
   error: () => {},
 });
 
-export const ToasterContext = React.createContext(defaultToaster);
+export const ToastProviderContext = React.createContext(defaultToast);
 
 type ToastContextImplProps = {
   toastElementsMapRef: React.RefObject<Map<string, HTMLLIElement> | null>;
@@ -53,7 +53,7 @@ const ToastContextImpl = React.createContext(defaultToastImpl);
 
 const ANIMATION_OUT_DURATION = 350;
 
-export const Toaster = ({
+export const ToastProvider = ({
   children,
   ...props
 }: ToastPrimitives.ToastProviderProps) => {
@@ -164,7 +164,7 @@ export const Toaster = ({
   );
 
   return (
-    <ToasterContext.Provider value={toastApi}>
+    <ToastProviderContext.Provider value={toastApi}>
       <ToastContextImpl.Provider
         value={React.useMemo(
           () => ({
@@ -201,7 +201,7 @@ export const Toaster = ({
           />
         </ToastPrimitives.Provider>
       </ToastContextImpl.Provider>
-    </ToasterContext.Provider>
+    </ToastProviderContext.Provider>
   );
 };
 
