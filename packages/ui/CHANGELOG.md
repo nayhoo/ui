@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.9.4
+
+### Patch Changes
+
+- a633665: refactor: panels to use outlines instead of a shadow
+- a633665: feat(ui): added round prop for buttons
+
 ## 0.9.3
 
 ### Patch Changes
