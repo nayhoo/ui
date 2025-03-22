@@ -1,16 +1,13 @@
-import { CardVariants, cardRecipe } from "@/theme/recipes/card.css";
+import { card } from "@/theme/styles/card.css";
 import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type CardProps = ComponentProps<typeof defaultElement, CardVariants>;
+type CardProps = ComponentProps<typeof defaultElement>;
 
 export const Card = ({ asChild, ...props }: CardProps) => {
-  const variants = pick(props, ...cardRecipe.variants());
-  const card = cardRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (

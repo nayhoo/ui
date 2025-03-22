@@ -1,5 +1,7 @@
 export * from "./box.css";
 
+export * from "./card.css";
+
 export * from "./checkbox.css";
 
 export * from "./form.css";

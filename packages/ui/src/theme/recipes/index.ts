@@ -4,8 +4,6 @@ export * from "./badge.css";
 
 export * from "./button.css";
 
-export * from "./card.css";
-
 export * from "./checkbox.css";
 
 export * from "./container.css";
