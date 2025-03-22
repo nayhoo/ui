@@ -1,3 +1,3 @@
 export * from "./theme-provider";
 
-export * from "./toaster";
+export * from "./toast-provider";
