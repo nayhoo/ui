@@ -31,7 +31,6 @@ export const iconButtonRecipe = recipe({
         boxSizing: "border-box",
       },
       "&:hover": {
-        backgroundColor: theme.semanticColors.transparentHover,
         cursor: "pointer",
       },
       "&:disabled": {
@@ -76,22 +75,33 @@ export const iconButtonRecipe = recipe({
     variant: {
       ghost: {
         backgroundColor: "transparent",
-        borderWidth: "0",
 
         selectors: {
+          "&:hover": {
+            backgroundColor: theme.semanticColors.transparentHover,
+          },
           "&:active": {
             backgroundColor: theme.semanticColors.transparentActive,
           },
         },
       },
       outline: {
+        backgroundColor: "transparent",
         boxShadow: `inset 0 0 0 1px ${theme.semanticColors.line}`,
 
         selectors: {
+          "&:hover": {
+            backgroundColor: theme.semanticColors.transparentHover,
+          },
           "&:active": {
-            backgroundColor: theme.colors.slateA.slateA4,
+            backgroundColor: theme.semanticColors.transparentActive,
           },
         },
+      },
+    },
+    round: {
+      true: {
+        borderRadius: theme.radii.full,
       },
     },
   },

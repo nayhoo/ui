@@ -76,12 +76,6 @@ export const buttonRecipe = recipe({
         lineHeight: theme.sizes[7],
       },
     },
-    shape: {
-      square: {},
-      pill: {
-        borderRadius: theme.radii.full,
-      },
-    },
     variant: {
       primary: {
         backgroundColor: theme.semanticColors.primary.primary4,
@@ -110,6 +104,7 @@ export const buttonRecipe = recipe({
         },
       },
       outline: {
+        backgroundColor: "transparent",
         boxShadow: `inset 0 0 0 1px ${theme.semanticColors.line}`,
 
         selectors: {
@@ -158,6 +153,11 @@ export const buttonRecipe = recipe({
             backgroundColor: theme.semanticColors.success.success6,
           },
         },
+      },
+    },
+    round: {
+      true: {
+        borderRadius: theme.radii.full,
       },
     },
   },

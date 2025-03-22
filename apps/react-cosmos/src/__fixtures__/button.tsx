@@ -7,9 +7,7 @@ export default () => {
 
   const [loading, setLoading] = useFixtureInput("loading", false);
 
-  const [shape] = useFixtureSelect("shape", {
-    options: ["square", "pill"],
-  });
+  const [round] = useFixtureInput("round", false);
 
   const [size] = useFixtureSelect("size", {
     options: ["1", "2", "3"],
@@ -31,8 +29,8 @@ export default () => {
     <Button
       fullWidth={fullWidth}
       loading={loading}
-      shape={shape}
       size={size}
+      round={round}
       variant={variant}
       onClick={handleOnClick}
     >

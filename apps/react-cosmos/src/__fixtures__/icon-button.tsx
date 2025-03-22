@@ -13,6 +13,8 @@ export default () => {
     options: ["ghost", "outline"],
   });
 
+  const [round] = useFixtureInput("round", false);
+
   const handleOnClick = () => {
     setLoading(true);
 
@@ -24,6 +26,7 @@ export default () => {
   return (
     <IconButton
       loading={loading}
+      round={round}
       size={size}
       variant={variant}
       onClick={handleOnClick}
