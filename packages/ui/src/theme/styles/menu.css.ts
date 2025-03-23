@@ -55,6 +55,7 @@ export const menu = style({
   boxSizing: "border-box",
   minWidth: 120,
   padding: theme.space[1],
+  zIndex: theme.zIndices.max,
 });
 
 export const menuSeparator = style({
