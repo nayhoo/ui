@@ -1,5 +1,16 @@
 # @nayhoo/ui
 
+## 0.10.0
+
+### Minor Changes
+
+- 881c4cb: feat(ui): added popover component
+
+### Patch Changes
+
+- 881c4cb: refactor(ui): button as child for select trigger; viewport within content
+- 881c4cb: fix(ui): increased z-index on menu style
+
 ## 0.9.6
 
 ### Patch Changes
