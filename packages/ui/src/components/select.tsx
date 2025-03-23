@@ -1,4 +1,4 @@
-import { ButtonVariants, buttonRecipe } from "@/theme/recipes/button.css";
+import { ButtonVariants } from "@/theme/recipes/button.css";
 import {
   menu,
   menuItem,
@@ -7,9 +7,9 @@ import {
 } from "@/theme/styles/menu.css";
 import { panel } from "@/theme/styles/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import * as SelectPrimitive from "@radix-ui/react-Select";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { Button } from "./button";
 
 export const Select = SelectPrimitive.Root;
 
@@ -23,33 +23,30 @@ export const SelectTrigger = ({
   variant = "outline",
   ...props
 }: SelectTriggerProps) => {
-  const button = buttonRecipe(
-    pick({ variant, ...props }, ...buttonRecipe.variants()),
-  );
-
   return (
-    <SelectPrimitive.Trigger
-      {...props}
-      className={mergeClasses(button, props.className)}
-    >
-      <SelectPrimitive.Value placeholder={placeholder} />
+    <SelectPrimitive.Trigger {...props} asChild>
+      <Button variant={variant}>
+        <SelectPrimitive.Value placeholder={placeholder} />
 
-      <SelectPrimitive.Icon style={{ marginLeft: 5 }}>
-        <ChevronDownIcon />
-      </SelectPrimitive.Icon>
+        <SelectPrimitive.Icon style={{ marginLeft: 5 }}>
+          <ChevronDownIcon />
+        </SelectPrimitive.Icon>
+      </Button>
     </SelectPrimitive.Trigger>
   );
 };
 
 type SelectContentProps = SelectPrimitive.SelectContentProps;
 
-export const SelectContent = ({ ...props }: SelectContentProps) => {
+export const SelectContent = ({ children, ...props }: SelectContentProps) => {
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         {...props}
         className={mergeClasses(menu, panel, props.className)}
-      />
+      >
+        <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
+      </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
   );
 };
@@ -66,8 +63,6 @@ export const SelectItem = ({ ...props }: SelectItemProps) => {
     </SelectPrimitive.Item>
   );
 };
-
-export const SelectViewport = SelectPrimitive.Viewport;
 
 export const SelectGroup = SelectPrimitive.Group;
 
