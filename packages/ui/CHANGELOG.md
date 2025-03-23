@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.9.6
+
+### Patch Changes
+
+- 8da8b02: fix(ui): resolved pseudo-classes issue
+
 ## 0.9.5
 
 ### Patch Changes
