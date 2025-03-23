@@ -14,4 +14,4 @@ export * from "./panel.css";
 
 export * from "./separator.css";
 
-export * from "./toaster.css";
+export * from "./toast.css";

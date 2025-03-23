@@ -11,7 +11,7 @@ import {
   toastInner,
   toastRoot,
   toastViewport,
-} from "@/theme/styles/toaster.css";
+} from "@/theme/styles/toast.css";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import * as React from "react";

@@ -56,9 +56,9 @@ export const toastRoot = style({
   },
 
   selectors: {
-    "&::focus-visible": {
-      boxShadow: "0 0 0 2px black",
-    },
+    // "&::focus-visible": {
+    //   boxShadow: "0 0 0 2px black",
+    // },
 
     "&::after": {
       content: '""',
