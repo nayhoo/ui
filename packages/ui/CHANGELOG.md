@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.9.5
+
+### Patch Changes
+
+- 5ab702e: refactor: renamed toast context to be inline with theme context
+- aa14804: fix(ui): resolved theme provider theme on initial load
+
 ## 0.9.4
 
 ### Patch Changes
