@@ -192,6 +192,7 @@ const ThemeScript = React.memo(
     const scriptArgs = JSON.stringify([
       storageKey,
       defaultTheme,
+      systemThemes,
       classes,
     ]).slice(1, -1);
 
@@ -234,11 +235,13 @@ const getSystemTheme = (e?: MediaQueryList | MediaQueryListEvent) => {
 const isTheme = (value: string): value is ITheme =>
   themes.some((theme) => theme === value);
 
-const isSystemTheme = (value: string): value is SystemTheme =>
-  systemThemes.some((theme) => theme === value);
-
 // Credits: https://github.com/pacocoursey/next-themes/blob/main/next-themes/src/script.ts
-const script = () => {
+const script = (
+  storageKey: string,
+  defaultTheme: ITheme,
+  systemThemes: SystemTheme[],
+  classes: Record<SystemTheme, string>,
+) => {
   const el = document.documentElement;
 
   function updateDOM(theme: SystemTheme) {
@@ -252,6 +255,16 @@ const script = () => {
     if (systemThemes.some((systemTheme) => systemTheme === theme)) {
       el.style.colorScheme = theme;
     }
+  }
+
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+
+  function isSystemTheme(value: string): value is SystemTheme {
+    return systemThemes.some((theme) => theme === value);
   }
 
   try {
