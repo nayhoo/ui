@@ -30,12 +30,23 @@ type ToastContextProps = ((payload: AddToastPayload) => void) & {
   success: (payload: AddToastPayload) => void;
 };
 
-const defaultToast: ToastContextProps = Object.assign(() => {}, {
-  success: () => {},
-  error: () => {},
-});
+const defaultContext: ToastContextProps = Object.assign(
+  () => {
+    // TODO: something about needs to be in a provider
+  },
+  {
+    success: () => {
+      // TODO: something about needs to be in a provider
+    },
+    error: () => {
+      // TODO: something about needs to be in a provider
+    },
+  },
+);
 
-export const ToastContext = React.createContext(defaultToast);
+const ToastContext = React.createContext(defaultContext);
+
+export const useToast = () => React.useContext(ToastContext) ?? defaultContext;
 
 type ToastContextImplProps = {
   toastElementsMapRef: React.RefObject<Map<string, HTMLLIElement> | null>;
