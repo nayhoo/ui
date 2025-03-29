@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.10.1
+
+### Patch Changes
+
+- 5e5faff: refactor(ui): using https://github.com/pacocoursey/next-themes more as a reference for ThemeProvider
+- 5e5faff: chore(ui): export useToast hook
+
 ## 0.10.0
 
 ### Minor Changes
