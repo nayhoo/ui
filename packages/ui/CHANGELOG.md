@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.10.2
+
+### Patch Changes
+
+- 988ba48: fix(ui): passing params to theme script
+
 ## 0.10.1
 
 ### Patch Changes
