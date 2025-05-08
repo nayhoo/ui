@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.11.0
+
+### Minor Changes
+
+- 675bc5d: feat: added homemadeRecipes for button, flex and grid
+
 ## 0.10.2
 
 ### Patch Changes
