@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const gridRecipe = recipe({
+export const gridRecipe = homemadeRecipe({
   base: {
     boxSizing: "border-box",
     display: "grid",
@@ -210,10 +211,14 @@ export const gridRecipe = recipe({
     },
   },
 
+  responsiveVariants: ["xs", "sm", "md", "lg", "xl"],
+
   defaultVariants: {
     // align: "stretch",
     // justify: "start",
   },
 });
 
-export type GridVariants = NonNullable<RecipeVariants<typeof gridRecipe>>;
+export type GridVariants = NonNullable<
+  HomemadeRecipeVariants<typeof gridRecipe>
+>;

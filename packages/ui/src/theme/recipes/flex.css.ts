@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const flexRecipe = recipe({
+export const flexRecipe = homemadeRecipe({
   base: {
     boxSizing: "border-box",
     display: "flex",
@@ -95,6 +96,8 @@ export const flexRecipe = recipe({
     },
   },
 
+  responsiveVariants: ["xs", "sm", "md", "lg", "xl"],
+
   defaultVariants: {
     align: "stretch",
     direction: "row",
@@ -103,4 +106,6 @@ export const flexRecipe = recipe({
   },
 });
 
-export type FlexVariants = NonNullable<RecipeVariants<typeof flexRecipe>>;
+export type FlexVariants = NonNullable<
+  HomemadeRecipeVariants<typeof flexRecipe>
+>;
