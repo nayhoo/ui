@@ -1,10 +1,8 @@
-const config = {
+module.exports = {
   bracketSpacing: true,
   semi: true,
   trailingComma: "all",
   printWidth: 80,
   tabWidth: 2,
-  plugins: ["prettier-plugin-organize-imports"],
+  plugins: [require.resolve("prettier-plugin-organize-imports")],
 };
-
-export default config;

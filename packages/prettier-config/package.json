@@ -2,7 +2,6 @@
   "name": "@nayhoo/prettier-config",
   "version": "1.0.1",
   "description": "Nayhoo Prettier config",
-  "type": "module",
   "exports": "./index.js",
   "license": "MIT",
   "publishConfig": {
