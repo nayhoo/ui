@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.11.1
+
+### Patch Changes
+
+- c46d684: fix: corrected import path
+
 ## 0.11.0
 
 ### Minor Changes
