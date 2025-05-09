@@ -7,8 +7,8 @@ import {
 } from "@/theme/styles/menu.css";
 import { panel } from "@/theme/styles/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
-import * as SelectPrimitive from "@radix-ui/react-Select";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
+import * as SelectPrimitive from "@radix-ui/react-select";
 import { Button } from "./button";
 
 export const Select = SelectPrimitive.Root;
