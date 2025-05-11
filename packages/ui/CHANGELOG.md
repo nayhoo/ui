@@ -1,5 +1,16 @@
 # @nayhoo/ui
 
+## 0.12.0
+
+### Minor Changes
+
+- 9af6789: feat: export homemade-recipe
+
+### Patch Changes
+
+- 9338182: chore: upgrade homemade-recipes to v0.3
+- 9af6789: chore: update moduleResolution to bundler
+
 ## 0.11.1
 
 ### Patch Changes
