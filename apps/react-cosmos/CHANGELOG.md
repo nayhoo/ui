@@ -1,5 +1,15 @@
 # @nayhoo/react-cosmos
 
+## 0.1.25
+
+### Patch Changes
+
+- 08f41da: chore: bump ts version to latest
+- Updated dependencies [08f41da]
+- Updated dependencies [08f41da]
+- Updated dependencies [08f41da]
+  - @nayhoo/ui@0.12.1
+
 ## 0.1.24
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @nayhoo/ui
 
+## 0.12.1
+
+### Patch Changes
+
+- 08f41da: chore: bump homemade-recipe to latest
+- 08f41da: chore: bump ts version to latest
+- 08f41da: fix: prevent exporting homemadeRecipe
+
 ## 0.12.0
 
 ### Minor Changes
