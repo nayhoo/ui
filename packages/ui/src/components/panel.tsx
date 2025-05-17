@@ -5,7 +5,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type PanelProps = ComponentProps<typeof defaultElement>;
+export type PanelProps = ComponentProps<typeof defaultElement>;
 
 export const Panel = ({ asChild, ...props }: PanelProps) => {
   const Comp = asChild ? Slot : defaultElement;

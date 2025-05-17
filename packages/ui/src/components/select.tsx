@@ -11,9 +11,11 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Button } from "./button";
 
+export type SelectProps = SelectPrimitive.SelectProps;
+
 export const Select = SelectPrimitive.Root;
 
-type SelectTriggerProps = SelectPrimitive.SelectTriggerProps &
+export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps &
   ButtonVariants & {
     placeholder?: React.ReactNode;
   };
@@ -36,7 +38,7 @@ export const SelectTrigger = ({
   );
 };
 
-type SelectContentProps = SelectPrimitive.SelectContentProps;
+export type SelectContentProps = SelectPrimitive.SelectContentProps;
 
 export const SelectContent = ({ children, ...props }: SelectContentProps) => {
   return (
@@ -51,7 +53,7 @@ export const SelectContent = ({ children, ...props }: SelectContentProps) => {
   );
 };
 
-type SelectItemProps = SelectPrimitive.SelectItemProps;
+export type SelectItemProps = SelectPrimitive.SelectItemProps;
 
 export const SelectItem = ({ ...props }: SelectItemProps) => {
   return (
@@ -64,9 +66,11 @@ export const SelectItem = ({ ...props }: SelectItemProps) => {
   );
 };
 
+export type SelectGroupProps = SelectPrimitive.SelectGroupProps;
+
 export const SelectGroup = SelectPrimitive.Group;
 
-type SelectLabelProps = SelectPrimitive.SelectLabelProps;
+export type SelectLabelProps = SelectPrimitive.SelectLabelProps;
 
 export const SelectLabel = ({ ...props }: SelectLabelProps) => {
   return (
@@ -79,7 +83,7 @@ export const SelectLabel = ({ ...props }: SelectLabelProps) => {
   );
 };
 
-type SelectSeparatorProps = SelectPrimitive.SelectSeparatorProps;
+export type SelectSeparatorProps = SelectPrimitive.SelectSeparatorProps;
 
 export const SelectSeparator = ({ ...props }: SelectSeparatorProps) => {
   return (

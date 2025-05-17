@@ -6,7 +6,10 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type SkeletonProps = ComponentProps<typeof defaultElement, SkeletonVariants>;
+export type SkeletonProps = ComponentProps<
+  typeof defaultElement,
+  SkeletonVariants
+>;
 
 export const Skeleton = ({ asChild, ...props }: SkeletonProps) => {
   const variants = pick(props, ...skeletonRecipe.variants());

@@ -4,11 +4,15 @@ import { mergeClasses } from "@/utils";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import React from "react";
 
+export type PopoverProps = PopoverPrimitive.PopoverProps;
+
 export const Popover = PopoverPrimitive.Root;
+
+export type PopoverTriggerProps = PopoverPrimitive.PopoverTriggerProps;
 
 export const PopoverTrigger = PopoverPrimitive.Trigger;
 
-type PopoverContentPrimitiveProps = React.ComponentProps<
+export type PopoverContentPrimitiveProps = React.ComponentProps<
   typeof PopoverPrimitive.Content
 >;
 
@@ -26,5 +30,7 @@ export const PopoverContent = ({
     </PopoverPrimitive.Content>
   </PopoverPrimitive.Portal>
 );
+
+export type PopoverCloseProps = PopoverPrimitive.PopoverCloseProps;
 
 export const PopoverClose = PopoverPrimitive.Close;

@@ -5,7 +5,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type BoxProps = ComponentProps<typeof defaultElement>;
+export type BoxProps = ComponentProps<typeof defaultElement>;
 
 export const Box = ({ asChild, ...props }: BoxProps) => {
   const Comp = asChild ? Slot : defaultElement;

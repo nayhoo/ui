@@ -12,11 +12,17 @@ import { mergeClasses } from "@/utils/merge-classes";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon } from "@radix-ui/react-icons";
 
+export type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps;
+
 export const DropdownMenu = DropdownMenuPrimitive.Root;
+
+export type DropdownMenuTriggerProps =
+  DropdownMenuPrimitive.DropdownMenuTriggerProps;
 
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
-type DropdownMenuContentProps = DropdownMenuPrimitive.DropdownMenuContentProps;
+export type DropdownMenuContentProps =
+  DropdownMenuPrimitive.DropdownMenuContentProps;
 
 export const DropdownMenuContent = ({ ...props }: DropdownMenuContentProps) => {
   return (
@@ -29,7 +35,7 @@ export const DropdownMenuContent = ({ ...props }: DropdownMenuContentProps) => {
   );
 };
 
-type DropdownMenuItemProps = DropdownMenuPrimitive.DropdownMenuItemProps;
+export type DropdownMenuItemProps = DropdownMenuPrimitive.DropdownMenuItemProps;
 
 export const DropdownMenuItem = ({ ...props }: DropdownMenuItemProps) => {
   return (
@@ -42,9 +48,13 @@ export const DropdownMenuItem = ({ ...props }: DropdownMenuItemProps) => {
   );
 };
 
+export type DropdownMenuGroupProps =
+  DropdownMenuPrimitive.DropdownMenuGroupProps;
+
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 
-type DropdownMenuLabelProps = DropdownMenuPrimitive.DropdownMenuLabelProps;
+export type DropdownMenuLabelProps =
+  DropdownMenuPrimitive.DropdownMenuLabelProps;
 
 export const DropdownMenuLabel = ({ ...props }: DropdownMenuLabelProps) => {
   return (
@@ -57,7 +67,7 @@ export const DropdownMenuLabel = ({ ...props }: DropdownMenuLabelProps) => {
   );
 };
 
-type DropdownMenuSeparatorProps =
+export type DropdownMenuSeparatorProps =
   DropdownMenuPrimitive.DropdownMenuSeparatorProps;
 
 export const DropdownMenuSeparator = ({
@@ -73,7 +83,7 @@ export const DropdownMenuSeparator = ({
   );
 };
 
-type DropdownMenuCheckboxItemProps =
+export type DropdownMenuCheckboxItemProps =
   DropdownMenuPrimitive.DropdownMenuCheckboxItemProps;
 
 export const DropdownMenuCheckboxItem = ({
@@ -96,9 +106,12 @@ export const DropdownMenuCheckboxItem = ({
   );
 };
 
+export type DropdownMenuRadioGroupProps =
+  DropdownMenuPrimitive.DropdownMenuRadioGroupProps;
+
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
-type DropdownMenuRadioItemProps =
+export type DropdownMenuRadioItemProps =
   DropdownMenuPrimitive.DropdownMenuRadioItemProps;
 
 export const DropdownMenuRadioItem = ({

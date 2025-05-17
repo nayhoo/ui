@@ -6,7 +6,10 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type SpinnerProps = ComponentProps<typeof defaultElement, SpinnerVariants>;
+export type SpinnerProps = ComponentProps<
+  typeof defaultElement,
+  SpinnerVariants
+>;
 
 export const Spinner = ({ asChild, ...props }: SpinnerProps) => {
   const variants = pick(props, ...spinnerRecipe.variants());

@@ -9,7 +9,10 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "input";
 
-type TextFieldProps = ComponentProps<typeof defaultElement, TextFieldVariants>;
+export type TextFieldProps = ComponentProps<
+  typeof defaultElement,
+  TextFieldVariants
+>;
 
 export const TextField = ({ asChild, ...props }: TextFieldProps) => {
   const variants = pick(props, ...textFieldRecipe.variants());

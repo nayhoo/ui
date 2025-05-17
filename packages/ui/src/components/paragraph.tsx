@@ -7,7 +7,7 @@ const defaultElement = "p";
 
 type ParagraphSizeVariants = "1" | "2";
 
-type ParagraphProps = ComponentProps<
+export type ParagraphProps = ComponentProps<
   typeof defaultElement,
   Omit<TextVariants, "size">
 > & {

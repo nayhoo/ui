@@ -9,7 +9,10 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type ContainerProps = ComponentProps<typeof defaultElement, ContainerVariants>;
+export type ContainerProps = ComponentProps<
+  typeof defaultElement,
+  ContainerVariants
+>;
 
 export const Container = ({ asChild, ...props }: ContainerProps) => {
   const variants = pick(props, ...containerRecipe.variants());

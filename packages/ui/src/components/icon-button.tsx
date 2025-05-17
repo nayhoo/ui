@@ -10,7 +10,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "button";
 
-type IconButtonProps = ComponentProps<
+export type IconButtonProps = ComponentProps<
   typeof defaultElement,
   IconButtonVariants
 >;

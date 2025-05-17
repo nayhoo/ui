@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type GridProps = ComponentProps<typeof defaultElement, GridVariants>;
+export type GridProps = ComponentProps<typeof defaultElement, GridVariants>;
 
 export const Grid = ({ asChild, ...props }: GridProps) => {
   const variants = pick(props, ...gridRecipe.variants());

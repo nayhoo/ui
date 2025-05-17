@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "span";
 
-type BadgeProps = ComponentProps<
+export type BadgeProps = ComponentProps<
   typeof defaultElement,
   BadgeVariants & { label: string }
 >;

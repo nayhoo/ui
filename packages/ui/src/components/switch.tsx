@@ -8,7 +8,8 @@ import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
-type SwitchThumbProps = SwitchPrimitive.SwitchThumbProps & SwitchThumbVariants;
+export type SwitchThumbProps = SwitchPrimitive.SwitchThumbProps &
+  SwitchThumbVariants;
 
 export const SwitchThumb = ({ ...props }: SwitchThumbProps) => {
   const variants = pick(props, ...switchThumbRecipe.variants());
@@ -22,7 +23,7 @@ export const SwitchThumb = ({ ...props }: SwitchThumbProps) => {
   );
 };
 
-type SwitchProps = SwitchPrimitive.SwitchProps & SwitchVariants;
+export type SwitchProps = SwitchPrimitive.SwitchProps & SwitchVariants;
 
 export const Switch = ({ ...props }: SwitchProps) => {
   const variants = pick(props, ...switchRecipe.variants());

@@ -12,7 +12,7 @@ import { mergeClasses } from "@/utils/merge-classes";
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as MenuPrimitive from "@radix-ui/react-menu";
 
-type MenuProps = MenuPrimitive.MenuProps & {
+export type MenuProps = MenuPrimitive.MenuProps & {
   className?: string;
 };
 
@@ -26,7 +26,7 @@ export const Menu = ({ ...props }: MenuProps) => {
   );
 };
 
-type MenuContentProps = MenuPrimitive.MenuContentProps;
+export type MenuContentProps = MenuPrimitive.MenuContentProps;
 
 export const MenuContent = ({ ...props }: MenuContentProps) => {
   return (
@@ -39,7 +39,7 @@ export const MenuContent = ({ ...props }: MenuContentProps) => {
   );
 };
 
-type MenuSeparatorProps = MenuPrimitive.MenuSeparatorProps;
+export type MenuSeparatorProps = MenuPrimitive.MenuSeparatorProps;
 
 export const MenuSeparator = ({ ...props }: MenuSeparatorProps) => {
   return (
@@ -52,7 +52,7 @@ export const MenuSeparator = ({ ...props }: MenuSeparatorProps) => {
   );
 };
 
-type MenuItemProps = MenuPrimitive.MenuItemProps;
+export type MenuItemProps = MenuPrimitive.MenuItemProps;
 
 export const MenuItem = ({ ...props }: MenuItemProps) => {
   return (
@@ -65,7 +65,7 @@ export const MenuItem = ({ ...props }: MenuItemProps) => {
   );
 };
 
-type MenuRadioItemProps = MenuPrimitive.MenuRadioItemProps;
+export type MenuRadioItemProps = MenuPrimitive.MenuRadioItemProps;
 
 export const MenuRadioItem = ({ ...props }: MenuRadioItemProps) => {
   return (
@@ -101,7 +101,7 @@ export const MenuRadioItem = ({ ...props }: MenuRadioItemProps) => {
   );
 };
 
-type MenuCheckboxItemProps = MenuPrimitive.MenuCheckboxItemProps;
+export type MenuCheckboxItemProps = MenuPrimitive.MenuCheckboxItemProps;
 
 export const MenuCheckboxItem = ({ ...props }: MenuCheckboxItemProps) => {
   return (
@@ -121,7 +121,7 @@ export const MenuCheckboxItem = ({ ...props }: MenuCheckboxItemProps) => {
   );
 };
 
-type MenuLabelProps = MenuPrimitive.MenuLabelProps;
+export type MenuLabelProps = MenuPrimitive.MenuLabelProps;
 
 export const MenuLabel = ({ ...props }: MenuLabelProps) => {
   return (
@@ -134,6 +134,10 @@ export const MenuLabel = ({ ...props }: MenuLabelProps) => {
   );
 };
 
+export type MenuRadioGroupProps = MenuPrimitive.MenuRadioGroupProps;
+
 export const MenuRadioGroup = MenuPrimitive.RadioGroup;
+
+export type MenuGroupProps = MenuPrimitive.MenuGroupProps;
 
 export const MenuGroup = MenuPrimitive.Group;

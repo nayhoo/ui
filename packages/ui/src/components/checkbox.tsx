@@ -5,7 +5,7 @@ import { pick } from "@/utils/pick";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { CheckIcon } from "@radix-ui/react-icons";
 
-type CheckboxProps = CheckboxPrimitive.CheckboxProps & CheckboxVariants;
+export type CheckboxProps = CheckboxPrimitive.CheckboxProps & CheckboxVariants;
 
 export const Checkbox = ({ ...props }: CheckboxProps) => {
   const checkbox = checkboxRecipe(pick(props, ...checkboxRecipe.variants()));

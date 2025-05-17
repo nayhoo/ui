@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
 
-type FlexProps = ComponentProps<typeof defaultElement, FlexVariants>;
+export type FlexProps = ComponentProps<typeof defaultElement, FlexVariants>;
 
 export const Flex = ({ asChild, ...props }: FlexProps) => {
   const variants = pick(props, ...flexRecipe.variants());

@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "a";
 
-type LinkProps = ComponentProps<typeof defaultElement, LinkVariants>;
+export type LinkProps = ComponentProps<typeof defaultElement, LinkVariants>;
 
 export const Link = ({ asChild, ...props }: LinkProps) => {
   const variants = pick(props, ...linkRecipe.variants());

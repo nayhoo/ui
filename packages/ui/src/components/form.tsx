@@ -7,11 +7,15 @@ import { mergeClasses } from "@/utils/merge-classes";
 import { pick } from "@/utils/pick";
 import * as FormPrimitive from "@radix-ui/react-form";
 
+export type FormProps = FormPrimitive.FormProps;
+
 export const Form = FormPrimitive.Root;
+
+export type FormControlProps = FormPrimitive.FormControlProps;
 
 export const FormControl = FormPrimitive.Control;
 
-type FormFieldProps = FormPrimitive.FormFieldProps;
+export type FormFieldProps = FormPrimitive.FormFieldProps;
 
 export const FormField = ({ ...props }: FormFieldProps) => {
   return (
@@ -24,7 +28,7 @@ export const FormField = ({ ...props }: FormFieldProps) => {
   );
 };
 
-type FormLabelProps = FormPrimitive.FormLabelProps;
+export type FormLabelProps = FormPrimitive.FormLabelProps;
 
 export const FormLabel = ({ ...props }: FormLabelProps) => {
   return (
@@ -37,7 +41,8 @@ export const FormLabel = ({ ...props }: FormLabelProps) => {
   );
 };
 
-type FormMessageProps = FormPrimitive.FormMessageProps & FormMessageVariants;
+export type FormMessageProps = FormPrimitive.FormMessageProps &
+  FormMessageVariants;
 
 export const FormMessage = ({ ...props }: FormMessageProps) => {
   const variants = pick(props, ...formMessageRecipe.variants());
@@ -52,5 +57,7 @@ export const FormMessage = ({ ...props }: FormMessageProps) => {
     </FormPrimitive.Message>
   );
 };
+
+export type FormSubmitProps = FormPrimitive.FormSubmitProps;
 
 export const FormSubmit = FormPrimitive.Submit;

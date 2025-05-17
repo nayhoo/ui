@@ -11,7 +11,8 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import React from "react";
 
 type TooltipPrimitiveProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
-type TooltipProps = TooltipPrimitiveProps &
+
+export type TooltipProps = TooltipPrimitiveProps &
   TooltipPrimitive.TooltipContentProps &
   TooltipContentVariants;
 

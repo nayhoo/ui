@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "span";
 
-type TextProps = ComponentProps<typeof defaultElement, TextVariants>;
+export type TextProps = ComponentProps<typeof defaultElement, TextVariants>;
 
 export const Text = ({ asChild, ...props }: TextProps) => {
   const variants = pick(props, ...textRecipe.variants());

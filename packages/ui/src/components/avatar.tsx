@@ -44,7 +44,7 @@ const AvatarFallback = ({ ...props }: AvatarFallbackProps) => {
   );
 };
 
-type AvatarProps = AvatarPrimitive.AvatarProps &
+export type AvatarProps = AvatarPrimitive.AvatarProps &
   AvatarVariants & {
     alt?: string;
     fallback?: React.ReactNode;

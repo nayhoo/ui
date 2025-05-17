@@ -5,7 +5,7 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 
 type LabelSizeVariants = "1" | "2";
 
-type LabelProps = LabelPrimitive.LabelProps &
+export type LabelProps = LabelPrimitive.LabelProps &
   Omit<TextVariants, "size"> & {
     size?: LabelSizeVariants;
   };
