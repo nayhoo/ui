@@ -1,7 +1,7 @@
 import { LinkVariants, linkRecipe } from "@/theme/recipes/link.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "a";
@@ -9,13 +9,16 @@ const defaultElement = "a";
 export type LinkProps = ComponentProps<typeof defaultElement, LinkVariants>;
 
 export const Link = ({ asChild, ...props }: LinkProps) => {
-  const variants = pick(props, ...linkRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...linkRecipe.variants(),
+  );
   const link = linkRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(link, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(link, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

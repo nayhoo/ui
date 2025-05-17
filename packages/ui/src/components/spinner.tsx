@@ -1,7 +1,7 @@
 import { SpinnerVariants, spinnerRecipe } from "@/theme/recipes/spinner.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
@@ -12,13 +12,16 @@ export type SpinnerProps = ComponentProps<
 >;
 
 export const Spinner = ({ asChild, ...props }: SpinnerProps) => {
-  const variants = pick(props, ...spinnerRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...spinnerRecipe.variants(),
+  );
   const spinner = spinnerRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(spinner, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(spinner, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

@@ -1,7 +1,7 @@
 import { SkeletonVariants, skeletonRecipe } from "@/theme/recipes/skeleton.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
@@ -12,13 +12,16 @@ export type SkeletonProps = ComponentProps<
 >;
 
 export const Skeleton = ({ asChild, ...props }: SkeletonProps) => {
-  const variants = pick(props, ...skeletonRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...skeletonRecipe.variants(),
+  );
   const skeleton = skeletonRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(skeleton, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(skeleton, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

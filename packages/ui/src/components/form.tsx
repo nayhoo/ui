@@ -3,8 +3,8 @@ import {
   formMessageRecipe,
 } from "@/theme/recipes/form.css";
 import { formField, formLabel } from "@/theme/styles/form.css";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import * as FormPrimitive from "@radix-ui/react-form";
 
 export type FormProps = FormPrimitive.FormProps;
@@ -45,15 +45,18 @@ export type FormMessageProps = FormPrimitive.FormMessageProps &
   FormMessageVariants;
 
 export const FormMessage = ({ ...props }: FormMessageProps) => {
-  const variants = pick(props, ...formMessageRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...formMessageRecipe.variants(),
+  );
   const formMessage = formMessageRecipe(variants);
 
   return (
     <FormPrimitive.Message
-      {...props}
-      className={mergeClasses(formMessage, props.className)}
+      {...rest}
+      className={mergeClasses(formMessage, rest.className)}
     >
-      {props.children}
+      {rest.children}
     </FormPrimitive.Message>
   );
 };

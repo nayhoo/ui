@@ -5,8 +5,8 @@ import {
   tooltipContentRecipe,
 } from "@/theme/recipes/tooltip.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import React from "react";
 
@@ -34,7 +34,10 @@ export function Tooltip({
     disableHoverableContent,
   };
 
-  const variants = pick(props, ...tooltipContentRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...tooltipContentRecipe.variants(),
+  );
   const tooltipContent = tooltipContentRecipe(variants);
 
   return (
@@ -46,13 +49,13 @@ export function Tooltip({
             side="top"
             align="center"
             sideOffset={5}
-            {...props}
-            className={mergeClasses(tooltipContent, props.className)}
+            {...rest}
+            className={mergeClasses(tooltipContent, rest.className)}
           >
             <Text
               size="1"
               style={{
-                lineHeight: props.multiline ? "20px" : undefined,
+                lineHeight: variants.multiline ? "20px" : undefined,
               }}
             >
               {content}

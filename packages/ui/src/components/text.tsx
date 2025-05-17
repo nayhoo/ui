@@ -1,7 +1,7 @@
 import { TextVariants, textRecipe } from "@/theme/recipes/text.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "span";
@@ -9,13 +9,16 @@ const defaultElement = "span";
 export type TextProps = ComponentProps<typeof defaultElement, TextVariants>;
 
 export const Text = ({ asChild, ...props }: TextProps) => {
-  const variants = pick(props, ...textRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...textRecipe.variants(),
+  );
   const text = textRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(text, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(text, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

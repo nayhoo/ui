@@ -3,8 +3,8 @@ import {
   containerRecipe,
 } from "@/theme/recipes/container.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "div";
@@ -15,13 +15,16 @@ export type ContainerProps = ComponentProps<
 >;
 
 export const Container = ({ asChild, ...props }: ContainerProps) => {
-  const variants = pick(props, ...containerRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...containerRecipe.variants(),
+  );
   const container = containerRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(container, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(container, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

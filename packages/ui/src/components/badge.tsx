@@ -1,7 +1,7 @@
 import { badgeRecipe, BadgeVariants } from "@/theme/recipes/badge.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "span";
@@ -12,12 +12,15 @@ export type BadgeProps = ComponentProps<
 >;
 
 export const Badge = ({ asChild, label, ...props }: BadgeProps) => {
-  const variants = pick(props, ...badgeRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...badgeRecipe.variants(),
+  );
   const badge = badgeRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(badge, props.className)}>
+    <Comp {...rest} className={mergeClasses(badge, props.className)}>
       {label}
     </Comp>
   );

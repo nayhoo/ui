@@ -3,8 +3,8 @@ import {
   textFieldRecipe,
 } from "@/theme/recipes/text-field.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "input";
@@ -15,13 +15,16 @@ export type TextFieldProps = ComponentProps<
 >;
 
 export const TextField = ({ asChild, ...props }: TextFieldProps) => {
-  const variants = pick(props, ...textFieldRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...textFieldRecipe.variants(),
+  );
   const textField = textFieldRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(textField, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(textField, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

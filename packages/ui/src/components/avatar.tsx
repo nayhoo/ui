@@ -8,8 +8,8 @@ import {
 import { StatusVariants } from "@/theme/recipes/status.css";
 import { avatarImage } from "@/theme/styles/avatar.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { extractVariantsFromProps } from "@/utils/get-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { pick } from "@/utils/pick";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
 import { Status } from "./status";
@@ -31,15 +31,18 @@ type AvatarFallbackProps = AvatarPrimitive.AvatarFallbackProps &
   AvatarFallbackVariants;
 
 const AvatarFallback = ({ ...props }: AvatarFallbackProps) => {
-  const variants = pick(props, ...avatarFallbackRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...avatarFallbackRecipe.variants(),
+  );
   const avatarFallback = avatarFallbackRecipe(variants);
 
   return (
     <AvatarPrimitive.Fallback
-      {...props}
-      className={mergeClasses(avatarFallback, props.className)}
+      {...rest}
+      className={mergeClasses(avatarFallback, rest.className)}
     >
-      {props.children}
+      {rest.children}
     </AvatarPrimitive.Fallback>
   );
 };
@@ -60,7 +63,10 @@ export const Avatar = ({
   style,
   ...props
 }: AvatarProps) => {
-  const variants = pick(props, ...avatarRecipe.variants());
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...avatarRecipe.variants(),
+  );
   const avatar = avatarRecipe(variants);
 
   return (
@@ -73,8 +79,8 @@ export const Avatar = ({
       }}
     >
       <AvatarPrimitive.Avatar
-        {...props}
-        className={mergeClasses(avatar, props.className)}
+        {...rest}
+        className={mergeClasses(avatar, rest.className)}
       >
         <AvatarImage alt={alt} src={src} />
 
