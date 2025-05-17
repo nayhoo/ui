@@ -1,5 +1,15 @@
 # @nayhoo/ui
 
+## 0.13.0
+
+### Minor Changes
+
+- 2472d43: feat(ui): export types for exported components
+
+### Patch Changes
+
+- d1608e2: prevent variants being spread onto the html element
+
 ## 0.12.1
 
 ### Patch Changes
