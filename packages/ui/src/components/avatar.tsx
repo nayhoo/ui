@@ -8,7 +8,7 @@ import {
 import { StatusVariants } from "@/theme/recipes/status.css";
 import { avatarImage } from "@/theme/styles/avatar.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { extractVariantsFromProps } from "@/utils/get-variants";
+import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";

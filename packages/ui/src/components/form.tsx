@@ -3,7 +3,7 @@ import {
   formMessageRecipe,
 } from "@/theme/recipes/form.css";
 import { formField, formLabel } from "@/theme/styles/form.css";
-import { extractVariantsFromProps } from "@/utils/get-variants";
+import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as FormPrimitive from "@radix-ui/react-form";
 

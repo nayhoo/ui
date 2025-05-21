@@ -4,7 +4,7 @@ import {
   SwitchThumbVariants,
   SwitchVariants,
 } from "@/theme/recipes/switch.css";
-import { extractVariantsFromProps } from "@/utils/get-variants";
+import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
