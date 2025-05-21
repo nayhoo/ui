@@ -45,6 +45,9 @@ export const buttonRecipe = homemadeRecipe({
       true: {
         width: "100%",
       },
+      false: {
+        width: "unset",
+      },
     },
     loading: {
       true: {
