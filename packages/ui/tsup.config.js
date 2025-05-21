@@ -3,6 +3,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   entry: [
+    // components
     "src/components/avatar.tsx",
     "src/components/badge.tsx",
     "src/components/box.tsx",
@@ -31,8 +32,13 @@ export default defineConfig({
     "src/components/text-field.tsx",
     "src/components/text.tsx",
     "src/components/tooltip.tsx",
+    // providers
     "src/providers/index.ts",
+    // theme
     "src/theme/index.ts",
+    // types
+    "src/types/index.ts",
+    // utils
     "src/utils/index.ts",
   ],
   sourcemap: true,
