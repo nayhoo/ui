@@ -44,9 +44,6 @@ importers:
       '@nayhoo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@vanilla-extract/next-plugin':
-        specifier: ^2.4.8
-        version: 2.4.9(next@15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(webpack@5.97.1)
       next:
         specifier: 15.1.6
         version: 15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -69,6 +66,9 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.0.3(@types/react@19.0.2)
+      '@vanilla-extract/next-plugin':
+        specifier: ^2.4.8
+        version: 2.4.9(next@15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(webpack@5.97.1)
       typescript:
         specifier: ^5
         version: 5.8.3
