@@ -1,3 +1,5 @@
+export * from "./avatar.css";
+
 export * from "./box.css";
 
 export * from "./card.css";
