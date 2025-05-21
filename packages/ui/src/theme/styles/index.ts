@@ -8,6 +8,8 @@ export * from "./checkbox.css";
 
 export * from "./form.css";
 
+export * from "./global-style.css";
+
 export * from "./label.css";
 
 export * from "./menu.css";

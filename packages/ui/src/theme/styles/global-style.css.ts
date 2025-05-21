@@ -1,7 +1,7 @@
 // Credit: https://github.com/safethecode/breakbase.dev/blob/fa85c0cbdccf98136609ddf40f9e38613ef73003/src/styles/globalStyle.css.ts
 
 import { globalStyle } from "@vanilla-extract/css";
-import { theme } from "./theme-contracts";
+import { theme } from "../theme-contracts";
 
 const parentElement = [
   "html",
