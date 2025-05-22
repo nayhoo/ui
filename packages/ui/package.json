@@ -51,122 +51,152 @@
   "exports": {
     "./avatar": {
       "types": "./dist/components/avatar.d.ts",
+      "module": "./dist/components/avatar.mjs",
       "default": "./dist/components/avatar.js"
     },
     "./badge": {
       "types": "./dist/components/badge.d.ts",
+      "module": "./dist/components/badge.mjs",
       "default": "./dist/components/badge.js"
     },
     "./box": {
       "types": "./dist/components/box.d.ts",
+      "module": "./dist/components/box.mjs",
       "default": "./dist/components/box.js"
     },
     "./button": {
       "types": "./dist/components/button.d.ts",
+      "module": "./dist/components/button.mjs",
       "default": "./dist/components/button.js"
     },
     "./card": {
       "types": "./dist/components/card.d.ts",
+      "module": "./dist/components/card.mjs",
       "default": "./dist/components/card.js"
     },
     "./checkbox": {
       "types": "./dist/components/checkbox.d.ts",
+      "module": "./dist/components/checkbox.mjs",
       "default": "./dist/components/checkbox.js"
     },
     "./container": {
       "types": "./dist/components/container.d.ts",
+      "module": "./dist/components/container.mjs",
       "default": "./dist/components/container.js"
     },
     "./dropdown-menu": {
       "types": "./dist/components/dropdown-menu.d.ts",
+      "module": "./dist/components/dropdown-menu.mjs",
       "default": "./dist/components/dropdown-menu.js"
     },
     "./flex": {
       "types": "./dist/components/flex.d.ts",
+      "module": "./dist/components/flex.mjs",
       "default": "./dist/components/flex.js"
     },
     "./form": {
       "types": "./dist/components/form.d.ts",
+      "module": "./dist/components/form.mjs",
       "default": "./dist/components/form.js"
     },
     "./grid": {
       "types": "./dist/components/grid.d.ts",
+      "module": "./dist/components/grid.mjs",
       "default": "./dist/components/grid.js"
     },
     "./heading": {
       "types": "./dist/components/heading.d.ts",
+      "module": "./dist/components/heading.mjs",
       "default": "./dist/components/heading.js"
     },
     "./icon-button": {
       "types": "./dist/components/icon-button.d.ts",
+      "module": "./dist/components/icon-button.mjs",
       "default": "./dist/components/icon-button.js"
     },
     "./label": {
       "types": "./dist/components/label.d.ts",
+      "module": "./dist/components/label.mjs",
       "default": "./dist/components/label.js"
     },
     "./link": {
       "types": "./dist/components/link.d.ts",
+      "module": "./dist/components/link.mjs",
       "default": "./dist/components/link.js"
     },
     "./menu": {
       "types": "./dist/components/menu.d.ts",
+      "module": "./dist/components/menu.mjs",
       "default": "./dist/components/menu.js"
     },
     "./panel": {
       "types": "./dist/components/panel.d.ts",
+      "module": "./dist/components/panel.mjs",
       "default": "./dist/components/panel.js"
     },
     "./paragraph": {
       "types": "./dist/components/paragraph.d.ts",
+      "module": "./dist/components/paragraph.mjs",
       "default": "./dist/components/paragraph.js"
     },
     "./popover": {
       "types": "./dist/components/popover.d.ts",
+      "module": "./dist/components/popover.mjs",
       "default": "./dist/components/popover.js"
     },
     "./select": {
       "types": "./dist/components/select.d.ts",
+      "module": "./dist/components/select.mjs",
       "default": "./dist/components/select.js"
     },
     "./separator": {
       "types": "./dist/components/separator.d.ts",
+      "module": "./dist/components/separator.mjs",
       "default": "./dist/components/separator.js"
     },
     "./skeleton": {
       "types": "./dist/components/skeleton.d.ts",
+      "module": "./dist/components/skeleton.mjs",
       "default": "./dist/components/skeleton.js"
     },
     "./spinner": {
       "types": "./dist/components/spinner.d.ts",
+      "module": "./dist/components/spinner.mjs",
       "default": "./dist/components/spinner.js"
     },
     "./status": {
       "types": "./dist/components/status.d.ts",
+      "module": "./dist/components/status.mjs",
       "default": "./dist/components/status.js"
     },
     "./switch": {
       "types": "./dist/components/switch.d.ts",
+      "module": "./dist/components/switch.mjs",
       "default": "./dist/components/switch.js"
     },
     "./text-field": {
       "types": "./dist/components/text-field.d.ts",
+      "module": "./dist/components/text-field.mjs",
       "default": "./dist/components/text-field.js"
     },
     "./text": {
       "types": "./dist/components/text.d.ts",
+      "module": "./dist/components/text.mjs",
       "default": "./dist/components/text.js"
     },
     "./tooltip": {
       "types": "./dist/components/tooltip.d.ts",
+      "module": "./dist/components/tooltip.mjs",
       "default": "./dist/components/tooltip.js"
     },
     "./providers": {
       "types": "./dist/providers/index.d.ts",
+      "module": "./dist/providers/index.mjs",
       "default": "./dist/providers/index.js"
     },
     "./theme": {
       "types": "./dist/theme/index.d.ts",
+      "module": "./dist/theme/index.mjs",
       "default": "./dist/theme/index.js"
     },
     "./theme/index.css": {
@@ -174,10 +204,12 @@
     },
     "./types": {
       "types": "./dist/types/index.d.ts",
+      "module": "./dist/types/index.mjs",
       "default": "./dist/types/index.js"
     },
     "./utils": {
       "types": "./dist/utils/index.d.ts",
+      "module": "./dist/utils/index.mjs",
       "default": "./dist/utils/index.js"
     }
   }
