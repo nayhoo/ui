@@ -1,4 +1,4 @@
-# @nayhoo/nextjs
+# @nayhoo/next
 
 ## 0.1.26
 
