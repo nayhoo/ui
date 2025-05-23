@@ -24,6 +24,6 @@
     "react-cosmos": "^6.2.3",
     "react-cosmos-plugin-boolean-input": "^6.2.3",
     "react-cosmos-next": "^6.2.0",
-    "typescript": "~5.8.3"
+    "typescript": "^5.8.3"
   }
 }
