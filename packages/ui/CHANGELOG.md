@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.14.1
+
+### Patch Changes
+
+- 6889030: fix: correct exports for module
+
 ## 0.14.0
 
 ### Minor Changes
