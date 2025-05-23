@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.15.0
+
+### Minor Changes
+
+- 7ab4b68: feat(ui): feat add image component
+- 7ab4b68: feat(ui): add aspect ratio component
+
 ## 0.14.1
 
 ### Patch Changes
