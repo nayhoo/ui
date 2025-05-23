@@ -33,6 +33,23 @@ export default withVanillaExtract(nextConfig);
 ```
 
 ```tsx
+// src/app/provider.tsx
+
+"use client";
+
+import { ThemeProvider } from "@nayhoo/ui/providers";
+import React from "react";
+
+type AppProviderProps = {
+  children: React.ReactNode;
+};
+
+export const AppProvider = ({ children }: AppProviderProps) => {
+  return <ThemeProvider>{children}</ThemeProvider>;
+};
+```
+
+```tsx
 // src/app/layout.tsx
 
 import "@nayhoo/ui/theme/index.css"; // REQUIRED
@@ -61,20 +78,15 @@ export default function RootLayout({
 ```
 
 ```tsx
-// src/app/provider.tsx
+// src/app/page.tsx
 
 "use client";
 
-import { ThemeProvider } from "@nayhoo/ui/providers";
-import React from "react";
+import { Button } from "@nayhoo/ui/button";
 
-type AppProviderProps = {
-  children: React.ReactNode;
-};
-
-export const AppProvider = ({ children }: AppProviderProps) => {
-  return <ThemeProvider>{children}</ThemeProvider>;
-};
+export default function Home() {
+  return <Button />;
+}
 ```
 
 ### Vite
@@ -93,9 +105,6 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin()],
-  optimizeDeps: {
-    include: ["@nayhoo/ui"],
-  },
 });
 ```
 
@@ -105,8 +114,8 @@ export default defineConfig({
 import "@nayhoo/ui/theme/index.css"; // REQUIRED
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import App from "./App.tsx";
+import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -116,23 +125,18 @@ createRoot(document.getElementById("root")!).render(
 ```
 
 ```tsx
-// src/app.tsx
-
-import { ThemeProvider } from "@nayhoo/ui/providers";
-
-function App({ children }: { children: React.ReactNode }) {
-  return <ThemeProvider>{children}</ThemeProvider>;
-}
-```
-
-## Usage
-
-```tsx
-"use client";
+// src/App.tsx
 
 import { Button } from "@nayhoo/ui/button";
+import { ThemeProvider } from "@nayhoo/ui/providers";
 
-export const Component = () => {
-  return <Button onClick={() => alert("Hello!")}>Press me</Button>;
-};
+function App() {
+  return (
+    <ThemeProvider>
+      <Button onClick={() => alert("Hello!")}>Press me</Button>
+    </ThemeProvider>
+  );
+}
+
+export default App;
 ```

@@ -23,8 +23,9 @@
   - [ui](#ui)
   - [utils](#utils)
 - [Apps](#apps)
-  - [nextjs](#nextjs)
+  - [next](#next)
   - [react-cosmos](#react-cosmos)
+  - [vite](#vite)
 
 ## Setup
 
@@ -87,17 +88,24 @@ See the package [here](packages/utils).
 
 ## Apps
 
-### nextjs
+### next
 
 Next.js 15 example using @nayhoo/ui.
 
-See the full example [here](apps/nextjs).
+See the full example [here](apps/next).
 
 ### react-cosmos
 
 @nayhoo/ui fixtures to develop and QA components.
 
 See the full example [here](apps/react-cosmos).
+
+### vite
+
+Vite example using @nayhoo/ui.
+
+See the full example [here](apps/vite).
+
 
 ## Credits
 
