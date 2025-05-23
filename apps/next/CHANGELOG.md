@@ -1,5 +1,13 @@
 # @nayhoo/nextjs
 
+## 0.1.26
+
+### Patch Changes
+
+- ce8e184: refactor: move nextjs to next; update examples
+- Updated dependencies [6889030]
+  - @nayhoo/ui@0.14.1
+
 ## 0.1.25
 
 ### Patch Changes
