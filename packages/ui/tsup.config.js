@@ -4,6 +4,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   entry: [
     // components
+    "src/components/aspect-ratio.tsx",
     "src/components/avatar.tsx",
     "src/components/badge.tsx",
     "src/components/box.tsx",
