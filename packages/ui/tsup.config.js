@@ -17,6 +17,7 @@ export default defineConfig({
     "src/components/grid.tsx",
     "src/components/heading.tsx",
     "src/components/icon-button.tsx",
+    "src/components/image.tsx",
     "src/components/label.tsx",
     "src/components/link.tsx",
     "src/components/menu.tsx",

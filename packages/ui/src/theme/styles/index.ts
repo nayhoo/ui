@@ -10,6 +10,8 @@ export * from "./form.css";
 
 export * from "./global-style.css";
 
+export * from "./image.css";
+
 export * from "./label.css";
 
 export * from "./menu.css";

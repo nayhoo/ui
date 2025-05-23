@@ -115,6 +115,11 @@
       "module": "./dist/components/icon-button.mjs",
       "default": "./dist/components/icon-button.js"
     },
+    "./image": {
+      "types": "./dist/components/image.d.ts",
+      "module": "./dist/components/image.mjs",
+      "default": "./dist/components/image.js"
+    },
     "./label": {
       "types": "./dist/components/label.d.ts",
       "module": "./dist/components/label.mjs",
