@@ -1,8 +1,12 @@
 import { Button } from "@nayhoo/ui/button";
-import "./App.css";
+import { ThemeProvider } from "@nayhoo/ui/providers";
 
 function App() {
-  return <Button fullWidth={{ initial: true, sm: false }}>Hello world</Button>;
+  return (
+    <ThemeProvider>
+      <Button onClick={() => alert("Hello!")}>Press me</Button>
+    </ThemeProvider>
+  );
 }
 
 export default App;
