@@ -40,6 +40,8 @@ export default () => {
         strokeMiterlimit="2"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
+        height={20}
+        width={20}
         fill="currentColor"
       >
         <path
