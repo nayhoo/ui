@@ -1,5 +1,17 @@
 # @nayhoo/nextjs
 
+## 0.2.0
+
+### Minor Changes
+
+- 803327c: feat(react-cosmos): add dialog fixture
+
+### Patch Changes
+
+- 803327c: fix(react-cosmos): update icons for icon button usage
+- Updated dependencies [803327c]
+  - @nayhoo/ui@0.16.0
+
 ## 0.1.29
 
 ### Patch Changes
