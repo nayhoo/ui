@@ -16,7 +16,6 @@ export const baseTheme = createGlobalTheme(":root", {
   fontSizes: {
     1: "12px",
     2: "14px",
-    /** Base */
     3: "16px",
     4: "18px",
     5: "20px",

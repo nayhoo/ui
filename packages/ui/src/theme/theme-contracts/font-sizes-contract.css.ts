@@ -4,6 +4,7 @@ import { createThemeContract } from "@vanilla-extract/css";
 export const fontSizesContract = createThemeContract({
   1: null,
   2: null,
+  /** Base font */
   3: null,
   4: null,
   5: null,
