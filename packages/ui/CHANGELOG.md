@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.16.0
+
+### Minor Changes
+
+- 803327c: feat(ui): add dialog component
+
 ## 0.15.0
 
 ### Minor Changes
