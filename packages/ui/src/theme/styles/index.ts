@@ -6,6 +6,8 @@ export * from "./card.css";
 
 export * from "./checkbox.css";
 
+export * from "./dialog.css";
+
 export * from "./form.css";
 
 export * from "./global-style.css";

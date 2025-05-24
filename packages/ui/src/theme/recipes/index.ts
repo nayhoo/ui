@@ -8,6 +8,8 @@ export * from "./checkbox.css";
 
 export * from "./container.css";
 
+export * from "./dialog.css";
+
 export * from "./flex.css";
 
 export * from "./form.css";
