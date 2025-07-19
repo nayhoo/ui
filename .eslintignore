@@ -3,3 +3,5 @@ node_modules
 dist
 build
 .next
+
+/apps/react-cosmos/cosmos.imports.ts
