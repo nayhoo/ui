@@ -4,10 +4,10 @@ import * as colors from "@radix-ui/colors";
 import { createTheme as ct } from "@vanilla-extract/css";
 
 export const createTheme = (mode: "light" | "dark") => {
-  const primary = "violet";
-  const secondary = "cyan";
+  const primary = "bronze";
+  const secondary = "amber";
   const error = "ruby";
-  const success = "green";
+  const success = "jade";
 
   return ct(theme, {
     ...baseTheme, // Use shared variables as a baseline
