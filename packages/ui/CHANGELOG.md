@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.16.1
+
+### Patch Changes
+
+- 2186676: refactor(ui): update theme colors
+
 ## 0.16.0
 
 ### Minor Changes
