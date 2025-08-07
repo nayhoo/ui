@@ -18,6 +18,7 @@
     "react": "^19.0.0"
   },
   "dependencies": {
+    "@nayhoo/hooks": "^0.2.2",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
     "@radix-ui/react-avatar": "^1.1.2",
@@ -206,6 +207,11 @@
       "types": "./dist/components/tooltip.d.ts",
       "module": "./dist/components/tooltip.mjs",
       "default": "./dist/components/tooltip.js"
+    },
+    "./patterns": {
+      "types": "./dist/patterns/index.d.ts",
+      "module": "./dist/patterns/index.mjs",
+      "default": "./dist/patterns/index.js"
     },
     "./providers": {
       "types": "./dist/providers/index.d.ts",

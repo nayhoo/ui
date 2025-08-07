@@ -35,6 +35,8 @@ export default defineConfig({
     "src/components/text-field.tsx",
     "src/components/text.tsx",
     "src/components/tooltip.tsx",
+    // patterns
+    "src/patterns/index.ts",
     // providers
     "src/providers/index.ts",
     // theme
