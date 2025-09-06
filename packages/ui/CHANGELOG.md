@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.18.0
+
+### Minor Changes
+
+- 537e92c: feat(ui): add TextArea component
+
 ## 0.17.0
 
 ### Minor Changes

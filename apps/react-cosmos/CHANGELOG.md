@@ -1,5 +1,16 @@
 # @nayhoo/nextjs
 
+## 0.3.0
+
+### Minor Changes
+
+- 537e92c: feat: add fixture for TextArea component
+
+### Patch Changes
+
+- Updated dependencies [537e92c]
+  - @nayhoo/ui@0.18.0
+
 ## 0.2.2
 
 ### Patch Changes
