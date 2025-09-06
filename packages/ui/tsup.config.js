@@ -32,6 +32,7 @@ export default defineConfig({
     "src/components/spinner.tsx",
     "src/components/status.tsx",
     "src/components/switch.tsx",
+    "src/components/text-area.tsx",
     "src/components/text-field.tsx",
     "src/components/text.tsx",
     "src/components/tooltip.tsx",

@@ -193,6 +193,11 @@
       "module": "./dist/components/switch.mjs",
       "default": "./dist/components/switch.js"
     },
+    "./text-area": {
+      "types": "./dist/components/text-area.d.ts",
+      "module": "./dist/components/text-area.mjs",
+      "default": "./dist/components/text-area.js"
+    },
     "./text-field": {
       "types": "./dist/components/text-field.d.ts",
       "module": "./dist/components/text-field.mjs",

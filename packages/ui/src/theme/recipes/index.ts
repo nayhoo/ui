@@ -28,6 +28,8 @@ export * from "./status.css";
 
 export * from "./switch.css";
 
+export * from "./text-area.css";
+
 export * from "./text-field.css";
 
 export * from "./text.css";
