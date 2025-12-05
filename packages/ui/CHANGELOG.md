@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.19.0
+
+### Minor Changes
+
+- 8f967ba: feat: add accordion component
+
 ## 0.18.0
 
 ### Minor Changes
