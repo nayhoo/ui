@@ -1,3 +1,5 @@
+export * from "./accordion.css";
+
 export * from "./avatar.css";
 
 export * from "./box.css";

@@ -20,6 +20,7 @@
   "dependencies": {
     "@nayhoo/hooks": "^0.2.2",
     "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.1.4",
@@ -53,6 +54,11 @@
     "typescript": "^5.8.3"
   },
   "exports": {
+    "./accordion": {
+      "types": "./dist/components/accordion.d.ts",
+      "module": "./dist/components/accordion.mjs",
+      "default": "./dist/components/accordion.js"
+    },
     "./aspect-ratio": {
       "types": "./dist/components/aspect-ratio.d.ts",
       "module": "./dist/components/aspect-ratio.mjs",
