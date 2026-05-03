@@ -1,5 +1,13 @@
 # @nayhoo/ui
 
+## 0.19.2
+
+### Patch Changes
+
+- c16b840: sync - fix pipeline
+- Updated dependencies [c16b840]
+  - @nayhoo/hooks@0.2.4
+
 ## 0.19.1
 
 ### Patch Changes
