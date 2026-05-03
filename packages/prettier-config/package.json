@@ -8,7 +8,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "prettier": ">=3.0.0"
+    "prettier": "^3.8.1"
   },
   "dependencies": {
     "prettier-plugin-organize-imports": "^4.1.0"

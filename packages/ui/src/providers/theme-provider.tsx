@@ -16,11 +16,10 @@ const systemThemes: SystemTheme[] = ["light", "dark"];
 const themes: ITheme[] = [...systemThemes, "system"];
 
 // Credits: https://github.com/pacocoursey/next-themes/blob/main/next-themes/src/types.ts
-interface ScriptProps
-  extends React.DetailedHTMLProps<
-    React.ScriptHTMLAttributes<HTMLScriptElement>,
-    HTMLScriptElement
-  > {}
+interface ScriptProps extends React.DetailedHTMLProps<
+  React.ScriptHTMLAttributes<HTMLScriptElement>,
+  HTMLScriptElement
+> {}
 
 export interface UseThemeProps {
   /** List of all available theme names */

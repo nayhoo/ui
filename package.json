@@ -21,15 +21,17 @@
     "cleandep": "rm -rf node_modules && pnpm -r exec rm -rf node_modules"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.1",
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.30.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^9.39.4",
     "@nayhoo/eslint-config": "workspace:*",
     "@nayhoo/prettier-config": "workspace:*",
-    "eslint": "^8.0.0",
+    "eslint": "~9.35.0",
     "husky": "^9.1.7",
-    "prettier": "^3.4.2",
-    "typescript": "^5.8.3"
+    "prettier": "^3.8.1",
+    "typescript": "5.6.2"
   }
 }
