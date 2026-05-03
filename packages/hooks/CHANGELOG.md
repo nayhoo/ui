@@ -1,5 +1,11 @@
 # @nayhoo/hooks
 
+## 0.2.3
+
+### Patch Changes
+
+- 4392a9c: chore: bump packages
+
 ## 0.2.2
 
 ### Patch Changes

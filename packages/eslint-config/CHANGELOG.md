@@ -1,5 +1,11 @@
 # @nayhoo/eslint-config
 
+## 1.0.3
+
+### Patch Changes
+
+- 4392a9c: chore: bump packages
+
 ## 1.0.2
 
 ### Patch Changes

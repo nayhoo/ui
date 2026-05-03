@@ -1,5 +1,11 @@
 # @nayhoo/utils
 
+## 0.2.1
+
+### Patch Changes
+
+- 4392a9c: chore: bump packages
+
 ## 0.2.0
 
 ### Minor Changes
