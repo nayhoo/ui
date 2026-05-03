@@ -1,6 +1,6 @@
 {
   "name": "@nayhoo/next",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,7 +15,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@nayhoo/tsconfig": "^1.0.0",
+    "@nayhoo/tsconfig": "^1.0.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
