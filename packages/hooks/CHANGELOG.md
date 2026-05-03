@@ -1,5 +1,11 @@
 # @nayhoo/hooks
 
+## 0.2.4
+
+### Patch Changes
+
+- c16b840: sync - fix pipeline
+
 ## 0.2.3
 
 ### Patch Changes

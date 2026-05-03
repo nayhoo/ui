@@ -1,5 +1,11 @@
 # @nayhoo/prettier-config
 
+## 1.0.4
+
+### Patch Changes
+
+- c16b840: sync - fix pipeline
+
 ## 1.0.3
 
 ### Patch Changes

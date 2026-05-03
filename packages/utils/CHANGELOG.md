@@ -1,5 +1,11 @@
 # @nayhoo/utils
 
+## 0.2.2
+
+### Patch Changes
+
+- c16b840: sync - fix pipeline
+
 ## 0.2.1
 
 ### Patch Changes
