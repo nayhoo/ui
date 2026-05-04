@@ -106,7 +106,6 @@ Vite example using @nayhoo/ui.
 
 See the full example [here](apps/vite).
 
-
 ## Credits
 
 Thank you [NiGhTTraX](https://github.com/NiGhTTraX) for the great [TypeScript monorepo template](https://github.com/NiGhTTraX/ts-monorepo).

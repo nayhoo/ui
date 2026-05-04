@@ -10,8 +10,10 @@
     "dist"
   ],
   "scripts": {
+    "lint": "eslint --ext js,ts,tsx .",
     "build": "pnpm run clean && pnpm run compile",
-    "clean": "rimraf ./dist",
+    "test": "vitest",
+    "clean": "rm -rf dist",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm run build"
   },
@@ -19,8 +21,8 @@
     "react": "^19.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19",
-    "rimraf": "^5.0.0",
-    "typescript": "5.6.2"
+    "@types/react": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

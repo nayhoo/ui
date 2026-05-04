@@ -2,15 +2,12 @@
   "name": "ui",
   "version": "0.16.3",
   "description": "🌴 Everything Front-End TypeScript monorepo for Nayhoo apps.",
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
+  "private": true,
   "scripts": {
-    "clean": "pnpm run -r clean",
-    "build": "pnpm --filter \"./packages/**\" run -r build",
-    "test": "pnpm run -r test",
-    "lint": "eslint --ext js,ts,tsx .",
+    "lint": "pnpm -r lint",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
     "changeset": "changeset",
@@ -21,17 +18,18 @@
     "cleandep": "rm -rf node_modules && pnpm -r exec rm -rf node_modules"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.2",
-    "@changesets/cli": "^2.30.0",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^9.39.4",
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@eslint/eslintrc": "catalog:",
+    "@eslint/js": "catalog:",
     "@nayhoo/eslint-config": "workspace:*",
     "@nayhoo/prettier-config": "workspace:*",
-    "eslint": "~9.35.0",
-    "husky": "^9.1.7",
-    "prettier": "^3.8.1",
-    "typescript": "5.6.2"
+    "eslint": "catalog:",
+    "husky": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

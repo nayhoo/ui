@@ -4,26 +4,23 @@
   "version": "0.3.3",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
     "cosmos": "cosmos --expose-imports",
     "cosmos-export": "cosmos-export --expose-imports"
   },
   "dependencies": {
     "@nayhoo/ui": "workspace:*",
-    "next": "15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@nayhoo/tsconfig": "workspace:*",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@vanilla-extract/next-plugin": "^2.4.8",
-    "react-cosmos": "^6.2.3",
-    "react-cosmos-plugin-boolean-input": "^6.2.3",
-    "react-cosmos-next": "^6.2.0",
-    "typescript": "^5.8.3"
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vanilla-extract/next-plugin": "catalog:",
+    "react-cosmos": "catalog:",
+    "react-cosmos-plugin-boolean-input": "catalog:",
+    "react-cosmos-next": "catalog:",
+    "typescript": "catalog:"
   }
 }

@@ -23,7 +23,7 @@ export default [
       "**/sst-env.d.ts", // Ignore SST generated files that cause issues
       "**/next-env.d.ts", // Ignore Next.js generated files
       "eslint.config.*", // Ignore ESLint config files
-      "apps/react-cosmos/cosmos.imports.ts"
+      "apps/react-cosmos/cosmos.imports.ts",
     ],
   },
   // Apply your external config using FlatCompat
