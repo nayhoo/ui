@@ -1,5 +1,11 @@
 # @nayhoo/eslint-config
 
+## 1.0.5
+
+### Patch Changes
+
+- 0550746: bump eslint-plugin-react-hooks to v5
+
 ## 1.0.4
 
 ### Patch Changes
