@@ -1,20 +1,14 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows: tests
-    types:
-      - completed
+  push:
     branches:
-      - [$default-branch]
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+      - main
 
 jobs:
   release:
     name: Release
     
-    if: github.event.workflow_run.event == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code repository
