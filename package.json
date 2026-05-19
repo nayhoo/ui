@@ -8,8 +8,6 @@
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
-    "format": "npm run prettier -- --write",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:release": "pnpm build && changeset publish",
@@ -28,8 +26,18 @@
     "@nayhoo/prettier-config": "workspace:*",
     "eslint": "catalog:",
     "husky": "catalog:",
+    "lint-staged": "^17.0.4",
     "prettier": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{css,json,md,yml,yaml,graphql}": [
+      "prettier --write"
+    ]
   }
 }
