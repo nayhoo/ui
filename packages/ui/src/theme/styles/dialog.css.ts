@@ -18,12 +18,8 @@ export const dialogFooter = style({
 
 export const dialogHeader = style({
   backgroundColor: theme.semanticColors.surface,
-  padding: `${theme.space[1]} ${theme.space[2]}`,
+  padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
   top: 0,
   zIndex: theme.zIndices.max,
-});
-
-export const dialogTitle = style({
-  marginBottom: theme.space[4],
 });

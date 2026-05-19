@@ -10,10 +10,10 @@ import {
   dialogDescription,
   dialogFooter,
   dialogHeader,
-  dialogTitle,
 } from "@/theme/styles/dialog.css";
 import { extractVariantsFromProps, mergeClasses } from "@/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { IconButton } from "./icon-button";
 
 export type DialogProps = DialogPrimitive.DialogProps;
 
@@ -28,14 +28,14 @@ export const DialogClose = DialogPrimitive.Close;
 
 export type DialogContentProps = DialogPrimitive.DialogContentProps &
   DialogContentVariants & {
-    components?: { Footer?: React.ReactNode; Header?: React.ReactNode };
     disableOverlayBlur?: boolean;
+    title?: string;
   };
 
 export const DialogContent = ({
   children,
-  components,
   disableOverlayBlur = false,
+  title,
   ...props
 }: DialogContentProps) => {
   const dialogOverlay = dialogOverlayRecipe({ disableOverlayBlur });
@@ -52,11 +52,33 @@ export const DialogContent = ({
         {...rest}
         className={mergeClasses(dialogContent, rest.className)}
       >
-        {components?.Header}
+        <DialogHeader>
+          {title && (
+            <DialogPrimitive.Title style={{ marginLeft: theme.space[2] }}>
+              {title}
+            </DialogPrimitive.Title>
+          )}
 
-        <Box style={{ padding: theme.space[5] }}>{children}</Box>
+          <DialogClose asChild>
+            <IconButton style={{ marginLeft: "auto" }}>
+              <svg
+                clipRule="evenodd"
+                fillRule="evenodd"
+                strokeLinejoin="round"
+                strokeMiterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height={20}
+                width={20}
+                fill="currentColor"
+              >
+                <path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
+              </svg>
+            </IconButton>
+          </DialogClose>
+        </DialogHeader>
 
-        {components?.Footer}
+        {children}
       </DialogPrimitive.Content>
     </DialogPrimitive.Portal>
   );
@@ -88,20 +110,20 @@ export const DialogFooter = ({ children }: DialogFooterProps) => {
   );
 };
 
-export type DialogHeaderProps = { children: React.ReactNode };
+export type DialogBodyProps = { children: React.ReactNode };
 
-export const DialogHeader = ({ children }: DialogHeaderProps) => {
-  return <Flex className={dialogHeader}>{children}</Flex>;
+export const DialogBody = ({ children }: DialogBodyProps) => {
+  return <Box style={{ padding: theme.space[4] }}>{children}</Box>;
 };
 
-export type DialogTitleProps = DialogPrimitive.DialogTitleProps;
+type DialogHeaderProps = { children: React.ReactNode };
 
-export const DialogTitle = ({ ...props }: DialogTitleProps) => {
+const DialogHeader = ({ children }: DialogHeaderProps) => {
   return (
-    <DialogPrimitive.Title
-      {...props}
-      className={mergeClasses(dialogTitle, props.className)}
-    />
+    <Flex className={dialogHeader} align="center">
+      {" "}
+      {children}
+    </Flex>
   );
 };
 
