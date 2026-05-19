@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.20.0
+
+### Minor Changes
+
+- 0b94d25: Improved dialog dx, visual changes and now easier to use a form within the dialog
+
 ## 0.19.2
 
 ### Patch Changes
