@@ -1,5 +1,12 @@
 # @nayhoo/vite
 
+## 0.1.9
+
+### Patch Changes
+
+- Updated dependencies [0b94d25]
+  - @nayhoo/ui@0.20.0
+
 ## 0.1.8
 
 ### Patch Changes
