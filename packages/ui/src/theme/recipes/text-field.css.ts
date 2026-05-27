@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const textFieldRecipe = recipe({
+export const textFieldRecipe = homemadeRecipe({
   base: {
     appearance: "none",
     borderWidth: "0",
@@ -140,5 +141,5 @@ export const textFieldRecipe = recipe({
 });
 
 export type TextFieldVariants = NonNullable<
-  RecipeVariants<typeof textFieldRecipe>
+  HomemadeRecipeVariants<typeof textFieldRecipe>
 >;

@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const containerRecipe = recipe({
+export const containerRecipe = homemadeRecipe({
   base: {
     boxSizing: "border-box",
     flexShrink: 0,
@@ -36,5 +37,5 @@ export const containerRecipe = recipe({
 });
 
 export type ContainerVariants = NonNullable<
-  RecipeVariants<typeof containerRecipe>
+  HomemadeRecipeVariants<typeof containerRecipe>
 >;

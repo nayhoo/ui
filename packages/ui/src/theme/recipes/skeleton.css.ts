@@ -1,8 +1,9 @@
 import { pulse } from "@/theme/animations/pulse.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const skeletonRecipe = recipe({
+export const skeletonRecipe = homemadeRecipe({
   base: {
     backgroundColor: theme.colors.slate.slate4,
     position: "relative",
@@ -81,5 +82,5 @@ export const skeletonRecipe = recipe({
 });
 
 export type SkeletonVariants = NonNullable<
-  RecipeVariants<typeof skeletonRecipe>
+  HomemadeRecipeVariants<typeof skeletonRecipe>
 >;

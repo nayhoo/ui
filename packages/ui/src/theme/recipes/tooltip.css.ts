@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const tooltipContentRecipe = recipe({
+export const tooltipContentRecipe = homemadeRecipe({
   base: {
     backgroundColor: theme.semanticColors.transparentSurface,
     borderRadius: theme.radii[1],
@@ -22,5 +23,5 @@ export const tooltipContentRecipe = recipe({
 });
 
 export type TooltipContentVariants = NonNullable<
-  RecipeVariants<typeof tooltipContentRecipe>
+  HomemadeRecipeVariants<typeof tooltipContentRecipe>
 >;

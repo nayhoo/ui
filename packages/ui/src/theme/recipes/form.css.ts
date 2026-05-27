@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const formMessageRecipe = recipe({
+export const formMessageRecipe = homemadeRecipe({
   base: {
     fontSize: theme.fontSizes[2],
     opacity: 0.8,
@@ -18,5 +19,5 @@ export const formMessageRecipe = recipe({
 });
 
 export type FormMessageVariants = NonNullable<
-  RecipeVariants<typeof formMessageRecipe>
+  HomemadeRecipeVariants<typeof formMessageRecipe>
 >;

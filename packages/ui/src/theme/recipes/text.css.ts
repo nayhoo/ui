@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const textRecipe = recipe({
+export const textRecipe = homemadeRecipe({
   base: {
     lineHeight: "1",
     margin: "0",
@@ -74,4 +75,6 @@ export const textRecipe = recipe({
   },
 });
 
-export type TextVariants = NonNullable<RecipeVariants<typeof textRecipe>>;
+export type TextVariants = NonNullable<
+  HomemadeRecipeVariants<typeof textRecipe>
+>;

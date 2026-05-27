@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const linkRecipe = recipe({
+export const linkRecipe = homemadeRecipe({
   base: {
     alignItems: "center",
     gap: theme.space[1],
@@ -58,4 +59,6 @@ export const linkRecipe = recipe({
   defaultVariants: {},
 });
 
-export type LinkVariants = NonNullable<RecipeVariants<typeof linkRecipe>>;
+export type LinkVariants = NonNullable<
+  HomemadeRecipeVariants<typeof linkRecipe>
+>;

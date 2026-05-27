@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const checkboxRecipe = recipe({
+export const checkboxRecipe = homemadeRecipe({
   base: {
     all: "unset",
     boxSizing: "border-box",
@@ -58,5 +59,5 @@ export const checkboxRecipe = recipe({
 });
 
 export type CheckboxVariants = NonNullable<
-  RecipeVariants<typeof checkboxRecipe>
+  HomemadeRecipeVariants<typeof checkboxRecipe>
 >;

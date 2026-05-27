@@ -41,7 +41,6 @@
     "@radix-ui/react-tooltip": "catalog:",
     "@vanilla-extract/css": "catalog:",
     "@vanilla-extract/esbuild-plugin": "catalog:",
-    "@vanilla-extract/recipes": "catalog:",
     "@vanilla-extract/sprinkles": "catalog:",
     "homemade-recipes": "catalog:",
     "tsup": "catalog:"

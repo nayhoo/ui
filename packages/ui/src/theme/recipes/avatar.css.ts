@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const avatarRecipe = recipe({
+export const avatarRecipe = homemadeRecipe({
   base: {
     alignItems: "center",
     justifyContent: "center",
@@ -109,9 +110,11 @@ export const avatarRecipe = recipe({
   },
 });
 
-export type AvatarVariants = NonNullable<RecipeVariants<typeof avatarRecipe>>;
+export type AvatarVariants = NonNullable<
+  HomemadeRecipeVariants<typeof avatarRecipe>
+>;
 
-export const avatarFallbackRecipe = recipe({
+export const avatarFallbackRecipe = homemadeRecipe({
   base: {
     textTransform: "uppercase",
   },
@@ -145,5 +148,5 @@ export const avatarFallbackRecipe = recipe({
 });
 
 export type AvatarFallbackVariants = NonNullable<
-  RecipeVariants<typeof avatarFallbackRecipe>
+  HomemadeRecipeVariants<typeof avatarFallbackRecipe>
 >;

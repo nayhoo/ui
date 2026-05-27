@@ -1,8 +1,9 @@
 import { panel } from "@/theme/styles/panel.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const dialogContentRecipe = recipe({
+export const dialogContentRecipe = homemadeRecipe({
   base: [
     panel,
     {
@@ -53,10 +54,12 @@ export const dialogContentRecipe = recipe({
   },
 });
 
-export type DialogContentVariants = RecipeVariants<typeof dialogContentRecipe>;
+export type DialogContentVariants = HomemadeRecipeVariants<
+  typeof dialogContentRecipe
+>;
 
 // could be its own component, glass?
-export const dialogOverlayRecipe = recipe({
+export const dialogOverlayRecipe = homemadeRecipe({
   base: {
     backgroundColor: `color-mix(in srgb, ${theme.semanticColors.background}, transparent 40%)`,
     bottom: 0,
@@ -82,4 +85,6 @@ export const dialogOverlayRecipe = recipe({
 });
 
 // Get the type
-export type DialogOverlayVariants = RecipeVariants<typeof dialogOverlayRecipe>;
+export type DialogOverlayVariants = HomemadeRecipeVariants<
+  typeof dialogOverlayRecipe
+>;

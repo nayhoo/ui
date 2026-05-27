@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const iconButtonRecipe = recipe({
+export const iconButtonRecipe = homemadeRecipe({
   base: {
     alignItems: "center",
     appearance: "none",
@@ -113,4 +114,6 @@ export const iconButtonRecipe = recipe({
 });
 
 // Get the type
-export type IconButtonVariants = RecipeVariants<typeof iconButtonRecipe>;
+export type IconButtonVariants = HomemadeRecipeVariants<
+  typeof iconButtonRecipe
+>;

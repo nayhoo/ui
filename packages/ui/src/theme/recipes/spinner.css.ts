@@ -1,8 +1,9 @@
 import { spin } from "@/theme/animations/spin.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const spinnerRecipe = recipe({
+export const spinnerRecipe = homemadeRecipe({
   base: {
     animation: `${spin} .8s linear infinite`,
     border: `1px solid ${theme.colors.slate.slate4}`,
@@ -57,4 +58,4 @@ export const spinnerRecipe = recipe({
 });
 
 // Get the type
-export type SpinnerVariants = RecipeVariants<typeof spinnerRecipe>;
+export type SpinnerVariants = HomemadeRecipeVariants<typeof spinnerRecipe>;

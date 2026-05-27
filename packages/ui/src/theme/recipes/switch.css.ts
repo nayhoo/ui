@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const switchRecipe = recipe({
+export const switchRecipe = homemadeRecipe({
   base: {
     all: "unset",
 
@@ -37,9 +38,11 @@ export const switchRecipe = recipe({
   },
 });
 
-export type SwitchVariants = NonNullable<RecipeVariants<typeof switchRecipe>>;
+export type SwitchVariants = NonNullable<
+  HomemadeRecipeVariants<typeof switchRecipe>
+>;
 
-export const switchThumbRecipe = recipe({
+export const switchThumbRecipe = homemadeRecipe({
   base: {
     all: "unset",
 
@@ -83,5 +86,5 @@ export const switchThumbRecipe = recipe({
 });
 
 export type SwitchThumbVariants = NonNullable<
-  RecipeVariants<typeof switchThumbRecipe>
+  HomemadeRecipeVariants<typeof switchThumbRecipe>
 >;

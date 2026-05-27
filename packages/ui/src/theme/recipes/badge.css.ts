@@ -1,7 +1,8 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
-import { RecipeVariants, recipe } from "@vanilla-extract/recipes";
+import { HomemadeRecipeVariants } from "homemade-recipes";
+import { homemadeRecipe } from "../homemade-recipe.css";
 
-export const badgeRecipe = recipe({
+export const badgeRecipe = homemadeRecipe({
   base: {
     alignItems: "center",
     appearance: "none",
@@ -59,4 +60,6 @@ export const badgeRecipe = recipe({
   },
 });
 
-export type BadgeVariants = NonNullable<RecipeVariants<typeof badgeRecipe>>;
+export type BadgeVariants = NonNullable<
+  HomemadeRecipeVariants<typeof badgeRecipe>
+>;
