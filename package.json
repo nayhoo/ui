@@ -24,6 +24,7 @@
     "@eslint/js": "catalog:",
     "@nayhoo/eslint-config": "workspace:*",
     "@nayhoo/prettier-config": "workspace:*",
+    "@nayhoo/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "husky": "catalog:",
     "lint-staged": "^17.0.4",

@@ -1,11 +1,9 @@
 {
-  "extends": "./tsconfig.build.json",
-
+  "extends": "@nayhoo/tsconfig/base.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@nayhoo/*": ["packages/*/src"]
-    },
-    "noEmit": true
-  }
+      "@nayhoo/*": ["./packages/*/src"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
 }

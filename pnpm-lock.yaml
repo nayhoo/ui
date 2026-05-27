@@ -230,6 +230,9 @@ importers:
       '@nayhoo/prettier-config':
         specifier: workspace:*
         version: link:packages/prettier-config
+      '@nayhoo/tsconfig':
+        specifier: workspace:*
+        version: link:packages/tsconfig
       eslint:
         specifier: 'catalog:'
         version: 9.35.0(jiti@2.4.2)

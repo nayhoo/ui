@@ -1,3 +1,3 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "@nayhoo/tsconfig/react-library.json"
 }
