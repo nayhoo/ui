@@ -21,7 +21,6 @@
     "dayjs": "^1.11.13"
   },
   "devDependencies": {
-    "tslib": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }

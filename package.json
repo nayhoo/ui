@@ -13,7 +13,8 @@
     "changeset:release": "pnpm build && changeset publish",
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "cleandep": "rm -rf node_modules && pnpm -r exec rm -rf node_modules"
+    "cleandep": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
+    "codemod:catalog": "pnpx codemod pnpm/catalog"
   },
   "devDependencies": {
     "@changesets/changelog-github": "catalog:",
@@ -27,7 +28,7 @@
     "@nayhoo/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "husky": "catalog:",
-    "lint-staged": "^17.0.4",
+    "lint-staged": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
