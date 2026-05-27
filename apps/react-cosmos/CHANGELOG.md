@@ -1,5 +1,12 @@
 # @nayhoo/nextjs
 
+## 0.3.5
+
+### Patch Changes
+
+- Updated dependencies [7db45e4]
+  - @nayhoo/ui@0.20.1
+
 ## 0.3.4
 
 ### Patch Changes
