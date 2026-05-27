@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.20.1
+
+### Patch Changes
+
+- 7db45e4: replace usage of recipe with homemadeRecipe
+
 ## 0.20.0
 
 ### Minor Changes
