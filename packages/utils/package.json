@@ -14,14 +14,11 @@
     "build": "pnpm run clean && pnpm run compile",
     "test": "vitest",
     "clean": "rm -rf dist",
-    "compile": "tsc -p tsconfig.build.json",
+    "compile": "tsup",
+    "compile:watch": "tsup --watch",
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
     "dayjs": "^1.11.13"
-  },
-  "devDependencies": {
-    "typescript": "catalog:",
-    "vitest": "catalog:"
   }
 }
