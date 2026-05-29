@@ -9,12 +9,20 @@
     "module": "NodeNext",
     "moduleDetection": "force",
     "moduleResolution": "NodeNext",
+    "noImplicitAny": true,
     "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "declaration": true,
-    "declarationMap": true,
-    "target": "ES2022"
-  }
+    "target": "ES2022",
+    "types": ["node"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "../../node_modules/@types",
+      "../../types"
+    ]
+  },
+  "exclude": ["node_modules", "**/dist/**"]
 }
