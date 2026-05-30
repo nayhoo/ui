@@ -39,14 +39,14 @@
     "@radix-ui/react-switch": "catalog:",
     "@radix-ui/react-toast": "catalog:",
     "@radix-ui/react-tooltip": "catalog:",
-    "@vanilla-extract/css": "catalog:",
-    "@vanilla-extract/esbuild-plugin": "catalog:",
-    "@vanilla-extract/sprinkles": "catalog:",
     "homemade-recipes": "catalog:"
   },
   "devDependencies": {
     "@swc/core": "catalog:",
     "@types/react": "catalog:",
+    "@vanilla-extract/esbuild-plugin": "catalog:",
+    "@vanilla-extract/css": "catalog:",
+    "@vanilla-extract/sprinkles": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
