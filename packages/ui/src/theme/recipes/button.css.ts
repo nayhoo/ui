@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { style } from "@vanilla-extract/css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
 
@@ -19,6 +20,8 @@ export const buttonRecipe = homemadeRecipe({
     fontVariantNumeric: "tabular-nums",
 
     transition: "all 100ms",
+
+    position: "relative",
 
     selectors: {
       "&::before": {
@@ -62,6 +65,15 @@ export const buttonRecipe = homemadeRecipe({
         paddingRight: theme.space[2],
         fontSize: theme.fontSizes[1],
         lineHeight: theme.sizes[5],
+
+        selectors: {
+          "&[data-left-icon]": {
+            paddingLeft: 0,
+          },
+          "&[data-right-icon]": {
+            paddingRight: 0,
+          },
+        },
       },
       "2": {
         borderRadius: theme.radii[2],
@@ -70,6 +82,15 @@ export const buttonRecipe = homemadeRecipe({
         paddingRight: theme.space[3],
         fontSize: theme.fontSizes[3],
         lineHeight: theme.lineHeights[6],
+
+        selectors: {
+          "&[data-left-icon]": {
+            paddingLeft: theme.space[1],
+          },
+          "&[data-right-icon]": {
+            paddingRight: theme.space[1],
+          },
+        },
       },
       "3": {
         borderRadius: theme.radii[2],
@@ -78,6 +99,15 @@ export const buttonRecipe = homemadeRecipe({
         paddingRight: theme.space[4],
         fontSize: theme.fontSizes[4],
         lineHeight: theme.sizes[7],
+
+        selectors: {
+          "&[data-left-icon]": {
+            paddingLeft: theme.space[2],
+          },
+          "&[data-right-icon]": {
+            paddingRight: theme.space[2],
+          },
+        },
       },
     },
     variant: {
@@ -176,3 +206,34 @@ export const buttonRecipe = homemadeRecipe({
 
 // Get the type
 export type ButtonVariants = HomemadeRecipeVariants<typeof buttonRecipe>;
+
+export const buttonIconRecipe = homemadeRecipe({
+  base: {
+    marginLeft: theme.space[1],
+    marginRight: theme.space[1],
+  },
+
+  variants: {
+    size: {
+      "1": {
+        height: theme.fontSizes[2],
+        width: theme.fontSizes[2],
+      },
+      "2": {
+        height: theme.fontSizes[4],
+        width: theme.fontSizes[4],
+      },
+      "3": {
+        height: theme.fontSizes[5],
+        width: theme.fontSizes[5],
+      },
+    },
+  },
+});
+
+export const buttonSpinner = style({
+  position: "absolute",
+  left: 0,
+  right: 0,
+  margin: "auto",
+});
