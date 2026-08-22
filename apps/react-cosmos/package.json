@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@nayhoo/ui": "workspace:*",
-    "next": "15.5.3",
+    "next": "15.5.23",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },
@@ -17,9 +17,9 @@
     "@nayhoo/tsconfig": "workspace:*",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
-    "@vanilla-extract/next-plugin": "^2.4.7",
+    "@vanilla-extract/next-plugin": "^2.4.11",
     "react-cosmos": "^6.2.3",
-    "react-cosmos-plugin-boolean-input": "^6.2.3",
-    "react-cosmos-next": "^6.2.0"
+    "react-cosmos-next": "^6.2.0",
+    "react-cosmos-plugin-boolean-input": "^6.2.3"
   }
 }
