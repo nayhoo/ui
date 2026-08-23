@@ -13,7 +13,7 @@ export const dialogFooter = style({
   bottom: 0,
   padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
-  zIndex: theme.zIndices.max,
+  zIndex: theme.zIndices[5],
 });
 
 export const dialogHeader = style({
@@ -21,5 +21,5 @@ export const dialogHeader = style({
   padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
   top: 0,
-  zIndex: theme.zIndices.max,
+  zIndex: theme.zIndices[5],
 });

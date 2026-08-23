@@ -36,7 +36,7 @@ export const Nav = ({
         top: 0,
         transition: "border-color 0.4s, padding 0.4s",
         width: "100%",
-        zIndex: theme.zIndices[1],
+        zIndex: theme.zIndices[4],
         backgroundColor: `color-mix(in srgb, ${theme.semanticColors.background}, transparent 40%)`,
         backdropFilter: "blur(10px)",
       }}

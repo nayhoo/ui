@@ -28,7 +28,7 @@ export const toastViewport = style({
   maxWidth: "100vw",
   margin: "0",
   listStyle: "none",
-  zIndex: 2147483647,
+  zIndex: theme.zIndices[6],
   outline: "none",
   transition: "transform 400ms ease",
   vars: {
