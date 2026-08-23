@@ -28,17 +28,15 @@ export const DialogClose = DialogPrimitive.Close;
 
 export type DialogContentProps = DialogPrimitive.DialogContentProps &
   DialogContentVariants & {
-    disableOverlayBlur?: boolean;
     title?: string;
   };
 
 export const DialogContent = ({
   children,
-  disableOverlayBlur = false,
   title,
   ...props
 }: DialogContentProps) => {
-  const dialogOverlay = dialogOverlayRecipe({ disableOverlayBlur });
+  const dialogOverlay = dialogOverlayRecipe();
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...dialogContentRecipe.variants(),

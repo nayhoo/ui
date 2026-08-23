@@ -93,6 +93,8 @@ export const baseTheme = createGlobalTheme(":root", {
     2: "200",
     3: "300",
     4: "400",
+    5: "500",
+    6: "600",
     max: "999",
   },
 });

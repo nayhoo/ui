@@ -20,6 +20,8 @@ export const dialogContentRecipe = homemadeRecipe({
       transform: "translate(-50%, -50%)",
       willChange: "transform",
 
+      zIndex: theme.zIndices[5],
+
       selectors: {
         "&:focus": {
           outline: "none",
@@ -68,20 +70,11 @@ export const dialogOverlayRecipe = homemadeRecipe({
     right: 0,
     top: 0,
 
-    backdropFilter: "blur(10px)",
     transition: "backdrop-filter 100ms linear",
     willChange: "backdrop-filter",
-  },
 
-  variants: {
-    disableOverlayBlur: {
-      true: {
-        backdropFilter: "blur(0px)",
-      },
-    },
+    zIndex: theme.zIndices[5],
   },
-
-  defaultVariants: {},
 });
 
 // Get the type
