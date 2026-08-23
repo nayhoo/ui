@@ -68,20 +68,9 @@ export const dialogOverlayRecipe = homemadeRecipe({
     right: 0,
     top: 0,
 
-    backdropFilter: "blur(10px)",
     transition: "backdrop-filter 100ms linear",
     willChange: "backdrop-filter",
   },
-
-  variants: {
-    disableOverlayBlur: {
-      true: {
-        backdropFilter: "blur(0px)",
-      },
-    },
-  },
-
-  defaultVariants: {},
 });
 
 // Get the type
