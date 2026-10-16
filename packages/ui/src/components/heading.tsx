@@ -32,6 +32,7 @@ const textSize: Record<HeadingLevelVariants, TextVariants["size"]> = {
 };
 
 export const Heading = ({
+  /** @deprecated don't need this */
   asChild,
   color,
   level = "1",

@@ -26,6 +26,7 @@
     "@nayhoo/prettier-config": "workspace:*",
     "@nayhoo/tsconfig": "workspace:*",
     "@types/node": "20.19.39",
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint": "~9.35.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5",

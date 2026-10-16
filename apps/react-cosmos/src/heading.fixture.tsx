@@ -1,25 +1,45 @@
-"use client";
-
+import { Flex } from "@nayhoo/ui/flex";
 import { Heading } from "@nayhoo/ui/heading";
-import { useFixtureSelect } from "react-cosmos/client";
 
-// eslint-disable-next-line react/display-name
-export default () => {
-  const [color] = useFixtureSelect("color", {
-    options: ["primary", "secondary", "error", "subtle"],
-  });
+const colors = ["primary", "secondary", "error", "subtle"] as const;
+const levels = ["1", "2", "3", "4", "5", "6"] as const;
+const weights = ["regular", "medium", "bold"] as const;
 
-  const [level] = useFixtureSelect("level", {
-    options: ["1", "2", "3", "4", "5", "6"],
-  });
-
-  const [weight] = useFixtureSelect("weight", {
-    options: ["regular", "medium", "bold"],
-  });
-
-  return (
-    <Heading color={color} level={level} weight={weight}>
-      This is some heading.
-    </Heading>
-  );
+export default {
+  default: () => {
+    return <Heading>Heading</Heading>;
+  },
+  colors: () => {
+    return (
+      <Flex gap="4" direction="column">
+        {colors.map((color) => (
+          <Heading key={color} color={color}>
+            {color}
+          </Heading>
+        ))}
+      </Flex>
+    );
+  },
+  levels: () => {
+    return (
+      <Flex gap="4" direction="column">
+        {levels.map((level) => (
+          <Heading key={level} level={level}>
+            Heading {level}
+          </Heading>
+        ))}
+      </Flex>
+    );
+  },
+  weights: () => {
+    return (
+      <Flex gap="4" direction="column">
+        {weights.map((weight) => (
+          <Heading key={weight} weight={weight}>
+            {weight}
+          </Heading>
+        ))}
+      </Flex>
+    );
+  },
 };
