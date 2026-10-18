@@ -67,11 +67,6 @@ export const iconButtonRecipe = homemadeRecipe({
         height: theme.sizes[7],
         width: theme.sizes[7],
       },
-      "4": {
-        borderRadius: theme.radii[3],
-        height: theme.sizes[8],
-        width: theme.sizes[8],
-      },
     },
     variant: {
       ghost: {

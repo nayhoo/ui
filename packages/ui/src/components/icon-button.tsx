@@ -30,7 +30,9 @@ export const IconButton = ({ asChild, ...props }: IconButtonProps) => {
       disabled={rest.disabled || Boolean(variants.loading)}
     >
       {rest.children}
-      {variants.loading && <Spinner style={{ position: "absolute" }} />}
+      {variants.loading && (
+        <Spinner size={variants.size} style={{ position: "absolute" }} />
+      )}
     </Comp>
   );
 };

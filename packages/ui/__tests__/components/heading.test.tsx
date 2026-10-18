@@ -4,7 +4,7 @@ import { describe, expect, test } from "vitest";
 
 describe("heading", () => {
   describe("props", () => {
-    test("should render default props", () => {
+    test("should render <h1> by default", () => {
       const { container } = render(<Heading />);
 
       expect(container.querySelector("h1")).toBeTruthy();

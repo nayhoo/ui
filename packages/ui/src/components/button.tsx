@@ -51,7 +51,9 @@ export const Button = ({
 
       {rightIcon && <Slot className={buttonIcon}>{rightIcon}</Slot>}
 
-      {variants.loading && <Spinner className={buttonSpinner} />}
+      {variants.loading && (
+        <Spinner className={buttonSpinner} size={variants.size} />
+      )}
     </Comp>
   );
 };

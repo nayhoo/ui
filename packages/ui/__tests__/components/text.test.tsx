@@ -4,7 +4,7 @@ import { describe, expect, test } from "vitest";
 
 describe("text", () => {
   describe("props", () => {
-    test("should render default props", () => {
+    test("should render <p> by default", () => {
       const { container } = render(<Text />);
 
       expect(container.querySelector("p")).toBeTruthy();

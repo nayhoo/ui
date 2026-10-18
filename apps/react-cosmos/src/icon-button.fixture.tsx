@@ -8,7 +8,7 @@ export default () => {
   const [loading, setLoading] = useFixtureInput("loading", false);
 
   const [size] = useFixtureSelect("size", {
-    options: ["1", "2", "3", "4"],
+    options: ["1", "2", "3"],
   });
 
   const [variant] = useFixtureSelect("variant", {

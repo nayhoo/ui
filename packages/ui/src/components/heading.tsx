@@ -1,15 +1,13 @@
 import { headingRecipe, HeadingVariants } from "@/theme/recipes/heading.css";
-import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils";
 import { mergeClasses } from "@/utils/merge-classes";
-import { Slot } from "@radix-ui/react-slot";
 
 type HeadingLevelVariants = "1" | "2" | "3" | "4" | "5" | "6";
 
-export type HeadingProps = ComponentProps<
-  "h1" | "h2" | "h3" | "h4" | "h5" | "h6",
-  HeadingVariants
->;
+export type HeadingProps = React.ComponentProps<
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+> &
+  HeadingVariants;
 
 const headingAs: Record<HeadingLevelVariants, React.ElementType> = {
   1: "h1",
@@ -23,22 +21,15 @@ const headingAs: Record<HeadingLevelVariants, React.ElementType> = {
 const extractElementFromLevel = (
   level: HeadingVariants["level"],
 ): React.ElementType => {
-  if (
-    (typeof level === "object" && !level.initial) ||
-    typeof level !== "string"
-  ) {
+  // TODO: need to think about this
+  if (typeof level !== "string") {
     return "h1";
   }
 
   return headingAs[level];
 };
 
-export const Heading = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: HeadingProps) => {
+export const Heading = (props: HeadingProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...headingRecipe.variants(),
@@ -46,11 +37,11 @@ export const Heading = ({
 
   const heading = headingRecipe(variants);
 
-  const Comp = asChild ? Slot : extractElementFromLevel(variants.level);
+  const Comp = extractElementFromLevel(variants.level);
 
   return (
-    <Comp className={mergeClasses(heading, className)} {...rest}>
-      {children}
+    <Comp {...rest} className={mergeClasses(heading, rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

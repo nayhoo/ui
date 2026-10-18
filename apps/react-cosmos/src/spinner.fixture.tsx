@@ -1,13 +1,19 @@
-"use client";
-
+import { Flex } from "@nayhoo/ui/flex";
 import { Spinner } from "@nayhoo/ui/spinner";
-import { useFixtureSelect } from "react-cosmos/client";
 
-// eslint-disable-next-line react/display-name
-export default () => {
-  const [size] = useFixtureSelect("size", {
-    options: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-  });
+const sizes = ["1", "2", "3"] as const;
 
-  return <Spinner size={size} />;
+export default {
+  default: () => {
+    return <Spinner />;
+  },
+  sizes: () => {
+    return (
+      <Flex gap="4" direction="column">
+        {sizes.map((size) => (
+          <Spinner key={size} size={size} />
+        ))}
+      </Flex>
+    );
+  },
 };
