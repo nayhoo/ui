@@ -160,11 +160,6 @@
       "module": "./dist/components/panel.mjs",
       "default": "./dist/components/panel.js"
     },
-    "./paragraph": {
-      "types": "./dist/components/paragraph.d.ts",
-      "module": "./dist/components/paragraph.mjs",
-      "default": "./dist/components/paragraph.js"
-    },
     "./popover": {
       "types": "./dist/components/popover.d.ts",
       "module": "./dist/components/popover.mjs",

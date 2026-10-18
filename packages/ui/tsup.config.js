@@ -25,7 +25,6 @@ export default defineConfig({
     "src/components/link.tsx",
     "src/components/menu.tsx",
     "src/components/panel.tsx",
-    "src/components/paragraph.tsx",
     "src/components/popover.tsx",
     "src/components/select.tsx",
     "src/components/separator.tsx",
