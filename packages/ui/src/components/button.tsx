@@ -10,12 +10,7 @@ import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
 
-const defaultElement = "button";
-
-export type ButtonProps = ComponentProps<
-  typeof defaultElement,
-  ButtonVariants
-> & {
+export type ButtonProps = ComponentProps<"button", ButtonVariants> & {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 };
@@ -31,18 +26,19 @@ export const Button = ({
     ...buttonRecipe.variants(),
   );
   const button = buttonRecipe(variants);
-  const Comp = asChild ? Slot : defaultElement;
 
   const buttonIcon = buttonIconRecipe({
     size: variants.size,
   });
 
+  const disabled = rest.disabled || Boolean(variants.loading);
+
   return (
-    <Comp
-      role="button"
+    <button
       {...rest}
       className={mergeClasses(button, rest.className)}
-      disabled={rest.disabled || Boolean(variants.loading)}
+      disabled={disabled}
+      aria-disabled={disabled}
       {...(leftIcon && { "data-left-icon": "" })}
       {...(rightIcon && { "data-right-icon": "" })}
     >
@@ -55,6 +51,6 @@ export const Button = ({
       {variants.loading && (
         <Spinner className={buttonSpinner} size={variants.size} />
       )}
-    </Comp>
+    </button>
   );
 };

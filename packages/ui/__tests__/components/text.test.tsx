@@ -7,13 +7,13 @@ describe("text", () => {
     test("should render as <p> by default", async () => {
       const { container } = await render(<Text />);
 
-      expect(container.querySelector("p")).toBeTruthy();
+      expect(container.querySelector("p")).toBeInTheDocument();
     });
 
     test("should render text", async () => {
       const { getByText } = await render(<Text>My text</Text>);
 
-      expect(getByText("My text")).toBeTruthy();
+      expect(getByText("My text")).toBeInTheDocument();
     });
 
     test("should render as span and pass on styles", async () => {

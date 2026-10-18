@@ -7,13 +7,13 @@ describe("heading", () => {
     test("should render as <h1> by default", async () => {
       const { container } = await render(<Heading />);
 
-      expect(container.querySelector("h1")).toBeTruthy();
+      expect(container.querySelector("h1")).toBeInTheDocument();
     });
 
     test("should render text", async () => {
       const { getByText } = await render(<Heading>My heading</Heading>);
 
-      expect(getByText("My heading")).toBeTruthy();
+      expect(getByText("My heading")).toBeInTheDocument();
     });
 
     test.for([
@@ -28,7 +28,7 @@ describe("heading", () => {
       async ([elementType, level]) => {
         const { container } = await render(<Heading level={level} />);
 
-        expect(container.querySelector(elementType)).toBeTruthy();
+        expect(container.querySelector(elementType)).toBeInTheDocument();
       },
     );
 
@@ -47,7 +47,7 @@ describe("heading", () => {
     ] as const)("should render as h1 for level %s", async (level) => {
       const { container } = await render(<Heading level={level} />);
 
-      expect(container.querySelector("h1")).toBeTruthy();
+      expect(container.querySelector("h1")).toBeInTheDocument();
     });
   });
 });

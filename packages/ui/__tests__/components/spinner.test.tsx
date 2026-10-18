@@ -7,14 +7,14 @@ describe("spinner", () => {
     test("should render Loading as aria-label", async () => {
       const { getByRole } = await render(<Spinner />);
 
-      expect(getByRole("status", { name: "Loading" })).toBeTruthy();
+      expect(getByRole("status", { name: "Loading" })).toBeInTheDocument();
     });
   });
   describe("props", () => {
     test("should render spinner", async () => {
       const { getByRole } = await render(<Spinner />);
 
-      expect(getByRole("status")).toBeTruthy();
+      expect(getByRole("status")).toBeInTheDocument();
     });
 
     test("should accept custom styles via class", async () => {
