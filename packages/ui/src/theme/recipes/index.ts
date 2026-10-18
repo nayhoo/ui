@@ -16,6 +16,8 @@ export * from "./form.css";
 
 export * from "./grid.css";
 
+export * from "./heading.css";
+
 export * from "./icon-button.css";
 
 export * from "./link.css";

@@ -4,7 +4,6 @@ import { Text } from "@nayhoo/ui/text";
 const colors = ["primary", "secondary", "error", "subtle"] as const;
 const sizes = ["1", "2", "3", "4", "5", "6", "7", "8", "9"] as const;
 const weights = ["regular", "medium", "bold"] as const;
-const elements = ["label", "li", "p"] as const;
 
 export default {
   default: () => {
@@ -45,13 +44,9 @@ export default {
   },
   asChild: () => {
     return (
-      <Flex gap="4" direction="column">
-        {elements.map((Element) => (
-          <Text key={Element} asChild>
-            <Element>{Element}</Element>
-          </Text>
-        ))}
-      </Flex>
+      <Text asChild>
+        <span>Text</span>
+      </Text>
     );
   },
 };

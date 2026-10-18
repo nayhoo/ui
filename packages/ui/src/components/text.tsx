@@ -4,16 +4,11 @@ import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
 
-// TODO: should this default to "p"?
-const defaultElement = "span";
+const defaultElement = "p";
 
 export type TextProps = ComponentProps<typeof defaultElement, TextVariants>;
 
-export const Text = ({
-  // TODO: could this be better as `as` to create label, li, p etc
-  asChild,
-  ...props
-}: TextProps) => {
+export const Text = ({ asChild, children, className, ...props }: TextProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...textRecipe.variants(),
@@ -22,8 +17,8 @@ export const Text = ({
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(text, rest.className)}>
-      {rest.children}
+    <Comp className={mergeClasses(text, className)} {...rest}>
+      {children}
     </Comp>
   );
 };

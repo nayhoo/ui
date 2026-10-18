@@ -7,7 +7,7 @@ describe("text", () => {
     test("should render default props", () => {
       const { container } = render(<Text />);
 
-      expect(container.querySelector("span")).toBeTruthy();
+      expect(container.querySelector("p")).toBeTruthy();
     });
 
     test("should render text", () => {
@@ -16,20 +16,17 @@ describe("text", () => {
       expect(getByText("My text")).toBeTruthy();
     });
 
-    test.for(["label", "li", "p"] as const)(
-      "should render as %s and pass on styles",
-      (Element) => {
-        const { container } = render(
-          <Text asChild className="custom-class">
-            <Element>{Element}</Element>
-          </Text>,
-        );
+    test("should render as span and pass on styles", () => {
+      const { container } = render(
+        <Text asChild className="custom-class">
+          <span>My text</span>
+        </Text>,
+      );
 
-        expect(
-          container.querySelector(Element)?.classList.contains("custom-class"),
-        ).toBeTruthy();
-      },
-    );
+      expect(
+        container.querySelector("span")?.classList.contains("custom-class"),
+      ).toBeTruthy();
+    });
 
     test("should accept custom styles via class", () => {
       const { container } = render(<Text className="custom-class another" />);

@@ -1,19 +1,17 @@
-import { TextVariants, textRecipe } from "@/theme/recipes/text.css";
+import { headingRecipe, HeadingVariants } from "@/theme/recipes/heading.css";
 import { ComponentProps } from "@/types/component-props";
+import { extractVariantsFromProps } from "@/utils";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
-import React from "react";
 
 type HeadingLevelVariants = "1" | "2" | "3" | "4" | "5" | "6";
 
 export type HeadingProps = ComponentProps<
   "h1" | "h2" | "h3" | "h4" | "h5" | "h6",
-  Omit<TextVariants, "size">
-> & {
-  level?: HeadingLevelVariants;
-};
+  HeadingVariants
+>;
 
-const textAs: Record<HeadingLevelVariants, React.ElementType> = {
+const headingAs: Record<HeadingLevelVariants, React.ElementType> = {
   1: "h1",
   2: "h2",
   3: "h3",
@@ -22,29 +20,37 @@ const textAs: Record<HeadingLevelVariants, React.ElementType> = {
   6: "h6",
 };
 
-const textSize: Record<HeadingLevelVariants, TextVariants["size"]> = {
-  1: "8",
-  2: "7",
-  3: "6",
-  4: "5",
-  5: "4",
-  6: "3",
+const extractElementFromLevel = (
+  level: HeadingVariants["level"],
+): React.ElementType => {
+  if (
+    (typeof level === "object" && !level.initial) ||
+    typeof level !== "string"
+  ) {
+    return "h1";
+  }
+
+  return headingAs[level];
 };
 
 export const Heading = ({
-  /** @deprecated don't need this */
   asChild,
-  color,
-  level = "1",
-  weight = "medium", // overrides defaultVariant
+  children,
+  className,
   ...props
 }: HeadingProps) => {
-  const text = textRecipe({ color, size: textSize[level], weight });
-  const Comp = asChild ? Slot : textAs[level];
+  const [variants, rest] = extractVariantsFromProps(
+    props,
+    ...headingRecipe.variants(),
+  );
+
+  const heading = headingRecipe(variants);
+
+  const Comp = asChild ? Slot : extractElementFromLevel(variants.level);
 
   return (
-    <Comp {...props} className={mergeClasses(text, props.className)}>
-      {props.children}
+    <Comp className={mergeClasses(heading, className)} {...rest}>
+      {children}
     </Comp>
   );
 };
