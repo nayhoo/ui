@@ -21,7 +21,6 @@ export default defineConfig({
     "src/components/heading.tsx",
     "src/components/icon-button.tsx",
     "src/components/image.tsx",
-    "src/components/label.tsx",
     "src/components/link.tsx",
     "src/components/menu.tsx",
     "src/components/panel.tsx",

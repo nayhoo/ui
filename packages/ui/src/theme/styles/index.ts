@@ -16,8 +16,6 @@ export * from "./global-style.css";
 
 export * from "./image.css";
 
-export * from "./label.css";
-
 export * from "./menu.css";
 
 export * from "./panel.css";
