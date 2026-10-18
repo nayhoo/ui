@@ -1,28 +1,28 @@
 import { Spinner } from "@/components/spinner";
-import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
+import { render } from "vitest-browser-react";
 
 describe("spinner", () => {
   describe("a11y", () => {
-    test("should render status as role and Loading as aria-label", () => {
-      const { getByRole } = render(<Spinner />);
+    test("should render Loading as aria-label", async () => {
+      const { getByRole } = await render(<Spinner />);
 
       expect(getByRole("status", { name: "Loading" })).toBeTruthy();
     });
   });
   describe("props", () => {
-    test("should render spinner", () => {
-      render(<Spinner data-testid="spinner" />);
+    test("should render spinner", async () => {
+      const { getByRole } = await render(<Spinner />);
 
-      expect(screen.getByTestId("spinner")).toBeTruthy();
+      expect(getByRole("status")).toBeTruthy();
     });
 
-    test("should accept custom styles via class", () => {
-      const { container } = render(
-        <Spinner className="custom-class another" data-testid="spinner" />,
+    test("should accept custom styles via class", async () => {
+      const { getByRole } = await render(
+        <Spinner className="custom-class another" />,
       );
-      expect(container.querySelector(".custom-class")).toBeTruthy();
-      expect(container.querySelector(".another")).toBeTruthy();
+
+      expect(getByRole("status")).toHaveClass("custom-class another");
     });
   });
 });

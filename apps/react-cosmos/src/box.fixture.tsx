@@ -1,18 +1,18 @@
-"use client";
-
 import { Box } from "@nayhoo/ui/box";
-import { Button } from "@nayhoo/ui/button";
+import { theme } from "@nayhoo/ui/theme";
 
-// eslint-disable-next-line react/display-name
-export default () => {
-  return (
-    <Box
-      asChild
-      onClick={() =>
-        alert("onClick event passed from Box to Button with asChild!")
-      }
-    >
-      <Button>Press me</Button>
-    </Box>
-  );
+export default {
+  default: () => {
+    return (
+      <Box
+        style={{
+          height: "100px",
+          width: "100px",
+          border: `2px solid ${theme.semanticColors.primary.primary11}`,
+          borderRadius: theme.radii[4],
+          backgroundColor: theme.semanticColors.primary.primary4,
+        }}
+      />
+    );
+  },
 };

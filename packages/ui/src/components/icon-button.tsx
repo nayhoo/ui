@@ -25,11 +25,13 @@ export const IconButton = ({ asChild, ...props }: IconButtonProps) => {
 
   return (
     <Comp
+      role="button"
       {...rest}
       className={mergeClasses(iconButton, rest.className)}
       disabled={rest.disabled || Boolean(variants.loading)}
     >
       {rest.children}
+
       {variants.loading && (
         <Spinner size={variants.size} style={{ position: "absolute" }} />
       )}

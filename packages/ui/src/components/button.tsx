@@ -39,6 +39,7 @@ export const Button = ({
 
   return (
     <Comp
+      role="button"
       {...rest}
       className={mergeClasses(button, rest.className)}
       disabled={rest.disabled || Boolean(variants.loading)}

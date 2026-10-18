@@ -49,9 +49,11 @@
     "@vanilla-extract/esbuild-plugin": "^2.3.16",
     "@vanilla-extract/sprinkles": "^1.6.3",
     "@vanilla-extract/vite-plugin": "^3.9.5",
+    "@vitest/browser-playwright": " ^4.1.10",
     "happy-dom": "^20.14.6",
     "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "react-dom": "19.1.1",
+    "vitest-browser-react": "^2.3.0"
   },
   "exports": {
     "./accordion": {
