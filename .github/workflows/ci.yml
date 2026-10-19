@@ -64,7 +64,5 @@ jobs:
       - name: Build (affected)
         run: pnpm --filter "...[origin/main]" build
 
-      - run: npx playwright install --with-deps
-
       - name: Test (affected)
         run: pnpm --filter "...[origin/main]" test
