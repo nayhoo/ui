@@ -13,7 +13,6 @@ export default defineConfig({
       enabled: true,
       headless: true,
       instances: [{ browser: "chromium" }],
-      // @ts-expect-error Need to figure this out
       provider: playwright(),
     },
     coverage: {
