@@ -64,5 +64,8 @@ jobs:
       - name: Build (affected)
         run: pnpm --filter "...[origin/main]" build
 
+      - name: Install Playwright Browsers
+        run: npx --no playwright install --with-deps --only-shell
+
       - name: Test (affected)
         run: pnpm --filter "...[origin/main]" test
