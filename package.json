@@ -26,6 +26,7 @@
     "@nayhoo/prettier-config": "workspace:*",
     "@nayhoo/tsconfig": "workspace:*",
     "@types/node": "20.19.39",
+    "@vitest/browser-playwright": " ^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
     "eslint": "~9.35.0",
     "husky": "^9.1.7",
@@ -33,7 +34,8 @@
     "prettier": "^3.8.3",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.10",
+    "vitest-browser-react": "^2.3.0"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

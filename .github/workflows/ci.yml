@@ -64,9 +64,7 @@ jobs:
       - name: Build (affected)
         run: pnpm --filter "...[origin/main]" build
 
-      # cache? install just for ui?
-      - name: Install Playwright chromium
-        run: npx playwright install chromium --only-shell
+      - run: npx playwright install --with-deps
 
       - name: Test (affected)
         run: pnpm --filter "...[origin/main]" test
