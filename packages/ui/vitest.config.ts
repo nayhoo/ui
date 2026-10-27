@@ -18,6 +18,7 @@ export default defineConfig({
     coverage: {
       include: ["src/**/*.{ts,tsx}"],
       exclude: [
+        "src/components/aspect-ratio", // straight port from radix ui
         "src/**/index.ts",
         "src/theme/*",
         "src/types/*",

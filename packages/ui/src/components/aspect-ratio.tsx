@@ -1,6 +1,6 @@
 import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
 
 /**
- * @see https://github.com/nayhoo/ui/blob/main/apps/react-cosmos/src/aspect-ratio.fixture.tsx
+ * @see https://www.radix-ui.com/primitives/docs/components/aspect-ratio
  */
 export const AspectRatio = AspectRatioPrimitive.Root;
