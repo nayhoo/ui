@@ -4,12 +4,12 @@ import { theme } from "@/theme";
 import {
   DialogContentVariants,
   dialogContentRecipe,
-  dialogOverlayRecipe,
 } from "@/theme/recipes/dialog.css";
 import {
   dialogDescription,
   dialogFooter,
   dialogHeader,
+  dialogOverlay,
 } from "@/theme/styles/dialog.css";
 import { extractVariantsFromProps, mergeClasses } from "@/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
@@ -36,7 +36,6 @@ export const DialogContent = ({
   title,
   ...props
 }: DialogContentProps) => {
-  const dialogOverlay = dialogOverlayRecipe();
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...dialogContentRecipe.variants(),

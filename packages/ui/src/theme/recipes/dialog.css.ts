@@ -59,25 +59,3 @@ export const dialogContentRecipe = homemadeRecipe({
 export type DialogContentVariants = HomemadeRecipeVariants<
   typeof dialogContentRecipe
 >;
-
-// could be its own component, glass?
-export const dialogOverlayRecipe = homemadeRecipe({
-  base: {
-    backgroundColor: `color-mix(in srgb, ${theme.semanticColors.background}, transparent 40%)`,
-    bottom: 0,
-    left: 0,
-    position: "fixed",
-    right: 0,
-    top: 0,
-
-    transition: "backdrop-filter 100ms linear",
-    willChange: "backdrop-filter",
-
-    zIndex: theme.zIndices[5],
-  },
-});
-
-// Get the type
-export type DialogOverlayVariants = HomemadeRecipeVariants<
-  typeof dialogOverlayRecipe
->;

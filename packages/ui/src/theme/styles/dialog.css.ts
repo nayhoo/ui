@@ -23,3 +23,17 @@ export const dialogHeader = style({
   top: 0,
   zIndex: theme.zIndices[5],
 });
+
+export const dialogOverlay = style({
+  backgroundColor: `color-mix(in srgb, ${theme.semanticColors.background}, transparent 40%)`,
+  bottom: 0,
+  left: 0,
+  position: "fixed",
+  right: 0,
+  top: 0,
+
+  transition: "backdrop-filter 100ms linear",
+  willChange: "backdrop-filter",
+
+  zIndex: theme.zIndices[5],
+});
