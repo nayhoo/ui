@@ -28,7 +28,7 @@ const extractElementFromLevel = (
   return headingAs[level];
 };
 
-export const Heading = (props: HeadingProps) => {
+export const Heading = ({ ...props }: HeadingProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...headingRecipe.variants(),

@@ -4,7 +4,7 @@ import { mergeClasses } from "@/utils/merge-classes";
 
 export type SpinnerProps = React.ComponentProps<"div"> & SpinnerVariants;
 
-export const Spinner = (props: SpinnerProps) => {
+export const Spinner = ({ ...props }: SpinnerProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...spinnerRecipe.variants(),

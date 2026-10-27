@@ -62,7 +62,7 @@ const saveToLS = (storageKey: string, value: string) => {
 
 export const useTheme = () => React.useContext(ThemeContext) ?? defaultContext;
 
-export const ThemeProvider = (props: ThemeProviderProps) => {
+export const ThemeProvider = ({ ...props }: ThemeProviderProps) => {
   const context = React.useContext(ThemeContext);
 
   // Ignore nested context providers, just passthrough children
@@ -153,7 +153,6 @@ const Theme = ({ children, scriptProps }: ThemeProviderProps) => {
     window.addEventListener("storage", handleStorage);
 
     return () => window.removeEventListener("storage", handleStorage);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setTheme]);
 
   // Whenever theme changes, apply it

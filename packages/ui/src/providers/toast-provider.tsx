@@ -216,7 +216,7 @@ export const ToastProvider = ({
   );
 };
 
-const Toast = (props: ToastPrimitives.ToastProps & { toast: Toast }) => {
+const Toast = ({ ...props }: ToastPrimitives.ToastProps & { toast: Toast }) => {
   const { onOpenChange, toast, id, ...toastProps } = props;
   const ref = React.useRef<HTMLLIElement>(null);
   const context = React.useContext(ToastContextImpl);
