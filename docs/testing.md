@@ -11,15 +11,17 @@ unit testing -> .test.ts
 component testing -> .test.tsx
 
 ```ts
+import { Component } from "@/components/component";
+import { describe, expect, test } from "vitest";
+import { render } from "vitest-browser-react";
+
 describe("component", () => {
   describe("a11y", () => {
     ...
   });
 
   describe("props", () => {
-    test("should render default props", () => {
-      ...
-    });
+    ...
   })
 })
 

@@ -1,6 +1,7 @@
 import { Button } from "@/components/button";
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import { render } from "vitest-browser-react";
+import { userEvent } from "vitest/browser";
 
 const Icon = (
   <svg
@@ -16,23 +17,43 @@ const Icon = (
 );
 
 describe("button", () => {
-  describe("props", () => {
-    test("should render button", async () => {
+  describe("a11y", () => {
+    test("should render as <button>", async () => {
+      const { container } = await render(<Button />);
+
+      expect(container.querySelector("button")).toBeInTheDocument();
+    });
+
+    test("should render button as role", async () => {
       const { getByRole } = await render(<Button />);
 
       expect(getByRole("button")).toBeInTheDocument();
     });
 
+    test("should focus and trigger onClick on {Enter}", async () => {
+      const mockFn = vi.fn();
+
+      const { getByRole } = await render(<Button onClick={mockFn} />);
+
+      const button = getByRole("button");
+
+      expect(button).not.toHaveFocus();
+
+      button.element().focus();
+
+      expect(button).toHaveFocus();
+
+      userEvent.keyboard("{Enter}");
+
+      expect(mockFn).toHaveBeenCalledOnce();
+    });
+  });
+
+  describe("props", () => {
     test("should render children as text", async () => {
       const { getByText } = await render(<Button>My button</Button>);
 
       expect(getByText("My button")).toBeInTheDocument();
-    });
-
-    test("should render as <button> by default", async () => {
-      const { container } = await render(<Button />);
-
-      expect(container.querySelector("button")).toBeInTheDocument();
     });
 
     test("should accept custom styles via class", async () => {

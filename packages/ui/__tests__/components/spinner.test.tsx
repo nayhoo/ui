@@ -9,14 +9,15 @@ describe("spinner", () => {
 
       expect(getByRole("status", { name: "Loading" })).toBeInTheDocument();
     });
-  });
-  describe("props", () => {
-    test("should render spinner", async () => {
+
+    test("should render status as role", async () => {
       const { getByRole } = await render(<Spinner />);
 
       expect(getByRole("status")).toBeInTheDocument();
     });
+  });
 
+  describe("props", () => {
     test("should accept custom styles via class", async () => {
       const { getByRole } = await render(
         <Spinner className="custom-class another" />,

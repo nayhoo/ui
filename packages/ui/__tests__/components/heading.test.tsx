@@ -3,13 +3,15 @@ import { describe, expect, test } from "vitest";
 import { render } from "vitest-browser-react";
 
 describe("heading", () => {
-  describe("props", () => {
+  describe("a11y", () => {
     test("should render as <h1> by default", async () => {
       const { container } = await render(<Heading />);
 
       expect(container.querySelector("h1")).toBeInTheDocument();
     });
+  });
 
+  describe("props", () => {
     test("should render text", async () => {
       const { getByText } = await render(<Heading>My heading</Heading>);
 

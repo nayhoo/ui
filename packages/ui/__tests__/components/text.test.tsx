@@ -3,13 +3,15 @@ import { describe, expect, test } from "vitest";
 import { render } from "vitest-browser-react";
 
 describe("text", () => {
-  describe("props", () => {
+  describe("a11y", () => {
     test("should render as <p> by default", async () => {
       const { container } = await render(<Text />);
 
       expect(container.querySelector("p")).toBeInTheDocument();
     });
+  });
 
+  describe("props", () => {
     test("should render text", async () => {
       const { getByText } = await render(<Text>My text</Text>);
 
