@@ -1,5 +1,18 @@
 # @nayhoo/ui
 
+## 0.23.0
+
+### Minor Changes
+
+- e9e86fd: Removed `Paragraph` for `Text`. Added new receipe and element handling for `Heading`
+- 32f5f76: Removed <Label /> in favour of the radix form label
+
+### Patch Changes
+
+- 0de6323: Added 'link' role to `Link`
+- d976cfe: Removed 'sm' responsive variant for button
+- 96fdf92: Made alt and src required for <Image>. Lazy loading images
+
 ## 0.22.0
 
 ### Minor Changes
