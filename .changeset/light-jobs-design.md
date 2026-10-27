@@ -2,4 +2,4 @@
 "@nayhoo/ui": patch
 ---
 
-Added 'link' role to `Link`
+Added `link` role attribute to `Link`
