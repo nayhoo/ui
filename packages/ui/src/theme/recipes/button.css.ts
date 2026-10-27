@@ -196,8 +196,6 @@ export const buttonRecipe = homemadeRecipe({
     },
   },
 
-  responsiveVariants: ["sm"],
-
   defaultVariants: {
     size: "2",
     variant: "primary",
