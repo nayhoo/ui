@@ -5,7 +5,7 @@
 
 🌴 Everything Front-End TypeScript monorepo for Nayhoo apps.
 
-[![tests](https://github.com/nayhoo/ui/actions/workflows/tests.yml/badge.svg)](https://github.com/nayhoo/ui/actions/workflows/tests.yml)
+[![coverage](https://github.com/nayhoo/ui/actions/workflows/coverage.yml/badge.svg)](https://github.com/nayhoo/ui/actions/workflows/coverage.yml)
 
 </div>
 
