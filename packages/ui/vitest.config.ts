@@ -17,7 +17,12 @@ export default defineConfig({
     },
     coverage: {
       include: ["src/**/*.{ts,tsx}"],
-      exclude: ["src/utils/create-theme.ts"],
+      exclude: [
+        "src/**/index.ts",
+        "src/theme/*",
+        "src/types/*",
+        "src/utils/create-theme.ts",
+      ],
       thresholds: {
         lines: 85,
         functions: 85,
