@@ -309,8 +309,8 @@ importers:
         specifier: ^1.2.7
         version: 1.2.7(@types/react-dom@19.1.5(@types/react@19.0.2))(@types/react@19.0.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       homemade-recipes:
-        specifier: ^0.3.1
-        version: 0.3.1(@vanilla-extract/css@1.17.2)
+        specifier: ^0.3.2
+        version: 0.3.2(@vanilla-extract/css@1.17.2)
     devDependencies:
       '@swc/core':
         specifier: ^1.11.29
@@ -3863,10 +3863,10 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  homemade-recipes@0.3.1:
-    resolution: {integrity: sha512-4+cOk97w5SD3N4eFhTE8jR9boxhlkoFaOE4910PO7uu87sNn6sbiw+uTJuaU/A2KvQBZ7dXU4VddBSwTLFAQWQ==}
+  homemade-recipes@0.3.2:
+    resolution: {integrity: sha512-8J4xGz7IdcW+WWF62EcEEN1gRqeHKOqFSyUM9PEK4MhfkQJQa/CQXSJQN4D1xrHMXk9lNFUAYiAW5yjJ7/O14A==}
     peerDependencies:
-      '@vanilla-extract/css': ^1
+      '@vanilla-extract/css': ^1.16.1
 
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
@@ -9297,7 +9297,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  homemade-recipes@0.3.1(@vanilla-extract/css@1.17.2):
+  homemade-recipes@0.3.2(@vanilla-extract/css@1.17.2):
     dependencies:
       '@vanilla-extract/css': 1.17.2
 

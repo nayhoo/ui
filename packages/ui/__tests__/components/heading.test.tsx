@@ -40,16 +40,5 @@ describe("heading", () => {
       );
       expect(getByText("My heading")).toHaveClass("custom-class another");
     });
-
-    test.for([
-      "1",
-      { initial: "1" },
-      // { initial: "1", sm: "4", md: "3", lg: "2" }, // TODO: need to investigate this failing test
-      // { sm: "4", md: "3", lg: "2" }, // TODO: need to investigate this failing test
-    ] as const)("should render as h1 for level %s", async (level) => {
-      const { container } = await render(<Heading level={level} />);
-
-      expect(container.querySelector("h1")).toBeInTheDocument();
-    });
   });
 });

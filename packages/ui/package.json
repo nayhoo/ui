@@ -39,7 +39,7 @@
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-toast": "^1.2.14",
     "@radix-ui/react-tooltip": "^1.2.7",
-    "homemade-recipes": "^0.3.1"
+    "homemade-recipes": "^0.3.2"
   },
   "devDependencies": {
     "@swc/core": "^1.11.29",
