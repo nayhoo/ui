@@ -30,7 +30,7 @@ describe("icon-button", () => {
 
       expect(button).toHaveFocus();
 
-      userEvent.keyboard("{Enter}");
+      await userEvent.keyboard("{Enter}");
 
       expect(mockFn).toHaveBeenCalledOnce();
     });

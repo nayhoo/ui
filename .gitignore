@@ -4,3 +4,6 @@ results
 .nyc_output
 *.tsbuildinfo
 coverage
+**/__tests__/**/__screenshots__/**/*
+.vitest
+.vitest-attachments
