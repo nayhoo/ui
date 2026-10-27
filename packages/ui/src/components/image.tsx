@@ -1,21 +1,27 @@
 import { image } from "@/theme/styles/image.css";
-import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
-import { Slot } from "@radix-ui/react-slot";
 
-const defaultElement = "img";
-
-export type ImageProps = ComponentProps<typeof defaultElement>;
+export type ImageProps = Omit<
+  React.ComponentProps<"img">,
+  "alt" | "src" | "loading"
+> & {
+  alt: string;
+  src: string;
+};
 
 /**
  * @see https://github.com/nayhoo/ui/blob/main/apps/storybook/src/components/Image.stories.tsx
  */
-export const Image = ({ asChild, ...props }: ImageProps) => {
-  const Comp = asChild ? Slot : defaultElement;
-
+export const Image = ({ alt, src, ...props }: ImageProps) => {
   return (
-    <Comp {...props} className={mergeClasses(image, props.className)}>
+    <img
+      alt={alt}
+      src={src}
+      loading="lazy"
+      {...props}
+      className={mergeClasses(image, props.className)}
+    >
       {props.children}
-    </Comp>
+    </img>
   );
 };
