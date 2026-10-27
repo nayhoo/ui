@@ -1,0 +1,42 @@
+name: Coverage
+
+on:
+  schedule:
+    - cron: "0 6 * * 6"
+      timezone: "Australia/Adelaide"
+  workflow_dispatch:
+
+concurrency:
+  group: coverage-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10
+          cache: true
+
+      - name: Setup node.js 26
+        uses: actions/setup-node@v6
+        with:
+          node-version: 26
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Browsers
+        run: npx --no playwright install --with-deps --only-shell
+
+      - name: Test coverage
+        run: pnpm --filter test:coverage
