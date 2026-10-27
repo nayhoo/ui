@@ -2,4 +2,4 @@
 "@nayhoo/ui": patch
 ---
 
-Removed 'sm' responsive variant for button
+Removed 'sm' responsive variant for `Button`
