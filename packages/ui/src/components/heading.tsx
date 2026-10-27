@@ -21,8 +21,7 @@ const headingAs: Record<HeadingLevelVariants, React.ElementType> = {
 const extractElementFromLevel = (
   level: HeadingVariants["level"],
 ): React.ElementType => {
-  // TODO: need to think about this
-  if (typeof level !== "string") {
+  if (!level) {
     return "h1";
   }
 
