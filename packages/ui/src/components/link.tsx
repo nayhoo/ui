@@ -17,7 +17,7 @@ export const Link = ({ asChild, ...props }: LinkProps) => {
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(link, rest.className)}>
+    <Comp role="link" {...rest} className={mergeClasses(link, rest.className)}>
       {rest.children}
     </Comp>
   );
