@@ -52,60 +52,44 @@ For packages, you don't want to bundle all the monorepo dependencies, and instea
 
 ## Packages
 
-### eslint-config
+### [eslint-config](packages/eslint-config)
 
-My personal ESLint config for TS projects.
+My personal ESLint config.
 
-See the package [here](packages/eslint-config).
-
-### hooks
+### [hooks](packages/hooks)
 
 A collection of React hooks.
 
-See the package [here](packages/hooks).
+### [prettier-config](packages/prettier-config)
 
-### prettier-config
+My personal Prettier config.
 
-My personal Prettier config for TS projects.
+### [tsconfig](packages/tsconfig)
 
-See the package [here](packages/prettier-config).
+Collection of TypeScript configs.
 
-### tsconfig
-
-See the package [here](packages/tsconfig).
-
-### ui
+### [ui](packages/ui)
 
 A collection of React components, built with [Radix Primitives](https://www.radix-ui.com/primitives), styled with [vanilla-extract](https://vanilla-extract.style).
 
-See the package [here](packages/ui).
-
-### utils
+### [utils](packages/utils)
 
 A collection of utility functions.
 
-See the package [here](packages/utils).
-
 ## Apps
 
-### next
+### [next](apps/next)
 
 Next.js 15 example using @nayhoo/ui.
 
-See the full example [here](apps/next).
-
-### react-cosmos
+### [react-cosmos](apps/react-cosmos)
 
 @nayhoo/ui fixtures to develop and QA components.
 
-See the full example [here](apps/react-cosmos).
-
-### vite
+### [vite](apps/vite)
 
 Vite example using @nayhoo/ui.
 
-See the full example [here](apps/vite).
-
 ## Credits
 
-Thank you [NiGhTTraX](https://github.com/NiGhTTraX) for the great [TypeScript monorepo template](https://github.com/NiGhTTraX/ts-monorepo).
+Thank you [NiGhTTraX](https://github.com/NiGhTTraX) for the [TypeScript monorepo template](https://github.com/NiGhTTraX/ts-monorepo).
