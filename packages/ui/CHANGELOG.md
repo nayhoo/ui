@@ -1,5 +1,20 @@
 # @nayhoo/ui
 
+## 0.23.0
+
+### Minor Changes
+
+- 2dc6000: Removed sprinkles in favour of homemade-recipes; Updated Nav `variant` prop to `fixed`
+- e9e86fd: Removed `Paragraph` for `Text`. Added new recipe for `Heading`
+- 32f5f76: Removed `Label` in favour of the radix form label
+
+### Patch Changes
+
+- 17eb0ee: Updated tooltip component z-indexing
+- 0de6323: Added `link` role attribute to `Link`
+- d976cfe: Removed `sm` responsive variant for `Button`
+- 96fdf92: Made alt and src required for `Image`. Lazy loading images
+
 ## 0.22.0
 
 ### Minor Changes
