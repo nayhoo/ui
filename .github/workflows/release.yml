@@ -26,6 +26,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+        # TODO: can affected know which it depends on to build?
+      - name: Build (full)
+        run: pnpm build
+
       - name: Install Playwright Browsers
         run: npx --no playwright install --with-deps --only-shell
 
