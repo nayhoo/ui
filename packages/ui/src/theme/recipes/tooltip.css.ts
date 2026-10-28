@@ -9,6 +9,8 @@ export const tooltipContentRecipe = homemadeRecipe({
     padding: `${theme.space[1]} ${theme.space[2]}`,
 
     color: theme.semanticColors.transparentSurfaceTextContrast,
+
+    zIndex: theme.zIndices[1],
   },
 
   variants: {
