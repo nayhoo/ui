@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.25.1
+
+### Patch Changes
+
+- 849dce5: Added missing box.css.ts export
+
 ## 0.25.0
 
 ### Minor Changes
