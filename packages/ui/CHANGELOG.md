@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.24.0
+
+### Minor Changes
+
+- 7d80fb7: added flex and grid responsive variants to `Box`; deprecated `Flex` and `Grid`
+- 4b902b3: Added display responsive variant to `Box`
+
 ## 0.23.0
 
 ### Minor Changes
