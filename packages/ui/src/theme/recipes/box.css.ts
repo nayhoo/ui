@@ -229,6 +229,17 @@ export const boxRecipe = homemadeRecipe({
         gridTemplateRows: `repeat(10, minmax(0, 10fr))`,
       },
     },
+    wrap: {
+      noWrap: {
+        flexWrap: "nowrap",
+      },
+      wrap: {
+        flexWrap: "wrap",
+      },
+      wrapReverse: {
+        flexWrap: "wrap-reverse",
+      },
+    },
   },
 
   responsiveVariants: ["xs", "sm", "md", "lg", "xl"],
