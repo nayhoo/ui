@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.25.0
+
+### Minor Changes
+
+- 462805f: Added wrap variant to `Box`
+
 ## 0.24.0
 
 ### Minor Changes
