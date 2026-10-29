@@ -2,6 +2,8 @@ export * from "./avatar.css";
 
 export * from "./badge.css";
 
+export * from "./box.css";
+
 export * from "./button.css";
 
 export * from "./checkbox.css";
