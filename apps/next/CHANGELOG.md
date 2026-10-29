@@ -1,5 +1,12 @@
 # @nayhoo/next
 
+## 0.1.42
+
+### Patch Changes
+
+- Updated dependencies [462805f]
+  - @nayhoo/ui@0.25.0
+
 ## 0.1.41
 
 ### Patch Changes
