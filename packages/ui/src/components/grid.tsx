@@ -8,6 +8,9 @@ const defaultElement = "div";
 
 export type GridProps = ComponentProps<typeof defaultElement, GridVariants>;
 
+/**
+ * @deprecated use Box instead with `display='grid'`
+ */
 export const Grid = ({ asChild, ...props }: GridProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,

@@ -8,6 +8,9 @@ const defaultElement = "div";
 
 export type FlexProps = ComponentProps<typeof defaultElement, FlexVariants>;
 
+/**
+ * @deprecated use Box instead with `display='flex'`
+ */
 export const Flex = ({ asChild, ...props }: FlexProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
