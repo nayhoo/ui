@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.25.3
+
+### Patch Changes
+
+- 3e9552a: css build output has been cut down to what's important. using vanilla extract global themes with [data-theme] attribute
+
 ## 0.25.2
 
 ### Patch Changes
