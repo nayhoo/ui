@@ -11,7 +11,7 @@ export const formMessageRecipe = homemadeRecipe({
   variants: {
     error: {
       true: {
-        color: theme.semanticColors.error.error9,
+        color: theme.colors.error.error9,
       },
     },
   },

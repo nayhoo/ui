@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { style } from "@vanilla-extract/css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
@@ -34,9 +35,9 @@ export const buttonRecipe = homemadeRecipe({
         cursor: "pointer",
       },
       "&:disabled": {
-        backgroundColor: theme.colors.slate.slate2,
-        boxShadow: `inset 0 0 0 1px ${theme.colors.slateA.slateA7}`,
-        color: theme.colors.slate.slate8,
+        backgroundColor: colors.slate.slate2,
+        boxShadow: `inset 0 0 0 1px ${colors.slateA.slateA7}`,
+        color: colors.slate.slate8,
         cursor: "not-allowed",
         pointerEvents: "none",
       },
@@ -112,41 +113,41 @@ export const buttonRecipe = homemadeRecipe({
     },
     variant: {
       primary: {
-        backgroundColor: theme.semanticColors.primary.primary4,
-        color: theme.semanticColors.primary.primary11,
+        backgroundColor: theme.colors.primary.primary4,
+        color: theme.colors.primary.primary11,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.primary.primary5,
+            backgroundColor: theme.colors.primary.primary5,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.primary.primary6,
+            backgroundColor: theme.colors.primary.primary6,
           },
         },
       },
       secondary: {
-        backgroundColor: theme.semanticColors.secondary.secondary4,
-        color: theme.semanticColors.secondary.secondary11,
+        backgroundColor: theme.colors.secondary.secondary4,
+        color: theme.colors.secondary.secondary11,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.secondary.secondary5,
+            backgroundColor: theme.colors.secondary.secondary5,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.secondary.secondary6,
+            backgroundColor: theme.colors.secondary.secondary6,
           },
         },
       },
       outline: {
         backgroundColor: "transparent",
-        boxShadow: `inset 0 0 0 1px ${theme.semanticColors.line}`,
+        boxShadow: `inset 0 0 0 1px ${theme.colors.line}`,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.transparentHover,
+            backgroundColor: theme.colors.transparentHover,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.transparentActive,
+            backgroundColor: theme.colors.transparentActive,
           },
         },
       },
@@ -155,36 +156,36 @@ export const buttonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.transparentHover,
+            backgroundColor: theme.colors.transparentHover,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.transparentActive,
+            backgroundColor: theme.colors.transparentActive,
           },
         },
       },
       error: {
-        backgroundColor: theme.semanticColors.error.error4,
-        color: theme.semanticColors.error.error11,
+        backgroundColor: theme.colors.error.error4,
+        color: theme.colors.error.error11,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.error.error5,
+            backgroundColor: theme.colors.error.error5,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.error.error6,
+            backgroundColor: theme.colors.error.error6,
           },
         },
       },
       success: {
-        backgroundColor: theme.semanticColors.success.success4,
-        color: theme.semanticColors.success.success11,
+        backgroundColor: theme.colors.success.success4,
+        color: theme.colors.success.success11,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.success.success5,
+            backgroundColor: theme.colors.success.success5,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.success.success6,
+            backgroundColor: theme.colors.success.success6,
           },
         },
       },

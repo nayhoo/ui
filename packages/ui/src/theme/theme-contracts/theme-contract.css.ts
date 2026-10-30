@@ -6,7 +6,6 @@ import { fontsContract } from "./fonts-contract.css";
 import { letterSpacingContract } from "./letter-spacing-contract.css";
 import { lineHeightsContract } from "./line-heights-contract.css";
 import { radiiContract } from "./radii-contract.css";
-import { semanticColorsContract } from "./semantic-colors-contract.css";
 import { shadowsContract } from "./shadows-contract.css";
 import { sizesContract } from "./sizes-contract.css";
 import { spaceContract } from "./space-contract.css";
@@ -18,7 +17,6 @@ export const theme = createThemeContract({
   space: spaceContract,
   fontSizes: fontSizesContract,
   colors: colorsContract,
-  semanticColors: semanticColorsContract,
   fonts: fontsContract,
   fontWeights: fontWeightsContract,
   lineHeights: lineHeightsContract,

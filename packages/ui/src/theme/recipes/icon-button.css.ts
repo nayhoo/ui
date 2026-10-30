@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
 
@@ -35,10 +36,10 @@ export const iconButtonRecipe = homemadeRecipe({
         cursor: "pointer",
       },
       "&:disabled": {
-        backgroundColor: theme.colors.slate.slate2,
-        boxShadow: `inset 0 0 0 1px ${theme.colors.slateA.slateA7}`,
+        backgroundColor: colors.slate.slate2,
+        boxShadow: `inset 0 0 0 1px ${colors.slateA.slateA7}`,
         // boxShadow: "none",
-        color: theme.colors.slate.slate8,
+        color: colors.slate.slate8,
         cursor: "not-allowed",
         pointerEvents: "none",
       },
@@ -74,23 +75,23 @@ export const iconButtonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.transparentHover,
+            backgroundColor: theme.colors.transparentHover,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.transparentActive,
+            backgroundColor: theme.colors.transparentActive,
           },
         },
       },
       outline: {
         backgroundColor: "transparent",
-        boxShadow: `inset 0 0 0 1px ${theme.semanticColors.line}`,
+        boxShadow: `inset 0 0 0 1px ${theme.colors.line}`,
 
         selectors: {
           "&:hover": {
-            backgroundColor: theme.semanticColors.transparentHover,
+            backgroundColor: theme.colors.transparentHover,
           },
           "&:active": {
-            backgroundColor: theme.semanticColors.transparentActive,
+            backgroundColor: theme.colors.transparentActive,
           },
         },
       },

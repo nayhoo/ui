@@ -1,7 +1,10 @@
 import * as colors from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
+import { theme } from "../theme-contracts";
 
-export const baseTheme = createGlobalTheme(":root", {
+const { colors: _, ...t } = theme;
+
+export const baseTheme = createGlobalTheme(":root", t, {
   space: {
     1: "4px",
     2: "8px",
@@ -24,7 +27,6 @@ export const baseTheme = createGlobalTheme(":root", {
     8: "35px",
     9: "60px",
   },
-  colors,
   fonts: {
     text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
     code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",

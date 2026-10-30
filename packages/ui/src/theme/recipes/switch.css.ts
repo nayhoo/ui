@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
 
@@ -6,17 +7,17 @@ export const switchRecipe = homemadeRecipe({
   base: {
     all: "unset",
 
-    backgroundColor: theme.colors.slate.slate5,
+    backgroundColor: colors.slate.slate5,
     borderRadius: theme.radii.full,
     position: "relative",
     WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
 
     selectors: {
       "&:focus": {
-        boxShadow: `0 0 0 2px ${theme.colors.slate.slate8}`,
+        boxShadow: `0 0 0 2px ${colors.slate.slate8}`,
       },
       '&[data-state="checked"]': {
-        backgroundColor: theme.semanticColors.primary.primary9,
+        backgroundColor: theme.colors.primary.primary9,
       },
     },
   },

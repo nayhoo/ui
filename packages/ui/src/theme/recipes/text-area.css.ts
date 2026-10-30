@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
 
@@ -22,7 +23,7 @@ export const textAreaRecipe = homemadeRecipe({
 
     selectors: {
       "&:hover": {
-        backgroundColor: theme.semanticColors.transparentHover,
+        backgroundColor: theme.colors.transparentHover,
       },
       "&:-webkit-autofill": {},
       "&:-webkit-autofill::first-line": {
@@ -35,10 +36,10 @@ export const textAreaRecipe = homemadeRecipe({
         boxSizing: "border-box",
       },
       "&:disabled": {
-        backgroundColor: theme.colors.slate.slate2,
-        boxShadow: `inset 0 0 0 1px ${theme.colors.slateA.slateA7}`,
+        backgroundColor: colors.slate.slate2,
+        boxShadow: `inset 0 0 0 1px ${colors.slateA.slateA7}`,
         // boxShadow: "none",
-        color: theme.colors.slate.slate8,
+        color: colors.slate.slate8,
         cursor: "not-allowed",
         pointerEvents: "none",
         // "&::placeholder": {
@@ -50,16 +51,16 @@ export const textAreaRecipe = homemadeRecipe({
         // "&:-webkit-autofill": {},
       },
       "&:read-only": {
-        backgroundColor: theme.colors.slate.slate2,
+        backgroundColor: colors.slate.slate2,
         // "&:focus": {
         //   boxShadow: `inset 0px 0px 0px 1px ${vars.colors.slate.slate7}`,
         // },
       },
       "&[data-invalid]": {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.error.error9}`,
+        boxShadow: `inset 0px 0px 0px 1px ${theme.colors.error.error9}`,
       },
       "&[data-placeholder]": {
-        color: theme.semanticColors.textPlaceholder,
+        color: theme.colors.textPlaceholder,
       },
     },
   },
@@ -108,7 +109,7 @@ export const textAreaRecipe = homemadeRecipe({
     },
     error: {
       true: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.error.error9} !important`, // TODO: is this possible without !important?
+        boxShadow: `inset 0px 0px 0px 1px ${theme.colors.error.error9} !important`, // TODO: is this possible without !important?
         // "&:focus": {
         //   // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
         // },
@@ -129,7 +130,7 @@ export const textAreaRecipe = homemadeRecipe({
     },
     variant: {
       outline: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.semanticColors.line}`,
+        boxShadow: `inset 0px 0px 0px 1px ${theme.colors.line}`,
       },
       ghost: {
         boxShadow: "none",

@@ -86,7 +86,7 @@ export const accordionTrigger = style({
 
   alignItems: "center",
   backgroundColor: "transparent",
-  boxShadow: `0 1px 0 ${theme.semanticColors.line}`,
+  boxShadow: `0 1px 0 ${theme.colors.line}`,
   display: "flex",
   flex: 1,
   fontFamily: "inherit",
@@ -98,7 +98,7 @@ export const accordionTrigger = style({
 
   selectors: {
     "&:hover": {
-      backgroundColor: theme.semanticColors.transparentHover,
+      backgroundColor: theme.colors.transparentHover,
     },
   },
 });

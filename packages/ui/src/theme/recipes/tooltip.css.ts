@@ -4,11 +4,11 @@ import { homemadeRecipe } from "../homemade-recipe.css";
 
 export const tooltipContentRecipe = homemadeRecipe({
   base: {
-    backgroundColor: theme.semanticColors.transparentSurface,
+    backgroundColor: theme.colors.transparentSurface,
     borderRadius: theme.radii[1],
     padding: `${theme.space[1]} ${theme.space[2]}`,
 
-    color: theme.semanticColors.transparentSurfaceTextContrast,
+    color: theme.colors.transparentSurfaceTextContrast,
 
     zIndex: theme.zIndices[1],
   },

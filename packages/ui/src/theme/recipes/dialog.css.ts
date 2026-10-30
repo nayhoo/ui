@@ -7,7 +7,7 @@ export const dialogContentRecipe = homemadeRecipe({
   base: [
     panel,
     {
-      border: `1px solid ${theme.semanticColors.line}`,
+      border: `1px solid ${theme.colors.line}`,
       boxShadow: "none",
 
       left: "50%",

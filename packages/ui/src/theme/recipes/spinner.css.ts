@@ -6,7 +6,7 @@ import { homemadeRecipe } from "../homemade-recipe.css";
 export const spinnerRecipe = homemadeRecipe({
   base: {
     animation: `${spin} .8s linear infinite`,
-    border: `2px solid ${theme.semanticColors.primary.primary9}`,
+    border: `2px solid ${theme.colors.primary.primary9}`,
     borderRadius: theme.radii.round,
     borderTop: "2px solid transparent",
   },

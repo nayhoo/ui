@@ -1,4 +1,4 @@
-import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
 
@@ -21,19 +21,19 @@ export const statusRecipe = homemadeRecipe({
     },
     variant: {
       gray: {
-        backgroundColor: theme.colors.slate.slate7,
+        backgroundColor: colors.slate.slate7,
       },
       blue: {
-        backgroundColor: theme.colors.blue.blue9,
+        backgroundColor: colors.blue.blue9,
       },
       green: {
-        backgroundColor: theme.colors.green.green9,
+        backgroundColor: colors.green.green9,
       },
       yellow: {
-        backgroundColor: theme.colors.yellow.yellow9,
+        backgroundColor: colors.yellow.yellow9,
       },
       red: {
-        backgroundColor: theme.colors.red.red9,
+        backgroundColor: colors.red.red9,
       },
     },
   },

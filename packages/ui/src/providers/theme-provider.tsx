@@ -1,21 +1,15 @@
 "use client";
 
-import { darkTheme } from "@/theme/themes/dark-theme.css";
-import { lightTheme } from "@/theme/themes/light-theme.css";
 import { SystemTheme } from "@/types/system-theme";
 import { Theme as ITheme } from "@/types/theme";
 import * as React from "react";
 
-const classes: Record<SystemTheme, string> = {
-  light: lightTheme,
-  dark: darkTheme,
-};
 const defaultTheme: ITheme = "system";
 const storageKey = "nayhoo-theme";
 const systemThemes: SystemTheme[] = ["light", "dark"];
 const themes: ITheme[] = [...systemThemes, "system"];
 
-// Credits: https://github.com/pacocoursey/next-themes/blob/main/next-themes/src/types.ts
+// inspired https://github.com/pacocoursey/next-themes/blob/main/next-themes/src/types.ts
 interface ScriptProps extends React.DetailedHTMLProps<
   React.ScriptHTMLAttributes<HTMLScriptElement>,
   HTMLScriptElement
@@ -89,13 +83,7 @@ const Theme = ({ children, scriptProps }: ThemeProviderProps) => {
 
     const d = document.documentElement;
 
-    const handleAttribute = () => {
-      d.classList.remove(...Object.values(classes));
-
-      if (resolved) d.classList.add(classes[resolved as SystemTheme]);
-    };
-
-    handleAttribute();
+    d.setAttribute("data-theme", resolved);
 
     const colorScheme = colorSchemes.some(
       (colorScheme) => colorScheme === resolved,
@@ -191,7 +179,6 @@ const ThemeScript = React.memo(
       storageKey,
       defaultTheme,
       systemThemes,
-      classes,
     ]).slice(1, -1);
 
     return (
@@ -238,13 +225,11 @@ const script = (
   storageKey: string,
   defaultTheme: ITheme,
   systemThemes: SystemTheme[],
-  classes: Record<SystemTheme, string>,
 ) => {
   const el = document.documentElement;
 
   function updateDOM(theme: SystemTheme) {
-    el.classList.remove(...Object.values(classes));
-    el.classList.add(classes[theme]);
+    el.setAttribute("data-theme", theme);
 
     setColorScheme(theme);
   }

@@ -2,14 +2,14 @@ import { theme } from "@/theme/theme-contracts/theme-contract.css";
 import { style } from "@vanilla-extract/css";
 
 export const dialogDescription = style({
-  color: theme.semanticColors.textSubtle,
+  color: theme.colors.textSubtle,
   fontSize: theme.fontSizes[3],
   marginBottom: theme.space[4],
 });
 
 export const dialogFooter = style({
-  backgroundColor: theme.semanticColors.surface,
-  borderTop: `1px solid ${theme.semanticColors.line}`,
+  backgroundColor: theme.colors.surface,
+  borderTop: `1px solid ${theme.colors.line}`,
   bottom: 0,
   padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
@@ -17,7 +17,7 @@ export const dialogFooter = style({
 });
 
 export const dialogHeader = style({
-  backgroundColor: theme.semanticColors.surface,
+  backgroundColor: theme.colors.surface,
   padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
   top: 0,
@@ -25,7 +25,7 @@ export const dialogHeader = style({
 });
 
 export const dialogOverlay = style({
-  backgroundColor: `color-mix(in srgb, ${theme.semanticColors.background}, transparent 40%)`,
+  backgroundColor: `color-mix(in srgb, ${theme.colors.background}, transparent 40%)`,
   bottom: 0,
   left: 0,
   position: "fixed",

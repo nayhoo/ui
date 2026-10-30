@@ -16,16 +16,16 @@ export const headingRecipe = homemadeRecipe({
   variants: {
     color: {
       primary: {
-        color: theme.semanticColors.primary.primary9,
+        color: theme.colors.primary.primary9,
       },
       secondary: {
-        color: theme.semanticColors.secondary.secondary9,
+        color: theme.colors.secondary.secondary9,
       },
       error: {
-        color: theme.semanticColors.error.error9,
+        color: theme.colors.error.error9,
       },
       subtle: {
-        color: theme.semanticColors.textSubtle,
+        color: theme.colors.textSubtle,
       },
     },
     level: {

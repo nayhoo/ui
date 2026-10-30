@@ -20,9 +20,9 @@ export const avatarRecipe = homemadeRecipe({
     outline: "none",
     padding: "0",
     fontWeight: theme.fontWeights.medium,
-    color: theme.semanticColors.surfaceTextContrast,
+    color: theme.colors.surfaceTextContrast,
 
-    backgroundColor: theme.semanticColors.surface,
+    backgroundColor: theme.colors.surface,
 
     selectors: {
       "&::before": {
@@ -33,7 +33,7 @@ export const avatarRecipe = homemadeRecipe({
         bottom: 0,
         left: 0,
         borderRadius: "inherit",
-        boxShadow: `inset 0px 0px 1px ${theme.semanticColors.line}`,
+        boxShadow: `inset 0px 0px 1px ${theme.colors.line}`,
       },
     },
   },

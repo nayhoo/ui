@@ -1,11 +1,12 @@
 import { pulse } from "@/theme/animations/pulse.css";
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../homemade-recipe.css";
 
 export const skeletonRecipe = homemadeRecipe({
   base: {
-    backgroundColor: theme.colors.slate.slate4,
+    backgroundColor: colors.slate.slate4,
     position: "relative",
     overflow: "hidden",
 
@@ -16,7 +17,7 @@ export const skeletonRecipe = homemadeRecipe({
         animationDirection: "alternate",
         animationIterationCount: "infinite",
         animationTimingFunction: "ease-in-out",
-        backgroundColor: theme.colors.slate.slate6,
+        backgroundColor: colors.slate.slate6,
         borderRadius: "inherit",
         bottom: 0,
         content: '""',

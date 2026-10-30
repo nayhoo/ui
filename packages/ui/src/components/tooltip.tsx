@@ -65,7 +65,7 @@ export function Tooltip({
                 width={11}
                 height={5}
                 style={{
-                  fill: theme.semanticColors.transparentSurface,
+                  fill: theme.colors.transparentSurface,
                 }}
               />
             </Box>

@@ -26,16 +26,16 @@ export const badgeRecipe = homemadeRecipe({
   variants: {
     color: {
       primary: {
-        backgroundColor: theme.semanticColors.primaryA.primaryA3,
-        color: theme.semanticColors.primary.primary9,
+        backgroundColor: theme.colors.primaryA.primaryA3,
+        color: theme.colors.primary.primary9,
       },
       secondary: {
-        backgroundColor: theme.semanticColors.secondaryA.secondaryA3,
-        color: theme.semanticColors.secondary.secondary9,
+        backgroundColor: theme.colors.secondaryA.secondaryA3,
+        color: theme.colors.secondary.secondary9,
       },
       error: {
-        backgroundColor: theme.semanticColors.errorA.errorA3,
-        color: theme.semanticColors.error.error9,
+        backgroundColor: theme.colors.errorA.errorA3,
+        color: theme.colors.error.error9,
       },
     },
     size: {

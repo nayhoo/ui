@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { keyframes, style } from "@vanilla-extract/css";
 
 const slideDown = keyframes({
@@ -163,13 +164,13 @@ export const toastClose = style({
   alignItems: "center",
   justifyContent: "center",
   borderRadius: "50% !important",
-  backgroundColor: theme.colors.slate.slate1,
-  color: theme.colors.slate.slate11,
+  backgroundColor: colors.slate.slate1,
+  color: colors.slate.slate11,
   transition: "color 200ms ease 0s, opacity 200ms ease 0s",
   opacity: "0",
   selectors: {
     "&:hover": {
-      color: theme.colors.slate.slate12,
+      color: colors.slate.slate12,
     },
     [`${toastInner}:hover &`]: {
       opacity: 1,
@@ -202,7 +203,7 @@ export const checkmark = style({
   width: "20px",
   height: "20px",
   borderRadius: "10px",
-  backgroundColor: theme.semanticColors.success.success9,
+  backgroundColor: theme.colors.success.success9,
   position: "relative",
   transform: "rotate(45deg)",
   animation: `${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`,
@@ -232,7 +233,7 @@ export const error = style({
   width: "20px",
   height: "20px",
   borderRadius: "10px",
-  backgroundColor: theme.semanticColors.error.error9,
+  backgroundColor: theme.colors.error.error9,
   position: "relative",
   transform: "rotate(45deg)",
   animation: `${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`,

@@ -1,4 +1,5 @@
 import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import * as colors from "@radix-ui/colors";
 import { style } from "@vanilla-extract/css";
 
 const baseMenuItem = style({
@@ -25,17 +26,17 @@ export const menuItem = style([
 
     selectors: {
       "&:hover": {
-        backgroundColor: theme.semanticColors.transparentHover,
+        backgroundColor: theme.colors.transparentHover,
       },
 
       "&[data-highlighted]": {
         outline: "none",
-        backgroundColor: theme.semanticColors.transparentActive,
+        backgroundColor: theme.colors.transparentActive,
       },
 
       "&[data-disabled]": {
-        color: theme.colors.slate.slate8,
-        backgroundColor: theme.colors.slate.slate2,
+        color: colors.slate.slate8,
+        backgroundColor: colors.slate.slate2,
         cursor: "not-allowed",
         pointerEvents: "none",
       },
@@ -47,7 +48,7 @@ export const menuLabel = style([
   baseMenuItem,
   {
     position: "relative",
-    color: theme.semanticColors.textSubtle,
+    color: theme.colors.textSubtle,
   },
 ]);
 
@@ -62,5 +63,5 @@ export const menuSeparator = style({
   height: 1,
   marginTop: theme.space[1],
   marginBottom: theme.space[1],
-  backgroundColor: theme.semanticColors.line,
+  backgroundColor: theme.colors.line,
 });
