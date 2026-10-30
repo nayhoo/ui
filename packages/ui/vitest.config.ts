@@ -19,6 +19,8 @@ export default defineConfig({
       include: ["src/**/*.{ts,tsx}"],
       exclude: [
         "src/components/aspect-ratio", // straight port from radix ui
+        "src/components/flex", // deprecated
+        "src/components/grid", // deprecated
         "src/components/separator", // straight port from radix ui (almost)
         "src/**/index.ts",
         "src/theme/*",
