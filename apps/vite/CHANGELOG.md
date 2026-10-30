@@ -1,5 +1,12 @@
 # @nayhoo/vite
 
+## 0.1.18
+
+### Patch Changes
+
+- Updated dependencies [505fcad]
+  - @nayhoo/ui@0.25.2
+
 ## 0.1.17
 
 ### Patch Changes

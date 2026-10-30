@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.25.2
+
+### Patch Changes
+
+- 505fcad: Removed transparent nav background
+
 ## 0.25.1
 
 ### Patch Changes

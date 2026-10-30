@@ -1,5 +1,12 @@
 # @nayhoo/next
 
+## 0.1.44
+
+### Patch Changes
+
+- Updated dependencies [505fcad]
+  - @nayhoo/ui@0.25.2
+
 ## 0.1.43
 
 ### Patch Changes
