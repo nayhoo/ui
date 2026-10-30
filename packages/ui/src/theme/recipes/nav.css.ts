@@ -8,7 +8,7 @@ export const navRecipe = homemadeRecipe({
     top: 0,
     width: "100%",
     zIndex: theme.zIndices[4],
-    backgroundColor: `color-mix(in srgb, ${theme.semanticColors.background}, transparent 40%)`,
+    backgroundColor: theme.semanticColors.background,
   },
 
   variants: {
