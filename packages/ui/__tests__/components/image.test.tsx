@@ -5,9 +5,7 @@ import { render } from "vitest-browser-react";
 describe("image", () => {
   describe("a11y", () => {
     test("should render as <img>", async () => {
-      const { container } = await render(
-        <Image src="/ninten.png" alt="A good boy" />,
-      );
+      const { container } = await render(<Image src="/ninten.png" alt=":)" />);
 
       expect(container.querySelector("img")).toBeInTheDocument();
     });
