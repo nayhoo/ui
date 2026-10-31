@@ -1,5 +1,13 @@
 # @nayhoo/react-cosmos
 
+## 0.3.15
+
+### Patch Changes
+
+- Updated dependencies [6c33506]
+- Updated dependencies [ca8b913]
+  - @nayhoo/ui@0.25.4
+
 ## 0.3.14
 
 ### Patch Changes
