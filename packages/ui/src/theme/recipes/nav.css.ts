@@ -1,5 +1,5 @@
-import { homemadeRecipe } from "../homemade-recipe.css";
-import { theme } from "../theme-contracts";
+import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { theme } from "@/theme/themes/theme-contract.css";
 
 export const navRecipe = homemadeRecipe({
   base: {

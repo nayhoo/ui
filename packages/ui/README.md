@@ -37,7 +37,7 @@ export default withVanillaExtract(nextConfig);
 
 "use client";
 
-import { ThemeProvider } from "@nayhoo/ui/providers";
+import { ThemeProvider } from "@nayhoo/ui/theme-provider";
 import React from "react";
 
 type AppProviderProps = {
@@ -128,7 +128,7 @@ createRoot(document.getElementById("root")!).render(
 // src/App.tsx
 
 import { Button } from "@nayhoo/ui/button";
-import { ThemeProvider } from "@nayhoo/ui/providers";
+import { ThemeProvider } from "@nayhoo/ui/theme-provider";
 
 function App() {
   return (

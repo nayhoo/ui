@@ -1,7 +1,4 @@
-"use client";
-
-import { SystemTheme } from "@/types/system-theme";
-import { Theme as ITheme } from "@/types/theme";
+import { Theme as ITheme, SystemTheme } from "@/types/theme";
 import * as React from "react";
 
 const defaultTheme: ITheme = "system";

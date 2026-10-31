@@ -7,7 +7,7 @@ import {
   menuSeparator,
 } from "@/theme/styles/menu.css";
 import { panel } from "@/theme/styles/panel.css";
-import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { theme } from "@/theme/themes/theme-contract.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as MenuPrimitive from "@radix-ui/react-menu";

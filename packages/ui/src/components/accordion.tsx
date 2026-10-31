@@ -7,7 +7,7 @@ import {
   accordionTrigger,
   chevron,
 } from "@/theme/styles/accordion.css";
-import { mergeClasses } from "@/utils";
+import { mergeClasses } from "@/utils/merge-classes";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 

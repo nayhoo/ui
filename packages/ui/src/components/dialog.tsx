@@ -1,5 +1,6 @@
 import { Box } from "@/components/box";
 import { Flex } from "@/components/flex";
+import { IconButton } from "@/components/icon-button";
 import { theme } from "@/theme";
 import {
   DialogContentVariants,
@@ -11,9 +12,9 @@ import {
   dialogHeader,
   dialogOverlay,
 } from "@/theme/styles/dialog.css";
-import { extractVariantsFromProps, mergeClasses } from "@/utils";
+import { extractVariantsFromProps } from "@/utils/extract-variants";
+import { mergeClasses } from "@/utils/merge-classes";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { IconButton } from "./icon-button";
 
 export type DialogProps = DialogPrimitive.DialogProps;
 

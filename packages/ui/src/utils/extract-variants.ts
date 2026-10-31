@@ -1,11 +1,12 @@
-import { omit } from "./omit";
-import { pick } from "./pick";
+import { omit } from "@/utils/omit";
+import { pick } from "@/utils/pick";
 
 /**
- * TODO
- * @param obj
- * @param keys
- * @returns [variants, props]
+ * @example
+ * const [variants, rest] = extractVariantsFromProps(
+ *  props,
+ *  ...boxRecipe.variants(),
+ * );
  */
 export function extractVariantsFromProps<T, K extends keyof T>(
   obj: T,

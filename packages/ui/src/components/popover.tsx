@@ -1,6 +1,6 @@
 import { menu } from "@/theme/styles/menu.css";
 import { panel } from "@/theme/styles/panel.css";
-import { mergeClasses } from "@/utils";
+import { mergeClasses } from "@/utils/merge-classes";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import React from "react";
 

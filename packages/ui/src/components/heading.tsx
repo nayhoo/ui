@@ -1,5 +1,5 @@
 import { headingRecipe, HeadingVariants } from "@/theme/recipes/heading.css";
-import { extractVariantsFromProps } from "@/utils";
+import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 
 type HeadingLevelVariants = "1" | "2" | "3" | "4" | "5" | "6";

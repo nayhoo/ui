@@ -1,6 +1,6 @@
+import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
 import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
-import { homemadeRecipe } from "../homemade-recipe.css";
 
 export const statusRecipe = homemadeRecipe({
   base: {

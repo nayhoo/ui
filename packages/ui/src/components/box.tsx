@@ -1,6 +1,6 @@
 import { boxRecipe, BoxVariants } from "@/theme/recipes/box.css";
 import { ComponentProps } from "@/types/component-props";
-import { extractVariantsFromProps } from "@/utils";
+import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
 

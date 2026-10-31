@@ -3,7 +3,6 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   entry: [
-    // components
     "src/components/accordion.tsx",
     "src/components/aspect-ratio.tsx",
     "src/components/avatar.tsx",
@@ -23,6 +22,7 @@ export default defineConfig({
     "src/components/image.tsx",
     "src/components/link.tsx",
     "src/components/menu.tsx",
+    "src/components/nav.tsx",
     "src/components/panel.tsx",
     "src/components/popover.tsx",
     "src/components/select.tsx",
@@ -35,16 +35,9 @@ export default defineConfig({
     "src/components/text-field.tsx",
     "src/components/text.tsx",
     "src/components/tooltip.tsx",
-    // patterns
-    "src/patterns/index.ts",
-    // providers
-    "src/providers/index.ts",
-    // theme
+    "src/providers/theme-provider.tsx",
+    "src/providers/toast-provider.tsx",
     "src/theme/index.ts",
-    // types
-    "src/types/index.ts",
-    // utils
-    "src/utils/index.ts",
   ],
   sourcemap: true,
   outDir: "dist",

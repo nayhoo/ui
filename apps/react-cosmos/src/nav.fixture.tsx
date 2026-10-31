@@ -3,7 +3,7 @@
 import { Button } from "@nayhoo/ui/button";
 import { Flex } from "@nayhoo/ui/flex";
 import { IconButton } from "@nayhoo/ui/icon-button";
-import { Nav } from "@nayhoo/ui/patterns";
+import { Nav } from "@nayhoo/ui/nav";
 
 // eslint-disable-next-line react/display-name
 export default () => {

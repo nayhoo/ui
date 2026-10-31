@@ -1,6 +1,7 @@
 "use client";
 
-import { ThemeProvider, ToastProvider } from "@nayhoo/ui/providers";
+import { ThemeProvider } from "@nayhoo/ui/theme-provider";
+import { ToastProvider } from "@nayhoo/ui/toast-provider";
 import React from "react";
 
 type AppProviderProps = {

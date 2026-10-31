@@ -1,3 +1,4 @@
+import { Button } from "@/components/button";
 import { ButtonVariants } from "@/theme/recipes/button.css";
 import {
   menu,
@@ -9,7 +10,6 @@ import { panel } from "@/theme/styles/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Button } from "./button";
 
 export type SelectProps = SelectPrimitive.SelectProps;
 

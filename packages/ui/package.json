@@ -146,6 +146,11 @@
       "module": "./dist/components/menu.mjs",
       "default": "./dist/components/menu.js"
     },
+    "./nav": {
+      "types": "./dist/components/nav.d.ts",
+      "module": "./dist/components/nav.mjs",
+      "default": "./dist/components/nav.js"
+    },
     "./panel": {
       "types": "./dist/components/panel.d.ts",
       "module": "./dist/components/panel.mjs",
@@ -206,15 +211,15 @@
       "module": "./dist/components/tooltip.mjs",
       "default": "./dist/components/tooltip.js"
     },
-    "./patterns": {
-      "types": "./dist/patterns/index.d.ts",
-      "module": "./dist/patterns/index.mjs",
-      "default": "./dist/patterns/index.js"
+    "./theme-provider": {
+      "types": "./dist/providers/theme-provider.d.ts",
+      "module": "./dist/providers/theme-provider.mjs",
+      "default": "./dist/providers/theme-provider.js"
     },
-    "./providers": {
-      "types": "./dist/providers/index.d.ts",
-      "module": "./dist/providers/index.mjs",
-      "default": "./dist/providers/index.js"
+    "./toast-provider": {
+      "types": "./dist/providers/toast-provider.d.ts",
+      "module": "./dist/providers/toast-provider.mjs",
+      "default": "./dist/providers/toast-provider.js"
     },
     "./theme": {
       "types": "./dist/theme/index.d.ts",
@@ -223,16 +228,6 @@
     },
     "./theme/index.css": {
       "default": "./dist/theme/index.css"
-    },
-    "./types": {
-      "types": "./dist/types/index.d.ts",
-      "module": "./dist/types/index.mjs",
-      "default": "./dist/types/index.js"
-    },
-    "./utils": {
-      "types": "./dist/utils/index.d.ts",
-      "module": "./dist/utils/index.mjs",
-      "default": "./dist/utils/index.js"
     }
   }
 }

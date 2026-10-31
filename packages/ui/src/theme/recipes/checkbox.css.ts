@@ -1,6 +1,6 @@
-import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { theme } from "@/theme/themes/theme-contract.css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
-import { homemadeRecipe } from "../homemade-recipe.css";
 
 export const checkboxRecipe = homemadeRecipe({
   base: {

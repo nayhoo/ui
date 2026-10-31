@@ -1,8 +1,9 @@
-import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { theme } from "@/theme/themes/theme-contract.css";
+import type { SystemTheme } from "@/types/theme";
 import * as colors from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-export const createTheme = (mode: "light" | "dark") => {
+export const createTheme = (mode: SystemTheme) => {
   const primary = "bronze";
   const secondary = "amber";
   const error = "ruby";

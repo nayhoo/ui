@@ -2,7 +2,6 @@ import "@nayhoo/ui/theme/index.css";
 import type { Metadata } from "next";
 // eslint-disable-next-line camelcase
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { AppProvider } from "./provider";
 
 const geistSans = Geist({

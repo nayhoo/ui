@@ -4,7 +4,7 @@ import {
   TooltipContentVariants,
   tooltipContentRecipe,
 } from "@/theme/recipes/tooltip.css";
-import { theme } from "@/theme/theme-contracts/theme-contract.css";
+import { theme } from "@/theme/themes/theme-contract.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";

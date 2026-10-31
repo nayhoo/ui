@@ -1,20 +1,15 @@
+import { theme } from "@/theme/themes/theme-contract.css";
 import * as colors from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { theme } from "../theme-contracts";
 
 const { colors: _, ...t } = theme;
 
 export const baseTheme = createGlobalTheme(":root", t, {
-  space: {
-    1: "4px",
-    2: "8px",
-    3: "12px",
-    4: "16px",
-    5: "24px",
-    6: "32px",
-    7: "40px",
-    8: "48px",
-    9: "64px",
+  fonts: {
+    text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+    code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",
+    emphasis: "'Times New Roman', 'Times', serif",
+    quote: "'Times New Roman', 'Times', serif",
   },
   fontSizes: {
     1: "12px",
@@ -27,28 +22,11 @@ export const baseTheme = createGlobalTheme(":root", t, {
     8: "35px",
     9: "60px",
   },
-  fonts: {
-    text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
-    code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",
-    emphasis: "'Times New Roman', 'Times', serif",
-    quote: "'Times New Roman', 'Times', serif",
-  },
   fontWeights: {
     light: "300",
     regular: "400",
     medium: "500",
     bold: "700",
-  },
-  lineHeights: {
-    1: "16px",
-    2: "20px",
-    3: "24px",
-    4: "26px",
-    5: "28px",
-    6: "30px",
-    7: "36px",
-    8: "40px",
-    9: "60px",
   },
   letterSpacing: {
     1: "0.0025em",
@@ -61,16 +39,16 @@ export const baseTheme = createGlobalTheme(":root", t, {
     8: "-0.01em",
     9: "-0.025em",
   },
-  sizes: {
-    1: "4px",
-    2: "8px",
-    3: "12px",
-    4: "16px",
-    5: "24px",
-    6: "32px",
-    7: "40px",
-    8: "48px",
-    9: "64px",
+  lineHeights: {
+    1: "16px",
+    2: "20px",
+    3: "24px",
+    4: "26px",
+    5: "28px",
+    6: "30px",
+    7: "36px",
+    8: "40px",
+    9: "60px",
   },
   radii: {
     1: "3px",
@@ -89,6 +67,28 @@ export const baseTheme = createGlobalTheme(":root", t, {
     4: `0 0 0 1px ${colors.grayA.grayA3},0 8px 40px ${colors.blackA.blackA1},0 12px 32px -16px ${colors.grayA.grayA3}`,
     5: `0 0 0 1px ${colors.grayA.grayA3},0 12px 60px ${colors.blackA.blackA3},0 12px 32px -16px ${colors.grayA.grayA5}`,
     6: `0 0 0 1px ${colors.grayA.grayA3},0 12px 60px ${colors.blackA.blackA3},0 16px 64px ${colors.grayA.grayA2},0 16px 36px -20px ${colors.grayA.grayA7}`,
+  },
+  sizes: {
+    1: "4px",
+    2: "8px",
+    3: "12px",
+    4: "16px",
+    5: "24px",
+    6: "32px",
+    7: "40px",
+    8: "48px",
+    9: "64px",
+  },
+  space: {
+    1: "4px",
+    2: "8px",
+    3: "12px",
+    4: "16px",
+    5: "24px",
+    6: "32px",
+    7: "40px",
+    8: "48px",
+    9: "64px",
   },
   zIndices: {
     1: "100",
