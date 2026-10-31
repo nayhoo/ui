@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.25.4
+
+### Patch Changes
+
+- 6c33506: Updated providers and theme .css export path
+- ca8b913: updated import paths. fixed Link font issues
+
 ## 0.25.3
 
 ### Patch Changes
