@@ -3,6 +3,7 @@ import {
   ButtonVariants,
   buttonIconRecipe,
   buttonRecipe,
+  buttonSpanRecipe,
   buttonSpinner,
 } from "@/theme/recipes/button.css";
 import { ComponentProps } from "@/types/component-props";
@@ -31,6 +32,8 @@ export const Button = ({
     size: variants.size,
   });
 
+  const buttonSpan = buttonSpanRecipe({ loading: variants.loading });
+
   const disabled = rest.disabled || Boolean(variants.loading);
 
   return (
@@ -44,7 +47,7 @@ export const Button = ({
     >
       {leftIcon && <Slot className={buttonIcon}>{leftIcon}</Slot>}
 
-      {rest.children}
+      <span className={buttonSpan}>{rest.children}</span>
 
       {rightIcon && <Slot className={buttonIcon}>{rightIcon}</Slot>}
 

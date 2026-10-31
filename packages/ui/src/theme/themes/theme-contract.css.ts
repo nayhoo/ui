@@ -1,5 +1,59 @@
 import { createThemeContract } from "@vanilla-extract/css";
 
+const actionable = {
+  solid: {
+    background: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+    borderColor: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+    foreground: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+  },
+  bordered: {
+    background: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+    borderColor: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+    foreground: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+  },
+  ghost: {
+    background: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+    borderColor: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+    foreground: {
+      initial: null,
+      active: null,
+      hover: null,
+    },
+  },
+};
+
 // Combine the individual contracts into one
 // based on the System UI Theme Specification https://github.com/system-ui/theme-specification?tab=readme-ov-file#key-reference
 export const theme = createThemeContract({
@@ -32,7 +86,6 @@ export const theme = createThemeContract({
       primaryA11: null,
       primaryA12: null,
     },
-
     secondary: {
       secondary1: null,
       secondary2: null,
@@ -61,7 +114,6 @@ export const theme = createThemeContract({
       secondaryA11: null,
       secondaryA12: null,
     },
-
     error: {
       error1: null,
       error2: null,
@@ -90,7 +142,6 @@ export const theme = createThemeContract({
       errorA11: null,
       errorA12: null,
     },
-
     success: {
       success1: null,
       success2: null,
@@ -119,8 +170,6 @@ export const theme = createThemeContract({
       successA11: null,
       successA12: null,
     },
-
-    // warning: ,
     // info: ,
 
     background: null,
@@ -142,6 +191,14 @@ export const theme = createThemeContract({
     transparentActive: null,
 
     shadow: null,
+
+    actionable: {
+      accented: actionable,
+      neutral: actionable,
+      caution: actionable,
+      negative: actionable,
+      positive: actionable,
+    },
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-family
   fonts: {

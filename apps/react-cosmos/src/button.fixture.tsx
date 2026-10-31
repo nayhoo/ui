@@ -9,14 +9,16 @@ export default () => {
 
   const [loading, setLoading] = useFixtureInput("loading", false);
 
-  const [round] = useFixtureInput("round", false);
-
   const [size] = useFixtureSelect("size", {
-    options: ["1", "2", "3"],
+    options: ["sm", "md", "lg"],
+  });
+
+  const [sentiment] = useFixtureSelect("sentiment", {
+    options: ["accented", "neutral", "caution", "negative", "positive"],
   });
 
   const [variant] = useFixtureSelect("variant", {
-    options: ["primary", "secondary", "ghost", "outline", "error", "success"],
+    options: ["solid", "bordered", "ghost"],
   });
 
   const handleOnClick = () => {
@@ -32,7 +34,7 @@ export default () => {
       fullWidth={fullWidth}
       loading={loading}
       size={size}
-      round={round}
+      sentiment={sentiment}
       variant={variant}
       onClick={handleOnClick}
     >

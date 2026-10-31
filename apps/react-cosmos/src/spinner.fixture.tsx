@@ -1,7 +1,7 @@
 import { Flex } from "@nayhoo/ui/flex";
 import { Spinner } from "@nayhoo/ui/spinner";
 
-const sizes = ["1", "2", "3"] as const;
+const sizes = ["sm", "md", "lg"] as const;
 
 export default {
   default: () => {

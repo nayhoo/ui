@@ -127,10 +127,277 @@ export const createTheme = (mode: SystemTheme) => {
       successA12: colors[success][`${success}12`],
     },
 
-    // warning: ,
-    // info: ,
-
     ...(mode === "light" ? lightModeColors : darkModeColors),
+
+    // https://www.saltdesignsystem.com/salt/themes/design-tokens/tokens
+    actionable: {
+      accented: {
+        solid: {
+          background: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(175,224,237)",
+            hover: "rgba(0, 0, 0, 0.15)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(0 0 0 / 30%)",
+          },
+          foreground: {
+            initial: "#ffffff",
+            active: "#000000",
+            hover: "#ffffff",
+          },
+        },
+        bordered: {
+          background: {
+            initial: "#00000000",
+            active: "rgb(175,224,237)",
+            hover: "rgb(219,245,247)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(27,127,158)",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+        ghost: {
+          background: {
+            initial: "transparent",
+            active: "#00000026",
+            hover: "#0000001A",
+          },
+          borderColor: {
+            initial: "transparent",
+            active: "transparent",
+            hover: "transparent",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+      },
+      //
+      neutral: {
+        solid: {
+          background: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(175,224,237)",
+            hover: "rgba(0, 0, 0, 0.15)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(0 0 0 / 30%)",
+          },
+          foreground: {
+            initial: "#ffffff",
+            active: "#000000",
+            hover: "#ffffff",
+          },
+        },
+        bordered: {
+          background: {
+            initial: "#00000000",
+            active: "rgb(175,224,237)",
+            hover: "rgb(219,245,247)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(27,127,158)",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+        ghost: {
+          background: {
+            initial: "transparent",
+            active: "#00000026",
+            hover: "#0000001A",
+          },
+          borderColor: {
+            initial: "transparent",
+            active: "transparent",
+            hover: "transparent",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+      },
+      caution: {
+        solid: {
+          background: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(175,224,237)",
+            hover: "rgba(0, 0, 0, 0.15)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(0 0 0 / 30%)",
+          },
+          foreground: {
+            initial: "#ffffff",
+            active: "#000000",
+            hover: "#ffffff",
+          },
+        },
+        bordered: {
+          background: {
+            initial: "#00000000",
+            active: "rgb(175,224,237)",
+            hover: "rgb(219,245,247)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(27,127,158)",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+        ghost: {
+          background: {
+            initial: "transparent",
+            active: "#00000026",
+            hover: "#0000001A",
+          },
+          borderColor: {
+            initial: "transparent",
+            active: "transparent",
+            hover: "transparent",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+      },
+      negative: {
+        solid: {
+          background: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(175,224,237)",
+            hover: "rgba(0, 0, 0, 0.15)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(0 0 0 / 30%)",
+          },
+          foreground: {
+            initial: "#ffffff",
+            active: "#000000",
+            hover: "#ffffff",
+          },
+        },
+        bordered: {
+          background: {
+            initial: "#00000000",
+            active: "rgb(175,224,237)",
+            hover: "rgb(219,245,247)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(27,127,158)",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+        ghost: {
+          background: {
+            initial: "transparent",
+            active: "#00000026",
+            hover: "#0000001A",
+          },
+          borderColor: {
+            initial: "transparent",
+            active: "transparent",
+            hover: "transparent",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+      },
+      positive: {
+        solid: {
+          background: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(175,224,237)",
+            hover: "rgba(0, 0, 0, 0.15)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(0 0 0 / 30%)",
+          },
+          foreground: {
+            initial: "#ffffff",
+            active: "#000000",
+            hover: "#ffffff",
+          },
+        },
+        bordered: {
+          background: {
+            initial: "#00000000",
+            active: "rgb(175,224,237)",
+            hover: "rgb(219,245,247)",
+          },
+          borderColor: {
+            initial: "rgb(27,127,158)",
+            active: "rgb(27,127,158)",
+            hover: "rgb(27,127,158)",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+        ghost: {
+          background: {
+            initial: "transparent",
+            active: "#00000026",
+            hover: "#0000001A",
+          },
+          borderColor: {
+            initial: "transparent",
+            active: "transparent",
+            hover: "transparent",
+          },
+          foreground: {
+            initial: "rgb(18,100,126)",
+            active: "#000000",
+            hover: "rgb(9,74,96)",
+          },
+        },
+      },
+    },
   });
 };
 

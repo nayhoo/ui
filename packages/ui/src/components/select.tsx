@@ -22,12 +22,11 @@ export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps &
 
 export const SelectTrigger = ({
   placeholder,
-  variant = "outline",
   ...props
 }: SelectTriggerProps) => {
   return (
     <SelectPrimitive.Trigger {...props} asChild>
-      <Button variant={variant}>
+      <Button>
         <SelectPrimitive.Value placeholder={placeholder} />
 
         <SelectPrimitive.Icon style={{ marginLeft: 5 }}>

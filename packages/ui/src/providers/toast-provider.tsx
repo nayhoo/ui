@@ -288,9 +288,7 @@ export const ToastAction = ({
       style={{ gridArea: "action", ...props.style }}
       asChild
     >
-      <Button size="1" variant="outline">
-        {props.children}
-      </Button>
+      <Button size="sm">{props.children}</Button>
     </ToastPrimitives.Action>
   );
 };

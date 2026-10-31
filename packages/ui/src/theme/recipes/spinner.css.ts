@@ -6,22 +6,22 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 export const spinnerRecipe = homemadeRecipe({
   base: {
     animation: `${spin} .8s linear infinite`,
-    border: `2px solid ${theme.colors.primary.primary9}`,
+    border: "2px solid currentColor",
     borderRadius: theme.radii.round,
     borderTop: "2px solid transparent",
   },
 
   variants: {
     size: {
-      "1": {
+      sm: {
         height: theme.sizes[3],
         width: theme.sizes[3],
       },
-      "2": {
+      md: {
         height: theme.sizes[4],
         width: theme.sizes[4],
       },
-      "3": {
+      lg: {
         height: theme.sizes[5],
         width: theme.sizes[5],
       },
@@ -29,7 +29,7 @@ export const spinnerRecipe = homemadeRecipe({
   },
 
   defaultVariants: {
-    size: "2",
+    size: "md",
   },
 });
 

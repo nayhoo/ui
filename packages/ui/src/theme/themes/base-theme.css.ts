@@ -4,7 +4,7 @@ import { createGlobalTheme } from "@vanilla-extract/css";
 
 const { colors: _, ...t } = theme;
 
-export const baseTheme = createGlobalTheme(":root", t, {
+createGlobalTheme(":root", t, {
   fonts: {
     text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
     code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",

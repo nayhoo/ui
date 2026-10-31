@@ -53,17 +53,17 @@ export const iconButtonRecipe = homemadeRecipe({
       },
     },
     size: {
-      "1": {
+      sm: {
         borderRadius: theme.radii[1],
         height: theme.sizes[5],
         width: theme.sizes[5],
       },
-      "2": {
+      md: {
         borderRadius: theme.radii[2],
         height: theme.sizes[6],
         width: theme.sizes[6],
       },
-      "3": {
+      lg: {
         borderRadius: theme.radii[2],
         height: theme.sizes[7],
         width: theme.sizes[7],
@@ -104,7 +104,7 @@ export const iconButtonRecipe = homemadeRecipe({
   },
 
   defaultVariants: {
-    size: "1",
+    size: "md",
     variant: "ghost",
   },
 });
