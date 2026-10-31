@@ -1,7 +1,6 @@
 import { Box } from "@/components/box";
 import { Flex } from "@/components/flex";
 import { IconButton } from "@/components/icon-button";
-import { theme } from "@/theme";
 import {
   DialogContentVariants,
   dialogContentRecipe,
@@ -12,6 +11,7 @@ import {
   dialogHeader,
   dialogOverlay,
 } from "@/theme/styles/dialog.css";
+import { theme } from "@/theme/themes/theme-contract.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as DialogPrimitive from "@radix-ui/react-dialog";

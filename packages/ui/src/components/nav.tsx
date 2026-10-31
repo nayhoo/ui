@@ -1,6 +1,6 @@
 import { Container } from "@/components/container";
-import { theme } from "@/theme";
 import { navRecipe } from "@/theme/recipes/nav.css";
+import { theme } from "@/theme/themes/theme-contract.css";
 import { useScrollPosition } from "@nayhoo/hooks";
 
 type NavProps = {

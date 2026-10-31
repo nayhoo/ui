@@ -1,5 +1,5 @@
 import { Button } from "@nayhoo/ui/button";
-import { ThemeProvider } from "@nayhoo/ui/providers";
+import { ThemeProvider } from "@nayhoo/ui/providers/theme-provider";
 
 function App() {
   return (
