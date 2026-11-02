@@ -44,17 +44,17 @@ export const iconButtonRecipe = homemadeRecipe({
     },
     size: {
       "1": {
-        fontsize: theme.fontSizes[1],
+        fontsize: theme.fontSize[1],
         height: theme.space[5],
         width: theme.space[5],
       },
       "2": {
-        fontsize: theme.fontSizes[2],
+        fontsize: theme.fontSize[2],
         height: theme.space[6],
         width: theme.space[6],
       },
       "3": {
-        fontsize: theme.fontSizes[3],
+        fontsize: theme.fontSize[3],
         height: theme.space[7],
         width: theme.space[7],
       },
@@ -62,48 +62,47 @@ export const iconButtonRecipe = homemadeRecipe({
     variant: {
       bordered: {
         backgroundColor:
-          theme.colors.actionable.neutral.bordered.background.initial,
-        color: theme.colors.actionable.neutral.bordered.foreground.initial,
+          theme.color.actionable.neutral.bordered.background.initial,
+        color: theme.color.actionable.neutral.bordered.foreground.initial,
         borderColor:
-          theme.colors.actionable.neutral.bordered.borderColor.initial,
+          theme.color.actionable.neutral.bordered.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.bordered.background.hover,
-            color: theme.colors.actionable.neutral.bordered.foreground.hover,
+              theme.color.actionable.neutral.bordered.background.hover,
+            color: theme.color.actionable.neutral.bordered.foreground.hover,
             borderColor:
-              theme.colors.actionable.neutral.bordered.borderColor.hover,
+              theme.color.actionable.neutral.bordered.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.bordered.background.active,
-            color: theme.colors.actionable.neutral.bordered.foreground.active,
+              theme.color.actionable.neutral.bordered.background.active,
+            color: theme.color.actionable.neutral.bordered.foreground.active,
             borderColor:
-              theme.colors.actionable.neutral.bordered.borderColor.active,
+              theme.color.actionable.neutral.bordered.borderColor.active,
           },
         },
       },
       ghost: {
         backgroundColor:
-          theme.colors.actionable.neutral.ghost.background.initial,
-        color: theme.colors.actionable.neutral.ghost.foreground.initial,
-        borderColor: theme.colors.actionable.neutral.ghost.borderColor.initial,
+          theme.color.actionable.neutral.ghost.background.initial,
+        color: theme.color.actionable.neutral.ghost.foreground.initial,
+        borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.ghost.background.hover,
-            color: theme.colors.actionable.neutral.ghost.foreground.hover,
-            borderColor:
-              theme.colors.actionable.neutral.ghost.borderColor.hover,
+              theme.color.actionable.neutral.ghost.background.hover,
+            color: theme.color.actionable.neutral.ghost.foreground.hover,
+            borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.ghost.background.active,
-            color: theme.colors.actionable.neutral.ghost.foreground.active,
+              theme.color.actionable.neutral.ghost.background.active,
+            color: theme.color.actionable.neutral.ghost.foreground.active,
             borderColor:
-              theme.colors.actionable.neutral.ghost.borderColor.active,
+              theme.color.actionable.neutral.ghost.borderColor.active,
           },
         },
       },

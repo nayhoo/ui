@@ -58,7 +58,7 @@ const slideUp = keyframes({
 });
 
 export const accordionContent = style({
-  fontSize: theme.fontSizes[3],
+  fontSize: theme.fontSize[3],
   overflow: "hidden",
 
   selectors: {
@@ -86,11 +86,11 @@ export const accordionTrigger = style({
 
   alignItems: "center",
   backgroundColor: "transparent",
-  boxShadow: `0 1px 0 ${theme.colors.line}`,
+  boxShadow: `0 1px 0 ${theme.color.line}`,
   display: "flex",
   flex: 1,
   fontFamily: "inherit",
-  fontSize: theme.fontSizes[3],
+  fontSize: theme.fontSize[3],
   height: 45,
   justifyContent: "space-between",
   lineHeight: 1,
@@ -98,7 +98,7 @@ export const accordionTrigger = style({
 
   selectors: {
     "&:hover": {
-      backgroundColor: theme.colors.transparentHover,
+      backgroundColor: theme.color.transparentHover,
     },
   },
 });

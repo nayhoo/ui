@@ -9,7 +9,7 @@ export const createTheme = (mode: SystemTheme) => {
   const error = "ruby";
   const success = "jade";
 
-  return createGlobalTheme(`[data-theme="${mode}"]`, theme.colors, {
+  return createGlobalTheme(`[data-theme="${mode}"]`, theme.color, {
     primary: {
       primary1: colors[primary][`${primary}1`],
       primary2: colors[primary][`${primary}2`],

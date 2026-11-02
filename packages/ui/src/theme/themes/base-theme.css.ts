@@ -2,16 +2,16 @@ import { theme } from "@/theme/themes/theme-contract.css";
 import * as colors from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-const { colors: _, ...t } = theme;
+const { color: _, ...t } = theme;
 
 createGlobalTheme(":root", t, {
-  fonts: {
+  fontFamily: {
     text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
     code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",
     emphasis: "'Times New Roman', 'Times', serif",
     quote: "'Times New Roman', 'Times', serif",
   },
-  fontSizes: {
+  fontSize: {
     1: "12px",
     2: "14px",
     3: "16px",
@@ -22,7 +22,7 @@ createGlobalTheme(":root", t, {
     8: "35px",
     9: "60px",
   },
-  fontWeights: {
+  fontWeight: {
     light: "300",
     regular: "400",
     medium: "500",
@@ -39,7 +39,7 @@ createGlobalTheme(":root", t, {
     8: "-0.01em",
     9: "-0.025em",
   },
-  lineHeights: {
+  lineHeight: {
     1: "16px",
     2: "20px",
     3: "24px",
@@ -60,7 +60,7 @@ createGlobalTheme(":root", t, {
     round: "50%",
     full: "9999px",
   },
-  shadows: {
+  shadow: {
     1: `inset 0 0 0 1px ${colors.grayA.grayA5},inset 0 1.5px 2px 0 ${colors.grayA.grayA2},inset 0 1.5px 2px 0 ${colors.blackA.blackA2}`,
     2: `0 0 0 1px ${colors.grayA.grayA3},0 0 0 0.5px ${colors.blackA.blackA1},0 1px 1px 0 ${colors.grayA.grayA2},0 2px 1px -1px ${colors.blackA.blackA1},0 1px 3px 0 ${colors.blackA.blackA1}`,
     3: `0 0 0 1px ${colors.grayA.grayA3},0 2px 3px -2px ${colors.grayA.grayA3},0 3px 12px -4px ${colors.blackA.blackA2},0 4px 16px -8px ${colors.blackA.blackA2}`,
@@ -79,7 +79,7 @@ createGlobalTheme(":root", t, {
     8: "48px",
     9: "64px",
   },
-  zIndices: {
+  zIndex: {
     1: "100",
     2: "200",
     3: "300",

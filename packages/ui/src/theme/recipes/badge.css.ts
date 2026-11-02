@@ -26,16 +26,16 @@ export const badgeRecipe = homemadeRecipe({
   variants: {
     color: {
       primary: {
-        backgroundColor: theme.colors.primaryA.primaryA3,
-        color: theme.colors.primary.primary9,
+        backgroundColor: theme.color.primaryA.primaryA3,
+        color: theme.color.primary.primary9,
       },
       secondary: {
-        backgroundColor: theme.colors.secondaryA.secondaryA3,
-        color: theme.colors.secondary.secondary9,
+        backgroundColor: theme.color.secondaryA.secondaryA3,
+        color: theme.color.secondary.secondary9,
       },
       error: {
-        backgroundColor: theme.colors.errorA.errorA3,
-        color: theme.colors.error.error9,
+        backgroundColor: theme.color.errorA.errorA3,
+        color: theme.color.error.error9,
       },
     },
     size: {
@@ -43,13 +43,13 @@ export const badgeRecipe = homemadeRecipe({
         height: theme.space[4],
         paddingLeft: theme.space[1],
         paddingRight: theme.space[1],
-        fontSize: theme.fontSizes[1],
+        fontSize: theme.fontSize[1],
       },
       "2": {
         height: theme.space[5],
         paddingLeft: theme.space[2],
         paddingRight: theme.space[2],
-        fontSize: theme.fontSizes[2],
+        fontSize: theme.fontSize[2],
       },
     },
   },

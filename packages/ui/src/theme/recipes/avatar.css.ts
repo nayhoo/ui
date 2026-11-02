@@ -19,10 +19,10 @@ export const avatarRecipe = homemadeRecipe({
     margin: "0",
     outline: "none",
     padding: "0",
-    fontWeight: theme.fontWeights.medium,
-    color: theme.colors.surfaceTextContrast,
+    fontWeight: theme.fontWeight.medium,
+    color: theme.color.surfaceTextContrast,
 
-    backgroundColor: theme.colors.surface,
+    backgroundColor: theme.color.surface,
 
     selectors: {
       "&::before": {
@@ -33,7 +33,7 @@ export const avatarRecipe = homemadeRecipe({
         bottom: 0,
         left: 0,
         borderRadius: "inherit",
-        boxShadow: `inset 0px 0px 1px ${theme.colors.line}`,
+        boxShadow: `inset 0px 0px 1px ${theme.color.line}`,
       },
     },
   },
@@ -126,19 +126,19 @@ export const avatarFallbackRecipe = homemadeRecipe({
         lineHeight: "15px",
       },
       "2": {
-        fontSize: theme.fontSizes[3],
+        fontSize: theme.fontSize[3],
       },
       "3": {
-        fontSize: theme.fontSizes[6],
+        fontSize: theme.fontSize[6],
       },
       "4": {
-        fontSize: theme.fontSizes[7],
+        fontSize: theme.fontSize[7],
       },
       "5": {
-        fontSize: theme.fontSizes[8],
+        fontSize: theme.fontSize[8],
       },
       "6": {
-        fontSize: theme.fontSizes[9],
+        fontSize: theme.fontSize[9],
       },
     },
   },

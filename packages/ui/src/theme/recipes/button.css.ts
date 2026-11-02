@@ -12,9 +12,9 @@ export const buttonRecipe = homemadeRecipe({
     boxSizing: "border-box",
     display: "inline-flex",
     flexShrink: 0,
-    fontFamily: theme.fonts.text,
+    fontFamily: theme.fontFamily.text,
     fontVariantNumeric: "tabular-nums",
-    fontWeight: theme.fontWeights.medium,
+    fontWeight: theme.fontWeight.medium,
     justifyContent: "center",
     position: "relative",
     transition: "all 100ms",
@@ -54,27 +54,27 @@ export const buttonRecipe = homemadeRecipe({
     },
     size: {
       "1": {
-        fontSize: theme.fontSizes[1],
+        fontSize: theme.fontSize[1],
         letterSpacing: theme.letterSpacing[1],
-        lineHeight: theme.lineHeights[1],
+        lineHeight: theme.lineHeight[1],
         paddingLeft: theme.space[2],
         paddingRight: theme.space[2],
         height: theme.space[5],
         gap: theme.space[1],
       },
       "2": {
-        fontSize: theme.fontSizes[2],
+        fontSize: theme.fontSize[2],
         letterSpacing: theme.letterSpacing[2],
-        lineHeight: theme.lineHeights[2],
+        lineHeight: theme.lineHeight[2],
         paddingLeft: theme.space[3],
         paddingRight: theme.space[3],
         height: theme.space[6],
         gap: theme.space[2],
       },
       "3": {
-        fontSize: theme.fontSizes[3],
+        fontSize: theme.fontSize[3],
         letterSpacing: theme.letterSpacing[3],
-        lineHeight: theme.lineHeights[3],
+        lineHeight: theme.lineHeight[3],
         paddingLeft: theme.space[4],
         paddingRight: theme.space[4],
         height: theme.space[7],
@@ -103,24 +103,24 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.accented.solid.background.initial,
-        color: theme.colors.actionable.accented.solid.foreground.initial,
-        borderColor: theme.colors.actionable.accented.solid.borderColor.initial,
+          theme.color.actionable.accented.solid.background.initial,
+        color: theme.color.actionable.accented.solid.foreground.initial,
+        borderColor: theme.color.actionable.accented.solid.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.accented.solid.background.hover,
-            color: theme.colors.actionable.accented.solid.foreground.hover,
+              theme.color.actionable.accented.solid.background.hover,
+            color: theme.color.actionable.accented.solid.foreground.hover,
             borderColor:
-              theme.colors.actionable.accented.solid.borderColor.hover,
+              theme.color.actionable.accented.solid.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.accented.solid.background.active,
-            color: theme.colors.actionable.accented.solid.foreground.active,
+              theme.color.actionable.accented.solid.background.active,
+            color: theme.color.actionable.accented.solid.foreground.active,
             borderColor:
-              theme.colors.actionable.accented.solid.borderColor.active,
+              theme.color.actionable.accented.solid.borderColor.active,
           },
         },
       },
@@ -132,25 +132,25 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.accented.bordered.background.initial,
-        color: theme.colors.actionable.accented.bordered.foreground.initial,
+          theme.color.actionable.accented.bordered.background.initial,
+        color: theme.color.actionable.accented.bordered.foreground.initial,
         borderColor:
-          theme.colors.actionable.accented.bordered.borderColor.initial,
+          theme.color.actionable.accented.bordered.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.accented.bordered.background.hover,
-            color: theme.colors.actionable.accented.bordered.foreground.hover,
+              theme.color.actionable.accented.bordered.background.hover,
+            color: theme.color.actionable.accented.bordered.foreground.hover,
             borderColor:
-              theme.colors.actionable.accented.bordered.borderColor.hover,
+              theme.color.actionable.accented.bordered.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.accented.bordered.background.active,
-            color: theme.colors.actionable.accented.bordered.foreground.active,
+              theme.color.actionable.accented.bordered.background.active,
+            color: theme.color.actionable.accented.bordered.foreground.active,
             borderColor:
-              theme.colors.actionable.accented.bordered.borderColor.active,
+              theme.color.actionable.accented.bordered.borderColor.active,
           },
         },
       },
@@ -162,24 +162,24 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.accented.ghost.background.initial,
-        color: theme.colors.actionable.accented.ghost.foreground.initial,
-        borderColor: theme.colors.actionable.accented.ghost.borderColor.initial,
+          theme.color.actionable.accented.ghost.background.initial,
+        color: theme.color.actionable.accented.ghost.foreground.initial,
+        borderColor: theme.color.actionable.accented.ghost.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.accented.ghost.background.hover,
-            color: theme.colors.actionable.accented.ghost.foreground.hover,
+              theme.color.actionable.accented.ghost.background.hover,
+            color: theme.color.actionable.accented.ghost.foreground.hover,
             borderColor:
-              theme.colors.actionable.accented.ghost.borderColor.hover,
+              theme.color.actionable.accented.ghost.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.accented.ghost.background.active,
-            color: theme.colors.actionable.accented.ghost.foreground.active,
+              theme.color.actionable.accented.ghost.background.active,
+            color: theme.color.actionable.accented.ghost.foreground.active,
             borderColor:
-              theme.colors.actionable.accented.ghost.borderColor.active,
+              theme.color.actionable.accented.ghost.borderColor.active,
           },
         },
       },
@@ -191,24 +191,23 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.neutral.solid.background.initial,
-        color: theme.colors.actionable.neutral.solid.foreground.initial,
-        borderColor: theme.colors.actionable.neutral.solid.borderColor.initial,
+          theme.color.actionable.neutral.solid.background.initial,
+        color: theme.color.actionable.neutral.solid.foreground.initial,
+        borderColor: theme.color.actionable.neutral.solid.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.solid.background.hover,
-            color: theme.colors.actionable.neutral.solid.foreground.hover,
-            borderColor:
-              theme.colors.actionable.neutral.solid.borderColor.hover,
+              theme.color.actionable.neutral.solid.background.hover,
+            color: theme.color.actionable.neutral.solid.foreground.hover,
+            borderColor: theme.color.actionable.neutral.solid.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.solid.background.active,
-            color: theme.colors.actionable.neutral.solid.foreground.active,
+              theme.color.actionable.neutral.solid.background.active,
+            color: theme.color.actionable.neutral.solid.foreground.active,
             borderColor:
-              theme.colors.actionable.neutral.solid.borderColor.active,
+              theme.color.actionable.neutral.solid.borderColor.active,
           },
         },
       },
@@ -220,25 +219,25 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.neutral.bordered.background.initial,
-        color: theme.colors.actionable.neutral.bordered.foreground.initial,
+          theme.color.actionable.neutral.bordered.background.initial,
+        color: theme.color.actionable.neutral.bordered.foreground.initial,
         borderColor:
-          theme.colors.actionable.neutral.bordered.borderColor.initial,
+          theme.color.actionable.neutral.bordered.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.bordered.background.hover,
-            color: theme.colors.actionable.neutral.bordered.foreground.hover,
+              theme.color.actionable.neutral.bordered.background.hover,
+            color: theme.color.actionable.neutral.bordered.foreground.hover,
             borderColor:
-              theme.colors.actionable.neutral.bordered.borderColor.hover,
+              theme.color.actionable.neutral.bordered.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.bordered.background.active,
-            color: theme.colors.actionable.neutral.bordered.foreground.active,
+              theme.color.actionable.neutral.bordered.background.active,
+            color: theme.color.actionable.neutral.bordered.foreground.active,
             borderColor:
-              theme.colors.actionable.neutral.bordered.borderColor.active,
+              theme.color.actionable.neutral.bordered.borderColor.active,
           },
         },
       },
@@ -250,24 +249,23 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.neutral.ghost.background.initial,
-        color: theme.colors.actionable.neutral.ghost.foreground.initial,
-        borderColor: theme.colors.actionable.neutral.ghost.borderColor.initial,
+          theme.color.actionable.neutral.ghost.background.initial,
+        color: theme.color.actionable.neutral.ghost.foreground.initial,
+        borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.ghost.background.hover,
-            color: theme.colors.actionable.neutral.ghost.foreground.hover,
-            borderColor:
-              theme.colors.actionable.neutral.ghost.borderColor.hover,
+              theme.color.actionable.neutral.ghost.background.hover,
+            color: theme.color.actionable.neutral.ghost.foreground.hover,
+            borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.neutral.ghost.background.active,
-            color: theme.colors.actionable.neutral.ghost.foreground.active,
+              theme.color.actionable.neutral.ghost.background.active,
+            color: theme.color.actionable.neutral.ghost.foreground.active,
             borderColor:
-              theme.colors.actionable.neutral.ghost.borderColor.active,
+              theme.color.actionable.neutral.ghost.borderColor.active,
           },
         },
       },
@@ -279,24 +277,23 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.caution.solid.background.initial,
-        color: theme.colors.actionable.caution.solid.foreground.initial,
-        borderColor: theme.colors.actionable.caution.solid.borderColor.initial,
+          theme.color.actionable.caution.solid.background.initial,
+        color: theme.color.actionable.caution.solid.foreground.initial,
+        borderColor: theme.color.actionable.caution.solid.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.caution.solid.background.hover,
-            color: theme.colors.actionable.caution.solid.foreground.hover,
-            borderColor:
-              theme.colors.actionable.caution.solid.borderColor.hover,
+              theme.color.actionable.caution.solid.background.hover,
+            color: theme.color.actionable.caution.solid.foreground.hover,
+            borderColor: theme.color.actionable.caution.solid.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.caution.solid.background.active,
-            color: theme.colors.actionable.caution.solid.foreground.active,
+              theme.color.actionable.caution.solid.background.active,
+            color: theme.color.actionable.caution.solid.foreground.active,
             borderColor:
-              theme.colors.actionable.caution.solid.borderColor.active,
+              theme.color.actionable.caution.solid.borderColor.active,
           },
         },
       },
@@ -308,25 +305,25 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.caution.bordered.background.initial,
-        color: theme.colors.actionable.caution.bordered.foreground.initial,
+          theme.color.actionable.caution.bordered.background.initial,
+        color: theme.color.actionable.caution.bordered.foreground.initial,
         borderColor:
-          theme.colors.actionable.caution.bordered.borderColor.initial,
+          theme.color.actionable.caution.bordered.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.caution.bordered.background.hover,
-            color: theme.colors.actionable.caution.bordered.foreground.hover,
+              theme.color.actionable.caution.bordered.background.hover,
+            color: theme.color.actionable.caution.bordered.foreground.hover,
             borderColor:
-              theme.colors.actionable.caution.bordered.borderColor.hover,
+              theme.color.actionable.caution.bordered.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.caution.bordered.background.active,
-            color: theme.colors.actionable.caution.bordered.foreground.active,
+              theme.color.actionable.caution.bordered.background.active,
+            color: theme.color.actionable.caution.bordered.foreground.active,
             borderColor:
-              theme.colors.actionable.caution.bordered.borderColor.active,
+              theme.color.actionable.caution.bordered.borderColor.active,
           },
         },
       },
@@ -338,24 +335,23 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.caution.ghost.background.initial,
-        color: theme.colors.actionable.caution.ghost.foreground.initial,
-        borderColor: theme.colors.actionable.caution.ghost.borderColor.initial,
+          theme.color.actionable.caution.ghost.background.initial,
+        color: theme.color.actionable.caution.ghost.foreground.initial,
+        borderColor: theme.color.actionable.caution.ghost.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.caution.ghost.background.hover,
-            color: theme.colors.actionable.caution.ghost.foreground.hover,
-            borderColor:
-              theme.colors.actionable.caution.ghost.borderColor.hover,
+              theme.color.actionable.caution.ghost.background.hover,
+            color: theme.color.actionable.caution.ghost.foreground.hover,
+            borderColor: theme.color.actionable.caution.ghost.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.caution.ghost.background.active,
-            color: theme.colors.actionable.caution.ghost.foreground.active,
+              theme.color.actionable.caution.ghost.background.active,
+            color: theme.color.actionable.caution.ghost.foreground.active,
             borderColor:
-              theme.colors.actionable.caution.ghost.borderColor.active,
+              theme.color.actionable.caution.ghost.borderColor.active,
           },
         },
       },
@@ -367,24 +363,24 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.negative.solid.background.initial,
-        color: theme.colors.actionable.negative.solid.foreground.initial,
-        borderColor: theme.colors.actionable.negative.solid.borderColor.initial,
+          theme.color.actionable.negative.solid.background.initial,
+        color: theme.color.actionable.negative.solid.foreground.initial,
+        borderColor: theme.color.actionable.negative.solid.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.negative.solid.background.hover,
-            color: theme.colors.actionable.negative.solid.foreground.hover,
+              theme.color.actionable.negative.solid.background.hover,
+            color: theme.color.actionable.negative.solid.foreground.hover,
             borderColor:
-              theme.colors.actionable.negative.solid.borderColor.hover,
+              theme.color.actionable.negative.solid.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.negative.solid.background.active,
-            color: theme.colors.actionable.negative.solid.foreground.active,
+              theme.color.actionable.negative.solid.background.active,
+            color: theme.color.actionable.negative.solid.foreground.active,
             borderColor:
-              theme.colors.actionable.negative.solid.borderColor.active,
+              theme.color.actionable.negative.solid.borderColor.active,
           },
         },
       },
@@ -396,25 +392,25 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.negative.bordered.background.initial,
-        color: theme.colors.actionable.negative.bordered.foreground.initial,
+          theme.color.actionable.negative.bordered.background.initial,
+        color: theme.color.actionable.negative.bordered.foreground.initial,
         borderColor:
-          theme.colors.actionable.negative.bordered.borderColor.initial,
+          theme.color.actionable.negative.bordered.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.negative.bordered.background.hover,
-            color: theme.colors.actionable.negative.bordered.foreground.hover,
+              theme.color.actionable.negative.bordered.background.hover,
+            color: theme.color.actionable.negative.bordered.foreground.hover,
             borderColor:
-              theme.colors.actionable.negative.bordered.borderColor.hover,
+              theme.color.actionable.negative.bordered.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.negative.bordered.background.active,
-            color: theme.colors.actionable.negative.bordered.foreground.active,
+              theme.color.actionable.negative.bordered.background.active,
+            color: theme.color.actionable.negative.bordered.foreground.active,
             borderColor:
-              theme.colors.actionable.negative.bordered.borderColor.active,
+              theme.color.actionable.negative.bordered.borderColor.active,
           },
         },
       },
@@ -426,24 +422,24 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.negative.ghost.background.initial,
-        color: theme.colors.actionable.negative.ghost.foreground.initial,
-        borderColor: theme.colors.actionable.negative.ghost.borderColor.initial,
+          theme.color.actionable.negative.ghost.background.initial,
+        color: theme.color.actionable.negative.ghost.foreground.initial,
+        borderColor: theme.color.actionable.negative.ghost.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.negative.ghost.background.hover,
-            color: theme.colors.actionable.negative.ghost.foreground.hover,
+              theme.color.actionable.negative.ghost.background.hover,
+            color: theme.color.actionable.negative.ghost.foreground.hover,
             borderColor:
-              theme.colors.actionable.negative.ghost.borderColor.hover,
+              theme.color.actionable.negative.ghost.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.negative.ghost.background.active,
-            color: theme.colors.actionable.negative.ghost.foreground.active,
+              theme.color.actionable.negative.ghost.background.active,
+            color: theme.color.actionable.negative.ghost.foreground.active,
             borderColor:
-              theme.colors.actionable.negative.ghost.borderColor.active,
+              theme.color.actionable.negative.ghost.borderColor.active,
           },
         },
       },
@@ -455,24 +451,24 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.positive.solid.background.initial,
-        color: theme.colors.actionable.positive.solid.foreground.initial,
-        borderColor: theme.colors.actionable.positive.solid.borderColor.initial,
+          theme.color.actionable.positive.solid.background.initial,
+        color: theme.color.actionable.positive.solid.foreground.initial,
+        borderColor: theme.color.actionable.positive.solid.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.positive.solid.background.hover,
-            color: theme.colors.actionable.positive.solid.foreground.hover,
+              theme.color.actionable.positive.solid.background.hover,
+            color: theme.color.actionable.positive.solid.foreground.hover,
             borderColor:
-              theme.colors.actionable.positive.solid.borderColor.hover,
+              theme.color.actionable.positive.solid.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.positive.solid.background.active,
-            color: theme.colors.actionable.positive.solid.foreground.active,
+              theme.color.actionable.positive.solid.background.active,
+            color: theme.color.actionable.positive.solid.foreground.active,
             borderColor:
-              theme.colors.actionable.positive.solid.borderColor.active,
+              theme.color.actionable.positive.solid.borderColor.active,
           },
         },
       },
@@ -484,25 +480,25 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.positive.bordered.background.initial,
-        color: theme.colors.actionable.positive.bordered.foreground.initial,
+          theme.color.actionable.positive.bordered.background.initial,
+        color: theme.color.actionable.positive.bordered.foreground.initial,
         borderColor:
-          theme.colors.actionable.positive.bordered.borderColor.initial,
+          theme.color.actionable.positive.bordered.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.positive.bordered.background.hover,
-            color: theme.colors.actionable.positive.bordered.foreground.hover,
+              theme.color.actionable.positive.bordered.background.hover,
+            color: theme.color.actionable.positive.bordered.foreground.hover,
             borderColor:
-              theme.colors.actionable.positive.bordered.borderColor.hover,
+              theme.color.actionable.positive.bordered.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.positive.bordered.background.active,
-            color: theme.colors.actionable.positive.bordered.foreground.active,
+              theme.color.actionable.positive.bordered.background.active,
+            color: theme.color.actionable.positive.bordered.foreground.active,
             borderColor:
-              theme.colors.actionable.positive.bordered.borderColor.active,
+              theme.color.actionable.positive.bordered.borderColor.active,
           },
         },
       },
@@ -514,24 +510,24 @@ export const buttonRecipe = homemadeRecipe({
       },
       style: {
         backgroundColor:
-          theme.colors.actionable.positive.ghost.background.initial,
-        color: theme.colors.actionable.positive.ghost.foreground.initial,
-        borderColor: theme.colors.actionable.positive.ghost.borderColor.initial,
+          theme.color.actionable.positive.ghost.background.initial,
+        color: theme.color.actionable.positive.ghost.foreground.initial,
+        borderColor: theme.color.actionable.positive.ghost.borderColor.initial,
 
         selectors: {
           "&:hover:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.positive.ghost.background.hover,
-            color: theme.colors.actionable.positive.ghost.foreground.hover,
+              theme.color.actionable.positive.ghost.background.hover,
+            color: theme.color.actionable.positive.ghost.foreground.hover,
             borderColor:
-              theme.colors.actionable.positive.ghost.borderColor.hover,
+              theme.color.actionable.positive.ghost.borderColor.hover,
           },
           "&:active:not(:disabled)": {
             backgroundColor:
-              theme.colors.actionable.positive.ghost.background.active,
-            color: theme.colors.actionable.positive.ghost.foreground.active,
+              theme.color.actionable.positive.ghost.background.active,
+            color: theme.color.actionable.positive.ghost.foreground.active,
             borderColor:
-              theme.colors.actionable.positive.ghost.borderColor.active,
+              theme.color.actionable.positive.ghost.borderColor.active,
           },
         },
       },
@@ -557,16 +553,16 @@ export const buttonIconRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        height: theme.fontSizes[2],
-        width: theme.fontSizes[2],
+        height: theme.fontSize[2],
+        width: theme.fontSize[2],
       },
       "2": {
-        height: theme.fontSizes[3],
-        width: theme.fontSizes[3],
+        height: theme.fontSize[3],
+        width: theme.fontSize[3],
       },
       "3": {
-        height: theme.fontSizes[4],
-        width: theme.fontSizes[4],
+        height: theme.fontSize[4],
+        width: theme.fontSize[4],
       },
     },
   },

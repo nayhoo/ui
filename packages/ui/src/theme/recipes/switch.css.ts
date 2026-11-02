@@ -17,7 +17,7 @@ export const switchRecipe = homemadeRecipe({
         boxShadow: `0 0 0 2px ${colors.slate.slate8}`,
       },
       '&[data-state="checked"]': {
-        backgroundColor: theme.colors.primary.primary9,
+        backgroundColor: theme.color.primary.primary9,
       },
     },
   },

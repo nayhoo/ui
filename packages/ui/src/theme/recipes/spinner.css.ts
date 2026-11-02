@@ -14,16 +14,16 @@ export const spinnerRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        height: theme.fontSizes[1],
-        width: theme.fontSizes[1],
+        height: theme.fontSize[1],
+        width: theme.fontSize[1],
       },
       "2": {
-        height: theme.fontSizes[2],
-        width: theme.fontSizes[2],
+        height: theme.fontSize[2],
+        width: theme.fontSize[2],
       },
       "3": {
-        height: theme.fontSizes[3],
-        width: theme.fontSizes[3],
+        height: theme.fontSize[3],
+        width: theme.fontSize[3],
       },
     },
   },

@@ -7,7 +7,7 @@ export const dialogContentRecipe = homemadeRecipe({
   base: [
     panel,
     {
-      border: `1px solid ${theme.colors.line}`,
+      border: `1px solid ${theme.color.line}`,
       boxShadow: "none",
 
       left: "50%",
@@ -20,7 +20,7 @@ export const dialogContentRecipe = homemadeRecipe({
       transform: "translate(-50%, -50%)",
       willChange: "transform",
 
-      zIndex: theme.zIndices[5],
+      zIndex: theme.zIndex[5],
 
       selectors: {
         "&:focus": {

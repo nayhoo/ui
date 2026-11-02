@@ -159,6 +159,6 @@ globalStyle("html, body", {
   WebkitFontSmoothing: "antialiased",
 
   // custom
-  background: theme.colors.background,
-  color: theme.colors.backgroundTextContrast,
+  background: theme.color.background,
+  color: theme.color.backgroundTextContrast,
 });

@@ -7,8 +7,8 @@ export const formField = style({
 });
 
 export const formLabel = style({
-  color: theme.colors.textSubtle,
-  fontSize: theme.fontSizes[3],
-  fontWeight: theme.fontWeights.medium,
-  lineHeight: theme.lineHeights[6],
+  color: theme.color.textSubtle,
+  fontSize: theme.fontSize[3],
+  fontWeight: theme.fontWeight.medium,
+  lineHeight: theme.lineHeight[6],
 });

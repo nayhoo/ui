@@ -4,14 +4,14 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 
 export const formMessageRecipe = homemadeRecipe({
   base: {
-    fontSize: theme.fontSizes[2],
+    fontSize: theme.fontSize[2],
     opacity: 0.8,
   },
 
   variants: {
     error: {
       true: {
-        color: theme.colors.error.error9,
+        color: theme.color.error.error9,
       },
     },
   },

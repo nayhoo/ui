@@ -57,8 +57,7 @@ const actionable = {
 // Combine the individual contracts into one
 // based on the System UI Theme Specification https://github.com/system-ui/theme-specification?tab=readme-ov-file#key-reference
 export const theme = createThemeContract({
-  // TODO: rename to color
-  colors: {
+  color: {
     primary: {
       primary1: null,
       primary2: null,
@@ -202,16 +201,14 @@ export const theme = createThemeContract({
     },
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-family
-  // TODO: rename to font
-  fonts: {
+  fontFamily: {
     text: null,
     code: null,
     emphasis: null,
     quote: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
-  // TODO: rename to fontSize
-  fontSizes: {
+  fontSize: {
     1: null,
     2: null,
     /** Base font */
@@ -224,8 +221,7 @@ export const theme = createThemeContract({
     9: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-weight
-  // TODO: rename to fontWeight
-  fontWeights: {
+  fontWeight: {
     light: null,
     regular: null,
     medium: null,
@@ -244,8 +240,7 @@ export const theme = createThemeContract({
     9: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
-  // TODO: rename to lineHeight
-  lineHeights: {
+  lineHeight: {
     1: null,
     2: null,
     3: null,
@@ -268,8 +263,7 @@ export const theme = createThemeContract({
     full: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/shadows
-  // TODO: rename to shadow
-  shadows: {
+  shadow: {
     1: null,
     2: null,
     3: null,
@@ -293,8 +287,7 @@ export const theme = createThemeContract({
     9: null,
   },
   //   todo: transition
-  // TODO: rename to zIndex
-  zIndices: {
+  zIndex: {
     /**
      * Tooltips
      * @examples Small hint overlays

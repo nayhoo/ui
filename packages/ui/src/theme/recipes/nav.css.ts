@@ -7,14 +7,14 @@ export const navRecipe = homemadeRecipe({
 
     top: 0,
     width: "100%",
-    zIndex: theme.zIndices[4],
-    backgroundColor: theme.colors.background,
+    zIndex: theme.zIndex[4],
+    backgroundColor: theme.color.background,
   },
 
   variants: {
     compact: {
       true: {
-        borderColor: theme.colors.line,
+        borderColor: theme.color.line,
       },
       false: {
         paddingTop: theme.space[2],

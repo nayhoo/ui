@@ -6,7 +6,7 @@ const baseMenuItem = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  fontSize: theme.fontSizes[1],
+  fontSize: theme.fontSize[1],
   fontVariantNumeric: "tabular-nums",
   lineHeight: "1",
   cursor: "default",
@@ -26,12 +26,12 @@ export const menuItem = style([
 
     selectors: {
       "&:hover": {
-        backgroundColor: theme.colors.transparentHover,
+        backgroundColor: theme.color.transparentHover,
       },
 
       "&[data-highlighted]": {
         outline: "none",
-        backgroundColor: theme.colors.transparentActive,
+        backgroundColor: theme.color.transparentActive,
       },
 
       "&[data-disabled]": {
@@ -48,7 +48,7 @@ export const menuLabel = style([
   baseMenuItem,
   {
     position: "relative",
-    color: theme.colors.textSubtle,
+    color: theme.color.textSubtle,
   },
 ]);
 
@@ -56,12 +56,12 @@ export const menu = style({
   boxSizing: "border-box",
   minWidth: 120,
   padding: theme.space[1],
-  zIndex: theme.zIndices[2],
+  zIndex: theme.zIndex[2],
 });
 
 export const menuSeparator = style({
   height: 1,
   marginTop: theme.space[1],
   marginBottom: theme.space[1],
-  backgroundColor: theme.colors.line,
+  backgroundColor: theme.color.line,
 });

@@ -23,7 +23,7 @@ export const textAreaRecipe = homemadeRecipe({
 
     selectors: {
       "&:hover": {
-        backgroundColor: theme.colors.transparentHover,
+        backgroundColor: theme.color.transparentHover,
       },
       "&:-webkit-autofill": {},
       "&:-webkit-autofill::first-line": {
@@ -57,10 +57,10 @@ export const textAreaRecipe = homemadeRecipe({
         // },
       },
       "&[data-invalid]": {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.colors.error.error9}`,
+        boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9}`,
       },
       "&[data-placeholder]": {
-        color: theme.colors.textPlaceholder,
+        color: theme.color.textPlaceholder,
       },
     },
   },
@@ -70,46 +70,46 @@ export const textAreaRecipe = homemadeRecipe({
       "1": {
         borderRadius: theme.radii[1],
         height: theme.space[5],
-        fontSize: theme.fontSizes[1],
+        fontSize: theme.fontSize[1],
         paddingLeft: theme.space[2],
         paddingRight: theme.space[2],
         lineHeight: theme.space[5],
         selectors: {
           "&:-webkit-autofill::first-line": {
-            fontSize: theme.fontSizes[1],
+            fontSize: theme.fontSize[1],
           },
         },
       },
       "2": {
         borderRadius: theme.radii[2],
-        fontSize: theme.fontSizes[3],
-        lineHeight: theme.lineHeights[6],
+        fontSize: theme.fontSize[3],
+        lineHeight: theme.lineHeight[6],
         height: theme.space[6],
         paddingLeft: theme.space[3],
         paddingRight: theme.space[3],
         selectors: {
           "&:-webkit-autofill::first-line": {
-            fontSize: theme.fontSizes[3],
+            fontSize: theme.fontSize[3],
           },
         },
       },
       "3": {
         borderRadius: theme.radii[2],
-        fontSize: theme.fontSizes[4],
+        fontSize: theme.fontSize[4],
         lineHeight: theme.space[7],
         height: theme.space[7],
         paddingLeft: theme.space[4],
         paddingRight: theme.space[4],
         selectors: {
           "&:-webkit-autofill::first-line": {
-            fontSize: theme.fontSizes[4],
+            fontSize: theme.fontSize[4],
           },
         },
       },
     },
     error: {
       true: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.colors.error.error9} !important`, // TODO: is this possible without !important?
+        boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9} !important`, // TODO: is this possible without !important?
         // "&:focus": {
         //   // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
         // },
@@ -130,7 +130,7 @@ export const textAreaRecipe = homemadeRecipe({
     },
     variant: {
       outline: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.colors.line}`,
+        boxShadow: `inset 0px 0px 0px 1px ${theme.color.line}`,
       },
       ghost: {
         boxShadow: "none",

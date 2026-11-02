@@ -18,12 +18,12 @@ export const checkboxRecipe = homemadeRecipe({
     padding: "0",
     WebkitTapHighlightColor: "rgba(0,0,0,0)",
 
-    boxShadow: `inset 0 0 0 1px ${theme.colors.line}`,
+    boxShadow: `inset 0 0 0 1px ${theme.color.line}`,
     overflow: "hidden",
 
     selectors: {
       "&:hover": {
-        backgroundColor: theme.colors.transparentHover,
+        backgroundColor: theme.color.transparentHover,
       },
 
       "&:focus": {
