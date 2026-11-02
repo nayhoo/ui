@@ -68,17 +68,6 @@ createGlobalTheme(":root", t, {
     5: `0 0 0 1px ${colors.grayA.grayA3},0 12px 60px ${colors.blackA.blackA3},0 12px 32px -16px ${colors.grayA.grayA5}`,
     6: `0 0 0 1px ${colors.grayA.grayA3},0 12px 60px ${colors.blackA.blackA3},0 16px 64px ${colors.grayA.grayA2},0 16px 36px -20px ${colors.grayA.grayA7}`,
   },
-  sizes: {
-    1: "4px",
-    2: "8px",
-    3: "12px",
-    4: "16px",
-    5: "24px",
-    6: "32px",
-    7: "40px",
-    8: "48px",
-    9: "64px",
-  },
   space: {
     1: "4px",
     2: "8px",

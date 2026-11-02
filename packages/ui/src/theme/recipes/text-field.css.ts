@@ -67,11 +67,11 @@ export const textFieldRecipe = homemadeRecipe({
     size: {
       "1": {
         borderRadius: theme.radii[1],
-        height: theme.sizes[5],
+        height: theme.space[5],
         fontSize: theme.fontSizes[1],
         paddingLeft: theme.space[2],
         paddingRight: theme.space[2],
-        lineHeight: theme.sizes[5],
+        lineHeight: theme.space[5],
         selectors: {
           "&:-webkit-autofill::first-line": {
             fontSize: theme.fontSizes[1],
@@ -82,7 +82,7 @@ export const textFieldRecipe = homemadeRecipe({
         borderRadius: theme.radii[2],
         fontSize: theme.fontSizes[3],
         lineHeight: theme.lineHeights[6],
-        height: theme.sizes[6],
+        height: theme.space[6],
         paddingLeft: theme.space[3],
         paddingRight: theme.space[3],
         selectors: {
@@ -94,8 +94,8 @@ export const textFieldRecipe = homemadeRecipe({
       "3": {
         borderRadius: theme.radii[2],
         fontSize: theme.fontSizes[4],
-        lineHeight: theme.sizes[7],
-        height: theme.sizes[7],
+        lineHeight: theme.space[7],
+        height: theme.space[7],
         paddingLeft: theme.space[4],
         paddingRight: theme.space[4],
         selectors: {

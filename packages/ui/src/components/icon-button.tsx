@@ -27,8 +27,11 @@ export const IconButton = ({ asChild, ...props }: IconButtonProps) => {
     >
       {rest.children}
 
-      {variants.loading && (
-        <Spinner size={variants.size} style={{ position: "absolute" }} />
+      {variants.loading ? (
+        <Spinner size={variants.size} />
+      ) : (
+        // TODO: make this iconName, determine size/color in here
+        rest.children
       )}
     </button>
   );

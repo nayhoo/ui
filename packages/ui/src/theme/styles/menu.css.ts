@@ -12,7 +12,7 @@ const baseMenuItem = style({
   cursor: "default",
   userSelect: "none",
   whiteSpace: "nowrap",
-  height: theme.sizes[5],
+  height: theme.space[5],
   paddingLeft: theme.space[5],
   paddingRight: theme.space[5],
   borderRadius: theme.radii[1],

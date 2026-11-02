@@ -42,13 +42,13 @@ export const checkboxRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        width: theme.sizes[3],
-        height: theme.sizes[3],
+        width: theme.space[3],
+        height: theme.space[3],
         borderRadius: theme.radii[1],
       },
       "2": {
-        width: theme.sizes[5],
-        height: theme.sizes[5],
+        width: theme.space[5],
+        height: theme.space[5],
         borderRadius: theme.radii[2],
       },
     },

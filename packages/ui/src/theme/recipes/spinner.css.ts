@@ -13,23 +13,23 @@ export const spinnerRecipe = homemadeRecipe({
 
   variants: {
     size: {
-      sm: {
-        height: theme.sizes[3],
-        width: theme.sizes[3],
+      "1": {
+        height: theme.fontSizes[1],
+        width: theme.fontSizes[1],
       },
-      md: {
-        height: theme.sizes[4],
-        width: theme.sizes[4],
+      "2": {
+        height: theme.fontSizes[2],
+        width: theme.fontSizes[2],
       },
-      lg: {
-        height: theme.sizes[5],
-        width: theme.sizes[5],
+      "3": {
+        height: theme.fontSizes[3],
+        width: theme.fontSizes[3],
       },
     },
   },
 
   defaultVariants: {
-    size: "md",
+    size: "1",
   },
 });
 

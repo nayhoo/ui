@@ -41,28 +41,28 @@ export const avatarRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        height: theme.sizes[3],
-        width: theme.sizes[3],
+        height: theme.space[3],
+        width: theme.space[3],
       },
       "2": {
-        height: theme.sizes[5],
-        width: theme.sizes[5],
+        height: theme.space[5],
+        width: theme.space[5],
       },
       "3": {
-        height: theme.sizes[6],
-        width: theme.sizes[6],
+        height: theme.space[6],
+        width: theme.space[6],
       },
       "4": {
-        height: theme.sizes[7],
-        width: theme.sizes[7],
+        height: theme.space[7],
+        width: theme.space[7],
       },
       "5": {
-        height: theme.sizes[8],
-        width: theme.sizes[8],
+        height: theme.space[8],
+        width: theme.space[8],
       },
       "6": {
-        height: theme.sizes[9],
-        width: theme.sizes[9],
+        height: theme.space[9],
+        width: theme.space[9],
       },
     },
     shape: {

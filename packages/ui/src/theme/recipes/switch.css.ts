@@ -25,12 +25,12 @@ export const switchRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        width: theme.sizes[5],
-        height: theme.sizes[4],
+        width: theme.space[5],
+        height: theme.space[4],
       },
       "2": {
-        width: theme.sizes[7],
-        height: theme.sizes[5],
+        width: theme.space[7],
+        height: theme.space[5],
       },
     },
   },
@@ -62,8 +62,8 @@ export const switchThumbRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        width: theme.sizes[3],
-        height: theme.sizes[3],
+        width: theme.space[3],
+        height: theme.space[3],
         selectors: {
           '&[data-state="checked"]': {
             transform: "translateX(10px)",

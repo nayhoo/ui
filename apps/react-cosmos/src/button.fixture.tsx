@@ -10,7 +10,7 @@ export default () => {
   const [loading, setLoading] = useFixtureInput("loading", false);
 
   const [size] = useFixtureSelect("size", {
-    options: ["sm", "md", "lg"],
+    options: ["1", "2", "3"],
   });
 
   const [sentiment] = useFixtureSelect("sentiment", {

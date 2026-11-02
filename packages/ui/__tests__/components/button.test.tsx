@@ -72,20 +72,14 @@ describe("button", () => {
     });
 
     test("should render a left icon button", async () => {
-      const { getByRole, getByTestId } = await render(
-        <Button leftIcon={Icon} />,
-      );
+      const { getByTestId } = await render(<Button leftIcon={Icon} />);
 
-      expect(getByRole("button")).toHaveAttribute("data-left-icon");
       expect(getByTestId("icon")).toBeInTheDocument();
     });
 
     test("should render a right icon button", async () => {
-      const { getByRole, getByTestId } = await render(
-        <Button rightIcon={Icon} />,
-      );
+      const { getByTestId } = await render(<Button rightIcon={Icon} />);
 
-      expect(getByRole("button")).toHaveAttribute("data-right-icon");
       expect(getByTestId("icon")).toBeInTheDocument();
     });
   });

@@ -57,6 +57,7 @@ const actionable = {
 // Combine the individual contracts into one
 // based on the System UI Theme Specification https://github.com/system-ui/theme-specification?tab=readme-ov-file#key-reference
 export const theme = createThemeContract({
+  // TODO: rename to color
   colors: {
     primary: {
       primary1: null,
@@ -201,6 +202,7 @@ export const theme = createThemeContract({
     },
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-family
+  // TODO: rename to font
   fonts: {
     text: null,
     code: null,
@@ -208,6 +210,7 @@ export const theme = createThemeContract({
     quote: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
+  // TODO: rename to fontSize
   fontSizes: {
     1: null,
     2: null,
@@ -221,6 +224,7 @@ export const theme = createThemeContract({
     9: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-weight
+  // TODO: rename to fontWeight
   fontWeights: {
     light: null,
     regular: null,
@@ -240,6 +244,7 @@ export const theme = createThemeContract({
     9: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
+  // TODO: rename to lineHeight
   lineHeights: {
     1: null,
     2: null,
@@ -263,6 +268,7 @@ export const theme = createThemeContract({
     full: null,
   },
   // https://www.radix-ui.com/themes/docs/theme/shadows
+  // TODO: rename to shadow
   shadows: {
     1: null,
     2: null,
@@ -271,21 +277,9 @@ export const theme = createThemeContract({
     5: null,
     6: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/spacing
-  sizes: {
-    1: null,
-    2: null,
-    3: null,
-    4: null,
-    5: null,
-    6: null,
-    7: null,
-    8: null,
-    9: null,
-  },
-  //   todo: borders
-  //   todo: borderWidths
-  //   todo: borderStyles
+  //   todo: border
+  //   todo: borderWidth
+  //   todo: borderStyle
   // https://www.radix-ui.com/themes/docs/theme/spacing
   space: {
     1: null,
@@ -298,7 +292,8 @@ export const theme = createThemeContract({
     8: null,
     9: null,
   },
-  //   todo: transitions
+  //   todo: transition
+  // TODO: rename to zIndex
   zIndices: {
     /**
      * Tooltips

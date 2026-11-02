@@ -40,13 +40,13 @@ export const badgeRecipe = homemadeRecipe({
     },
     size: {
       "1": {
-        height: theme.sizes[4],
+        height: theme.space[4],
         paddingLeft: theme.space[1],
         paddingRight: theme.space[1],
         fontSize: theme.fontSizes[1],
       },
       "2": {
-        height: theme.sizes[5],
+        height: theme.space[5],
         paddingLeft: theme.space[2],
         paddingRight: theme.space[2],
         fontSize: theme.fontSizes[2],

@@ -128,16 +128,16 @@ export const DropdownMenuRadioItem = ({
           <DropdownMenuPrimitive.ItemIndicator>
             <Flex
               style={{
-                width: theme.sizes[3],
-                height: theme.sizes[3],
+                width: theme.space[3],
+                height: theme.space[3],
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
               <Box
                 style={{
-                  width: theme.sizes[1],
-                  height: theme.sizes[1],
+                  width: theme.space[1],
+                  height: theme.space[1],
                   backgroundColor: "currentColor",
                   borderRadius: theme.radii.round,
                 }}

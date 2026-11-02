@@ -3,18 +3,24 @@ import {
   ButtonVariants,
   buttonIconRecipe,
   buttonRecipe,
-  buttonSpanRecipe,
-  buttonSpinner,
 } from "@/theme/recipes/button.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
+import { Text } from "./text";
 
-export type ButtonProps = ComponentProps<"button", ButtonVariants> & {
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-};
+export type ButtonProps = ComponentProps<"button", ButtonVariants> &
+  (
+    | {
+        leftIcon?: React.ReactNode;
+        rightIcon?: never;
+      }
+    | {
+        leftIcon?: never;
+        rightIcon?: React.ReactNode;
+      }
+  );
 
 export const Button = ({
   asChild,
@@ -28,13 +34,13 @@ export const Button = ({
   );
   const button = buttonRecipe(variants);
 
-  const buttonIcon = buttonIconRecipe({
+  const icon = buttonIconRecipe({
     size: variants.size,
   });
 
-  const buttonSpan = buttonSpanRecipe({ loading: variants.loading });
+  const isLoading = Boolean(variants.loading);
 
-  const disabled = rest.disabled || Boolean(variants.loading);
+  const disabled = rest.disabled || isLoading;
 
   return (
     <button
@@ -42,18 +48,16 @@ export const Button = ({
       className={mergeClasses(button, rest.className)}
       disabled={disabled}
       aria-disabled={disabled}
-      {...(leftIcon && { "data-left-icon": "" })}
-      {...(rightIcon && { "data-right-icon": "" })}
     >
-      {leftIcon && <Slot className={buttonIcon}>{leftIcon}</Slot>}
+      {isLoading && !rightIcon && <Spinner size={variants.size} />}
+      {!isLoading && leftIcon && <Slot className={icon}>{leftIcon}</Slot>}
 
-      <span className={buttonSpan}>{rest.children}</span>
+      <Text asChild size={variants.size}>
+        <span>{rest.children}</span>
+      </Text>
 
-      {rightIcon && <Slot className={buttonIcon}>{rightIcon}</Slot>}
-
-      {variants.loading && (
-        <Spinner className={buttonSpinner} size={variants.size} />
-      )}
+      {isLoading && rightIcon && <Spinner size={variants.size} />}
+      {!isLoading && rightIcon && <Slot className={icon}>{rightIcon}</Slot>}
     </button>
   );
 };

@@ -258,7 +258,7 @@ const Toast = ({ ...props }: ToastPrimitives.ToastProps & { toast: Toast }) => {
           asChild
           className={toastClose}
         >
-          <IconButton variant="outline">
+          <IconButton variant="bordered">
             <Cross2Icon />
           </IconButton>
         </ToastPrimitives.Close>
@@ -288,7 +288,7 @@ export const ToastAction = ({
       style={{ gridArea: "action", ...props.style }}
       asChild
     >
-      <Button size="sm">{props.children}</Button>
+      <Button>{props.children}</Button>
     </ToastPrimitives.Action>
   );
 };
