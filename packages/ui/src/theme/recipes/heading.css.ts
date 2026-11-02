@@ -31,21 +31,33 @@ export const headingRecipe = homemadeRecipe({
     level: {
       "1": {
         fontSize: theme.fontSizes[8],
+        letterSpacing: theme.letterSpacing[8],
+        lineHeight: theme.lineHeights[8],
       },
       "2": {
         fontSize: theme.fontSizes[7],
+        letterSpacing: theme.letterSpacing[7],
+        lineHeight: theme.lineHeights[7],
       },
       "3": {
         fontSize: theme.fontSizes[6],
+        letterSpacing: theme.letterSpacing[6],
+        lineHeight: theme.lineHeights[6],
       },
       "4": {
         fontSize: theme.fontSizes[5],
+        letterSpacing: theme.letterSpacing[5],
+        lineHeight: theme.lineHeights[5],
       },
       "5": {
         fontSize: theme.fontSizes[4],
+        letterSpacing: theme.letterSpacing[4],
+        lineHeight: theme.lineHeights[4],
       },
       "6": {
         fontSize: theme.fontSizes[3],
+        letterSpacing: theme.letterSpacing[3],
+        lineHeight: theme.lineHeights[3],
       },
     },
     weight: {
