@@ -93,6 +93,11 @@ export const buttonRecipe = homemadeRecipe({
       bordered: {},
       ghost: {},
     },
+    round: {
+      true: {
+        borderRadius: theme.radii.full,
+      },
+    },
   },
 
   compoundVariants: [
@@ -109,8 +114,7 @@ export const buttonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.accented.solid.background.hover,
+            background: theme.color.actionable.accented.solid.background.hover,
             color: theme.color.actionable.accented.solid.foreground.hover,
             borderColor:
               theme.color.actionable.accented.solid.borderColor.hover,
@@ -197,8 +201,7 @@ export const buttonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.solid.background.hover,
+            background: theme.color.actionable.neutral.solid.background.hover,
             color: theme.color.actionable.neutral.solid.foreground.hover,
             borderColor: theme.color.actionable.neutral.solid.borderColor.hover,
           },
@@ -283,8 +286,7 @@ export const buttonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.caution.solid.background.hover,
+            background: theme.color.actionable.caution.solid.background.hover,
             color: theme.color.actionable.caution.solid.foreground.hover,
             borderColor: theme.color.actionable.caution.solid.borderColor.hover,
           },
@@ -369,8 +371,7 @@ export const buttonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.negative.solid.background.hover,
+            background: theme.color.actionable.negative.solid.background.hover,
             color: theme.color.actionable.negative.solid.foreground.hover,
             borderColor:
               theme.color.actionable.negative.solid.borderColor.hover,
@@ -457,8 +458,7 @@ export const buttonRecipe = homemadeRecipe({
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.positive.solid.background.hover,
+            background: theme.color.actionable.positive.solid.background.hover,
             color: theme.color.actionable.positive.solid.foreground.hover,
             borderColor:
               theme.color.actionable.positive.solid.borderColor.hover,

@@ -21,6 +21,8 @@ export default () => {
     options: ["solid", "bordered", "ghost"],
   });
 
+  const [round] = useFixtureInput("round", false);
+
   const handleOnClick = () => {
     setLoading(true);
 
@@ -37,6 +39,7 @@ export default () => {
       sentiment={sentiment}
       variant={variant}
       onClick={handleOnClick}
+      round={round}
     >
       Press me
     </Button>
