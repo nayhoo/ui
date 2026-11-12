@@ -18,7 +18,7 @@ export default () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button>Press me</Button>
+        <Button>Dropdown menu</Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent>

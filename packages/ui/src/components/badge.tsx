@@ -1,4 +1,4 @@
-import { badgeRecipe, BadgeVariants } from "@/theme/recipes/badge.css";
+import { badge, BadgeVariants } from "@/theme/styles/badge.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -12,15 +12,11 @@ export type BadgeProps = ComponentProps<
 >;
 
 export const Badge = ({ asChild, label, ...props }: BadgeProps) => {
-  const [variants, rest] = extractVariantsFromProps(
-    props,
-    ...badgeRecipe.variants(),
-  );
-  const badge = badgeRecipe(variants);
+  const [variants, rest] = extractVariantsFromProps(props, ...badge.variants());
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(badge, props.className)}>
+    <Comp {...rest} className={mergeClasses(badge(variants), props.className)}>
       {label}
     </Comp>
   );

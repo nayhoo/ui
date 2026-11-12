@@ -1,4 +1,4 @@
-import { boxRecipe, BoxVariants } from "@/theme/recipes/box.css";
+import { box, BoxVariants } from "@/theme/styles/box.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -9,16 +9,12 @@ const defaultElement = "div";
 export type BoxProps = ComponentProps<typeof defaultElement, BoxVariants>;
 
 export const Box = ({ asChild, ...props }: BoxProps) => {
-  const [variants, rest] = extractVariantsFromProps(
-    props,
-    ...boxRecipe.variants(),
-  );
-  const box = boxRecipe(variants);
+  const [variants, rest] = extractVariantsFromProps(props, ...box.variants());
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(box, props.className)}>
-      {props.children}
+    <Comp {...rest} className={mergeClasses(box(variants), rest.className)}>
+      {rest.children}
     </Comp>
   );
 };

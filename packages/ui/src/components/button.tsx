@@ -1,9 +1,9 @@
 import { Spinner } from "@/components/spinner";
 import {
   ButtonVariants,
+  button,
   buttonIconRecipe,
-  buttonRecipe,
-} from "@/theme/recipes/button.css";
+} from "@/theme/styles/button.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -30,9 +30,8 @@ export const Button = ({
 }: ButtonProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...buttonRecipe.variants(),
+    ...button.variants(),
   );
-  const button = buttonRecipe(variants);
 
   const icon = buttonIconRecipe({
     size: variants.size,
@@ -45,14 +44,14 @@ export const Button = ({
   return (
     <button
       {...rest}
-      className={mergeClasses(button, rest.className)}
+      className={mergeClasses(button(variants), rest.className)}
       disabled={disabled}
       aria-disabled={disabled}
     >
       {isLoading && !rightIcon && <Spinner size={variants.size} />}
       {!isLoading && leftIcon && <Slot className={icon}>{leftIcon}</Slot>}
 
-      <Text asChild size={variants.size}>
+      <Text asChild color="inherit" size={variants.size}>
         <span>{rest.children}</span>
       </Text>
 

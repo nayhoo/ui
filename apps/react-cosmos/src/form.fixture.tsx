@@ -2,7 +2,6 @@
 
 import { Box } from "@nayhoo/ui/box";
 import { Button } from "@nayhoo/ui/button";
-import { Flex } from "@nayhoo/ui/flex";
 import {
   Form,
   FormControl,
@@ -49,7 +48,8 @@ export default () => {
       }}
     >
       <FormField name="username">
-        <Flex
+        <Box
+          display="flex"
           align="baseline"
           justify="between"
           style={{ marginBottom: theme.space[1] }}
@@ -58,14 +58,15 @@ export default () => {
           <FormMessage error match="valueMissing">
             This field is required
           </FormMessage>
-        </Flex>
+        </Box>
         <FormControl asChild>
           <TextField required type="text" />
         </FormControl>
       </FormField>
 
       <FormField name="password">
-        <Flex
+        <Box
+          display="flex"
           align="baseline"
           justify="between"
           style={{ marginBottom: theme.space[1] }}
@@ -74,7 +75,7 @@ export default () => {
           <FormMessage error match="valueMissing">
             This field is required
           </FormMessage>
-        </Flex>
+        </Box>
         <FormControl asChild>
           <TextField required type="password" />
         </FormControl>

@@ -1,4 +1,4 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 

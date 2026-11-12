@@ -1,21 +1,24 @@
-import { Flex } from "@nayhoo/ui/flex";
+import { Box } from "@nayhoo/ui/box";
 import { Link } from "@nayhoo/ui/link";
+import { Text } from "@nayhoo/ui/text";
 
-const colors = ["primary", "secondary", "error", "subtle"] as const;
+const sizes = ["inherit", "1", "2", "3"] as const;
 
 export default {
   default: () => {
     return <Link href="#swag">Open in new tab</Link>;
   },
-  colors: () => {
+  sizes: () => {
     return (
-      <Flex gap="4" direction="column">
-        {colors.map((color) => (
-          <Link href="#swag" key={color} color={color}>
-            {color}
-          </Link>
+      <Box display="flex" gap="4" direction="column">
+        {sizes.map((size) => (
+          <Text key="size">
+            <Link href="#swag" key={size} size={size}>
+              Size {size}
+            </Link>
+          </Text>
         ))}
-      </Flex>
+      </Box>
     );
   },
   asChild: () => {

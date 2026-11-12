@@ -1,8 +1,7 @@
 import { theme } from "@/theme/themes/theme-contract.css";
-import * as colors from "@radix-ui/colors";
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-const { color: _, ...t } = theme;
+const { color, shadow, ...t } = theme;
 
 createGlobalTheme(":root", t, {
   fontFamily: {
@@ -59,14 +58,6 @@ createGlobalTheme(":root", t, {
     6: "16px",
     round: "50%",
     full: "9999px",
-  },
-  shadow: {
-    1: `inset 0 0 0 1px ${colors.grayA.grayA5},inset 0 1.5px 2px 0 ${colors.grayA.grayA2},inset 0 1.5px 2px 0 ${colors.blackA.blackA2}`,
-    2: `0 0 0 1px ${colors.grayA.grayA3},0 0 0 0.5px ${colors.blackA.blackA1},0 1px 1px 0 ${colors.grayA.grayA2},0 2px 1px -1px ${colors.blackA.blackA1},0 1px 3px 0 ${colors.blackA.blackA1}`,
-    3: `0 0 0 1px ${colors.grayA.grayA3},0 2px 3px -2px ${colors.grayA.grayA3},0 3px 12px -4px ${colors.blackA.blackA2},0 4px 16px -8px ${colors.blackA.blackA2}`,
-    4: `0 0 0 1px ${colors.grayA.grayA3},0 8px 40px ${colors.blackA.blackA1},0 12px 32px -16px ${colors.grayA.grayA3}`,
-    5: `0 0 0 1px ${colors.grayA.grayA3},0 12px 60px ${colors.blackA.blackA3},0 12px 32px -16px ${colors.grayA.grayA5}`,
-    6: `0 0 0 1px ${colors.grayA.grayA3},0 12px 60px ${colors.blackA.blackA3},0 16px 64px ${colors.grayA.grayA2},0 16px 36px -20px ${colors.grayA.grayA7}`,
   },
   space: {
     1: "4px",

@@ -1,31 +1,36 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
-export const textRecipe = homemadeRecipe({
+export const text = homemadeRecipe({
   base: {
-    lineHeight: "1",
-    margin: "0",
-    fontWeight: theme.fontWeight.regular,
     fontVariantNumeric: "tabular-nums",
-    display: "block",
-
     fontFamily: theme.fontFamily.text,
   },
 
   variants: {
     color: {
       primary: {
-        color: theme.color.primary.primary9,
-      },
-      secondary: {
-        color: theme.color.secondary.secondary9,
-      },
-      error: {
-        color: theme.color.error.error9,
+        color: theme.color.content.primary.foreground,
+        selectors: {
+          "&:disabled": {
+            color: theme.color.content.primary.disabled,
+          },
+        },
       },
       subtle: {
-        color: theme.color.textSubtle,
+        color: theme.color.content.subtle.foreground,
+        selectors: {
+          "&:disabled": {
+            color: theme.color.content.subtle.disabled,
+          },
+        },
+      },
+      error: {
+        color: theme.color.content.error.foreground,
+      },
+      inherit: {
+        color: "inherit",
       },
     },
     size: {
@@ -89,10 +94,10 @@ export const textRecipe = homemadeRecipe({
   },
 
   defaultVariants: {
+    color: "primary",
     size: "3",
+    weight: "regular",
   },
 });
 
-export type TextVariants = NonNullable<
-  HomemadeRecipeVariants<typeof textRecipe>
->;
+export type TextVariants = NonNullable<HomemadeRecipeVariants<typeof text>>;

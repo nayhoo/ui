@@ -1,7 +1,4 @@
-import {
-  ContainerVariants,
-  containerRecipe,
-} from "@/theme/recipes/container.css";
+import { container, ContainerVariants } from "@/theme/styles/container.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -17,13 +14,15 @@ export type ContainerProps = ComponentProps<
 export const Container = ({ asChild, ...props }: ContainerProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...containerRecipe.variants(),
+    ...container.variants(),
   );
-  const container = containerRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(container, rest.className)}>
+    <Comp
+      {...rest}
+      className={mergeClasses(container(variants), rest.className)}
+    >
       {rest.children}
     </Comp>
   );

@@ -1,6 +1,8 @@
 import { Container } from "@/components/container";
-import { navRecipe } from "@/theme/recipes/nav.css";
+import { nav } from "@/theme";
 import { theme } from "@/theme/themes/theme-contract.css";
+import { ComponentProps } from "@/types/component-props";
+import { mergeClasses } from "@/utils/merge-classes";
 import { useScrollPosition } from "@nayhoo/hooks";
 
 type NavProps = {
@@ -20,28 +22,32 @@ type NavProps = {
    * false
    */
   fullWidth?: boolean;
-};
+} & ComponentProps<"nav">;
 
 export const Nav = ({
-  children,
   compact = false,
   fixed = false,
   fullWidth = false,
+  ...props
 }: NavProps) => {
   const scrollPosition = useScrollPosition();
 
   const isScrolled = scrollPosition > 24;
 
-  const nav = navRecipe({
-    compact: {
-      initial: true,
-      xs: compact || isScrolled,
-    },
-    fixed,
-  });
-
   return (
-    <nav className={nav}>
+    <nav
+      {...props}
+      className={mergeClasses(
+        nav({
+          compact: {
+            initial: true,
+            xs: compact || isScrolled,
+          },
+          fixed,
+        }),
+        props.className,
+      )}
+    >
       <Container
         size={fullWidth ? "4" : "3"}
         style={{
@@ -49,7 +55,7 @@ export const Nav = ({
           width: "100%",
         }}
       >
-        {children}
+        {props.children}
       </Container>
     </nav>
   );

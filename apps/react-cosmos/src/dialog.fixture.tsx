@@ -26,10 +26,12 @@ export default () => {
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button>Cancel</Button>
           </DialogClose>
 
-          <Button>Submit</Button>
+          <Button sentiment="accented" variant="solid">
+            Submit
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

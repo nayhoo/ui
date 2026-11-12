@@ -5,8 +5,8 @@ import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name
 export default () => {
-  const [color] = useFixtureSelect("color", {
-    options: ["primary", "secondary", "error"],
+  const [sentiment] = useFixtureSelect("sentiment", {
+    options: ["accented", "neutral", "caution", "negative", "positive"],
   });
 
   const [label] = useFixtureInput("label", "This is a badge");
@@ -15,5 +15,5 @@ export default () => {
     options: ["1", "2"],
   });
 
-  return <Badge color={color} label={label} size={size} />;
+  return <Badge sentiment={sentiment} label={label} size={size} />;
 };

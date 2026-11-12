@@ -1,8 +1,7 @@
-import { menu } from "@/theme/styles/menu.css";
+import { menuContent, MenuContentVariants } from "@/theme/styles/menu.css";
 import { panel } from "@/theme/styles/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import React from "react";
 
 export type PopoverProps = PopoverPrimitive.PopoverProps;
 
@@ -12,19 +11,19 @@ export type PopoverTriggerProps = PopoverPrimitive.PopoverTriggerProps;
 
 export const PopoverTrigger = PopoverPrimitive.Trigger;
 
-export type PopoverContentPrimitiveProps = React.ComponentProps<
-  typeof PopoverPrimitive.Content
->;
+export type PopoverContentPrimitiveProps =
+  PopoverPrimitive.PopoverContentProps & MenuContentVariants;
 
 export const PopoverContent = ({
   children,
+  onTop,
   ...props
 }: PopoverContentPrimitiveProps) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
       sideOffset={0}
       {...props}
-      className={mergeClasses(menu, panel, props.className)}
+      className={mergeClasses(menuContent({ onTop }), panel, props.className)}
     >
       {children}
     </PopoverPrimitive.Content>

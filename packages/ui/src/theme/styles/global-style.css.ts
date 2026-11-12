@@ -138,27 +138,20 @@ globalStyle("*, *::before, *::after", {
   scrollbarWidth: "none",
 });
 
+globalStyle("*:focus", {
+  ...theme.color.focused,
+});
+
 /**
  * this is reset css for html and body elements
  */
 globalStyle("html, body", {
   width: "100%",
   height: "100%",
-  // fontFamily: `
-  //   -apple-system,
-  //   BlinkMacSystemFont,
-  //   Segoe UI,
-  //   Roboto,
-  //   Helvetica Neue,
-  //   Helvetica,
-  //   Arial,
-  //   sans-serif
-  // `,
   margin: 0,
   padding: 0,
   WebkitFontSmoothing: "antialiased",
 
   // custom
-  background: theme.color.background,
-  color: theme.color.backgroundTextContrast,
+  background: theme.color.container.primary.background,
 });

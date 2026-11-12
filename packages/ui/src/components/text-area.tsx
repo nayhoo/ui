@@ -1,7 +1,4 @@
-import {
-  TextAreaVariants,
-  textAreaRecipe,
-} from "@/theme/recipes/text-area.css";
+import { TextAreaVariants, textAreaRecipe } from "@/theme/styles/text-area.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";

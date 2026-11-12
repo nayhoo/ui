@@ -1,45 +1,44 @@
-import { Flex } from "@nayhoo/ui/flex";
+import { Box } from "@nayhoo/ui/box";
 import { Heading } from "@nayhoo/ui/heading";
 
-const colors = ["primary", "secondary", "error", "subtle"] as const;
-const levels = ["1", "2", "3", "4", "5", "6"] as const;
+const as = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const weights = ["regular", "medium", "bold"] as const;
 
 export default {
   default: () => {
     return <Heading>Heading</Heading>;
   },
-  colors: () => {
-    return (
-      <Flex gap="4" direction="column">
-        {colors.map((color) => (
-          <Heading key={color} color={color}>
-            {color}
-          </Heading>
-        ))}
-      </Flex>
-    );
-  },
   levels: () => {
     return (
-      <Flex gap="4" direction="column">
-        {levels.map((level) => (
-          <Heading key={level} level={level}>
-            Heading {level}
+      <Box display="flex" gap="4" direction="column">
+        {as.map((tag) => (
+          <Heading key={tag} as={tag}>
+            {tag} heading
           </Heading>
         ))}
-      </Flex>
+      </Box>
     );
   },
   weights: () => {
     return (
-      <Flex gap="4" direction="column">
+      <Box display="flex" gap="4" direction="column">
         {weights.map((weight) => (
           <Heading key={weight} weight={weight}>
-            {weight}
+            {weight} heading
           </Heading>
         ))}
-      </Flex>
+      </Box>
+    );
+  },
+  styleAs: () => {
+    return (
+      <Box display="flex" gap="4" direction="column">
+        {as.map((tag) => (
+          <Heading key={tag} styleAs={tag}>
+            h1 (styled as {tag})
+          </Heading>
+        ))}
+      </Box>
     );
   },
 };

@@ -2,7 +2,7 @@ import { theme } from "@/theme/themes/theme-contract.css";
 import type { SystemTheme } from "@/types/theme";
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-const color = {
+const palette = {
   black: "rgb(0, 0, 0)",
   black5a: "rgba(0, 0, 0, 0.05)",
   black10a: "rgba(0, 0, 0, 0.1)",
@@ -71,707 +71,712 @@ const color = {
   red900: "rgb(69, 0, 2)",
 };
 
+const { color, shadow } = theme;
+
 export const createTheme = (mode: SystemTheme) => {
-  return createGlobalTheme(`[data-theme="${mode}"]`, theme.color, {
-    primary: {
-      primary1: "",
-      primary2: "",
-      primary3: "",
-      primary4: "",
-      primary5: "",
-      primary6: "",
-      primary7: "",
-      primary8: "",
-      primary9: "",
-      primary10: "",
-      primary11: "",
-      primary12: "",
+  createGlobalTheme(
+    `[data-theme="${mode}"]`,
+    {
+      color,
+      shadow,
     },
-    primaryA: {
-      primaryA1: "",
-      primaryA2: "",
-      primaryA3: "",
-      primaryA4: "",
-      primaryA5: "",
-      primaryA6: "",
-      primaryA7: "",
-      primaryA8: "",
-      primaryA9: "",
-      primaryA10: "",
-      primaryA11: "",
-      primaryA12: "",
+    {
+      ...t[mode],
     },
-
-    secondary: {
-      secondary1: "",
-      secondary2: "",
-      secondary3: "",
-      secondary4: "",
-      secondary5: "",
-      secondary6: "",
-      secondary7: "",
-      secondary8: "",
-      secondary9: "",
-      secondary10: "",
-      secondary11: "",
-      secondary12: "",
-    },
-    secondaryA: {
-      secondaryA1: "",
-      secondaryA2: "",
-      secondaryA3: "",
-      secondaryA4: "",
-      secondaryA5: "",
-      secondaryA6: "",
-      secondaryA7: "",
-      secondaryA8: "",
-      secondaryA9: "",
-      secondaryA10: "",
-      secondaryA11: "",
-      secondaryA12: "",
-    },
-
-    // - feedback colors
-    error: {
-      error1: "",
-      error2: "",
-      error3: "",
-      error4: "",
-      error5: "",
-      error6: "",
-      error7: "",
-      error8: "",
-      error9: "",
-      error10: "",
-      error11: "",
-      error12: "",
-    },
-    errorA: {
-      errorA1: "",
-      errorA2: "",
-      errorA3: "",
-      errorA4: "",
-      errorA5: "",
-      errorA6: "",
-      errorA7: "",
-      errorA8: "",
-      errorA9: "",
-      errorA10: "",
-      errorA11: "",
-      errorA12: "",
-    },
-
-    success: {
-      success1: "",
-      success2: "",
-      success3: "",
-      success4: "",
-      success5: "",
-      success6: "",
-      success7: "",
-      success8: "",
-      success9: "",
-      success10: "",
-      success11: "",
-      success12: "",
-    },
-    successA: {
-      successA1: "",
-      successA2: "",
-      successA3: "",
-      successA4: "",
-      successA5: "",
-      successA6: "",
-      successA7: "",
-      successA8: "",
-      successA9: "",
-      successA10: "",
-      successA11: "",
-      successA12: "",
-    },
-
-    ...(mode === "light" ? lightTheme : darkTheme),
-  });
+  );
 };
 
-const lightTheme = {
-  background: color.white,
-  backgroundTextContrast: color.black,
-
-  surface: color.white,
-  surfaceTextContrast: color.black,
-
-  transparentSurface: "hsl(0 0% 0% / 97%)",
-  transparentSurfaceTextContrast: color.white,
-
-  textSubtle: "", // colors.slate.slate11,
-  textPlaceholder: "#999999",
-
-  line: "", // colors.slateA.slateA4,
-
-  transparentHover: "", // colors.slateA.slateA3,
-  transparentActive: "", // colors.slateA.slateA4,
-
-  shadow: "hsl(206 22% 7% / 35%)",
-
-  //
-
-  actionable: {
-    accented: {
-      solid: {
-        background: {
-          initial: color.brown500,
-          active: color.brown200,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.brown500}`,
+const t = {
+  light: {
+    color: {
+      actionable: {
+        accented: {
+          solid: {
+            background: {
+              initial: palette.brown500,
+              active: palette.brown200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.brown500}`,
+            },
+            borderColor: {
+              initial: palette.brown500,
+              active: palette.brown500,
+              hover: palette.black30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.black,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.brown200,
+              hover: palette.brown100,
+            },
+            borderColor: {
+              initial: palette.brown500,
+              active: palette.brown500,
+              hover: palette.brown500,
+            },
+            foreground: {
+              initial: palette.brown600,
+              active: palette.black,
+              hover: palette.brown700,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.black15a,
+              hover: palette.black10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.brown600,
+              active: palette.black,
+              hover: palette.brown700,
+            },
+          },
         },
-        borderColor: {
-          initial: color.brown500,
-          active: color.brown500,
-          hover: color.black30a,
+        neutral: {
+          solid: {
+            background: {
+              initial: palette.gray500,
+              active: palette.gray200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.gray500}`,
+            },
+            borderColor: {
+              initial: palette.gray500,
+              active: palette.gray500,
+              hover: palette.black30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.black,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.gray200,
+              hover: palette.gray100,
+            },
+            borderColor: {
+              initial: palette.gray500,
+              active: palette.gray500,
+              hover: palette.gray500,
+            },
+            foreground: {
+              initial: palette.gray600,
+              active: palette.black,
+              hover: palette.gray700,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.black15a,
+              hover: palette.black10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.gray600,
+              active: palette.black,
+              hover: palette.gray700,
+            },
+          },
         },
-        foreground: {
-          initial: color.white,
-          active: color.black,
-          hover: color.white,
+        caution: {
+          solid: {
+            background: {
+              initial: palette.orange500,
+              active: palette.orange200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.orange500}`,
+            },
+            borderColor: {
+              initial: palette.orange500,
+              active: palette.orange500,
+              hover: palette.black30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.black,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.orange200,
+              hover: palette.orange100,
+            },
+            borderColor: {
+              initial: palette.orange500,
+              active: palette.orange500,
+              hover: palette.orange500,
+            },
+            foreground: {
+              initial: palette.orange600,
+              active: palette.black,
+              hover: palette.orange700,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.black15a,
+              hover: palette.black10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.orange600,
+              active: palette.black,
+              hover: palette.orange700,
+            },
+          },
+        },
+        negative: {
+          solid: {
+            background: {
+              initial: palette.red500,
+              active: palette.red200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.red500}`,
+            },
+            borderColor: {
+              initial: palette.red500,
+              active: palette.red500,
+              hover: palette.black30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.black,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.red200,
+              hover: palette.red100,
+            },
+            borderColor: {
+              initial: palette.red500,
+              active: palette.red500,
+              hover: palette.red500,
+            },
+            foreground: {
+              initial: palette.red600,
+              active: palette.black,
+              hover: palette.red700,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.black15a,
+              hover: palette.black10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.red600,
+              active: palette.black,
+              hover: palette.red700,
+            },
+          },
+        },
+        positive: {
+          solid: {
+            background: {
+              initial: palette.green500,
+              active: palette.green200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.green500}`,
+            },
+            borderColor: {
+              initial: palette.green500,
+              active: palette.green500,
+              hover: palette.black30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.black,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.green200,
+              hover: palette.green100,
+            },
+            borderColor: {
+              initial: palette.green500,
+              active: palette.green500,
+              hover: palette.green500,
+            },
+            foreground: {
+              initial: palette.green600,
+              active: palette.black,
+              hover: palette.green700,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.black15a,
+              hover: palette.black10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.green600,
+              active: palette.black,
+              hover: palette.green700,
+            },
+          },
         },
       },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.brown200,
-          hover: color.brown100,
+
+      container: {
+        primary: {
+          background: palette.white,
         },
-        borderColor: {
-          initial: color.brown500,
-          active: color.brown500,
-          hover: color.brown500,
-        },
-        foreground: {
-          initial: color.brown600,
-          active: color.black,
-          hover: color.brown700,
+        secondary: {
+          background: "rgb(245,247,248)",
+          borderColor: palette.gray500,
         },
       },
-      ghost: {
+
+      content: {
+        primary: {
+          foreground: palette.black,
+          disabled: palette.black40a,
+        },
+        subtle: {
+          foreground: palette.gray700,
+          disabled: "rgba(76, 81, 87, 0.4)", // gray700a40
+        },
+        accent: {
+          foreground: palette.brown600,
+        },
+        visited: {
+          foreground: "rgb(73, 21, 82)", // purple800
+        },
+        // onSolid: {
+        //   foreground: palette.white,
+        // },
+        error: {
+          foreground: palette.red600,
+        },
+      },
+
+      focused: {
+        // onSolid: {
+        //   outlineColor: palette.white80a,
+        // },
+        outlineColor: palette.brown700,
+        outlineOffset: "0px",
+        outlineStyle: "dotted",
+        outlineWidth: "2px",
+      },
+
+      separable: {
+        primary: {
+          borderColor: palette.black40a,
+        },
+        secondary: {
+          borderColor: palette.black30a,
+        },
+        tertiary: {
+          borderColor: palette.black20a,
+        },
+      },
+
+      selectable: {
         background: {
-          initial: color.transparent,
-          active: color.black15a,
-          hover: color.black10a,
+          selected: palette.brown200,
         },
         borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
+          selected: palette.brown500,
         },
         foreground: {
-          initial: color.brown600,
-          active: color.black,
-          hover: color.brown700,
+          selected: palette.brown500,
         },
       },
     },
-    neutral: {
-      solid: {
-        background: {
-          initial: color.gray500,
-          active: color.gray200,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.gray500}`,
-        },
-        borderColor: {
-          initial: color.gray500,
-          active: color.gray500,
-          hover: color.black30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.black,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.gray200,
-          hover: color.gray100,
-        },
-        borderColor: {
-          initial: color.gray500,
-          active: color.gray500,
-          hover: color.gray500,
-        },
-        foreground: {
-          initial: color.gray600,
-          active: color.black,
-          hover: color.gray700,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.black15a,
-          hover: color.black10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.gray600,
-          active: color.black,
-          hover: color.gray700,
-        },
-      },
-    },
-    caution: {
-      solid: {
-        background: {
-          initial: color.orange500,
-          active: color.orange200,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.orange500}`,
-        },
-        borderColor: {
-          initial: color.orange500,
-          active: color.orange500,
-          hover: color.black30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.black,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.orange200,
-          hover: color.orange100,
-        },
-        borderColor: {
-          initial: color.orange500,
-          active: color.orange500,
-          hover: color.orange500,
-        },
-        foreground: {
-          initial: color.orange600,
-          active: color.black,
-          hover: color.orange700,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.black15a,
-          hover: color.black10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.orange600,
-          active: color.black,
-          hover: color.orange700,
-        },
-      },
-    },
-    negative: {
-      solid: {
-        background: {
-          initial: color.red500,
-          active: color.red200,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.red500}`,
-        },
-        borderColor: {
-          initial: color.red500,
-          active: color.red500,
-          hover: color.black30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.black,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.red200,
-          hover: color.red100,
-        },
-        borderColor: {
-          initial: color.red500,
-          active: color.red500,
-          hover: color.red500,
-        },
-        foreground: {
-          initial: color.red600,
-          active: color.black,
-          hover: color.red700,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.black15a,
-          hover: color.black10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.red600,
-          active: color.black,
-          hover: color.red700,
-        },
-      },
-    },
-    positive: {
-      solid: {
-        background: {
-          initial: color.green500,
-          active: color.green200,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.green500}`,
-        },
-        borderColor: {
-          initial: color.green500,
-          active: color.green500,
-          hover: color.black30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.black,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.green200,
-          hover: color.green100,
-        },
-        borderColor: {
-          initial: color.green500,
-          active: color.green500,
-          hover: color.green500,
-        },
-        foreground: {
-          initial: color.green600,
-          active: color.black,
-          hover: color.green700,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.black15a,
-          hover: color.black10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.green600,
-          active: color.black,
-          hover: color.green700,
-        },
-      },
+
+    shadow: {
+      1: "0 1px 3px 0 rgba(0,0,0,0.1)",
+      2: "0 2px 4px 0 rgba(0,0,0,0.1)",
+      3: "0 4px 8px 0 rgba(0,0,0,0.15)",
+      4: "0 6px 10px 0 rgba(0,0,0,0.2)",
+      5: "0 12px 40px 0 rgba(0,0,0,0.3)",
     },
   },
-};
-
-const darkTheme = {
-  background: "#121212",
-  backgroundTextContrast: color.white,
-
-  surface: "#121212",
-  surfaceTextContrast: color.white,
-
-  transparentSurface: "hsl(0 100% 100% / 97%)",
-  transparentSurfaceTextContrast: color.black,
-
-  textSubtle: "", // colors.slate.slate11,
-  textPlaceholder: "#999999",
-
-  line: "", // colors.whiteA.whiteA4,
-
-  transparentHover: "", // colors.whiteA.whiteA3,
-  transparentActive: "", // colors.whiteA.whiteA4,
-
-  shadow: "hsl(206 22% 7% / 20%)",
-
-  //
-
-  actionable: {
-    accented: {
-      solid: {
-        background: {
-          initial: color.brown500,
-          active: color.brown800,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.brown500}`,
+  dark: {
+    color: {
+      actionable: {
+        accented: {
+          solid: {
+            background: {
+              initial: palette.brown500,
+              active: palette.brown800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.brown500}`,
+            },
+            borderColor: {
+              initial: palette.brown500,
+              active: palette.brown500,
+              hover: palette.white30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.white,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.brown800,
+              hover: palette.brown900,
+            },
+            borderColor: {
+              initial: palette.brown500,
+              active: palette.brown500,
+              hover: palette.brown500,
+            },
+            foreground: {
+              initial: palette.brown400,
+              active: palette.white,
+              hover: palette.brown300,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.white15a,
+              hover: palette.white10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.brown400,
+              active: palette.white,
+              hover: palette.brown300,
+            },
+          },
         },
-        borderColor: {
-          initial: color.brown500,
-          active: color.brown500,
-          hover: color.white30a,
+        neutral: {
+          solid: {
+            background: {
+              initial: palette.gray500,
+              active: palette.gray800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.gray500}`,
+            },
+            borderColor: {
+              initial: palette.gray500,
+              active: palette.gray500,
+              hover: palette.white30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.white,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.gray800,
+              hover: palette.gray900,
+            },
+            borderColor: {
+              initial: palette.gray500,
+              active: palette.gray500,
+              hover: palette.gray500,
+            },
+            foreground: {
+              initial: palette.gray400,
+              active: palette.white,
+              hover: palette.gray300,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.white15a,
+              hover: palette.white10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.gray400,
+              active: palette.white,
+              hover: palette.gray300,
+            },
+          },
         },
-        foreground: {
-          initial: color.white,
-          active: color.white,
-          hover: color.white,
+        caution: {
+          solid: {
+            background: {
+              initial: palette.orange500,
+              active: palette.orange800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.orange500}`,
+            },
+            borderColor: {
+              initial: palette.orange500,
+              active: palette.orange500,
+              hover: palette.white30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.white,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.orange800,
+              hover: palette.orange900,
+            },
+            borderColor: {
+              initial: palette.orange500,
+              active: palette.orange500,
+              hover: palette.orange500,
+            },
+            foreground: {
+              initial: palette.orange400,
+              active: palette.white,
+              hover: palette.orange300,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.white15a,
+              hover: palette.white10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.orange400,
+              active: palette.white,
+              hover: palette.orange300,
+            },
+          },
+        },
+        negative: {
+          solid: {
+            background: {
+              initial: palette.red500,
+              active: palette.red800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.red500}`,
+            },
+            borderColor: {
+              initial: palette.red500,
+              active: palette.red500,
+              hover: palette.white30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.white,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.red800,
+              hover: palette.red900,
+            },
+            borderColor: {
+              initial: palette.red500,
+              active: palette.red500,
+              hover: palette.red500,
+            },
+            foreground: {
+              initial: palette.red400,
+              active: palette.white,
+              hover: palette.red300,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.white15a,
+              hover: palette.white10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.red400,
+              active: palette.white,
+              hover: palette.red300,
+            },
+          },
+        },
+        positive: {
+          solid: {
+            background: {
+              initial: palette.green500,
+              active: palette.green800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.green500}`,
+            },
+            borderColor: {
+              initial: palette.green500,
+              active: palette.green500,
+              hover: palette.white30a,
+            },
+            foreground: {
+              initial: palette.white,
+              active: palette.white,
+              hover: palette.white,
+            },
+          },
+          bordered: {
+            background: {
+              initial: palette.transparent,
+              active: palette.green800,
+              hover: palette.green900,
+            },
+            borderColor: {
+              initial: palette.green500,
+              active: palette.green500,
+              hover: palette.green500,
+            },
+            foreground: {
+              initial: palette.green400,
+              active: palette.white,
+              hover: palette.green300,
+            },
+          },
+          ghost: {
+            background: {
+              initial: palette.transparent,
+              active: palette.white15a,
+              hover: palette.white10a,
+            },
+            borderColor: {
+              initial: palette.transparent,
+              active: palette.transparent,
+              hover: palette.transparent,
+            },
+            foreground: {
+              initial: palette.green400,
+              active: palette.white,
+              hover: palette.green300,
+            },
+          },
         },
       },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.brown800,
-          hover: color.brown900,
+
+      container: {
+        primary: {
+          background: "rgb(16,24,32)",
         },
-        borderColor: {
-          initial: color.brown500,
-          active: color.brown500,
-          hover: color.brown500,
-        },
-        foreground: {
-          initial: color.brown400,
-          active: color.white,
-          hover: color.brown300,
+        secondary: {
+          background: "rgb(26,34,41)",
+          borderColor: palette.gray500,
         },
       },
-      ghost: {
+
+      content: {
+        primary: {
+          foreground: palette.white,
+          disabled: palette.white40a,
+        },
+        subtle: {
+          foreground: palette.gray300,
+          disabled: "rgba(177, 181, 185, 0.4)", // gray300a40
+        },
+        accent: {
+          foreground: palette.brown400,
+        },
+        visited: {
+          foreground: "rgb(240, 214, 245)", // purple200
+        },
+        // onSolid: {
+        //   foreground: palette.white,
+        // },
+        error: {
+          foreground: palette.red400,
+        },
+      },
+
+      focused: {
+        // onSolid: {
+        //   outlineColor: palette.white80a,
+        // },
+        outlineColor: palette.brown300,
+        outlineOffset: "0px",
+        outlineStyle: "dotted",
+        outlineWidth: "2px",
+      },
+
+      selectable: {
         background: {
-          initial: color.transparent,
-          active: color.white15a,
-          hover: color.white10a,
+          selected: palette.brown800,
         },
         borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
+          selected: palette.brown500,
         },
         foreground: {
-          initial: color.brown400,
-          active: color.white,
-          hover: color.brown300,
+          selected: palette.brown500,
+        },
+      },
+
+      separable: {
+        primary: {
+          borderColor: palette.white40a,
+        },
+        secondary: {
+          borderColor: palette.white30a,
+        },
+        tertiary: {
+          borderColor: palette.white20a,
         },
       },
     },
-    neutral: {
-      solid: {
-        background: {
-          initial: color.gray500,
-          active: color.gray800,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.gray500}`,
-        },
-        borderColor: {
-          initial: color.gray500,
-          active: color.gray500,
-          hover: color.white30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.white,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.gray800,
-          hover: color.gray900,
-        },
-        borderColor: {
-          initial: color.gray500,
-          active: color.gray500,
-          hover: color.gray500,
-        },
-        foreground: {
-          initial: color.gray400,
-          active: color.white,
-          hover: color.gray300,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.white15a,
-          hover: color.white10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.gray400,
-          active: color.white,
-          hover: color.gray300,
-        },
-      },
-    },
-    caution: {
-      solid: {
-        background: {
-          initial: color.orange500,
-          active: color.orange800,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.orange500}`,
-        },
-        borderColor: {
-          initial: color.orange500,
-          active: color.orange500,
-          hover: color.white30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.white,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.orange800,
-          hover: color.orange900,
-        },
-        borderColor: {
-          initial: color.orange500,
-          active: color.orange500,
-          hover: color.orange500,
-        },
-        foreground: {
-          initial: color.orange400,
-          active: color.white,
-          hover: color.orange300,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.white15a,
-          hover: color.white10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.orange400,
-          active: color.white,
-          hover: color.orange300,
-        },
-      },
-    },
-    negative: {
-      solid: {
-        background: {
-          initial: color.red500,
-          active: color.red800,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.red500}`,
-        },
-        borderColor: {
-          initial: color.red500,
-          active: color.red500,
-          hover: color.white30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.white,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.red800,
-          hover: color.red900,
-        },
-        borderColor: {
-          initial: color.red500,
-          active: color.red500,
-          hover: color.red500,
-        },
-        foreground: {
-          initial: color.red400,
-          active: color.white,
-          hover: color.red300,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.white15a,
-          hover: color.white10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.red400,
-          active: color.white,
-          hover: color.red300,
-        },
-      },
-    },
-    positive: {
-      solid: {
-        background: {
-          initial: color.green500,
-          active: color.green800,
-          hover: `linear-gradient(${color.black15a},${color.black15a}) ${color.green500}`,
-        },
-        borderColor: {
-          initial: color.green500,
-          active: color.green500,
-          hover: color.white30a,
-        },
-        foreground: {
-          initial: color.white,
-          active: color.white,
-          hover: color.white,
-        },
-      },
-      bordered: {
-        background: {
-          initial: color.transparent,
-          active: color.green800,
-          hover: color.green900,
-        },
-        borderColor: {
-          initial: color.green500,
-          active: color.green500,
-          hover: color.green500,
-        },
-        foreground: {
-          initial: color.green400,
-          active: color.white,
-          hover: color.green300,
-        },
-      },
-      ghost: {
-        background: {
-          initial: color.transparent,
-          active: color.white15a,
-          hover: color.white10a,
-        },
-        borderColor: {
-          initial: color.transparent,
-          active: color.transparent,
-          hover: color.transparent,
-        },
-        foreground: {
-          initial: color.green400,
-          active: color.white,
-          hover: color.green300,
-        },
-      },
+
+    shadow: {
+      1: "0 1px 3px 0 rgba(0,0,0,0.5)",
+      2: "0 2px 4px 0 rgba(0,0,0,0.5)",
+      3: "0 4px 8px 0 rgba(0,0,0,0.55)",
+      4: "0 6px 10px 0 rgba(0,0,0,0.55)",
+      5: "0 12px 40px 0 rgba(0,0,0,0.65)",
     },
   },
 };

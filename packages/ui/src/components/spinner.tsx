@@ -1,22 +1,21 @@
-import { SpinnerVariants, spinnerRecipe } from "@/theme/recipes/spinner.css";
+import { spinner, SpinnerVariants } from "@/theme/styles/spinner.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 
 export type SpinnerProps = React.ComponentProps<"div"> & SpinnerVariants;
 
-export const Spinner = ({ ...props }: SpinnerProps) => {
+export const Spinner = (props: SpinnerProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...spinnerRecipe.variants(),
+    ...spinner.variants(),
   );
-  const spinner = spinnerRecipe(variants);
 
   return (
     <div
-      role="status"
       aria-label="Loading"
+      role="status"
       {...rest}
-      className={mergeClasses(spinner, rest.className)}
+      className={mergeClasses(spinner(variants), rest.className)}
     >
       {rest.children}
     </div>

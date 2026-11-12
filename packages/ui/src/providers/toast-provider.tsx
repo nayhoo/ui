@@ -242,7 +242,7 @@ const Toast = ({ ...props }: ToastPrimitives.ToastProps & { toast: Toast }) => {
       <div className={toastInner} data-status={toast.status}>
         <ToastStatusIcon status={toast.status} />
         <ToastPrimitives.Title asChild style={{ gridArea: "title" }}>
-          <Heading level="6">{toast.title}</Heading>
+          <Heading as="h6">{toast.title}</Heading>
         </ToastPrimitives.Title>
         <ToastPrimitives.Description
           asChild

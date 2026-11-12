@@ -1,4 +1,4 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
@@ -21,7 +21,7 @@ export const textFieldRecipe = homemadeRecipe({
 
     selectors: {
       "&:hover": {
-        backgroundColor: theme.color.transparentHover,
+        // backgroundColor: theme.color.transparentHover,
       },
       "&:-webkit-autofill": {},
       "&:-webkit-autofill::first-line": {
@@ -55,10 +55,10 @@ export const textFieldRecipe = homemadeRecipe({
         // },
       },
       "&[data-invalid]": {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9}`,
+        // boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9}`,
       },
       "&[data-placeholder]": {
-        color: theme.color.textPlaceholder,
+        // color: theme.color.textPlaceholder,
       },
     },
   },
@@ -107,7 +107,7 @@ export const textFieldRecipe = homemadeRecipe({
     },
     error: {
       true: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9} !important`, // TODO: is this possible without !important?
+        // boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9} !important`, // TODO: is this possible without !important?
         // "&:focus": {
         //   // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
         // },
@@ -128,7 +128,7 @@ export const textFieldRecipe = homemadeRecipe({
     },
     variant: {
       outline: {
-        boxShadow: `inset 0px 0px 0px 1px ${theme.color.line}`,
+        // boxShadow: `inset 0px 0px 0px 1px ${theme.color.line}`,
       },
       ghost: {
         boxShadow: "none",

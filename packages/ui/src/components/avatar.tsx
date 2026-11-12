@@ -4,10 +4,10 @@ import {
   AvatarFallbackVariants,
   AvatarVariants,
   avatarFallbackRecipe,
+  avatarImage,
   avatarRecipe,
-} from "@/theme/recipes/avatar.css";
-import { StatusVariants } from "@/theme/recipes/status.css";
-import { avatarImage } from "@/theme/styles/avatar.css";
+} from "@/theme/styles/avatar.css";
+import { StatusVariants } from "@/theme/styles/status.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";

@@ -1,4 +1,4 @@
-import { StatusVariants, statusRecipe } from "@/theme/recipes/status.css";
+import { StatusVariants, statusRecipe } from "@/theme/styles/status.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";

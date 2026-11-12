@@ -14,7 +14,7 @@ import {
 export default () => {
   return (
     <Select>
-      <SelectTrigger placeholder="Select a fruit…" variant="outline" />
+      <SelectTrigger placeholder="Select a fruit…" />
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Fruits</SelectLabel>

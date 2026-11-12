@@ -1,15 +1,13 @@
 import { Box } from "@/components/box";
-import { Flex } from "@/components/flex";
 import { IconButton } from "@/components/icon-button";
 import {
   DialogContentVariants,
   dialogContentRecipe,
-} from "@/theme/recipes/dialog.css";
-import {
   dialogDescription,
   dialogFooter,
   dialogHeader,
   dialogOverlay,
+  dialogTitle,
 } from "@/theme/styles/dialog.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
@@ -52,13 +50,13 @@ export const DialogContent = ({
       >
         <DialogHeader>
           {title && (
-            <DialogPrimitive.Title style={{ marginLeft: theme.space[2] }}>
+            <DialogPrimitive.Title className={dialogTitle}>
               {title}
             </DialogPrimitive.Title>
           )}
 
           <DialogClose asChild>
-            <IconButton style={{ marginLeft: "auto" }}>
+            <IconButton style={{ marginLeft: "auto" }} variant="ghost">
               <svg
                 clipRule="evenodd"
                 fillRule="evenodd"
@@ -97,14 +95,9 @@ export type DialogFooterProps = { children: React.ReactNode };
 
 export const DialogFooter = ({ children }: DialogFooterProps) => {
   return (
-    <Flex
-      className={dialogFooter}
-      direction={{ initial: "column", sm: "row" }}
-      gap="2"
-      justify="end"
-    >
+    <Box className={dialogFooter} display="flex" gap="2" justify="end">
       {children}
-    </Flex>
+    </Box>
   );
 };
 
@@ -118,10 +111,9 @@ type DialogHeaderProps = { children: React.ReactNode };
 
 const DialogHeader = ({ children }: DialogHeaderProps) => {
   return (
-    <Flex className={dialogHeader} align="center">
-      {" "}
+    <Box align="center" className={dialogHeader} display="flex">
       {children}
-    </Flex>
+    </Box>
   );
 };
 

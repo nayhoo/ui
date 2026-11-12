@@ -1,8 +1,8 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
-export const iconButtonRecipe = homemadeRecipe({
+export const iconButton = homemadeRecipe({
   base: {
     all: "unset",
 
@@ -14,6 +14,7 @@ export const iconButtonRecipe = homemadeRecipe({
     flexShrink: 0,
     fontVariantNumeric: "tabular-nums",
     justifyContent: "center",
+    padding: theme.space[1],
     position: "relative",
     transition: "all 100ms",
     userSelect: "none",
@@ -44,17 +45,14 @@ export const iconButtonRecipe = homemadeRecipe({
     },
     size: {
       "1": {
-        fontsize: theme.fontSize[1],
         height: theme.space[5],
         width: theme.space[5],
       },
       "2": {
-        fontsize: theme.fontSize[2],
         height: theme.space[6],
         width: theme.space[6],
       },
       "3": {
-        fontsize: theme.fontSize[3],
         height: theme.space[7],
         width: theme.space[7],
       },
@@ -115,12 +113,10 @@ export const iconButtonRecipe = homemadeRecipe({
   },
 
   defaultVariants: {
-    size: "1",
+    size: "2",
     variant: "bordered",
   },
 });
 
 // Get the type
-export type IconButtonVariants = HomemadeRecipeVariants<
-  typeof iconButtonRecipe
->;
+export type IconButtonVariants = HomemadeRecipeVariants<typeof iconButton>;

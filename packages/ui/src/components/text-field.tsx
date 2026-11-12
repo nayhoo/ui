@@ -1,7 +1,7 @@
 import {
   TextFieldVariants,
   textFieldRecipe,
-} from "@/theme/recipes/text-field.css";
+} from "@/theme/styles/text-field.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";

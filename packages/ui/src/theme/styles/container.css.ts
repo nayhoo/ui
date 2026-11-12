@@ -1,15 +1,13 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
-export const containerRecipe = homemadeRecipe({
+export const container = homemadeRecipe({
   base: {
     boxSizing: "border-box",
     flexShrink: 0,
-
     marginLeft: "auto",
     marginRight: "auto",
-
     paddingLeft: theme.space[5],
     paddingRight: theme.space[5],
   },
@@ -37,5 +35,5 @@ export const containerRecipe = homemadeRecipe({
 });
 
 export type ContainerVariants = NonNullable<
-  HomemadeRecipeVariants<typeof containerRecipe>
+  HomemadeRecipeVariants<typeof container>
 >;

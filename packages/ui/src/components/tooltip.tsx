@@ -3,8 +3,7 @@ import { Text } from "@/components/text";
 import {
   TooltipContentVariants,
   tooltipContentRecipe,
-} from "@/theme/recipes/tooltip.css";
-import { theme } from "@/theme/themes/theme-contract.css";
+} from "@/theme/styles/tooltip.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
@@ -64,9 +63,11 @@ export function Tooltip({
               <TooltipPrimitive.Arrow
                 width={11}
                 height={5}
-                style={{
-                  fill: theme.color.transparentSurface,
-                }}
+                style={
+                  {
+                    // fill: theme.color.transparentSurface,
+                  }
+                }
               />
             </Box>
           </TooltipPrimitive.Content>

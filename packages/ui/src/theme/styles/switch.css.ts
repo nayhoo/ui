@@ -1,4 +1,4 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
@@ -17,7 +17,7 @@ export const switchRecipe = homemadeRecipe({
         boxShadow: `0 0 0 2px ${colors.slate.slate8}`,
       },
       '&[data-state="checked"]': {
-        backgroundColor: theme.color.primary.primary9,
+        // backgroundColor: theme.color.primary.primary9,
       },
     },
   },

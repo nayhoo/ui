@@ -1,5 +1,8 @@
-import { CheckboxVariants, checkboxRecipe } from "@/theme/recipes/checkbox.css";
-import { checkboxIndicator } from "@/theme/styles/checkbox.css";
+import {
+  checkboxIndicator,
+  checkboxRecipe,
+  CheckboxVariants,
+} from "@/theme/styles/checkbox.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";

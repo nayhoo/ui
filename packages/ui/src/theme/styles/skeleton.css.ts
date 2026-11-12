@@ -1,5 +1,5 @@
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { pulse } from "@/theme/animations/pulse.css";
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";

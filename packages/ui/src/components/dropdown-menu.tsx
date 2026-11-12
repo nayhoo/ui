@@ -1,7 +1,7 @@
 import { Box } from "@/components/box";
-import { Flex } from "@/components/flex";
 import {
-  menu,
+  menuContent,
+  MenuContentVariants,
   menuItem,
   menuLabel,
   menuSeparator,
@@ -22,15 +22,22 @@ export type DropdownMenuTriggerProps =
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
 export type DropdownMenuContentProps =
-  DropdownMenuPrimitive.DropdownMenuContentProps;
+  DropdownMenuPrimitive.DropdownMenuContentProps & MenuContentVariants;
 
-export const DropdownMenuContent = ({ ...props }: DropdownMenuContentProps) => {
+export const DropdownMenuContent = ({
+  children,
+  onTop,
+  ...props
+}: DropdownMenuContentProps) => {
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
+        sideOffset={4}
         {...props}
-        className={mergeClasses(menu, panel, props.className)}
-      />
+        className={mergeClasses(menuContent({ onTop }), panel, props.className)}
+      >
+        {children}
+      </DropdownMenuPrimitive.Content>
     </DropdownMenuPrimitive.Portal>
   );
 };
@@ -76,6 +83,7 @@ export const DropdownMenuSeparator = ({
   return (
     <DropdownMenuPrimitive.Separator
       {...props}
+      data-orientation="horizontal"
       className={mergeClasses(menuSeparator, props.className)}
     >
       {props.children}
@@ -126,12 +134,13 @@ export const DropdownMenuRadioItem = ({
       <Box asChild style={{ position: "absolute", left: theme.space[1] }}>
         <span>
           <DropdownMenuPrimitive.ItemIndicator>
-            <Flex
+            <Box
+              display="flex"
+              align="center"
+              justify="center"
               style={{
                 width: theme.space[3],
                 height: theme.space[3],
-                alignItems: "center",
-                justifyContent: "center",
               }}
             >
               <Box
@@ -142,7 +151,7 @@ export const DropdownMenuRadioItem = ({
                   borderRadius: theme.radii.round,
                 }}
               />
-            </Flex>
+            </Box>
           </DropdownMenuPrimitive.ItemIndicator>
         </span>
       </Box>

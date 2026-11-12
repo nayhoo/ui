@@ -1,25 +1,25 @@
-import { homemadeRecipe } from "@/theme/recipes/homemade-recipe.css";
+import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 
-export const navRecipe = homemadeRecipe({
+export const nav = homemadeRecipe({
   base: {
-    borderBottom: "1px solid",
-
+    backgroundColor: theme.color.container.primary.background,
+    borderBottomWidth: "1px",
+    borderBottomStyle: "solid",
     top: 0,
     width: "100%",
     zIndex: theme.zIndex[4],
-    backgroundColor: theme.color.background,
   },
 
   variants: {
     compact: {
       true: {
-        borderColor: theme.color.line,
+        borderColor: theme.color.separable.primary.borderColor,
       },
       false: {
-        paddingTop: theme.space[2],
-        paddingBottom: theme.space[2],
         borderColor: "transparent",
+        paddingBottom: theme.space[2],
+        paddingTop: theme.space[2],
       },
     },
     fixed: {
