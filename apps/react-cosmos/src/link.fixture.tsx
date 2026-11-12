@@ -12,7 +12,7 @@ export default {
     return (
       <Box display="flex" gap="4" direction="column">
         {sizes.map((size) => (
-          <Text key="size">
+          <Text key={size}>
             <Link href="#swag" key={size} size={size}>
               Size {size}
             </Link>
