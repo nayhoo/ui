@@ -51,15 +51,6 @@ export type DialogContentVariants = HomemadeRecipeVariants<
   typeof dialogContent
 >;
 
-export const dialogDescription = style({
-  color: theme.color.content.subtle.foreground,
-  fontFamily: theme.fontFamily.text,
-  fontSize: theme.fontSize[3],
-  fontVariantNumeric: "tabular-nums",
-  letterSpacing: theme.letterSpacing[3],
-  lineHeight: theme.lineHeight[3],
-});
-
 export const dialogFooter = style({
   backgroundColor: theme.color.container.secondary.background,
   borderTop: `1px solid ${theme.color.container.secondary.borderColor}`,
@@ -72,20 +63,10 @@ export const dialogFooter = style({
 export const dialogHeader = style({
   backgroundColor: theme.color.container.secondary.background,
   borderBottom: `1px solid ${theme.color.container.secondary.borderColor}`,
-  padding: `${theme.space[2]} ${theme.space[2]}`,
+  padding: theme.space[2],
   position: "sticky",
   top: 0,
   zIndex: theme.zIndex[5],
-});
-
-export const dialogTitle = style({
-  color: theme.color.content.primary.foreground,
-  fontFamily: theme.fontFamily.text,
-  fontSize: theme.fontSize[4],
-  fontVariantNumeric: "tabular-nums",
-  letterSpacing: theme.letterSpacing[4],
-  lineHeight: theme.lineHeight[4],
-  marginLeft: theme.space[2],
 });
 
 export const dialogBody = style({

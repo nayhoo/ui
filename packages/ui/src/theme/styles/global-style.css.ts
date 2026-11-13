@@ -138,7 +138,9 @@ globalStyle("*, *::before, *::after", {
   scrollbarWidth: "none",
 });
 
-globalStyle("*:focus", {
+const focusableSelector = `*:is(a[href],area[href],button,input:not([type="hidden"]),select,textarea,summary,iframe,audio[controls],video[controls],[contenteditable="true"],[tabindex]:not([tabindex="-1"])):not([disabled]):not([inert]):focus-visible`;
+
+globalStyle(focusableSelector, {
   ...theme.color.focused,
 });
 

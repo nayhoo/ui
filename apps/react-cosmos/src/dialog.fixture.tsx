@@ -8,6 +8,8 @@ import {
   DialogContent,
   DialogDescription,
   DialogFooter,
+  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@nayhoo/ui/dialog";
 
@@ -19,7 +21,11 @@ export default () => {
         <Button>Press me</Button>
       </DialogTrigger>
 
-      <DialogContent fullWidth size="1" title="Title">
+      <DialogContent fullWidth size="1">
+        <DialogHeader>
+          <DialogTitle>Title</DialogTitle>
+        </DialogHeader>
+
         <DialogBody>
           <DialogDescription>Description</DialogDescription>
         </DialogBody>
