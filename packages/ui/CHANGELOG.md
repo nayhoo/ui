@@ -1,5 +1,14 @@
 # @nayhoo/ui
 
+## 0.25.5
+
+### Patch Changes
+
+- d4923ee: updated button colors and re-added round prop
+- 7f8e9b9: Removed `sizes` tokens in place of `space` tokens. Updated button sizes and loading states
+- 4b8d3b7: Added letter spacing and line heights to `Text` and `Heading`
+- 66901a0: Updated theme token naming
+
 ## 0.25.4
 
 ### Patch Changes
