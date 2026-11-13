@@ -32,6 +32,9 @@ export const text = homemadeRecipe({
       inherit: {
         color: "inherit",
       },
+      onSolid: {
+        color: theme.color.content.onSolid.foreground,
+      },
     },
     size: {
       "1": {
@@ -95,7 +98,7 @@ export const text = homemadeRecipe({
 
   defaultVariants: {
     color: "primary",
-    size: "3",
+    size: "2",
     weight: "regular",
   },
 });

@@ -2,51 +2,19 @@ import { theme } from "@/theme/themes/theme-contract.css";
 import { style } from "@vanilla-extract/css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 import { homemadeRecipe } from "../../lib/homemade-recipe.css";
-import { button } from "./button.css";
-import { separator } from "./separator.css";
-import { text } from "./text.css";
 
-export const menuTrigger = style([
-  button({
-    size: "2",
-    sentiment: "neutral",
-    variant: "bordered",
-  }),
-  {
-    selectors: {
-      "&:not([data-placeholder])": {
-        color: theme.color.content.primary.foreground,
-      },
-    },
-  },
-]);
-
-export const menuItem = style([
-  button({ size: "2", sentiment: "accented", variant: "ghost" }),
-  {
-    display: "flex",
-    justifyContent: "flex-start",
-
-    selectors: {
-      "&[data-highlighted]": {
-        outline: "none",
-        backgroundColor: theme.color.selectable.background.selected,
-        borderColor: theme.color.selectable.borderColor.selected,
-        color: theme.color.selectable.foreground.selected,
-      },
-    },
-  },
-]);
-
-export const menuLabel = style([
-  text({ size: "2", color: "subtle" }),
-  {
-    paddingLeft: theme.space[3],
-    paddingRight: theme.space[3],
-    marginBottom: theme.space[2],
-    marginTop: theme.space[2],
-  },
-]);
+export const menuLabel = style({
+  display: "flex",
+  justifyContent: "center",
+  color: theme.color.content.subtle.foreground,
+  fontSize: theme.fontSize[1],
+  letterSpacing: theme.letterSpacing[1],
+  lineHeight: theme.lineHeight[1],
+  fontFamily: theme.fontFamily.text,
+  fontVariantNumeric: "tabular-nums",
+  marginBottom: theme.space[2],
+  marginTop: theme.space[2],
+});
 
 export const menuContent = homemadeRecipe({
   base: {
@@ -74,10 +42,10 @@ export const menuContent = homemadeRecipe({
 
 export type MenuContentVariants = HomemadeRecipeVariants<typeof menuContent>;
 
-export const menuSeparator = style([
-  separator({ variant: "secondary" }),
-  {
-    marginTop: theme.space[1],
-    marginBottom: theme.space[1],
-  },
-]);
+export const menuSeparator = style({
+  backgroundColor: theme.color.separable.secondary.borderColor,
+  marginBottom: theme.space[1],
+  marginTop: theme.space[1],
+  height: 1,
+  width: "100%",
+});

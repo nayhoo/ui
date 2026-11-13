@@ -1,23 +1,20 @@
 import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
-import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
-export const switchRecipe = homemadeRecipe({
+// 'switch' is not allowed as a variable declaration name.ts(1389)
+export const _switch = homemadeRecipe({
   base: {
     all: "unset",
 
-    backgroundColor: colors.slate.slate5,
+    backgroundColor: "rgb(114, 119, 125)",
     borderRadius: theme.radii.full,
     position: "relative",
     WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
 
     selectors: {
-      "&:focus": {
-        boxShadow: `0 0 0 2px ${colors.slate.slate8}`,
-      },
       '&[data-state="checked"]': {
-        // backgroundColor: theme.color.primary.primary9,
+        backgroundColor: theme.color.selectable.background.selected,
       },
     },
   },
@@ -25,12 +22,16 @@ export const switchRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        width: theme.space[5],
         height: theme.space[4],
+        paddingLeft: theme.space[1],
+        paddingRight: theme.space[1],
+        width: theme.space[4],
       },
       "2": {
-        width: theme.space[7],
         height: theme.space[5],
+        paddingLeft: theme.space[2],
+        paddingRight: theme.space[2],
+        width: theme.space[5],
       },
     },
   },
@@ -40,23 +41,22 @@ export const switchRecipe = homemadeRecipe({
 });
 
 export type SwitchVariants = NonNullable<
-  HomemadeRecipeVariants<typeof switchRecipe>
+  HomemadeRecipeVariants<typeof _switch>
 >;
 
-export const switchThumbRecipe = homemadeRecipe({
+export const switchThumb = homemadeRecipe({
   base: {
     all: "unset",
 
-    display: "block",
     backgroundColor: "white",
     borderRadius: theme.radii.full,
-    transition: "transform 100ms",
-    transform: "translateX(2px)",
-    willChange: "transform",
-
-    position: "absolute",
+    display: "block",
     left: 0,
+    position: "absolute",
     top: "2px",
+    transform: "translateX(2px)",
+    transition: "transform 100ms",
+    willChange: "transform",
   },
 
   variants: {
@@ -87,5 +87,5 @@ export const switchThumbRecipe = homemadeRecipe({
 });
 
 export type SwitchThumbVariants = NonNullable<
-  HomemadeRecipeVariants<typeof switchThumbRecipe>
+  HomemadeRecipeVariants<typeof switchThumb>
 >;

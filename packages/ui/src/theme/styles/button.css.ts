@@ -10,7 +10,7 @@ export const button = homemadeRecipe({
     border: "1px solid",
     borderRadius: theme.radii[2],
     boxSizing: "border-box",
-    display: "inline-flex",
+    display: "flex",
     flexShrink: 0,
     fontFamily: theme.fontFamily.text,
     fontVariantNumeric: "tabular-nums",

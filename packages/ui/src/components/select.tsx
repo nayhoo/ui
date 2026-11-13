@@ -1,15 +1,14 @@
 import {
   menuContent,
   MenuContentVariants,
-  menuItem,
   menuLabel,
   menuSeparator,
-  menuTrigger,
 } from "@/theme/styles/menu.css";
 import { panel } from "@/theme/styles/panel.css";
 import { mergeClasses } from "@/utils/merge-classes";
-import { CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
+import { Button } from "./button";
 
 export type SelectProps = SelectPrimitive.SelectProps;
 
@@ -22,15 +21,18 @@ export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps & {
 export const SelectTrigger = ({
   placeholder,
   ...props
-}: SelectTriggerProps) => {
+}: Omit<SelectTriggerProps, "asChild">) => {
   return (
-    <SelectPrimitive.Trigger
-      {...props}
-      className={mergeClasses(menuTrigger, props.className)}
-    >
-      <SelectPrimitive.Value placeholder={placeholder} />
-
-      <SelectPrimitive.Icon />
+    <SelectPrimitive.Trigger {...props} asChild>
+      <Button
+        rightIcon={
+          <SelectPrimitive.Icon>
+            <ChevronDownIcon />
+          </SelectPrimitive.Icon>
+        }
+      >
+        <SelectPrimitive.Value placeholder={placeholder} />
+      </Button>
     </SelectPrimitive.Trigger>
   );
 };
@@ -55,16 +57,21 @@ export const SelectContent = ({ onTop, ...props }: SelectContentProps) => {
 
 export type SelectItemProps = SelectPrimitive.SelectItemProps;
 
-export const SelectItem = (props: SelectItemProps) => {
+export const SelectItem = (props: Omit<SelectItemProps, "asChild">) => {
   return (
-    <SelectPrimitive.Item
-      {...props}
-      className={mergeClasses(menuItem, props.className)}
-    >
-      <SelectPrimitive.ItemText>{props.children}</SelectPrimitive.ItemText>
-      <SelectPrimitive.ItemIndicator>
-        <CheckIcon />
-      </SelectPrimitive.ItemIndicator>
+    <SelectPrimitive.Item {...props} asChild>
+      <Button
+        fullWidth
+        rightIcon={
+          <SelectPrimitive.ItemIndicator>
+            <CheckIcon />
+          </SelectPrimitive.ItemIndicator>
+        }
+        sentiment="accented"
+        variant="ghost"
+      >
+        <SelectPrimitive.ItemText>{props.children}</SelectPrimitive.ItemText>
+      </Button>
     </SelectPrimitive.Item>
   );
 };
@@ -80,9 +87,7 @@ export const SelectLabel = (props: SelectLabelProps) => {
     <SelectPrimitive.Label
       {...props}
       className={mergeClasses(menuLabel, props.className)}
-    >
-      {props.children}
-    </SelectPrimitive.Label>
+    />
   );
 };
 
@@ -92,10 +97,7 @@ export const SelectSeparator = (props: SelectSeparatorProps) => {
   return (
     <SelectPrimitive.Separator
       {...props}
-      data-orientation="horizontal"
       className={mergeClasses(menuSeparator, props.className)}
-    >
-      {props.children}
-    </SelectPrimitive.Separator>
+    />
   );
 };

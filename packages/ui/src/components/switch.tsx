@@ -1,6 +1,6 @@
 import {
-  switchRecipe,
-  switchThumbRecipe,
+  _switch,
+  switchThumb,
   SwitchThumbVariants,
   SwitchVariants,
 } from "@/theme/styles/switch.css";
@@ -14,14 +14,13 @@ export type SwitchThumbProps = SwitchPrimitive.SwitchThumbProps &
 export const SwitchThumb = ({ ...props }: SwitchThumbProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...switchThumbRecipe.variants(),
+    ...switchThumb.variants(),
   );
-  const switchThumb = switchThumbRecipe(variants);
 
   return (
     <SwitchPrimitive.Thumb
       {...rest}
-      className={mergeClasses(switchThumb, rest.className)}
+      className={mergeClasses(switchThumb(variants), rest.className)}
     />
   );
 };
@@ -31,14 +30,13 @@ export type SwitchProps = SwitchPrimitive.SwitchProps & SwitchVariants;
 export const Switch = ({ ...props }: SwitchProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...switchRecipe.variants(),
+    ..._switch.variants(),
   );
-  const _switch = switchRecipe(variants); // 'switch' is not allowed as a variable declaration name.ts(1389)
 
   return (
     <SwitchPrimitive.Root
       {...rest}
-      className={mergeClasses(_switch, rest.className)}
+      className={mergeClasses(_switch(variants), rest.className)}
     >
       <SwitchThumb size={variants.size} />
     </SwitchPrimitive.Root>

@@ -382,9 +382,9 @@ const t = {
         visited: {
           foreground: "rgb(73, 21, 82)", // purple800
         },
-        // onSolid: {
-        //   foreground: palette.white,
-        // },
+        onSolid: {
+          foreground: palette.white,
+        },
         error: {
           foreground: palette.red600,
         },
@@ -728,9 +728,9 @@ const t = {
         visited: {
           foreground: "rgb(240, 214, 245)", // purple200
         },
-        // onSolid: {
-        //   foreground: palette.white,
-        // },
+        onSolid: {
+          foreground: palette.white,
+        },
         error: {
           foreground: palette.red400,
         },

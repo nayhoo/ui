@@ -3,7 +3,6 @@ import { keyframes, style } from "@vanilla-extract/css";
 
 export const accordion = style({
   borderRadius: theme.radii[2],
-  width: 300,
 });
 
 export const accordionItem = style({
@@ -12,14 +11,14 @@ export const accordionItem = style({
 
   selectors: {
     "&:first-child": {
-      borderTopLeftRadius: theme.radii[1],
-      borderTopRightRadius: theme.radii[1],
+      borderTopLeftRadius: theme.radii[2],
+      borderTopRightRadius: theme.radii[2],
       marginTop: 0,
     },
 
     "&:last-child": {
-      borderBottomLeftRadius: theme.radii[1],
-      borderBottomRightRadius: theme.radii[1],
+      borderBottomLeftRadius: theme.radii[2],
+      borderBottomRightRadius: theme.radii[2],
     },
 
     "&:focus-within": {
@@ -58,8 +57,13 @@ const slideUp = keyframes({
 });
 
 export const accordionContent = style({
-  fontSize: theme.fontSize[3],
   overflow: "hidden",
+  fontFamily: theme.fontFamily.text,
+  fontSize: theme.fontSize[3],
+  letterSpacing: theme.letterSpacing[3],
+  lineHeight: theme.lineHeight[3],
+  fontVariantNumeric: "tabular-nums",
+  color: theme.color.content.subtle.foreground,
 
   selectors: {
     '&[data-state="open"]': {
@@ -85,20 +89,26 @@ export const accordionTrigger = style({
   all: "unset",
 
   alignItems: "center",
-  backgroundColor: "transparent",
-  // boxShadow: `0 1px 0 ${theme.color.line}`,
+  backgroundColor: theme.color.actionable.neutral.ghost.background.initial,
+  border: "1px solid",
+  borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
+  color: theme.color.content.primary.foreground,
   display: "flex",
   flex: 1,
-  fontFamily: "inherit",
-  fontSize: theme.fontSize[3],
-  height: 45,
+  fontFamily: theme.fontFamily.text,
+  fontSize: theme.fontSize[4],
+  fontVariantNumeric: "tabular-nums",
+  fontWeight: theme.fontWeight.medium,
   justifyContent: "space-between",
-  lineHeight: 1,
-  padding: "0 20px",
+  letterSpacing: theme.letterSpacing[4],
+  lineHeight: theme.lineHeight[4],
+  padding: `${theme.space[2]} ${theme.space[2]}`,
 
   selectors: {
     "&:hover": {
-      // backgroundColor: theme.color.transparentHover,
+      cursor: "pointer",
+      backgroundColor: theme.color.actionable.neutral.ghost.background.hover,
+      borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
     },
   },
 });

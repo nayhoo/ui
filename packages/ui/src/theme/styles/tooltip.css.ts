@@ -2,13 +2,11 @@ import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
-export const tooltipContentRecipe = homemadeRecipe({
+export const tooltipContent = homemadeRecipe({
   base: {
-    // backgroundColor: theme.color.transparentSurface,
+    backgroundColor: "rgb(0, 0, 0)",
     borderRadius: theme.radii[1],
     padding: `${theme.space[1]} ${theme.space[2]}`,
-
-    // color: theme.color.transparentSurfaceTextContrast,
 
     zIndex: theme.zIndex[1],
   },
@@ -25,5 +23,5 @@ export const tooltipContentRecipe = homemadeRecipe({
 });
 
 export type TooltipContentVariants = NonNullable<
-  HomemadeRecipeVariants<typeof tooltipContentRecipe>
+  HomemadeRecipeVariants<typeof tooltipContent>
 >;

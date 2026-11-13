@@ -3,12 +3,9 @@
 import { Button } from "@nayhoo/ui/button";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@nayhoo/ui/dropdown-menu";
@@ -22,77 +19,20 @@ export default () => {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent>
-        <DropdownMenuItem>
-          New Tab <div>⌘+T</div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          New Window <div>⌘+N</div>
-        </DropdownMenuItem>
-        <DropdownMenuItem disabled>
-          New Private Window <div>⇧+⌘+N</div>
-        </DropdownMenuItem>
-        {/* <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            More Tools
-            <div>
-              <ChevronRightIcon />
-            </div>
-          </DropdownMenuSubTrigger>
-          <DropdownMenuPortal>
-            <DropdownMenuSubContent sideOffset={2} alignOffset={-5}>
-              <DropdownMenuItem>
-                Save Page As… <div>⌘+S</div>
-              </DropdownMenuItem>
-              <DropdownMenuItem>Create Shortcut…</DropdownMenuItem>
-              <DropdownMenuItem>Name Window…</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Developer Tools</DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuPortal>
-        </DropdownMenuSub> */}
+        <DropdownMenuItem>New Tab ⌘+T</DropdownMenuItem>
+        <DropdownMenuItem>New Window ⌘+N</DropdownMenuItem>
+        <DropdownMenuItem disabled>New Private Window ⇧+⌘+N</DropdownMenuItem>
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuCheckboxItem
-          className="DropdownMenuCheckboxItem"
-          // checked={bookmarksChecked}
-          // onCheckedChange={setBookmarksChecked}
-        >
-          {/* <DropdownMenuItemIndicator>
-            <CheckIcon />
-          </DropdownMenuItemIndicator> */}
-          Show Bookmarks <div>⌘+B</div>
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          className="DropdownMenuCheckboxItem"
-          // checked={urlsChecked}
-          // onCheckedChange={setUrlsChecked}
-        >
-          {/* <DropdownMenuItemIndicator>
-            <CheckIcon />
-          </DropdownMenuItemIndicator> */}
-          Show Full URLs
-        </DropdownMenuCheckboxItem>
+        <DropdownMenuItem>Show Bookmarks ⌘+B</DropdownMenuItem>
+        <DropdownMenuItem>Show Full URLs</DropdownMenuItem>
 
         <DropdownMenuSeparator />
 
         <DropdownMenuLabel>People</DropdownMenuLabel>
-        <DropdownMenuRadioGroup
-        // value={person} onValueChange={setPerson}
-        >
-          <DropdownMenuRadioItem value="pedro">
-            {/* <DropdownMenuItemIndicator>
-              <DotFilledIcon />
-            </DropdownMenuItemIndicator> */}
-            Pedro Duarte
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="colm">
-            {/* <DropdownMenuItemIndicator>
-              <DotFilledIcon />
-            </DropdownMenuItemIndicator> */}
-            Colm Tuite
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+        <DropdownMenuItem>Pedro Duarte</DropdownMenuItem>
+        <DropdownMenuItem>Colm Tuite</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

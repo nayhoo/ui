@@ -1,6 +1,6 @@
 import {
+  checkbox,
   checkboxIndicator,
-  checkboxRecipe,
   CheckboxVariants,
 } from "@/theme/styles/checkbox.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
@@ -13,18 +13,16 @@ export type CheckboxProps = CheckboxPrimitive.CheckboxProps & CheckboxVariants;
 export const Checkbox = ({ ...props }: CheckboxProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...checkboxRecipe.variants(),
+    ...checkbox.variants(),
   );
-
-  const checkbox = checkboxRecipe(variants);
 
   return (
     <CheckboxPrimitive.Root
       {...rest}
-      className={mergeClasses(checkbox, rest.className)}
+      className={mergeClasses(checkbox(variants), rest.className)}
     >
-      <CheckboxPrimitive.CheckboxIndicator className={checkboxIndicator}>
-        <CheckIcon />
+      <CheckboxPrimitive.CheckboxIndicator>
+        <CheckIcon className={checkboxIndicator({ size: variants.size })} />
       </CheckboxPrimitive.CheckboxIndicator>
     </CheckboxPrimitive.Root>
   );

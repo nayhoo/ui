@@ -3,10 +3,8 @@ import { panel } from "@/theme/styles/panel.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { style } from "@vanilla-extract/css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
-import { heading } from "./heading.css";
-import { text } from "./text.css";
 
-export const dialogContentRecipe = homemadeRecipe({
+export const dialogContent = homemadeRecipe({
   base: [
     panel,
     {
@@ -50,15 +48,17 @@ export const dialogContentRecipe = homemadeRecipe({
 });
 
 export type DialogContentVariants = HomemadeRecipeVariants<
-  typeof dialogContentRecipe
+  typeof dialogContent
 >;
 
-export const dialogDescription = style([
-  text({ color: "subtle", size: "3" }),
-  {
-    marginBottom: theme.space[4],
-  },
-]);
+export const dialogDescription = style({
+  color: theme.color.content.subtle.foreground,
+  fontFamily: theme.fontFamily.text,
+  fontSize: theme.fontSize[3],
+  fontVariantNumeric: "tabular-nums",
+  letterSpacing: theme.letterSpacing[3],
+  lineHeight: theme.lineHeight[3],
+});
 
 export const dialogFooter = style({
   backgroundColor: theme.color.container.secondary.background,
@@ -72,18 +72,25 @@ export const dialogFooter = style({
 export const dialogHeader = style({
   backgroundColor: theme.color.container.secondary.background,
   borderBottom: `1px solid ${theme.color.container.secondary.borderColor}`,
-  top: 0,
   padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
+  top: 0,
   zIndex: theme.zIndex[5],
 });
 
-export const dialogTitle = style([
-  heading({ as: "h5" }),
-  {
-    marginLeft: theme.space[2],
-  },
-]);
+export const dialogTitle = style({
+  color: theme.color.content.primary.foreground,
+  fontFamily: theme.fontFamily.text,
+  fontSize: theme.fontSize[4],
+  fontVariantNumeric: "tabular-nums",
+  letterSpacing: theme.letterSpacing[4],
+  lineHeight: theme.lineHeight[4],
+  marginLeft: theme.space[2],
+});
+
+export const dialogBody = style({
+  padding: theme.space[4],
+});
 
 export const dialogOverlay = style({
   backgroundColor: `color-mix(in srgb, #000, transparent 50%)`,

@@ -1,15 +1,15 @@
 import { Box } from "@/components/box";
 import { IconButton } from "@/components/icon-button";
 import {
+  dialogBody,
+  dialogContent,
   DialogContentVariants,
-  dialogContentRecipe,
   dialogDescription,
   dialogFooter,
   dialogHeader,
   dialogOverlay,
   dialogTitle,
 } from "@/theme/styles/dialog.css";
-import { theme } from "@/theme/themes/theme-contract.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
@@ -37,16 +37,15 @@ export const DialogContent = ({
 }: DialogContentProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...dialogContentRecipe.variants(),
+    ...dialogContent.variants(),
   );
-  const dialogContent = dialogContentRecipe(variants);
 
   return (
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className={dialogOverlay} />
       <DialogPrimitive.Content
         {...rest}
-        className={mergeClasses(dialogContent, rest.className)}
+        className={mergeClasses(dialogContent(variants), rest.className)}
       >
         <DialogHeader>
           {title && (
@@ -104,7 +103,11 @@ export const DialogFooter = ({ children }: DialogFooterProps) => {
 export type DialogBodyProps = { children: React.ReactNode };
 
 export const DialogBody = ({ children }: DialogBodyProps) => {
-  return <Box style={{ padding: theme.space[4] }}>{children}</Box>;
+  return (
+    <Box className={dialogBody} direction="column" display="flex" gap="4">
+      {children}
+    </Box>
+  );
 };
 
 type DialogHeaderProps = { children: React.ReactNode };

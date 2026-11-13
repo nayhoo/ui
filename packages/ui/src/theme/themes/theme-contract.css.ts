@@ -297,9 +297,9 @@ export const theme = createThemeContract({
       visited: {
         foreground: null,
       },
-      // onSolid: {
-      //   foreground: null,
-      // },
+      onSolid: {
+        foreground: null,
+      },
       error: {
         foreground: null,
       },

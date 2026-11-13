@@ -15,14 +15,12 @@ type AccordionProps =
   | AccordionPrimitive.AccordionSingleProps
   | AccordionPrimitive.AccordionMultipleProps;
 
-export const Accordion = ({ children, ...props }: AccordionProps) => {
+export const Accordion = (props: AccordionProps) => {
   return (
     <AccordionPrimitive.Root
       {...props}
       className={mergeClasses(accordion, props.className)}
-    >
-      {children}
-    </AccordionPrimitive.Root>
+    />
   );
 };
 
@@ -38,16 +36,11 @@ export const AccordionContent = ({
   </AccordionPrimitive.Content>
 );
 
-export const AccordionItem = ({
-  children,
-  ...props
-}: AccordionPrimitive.AccordionItemProps) => (
+export const AccordionItem = (props: AccordionPrimitive.AccordionItemProps) => (
   <AccordionPrimitive.Item
     {...props}
     className={mergeClasses(accordionItem, props.className)}
-  >
-    {children}
-  </AccordionPrimitive.Item>
+  />
 );
 
 export const AccordionTrigger = ({

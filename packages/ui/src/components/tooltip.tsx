@@ -1,8 +1,8 @@
 import { Box } from "@/components/box";
 import { Text } from "@/components/text";
 import {
+  tooltipContent,
   TooltipContentVariants,
-  tooltipContentRecipe,
 } from "@/theme/styles/tooltip.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -35,9 +35,8 @@ export function Tooltip({
 
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...tooltipContentRecipe.variants(),
+    ...tooltipContent.variants(),
   );
-  const tooltipContent = tooltipContentRecipe(variants);
 
   return (
     <TooltipPrimitive.Provider>
@@ -47,11 +46,12 @@ export function Tooltip({
           <TooltipPrimitive.Content
             side="top"
             align="center"
-            sideOffset={5}
+            sideOffset={4}
             {...rest}
-            className={mergeClasses(tooltipContent, rest.className)}
+            className={mergeClasses(tooltipContent(variants), rest.className)}
           >
             <Text
+              color="onSolid"
               size="1"
               style={{
                 lineHeight: variants.multiline ? "20px" : undefined,
@@ -63,11 +63,9 @@ export function Tooltip({
               <TooltipPrimitive.Arrow
                 width={11}
                 height={5}
-                style={
-                  {
-                    // fill: theme.color.transparentSurface,
-                  }
-                }
+                style={{
+                  fill: "rgb(0, 0, 0)",
+                }}
               />
             </Box>
           </TooltipPrimitive.Content>
