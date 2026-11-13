@@ -1,113 +1,41 @@
-import { Box } from "@/components/box";
-import { Status } from "@/components/status";
-import {
-  AvatarFallbackVariants,
-  AvatarVariants,
-  avatarFallbackRecipe,
-  avatarImage,
-  avatarRecipe,
-} from "@/theme/styles/avatar.css";
-import { StatusVariants } from "@/theme/styles/status.css";
-import { theme } from "@/theme/themes/theme-contract.css";
+import { AvatarVariants, avatar, avatarImage } from "@/theme/styles/avatar.css";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import React from "react";
-
-type AvatarImageProps = AvatarPrimitive.AvatarImageProps;
-
-const AvatarImage = ({ ...props }: AvatarImageProps) => {
-  return (
-    <AvatarPrimitive.Image
-      {...props}
-      className={mergeClasses(avatarImage, props.className)}
-    >
-      {props.children}
-    </AvatarPrimitive.Image>
-  );
-};
-
-type AvatarFallbackProps = AvatarPrimitive.AvatarFallbackProps &
-  AvatarFallbackVariants;
-
-const AvatarFallback = ({ ...props }: AvatarFallbackProps) => {
-  const [variants, rest] = extractVariantsFromProps(
-    props,
-    ...avatarFallbackRecipe.variants(),
-  );
-  const avatarFallback = avatarFallbackRecipe(variants);
-
-  return (
-    <AvatarPrimitive.Fallback
-      {...rest}
-      className={mergeClasses(avatarFallback, rest.className)}
-    >
-      {rest.children}
-    </AvatarPrimitive.Fallback>
-  );
-};
+import { Text } from "./text";
 
 export type AvatarProps = AvatarPrimitive.AvatarProps &
   AvatarVariants & {
     alt?: string;
+    /**
+     * fallback text if there is no image
+     * @example "TK"
+     */
     fallback?: React.ReactNode;
     src?: string;
-    status?: StatusVariants["variant"];
   };
 
-export const Avatar = ({
-  alt,
-  fallback,
-  src,
-  status,
-  style,
-  ...props
-}: AvatarProps) => {
+export const Avatar = ({ alt, fallback, src, ...props }: AvatarProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...avatarRecipe.variants(),
+    ...avatar.variants(),
   );
-  const avatar = avatarRecipe(variants);
 
   return (
-    <Box
-      style={{
-        height: "fit-content",
-        position: "relative",
-        width: "fit-content",
-        ...style,
-      }}
+    <AvatarPrimitive.Avatar
+      {...rest}
+      className={mergeClasses(avatar(variants), rest.className)}
     >
-      <AvatarPrimitive.Avatar
-        {...rest}
-        className={mergeClasses(avatar, rest.className)}
-      >
-        <AvatarImage alt={alt} src={src} />
+      <AvatarPrimitive.AvatarImage
+        alt={alt}
+        className={mergeClasses(avatarImage)}
+        src={src}
+      />
 
-        {/* TODO: fallback wont render - https://github.com/radix-ui/primitives/issues/1767 */}
-        <AvatarFallback size={variants.size} delayMs={600}>
-          {fallback}
-        </AvatarFallback>
-      </AvatarPrimitive.Avatar>
-
-      {status && (
-        <Box
-          style={{
-            position: "absolute",
-            bottom: "0",
-            right: "0",
-            boxShadow: "0 0 0 3px rgba(0, 0, 0, 0.12)",
-            borderRadius: theme.radii.round,
-            marginRight: "-3px",
-            marginBottom: "-3px",
-          }}
-        >
-          <Status
-            size={variants.size && Number(variants.size) > 2 ? "2" : "1"}
-            variant={status}
-          />
-        </Box>
-      )}
-    </Box>
+      <AvatarPrimitive.AvatarFallback asChild delayMs={600}>
+        <Text size={variants.size}>{fallback}</Text>
+      </AvatarPrimitive.AvatarFallback>
+    </AvatarPrimitive.Avatar>
   );
 };

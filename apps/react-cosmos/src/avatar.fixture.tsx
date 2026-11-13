@@ -5,9 +5,9 @@ import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name
 export default () => {
-  const [alt] = useFixtureInput("alt", "Sad Clown Girl. @stickwhack");
+  const [alt] = useFixtureInput("alt", "Ninten");
 
-  const [fallback] = useFixtureInput("fallback", "S");
+  const [fallback] = useFixtureInput("fallback", "N");
 
   const [inactive] = useFixtureInput("inactive", false);
 
@@ -18,17 +18,13 @@ export default () => {
   });
 
   const [size] = useFixtureSelect("size", {
-    options: ["1", "2", "3", "4", "5", "6"],
+    options: ["1", "2", "3"],
   });
 
   const [src] = useFixtureInput(
     "src",
-    "https://www.stickwhack.com/static/media/Mask%20Group%208.3146f06ac072ddba9fa7.png",
+    "https://static.wikia.nocookie.net/earthbound/images/9/90/Ninten_clay_model.png/revision/latest?cb=20190101193139",
   );
-
-  const [status] = useFixtureSelect("status", {
-    options: ["gray", "red", "blue", "green"],
-  });
 
   return (
     <Avatar
@@ -39,7 +35,6 @@ export default () => {
       shape={shape}
       size={size}
       src={src}
-      status={status}
     />
   );
 };
