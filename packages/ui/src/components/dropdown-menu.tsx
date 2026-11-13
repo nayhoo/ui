@@ -46,7 +46,7 @@ export const DropdownMenuItem = (
 ) => {
   return (
     <DropdownMenuPrimitive.Item {...props} asChild>
-      <Button fullWidth sentiment="accented" variant="ghost">
+      <Button fullWidth sentiment="accented" size="1" variant="ghost">
         {props.children}
       </Button>
     </DropdownMenuPrimitive.Item>

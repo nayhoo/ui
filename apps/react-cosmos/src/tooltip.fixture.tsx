@@ -10,7 +10,7 @@ export default () => {
 
   return (
     <Tooltip content="Close" multiline={multiline}>
-      <IconButton>
+      <IconButton size="1">
         <svg
           clipRule="evenodd"
           fillRule="evenodd"

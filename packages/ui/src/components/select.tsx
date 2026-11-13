@@ -68,6 +68,7 @@ export const SelectItem = (props: Omit<SelectItemProps, "asChild">) => {
           </SelectPrimitive.ItemIndicator>
         }
         sentiment="accented"
+        size="1"
         variant="ghost"
       >
         <SelectPrimitive.ItemText>{props.children}</SelectPrimitive.ItemText>
