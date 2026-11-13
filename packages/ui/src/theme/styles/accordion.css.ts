@@ -6,14 +6,12 @@ export const accordion = style({
 });
 
 export const accordionItem = style({
-  marginTop: 1,
   overflow: "hidden",
 
   selectors: {
     "&:first-child": {
       borderTopLeftRadius: theme.radii[2],
       borderTopRightRadius: theme.radii[2],
-      marginTop: 0,
     },
 
     "&:last-child": {
@@ -57,13 +55,13 @@ const slideUp = keyframes({
 });
 
 export const accordionContent = style({
-  overflow: "hidden",
-  fontFamily: theme.fontFamily.text,
-  fontSize: theme.fontSize[3],
-  letterSpacing: theme.letterSpacing[3],
-  lineHeight: theme.lineHeight[3],
-  fontVariantNumeric: "tabular-nums",
   color: theme.color.content.subtle.foreground,
+  fontFamily: theme.fontFamily.text,
+  fontSize: theme.fontSize[2],
+  fontVariantNumeric: "tabular-nums",
+  letterSpacing: theme.letterSpacing[2],
+  lineHeight: theme.lineHeight[2],
+  overflow: "hidden",
 
   selectors: {
     '&[data-state="open"]': {
@@ -76,7 +74,7 @@ export const accordionContent = style({
 });
 
 export const accordionContentText = style({
-  padding: "15px 20px",
+  padding: theme.space[4],
 });
 
 export const accordionHeader = style({
@@ -99,10 +97,11 @@ export const accordionTrigger = style({
   fontSize: theme.fontSize[4],
   fontVariantNumeric: "tabular-nums",
   fontWeight: theme.fontWeight.medium,
+  gap: theme.space[2],
   justifyContent: "space-between",
   letterSpacing: theme.letterSpacing[4],
   lineHeight: theme.lineHeight[4],
-  padding: `${theme.space[2]} ${theme.space[2]}`,
+  padding: theme.space[2],
 
   selectors: {
     "&:hover": {

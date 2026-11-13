@@ -1,87 +1,42 @@
-import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { pulse } from "@/theme/animations/pulse.css";
 import { theme } from "@/theme/themes/theme-contract.css";
-import * as colors from "@radix-ui/colors";
-import { HomemadeRecipeVariants } from "homemade-recipes";
+import { globalStyle, style } from "@vanilla-extract/css";
 
-export const skeletonRecipe = homemadeRecipe({
-  base: {
-    backgroundColor: colors.slate.slate4,
-    position: "relative",
-    overflow: "hidden",
+export const skeleton = style({
+  backgroundColor: theme.color.actionable.negative.ghost.background.hover,
+  borderColor: "transparent",
+  boxShadow: "none",
+  color: "transparent",
+  overflow: "hidden",
+  pointerEvents: "none",
+  position: "relative",
+  userSelect: "none",
+  width: "fit-content",
 
-    selectors: {
-      "&::after": {
-        animationName: `${pulse}`,
-        animationDuration: "500ms",
-        animationDirection: "alternate",
-        animationIterationCount: "infinite",
-        animationTimingFunction: "ease-in-out",
-        backgroundColor: colors.slate.slate6,
-        borderRadius: "inherit",
-        bottom: 0,
-        content: '""',
-        left: 0,
-        position: "absolute",
-        right: 0,
-        top: 0,
-      },
+  selectors: {
+    "&::after": {
+      animationName: `${pulse}`,
+      animationDuration: "500ms",
+      animationDirection: "alternate",
+      animationIterationCount: "infinite",
+      animationTimingFunction: "ease-in-out",
+      backgroundColor: theme.color.actionable.negative.ghost.background.active,
+      bottom: 0,
+      content: '""',
+      left: 0,
+      position: "absolute",
+      right: 0,
+      top: 0,
+      zIndex: 1,
     },
-  },
-
-  variants: {
-    variant: {
-      avatar1: {
-        borderRadius: theme.radii.round,
-        height: theme.space[3],
-        width: theme.space[3],
-      },
-      avatar2: {
-        borderRadius: theme.radii.round,
-        height: theme.space[5],
-        width: theme.space[5],
-      },
-      avatar3: {
-        borderRadius: theme.radii.round,
-        height: theme.space[6],
-        width: theme.space[6],
-      },
-      avatar4: {
-        borderRadius: theme.radii.round,
-        height: theme.space[7],
-        width: theme.space[7],
-      },
-      avatar5: {
-        borderRadius: theme.radii.round,
-        height: theme.space[8],
-        width: theme.space[8],
-      },
-      avatar6: {
-        borderRadius: theme.radii.round,
-        height: theme.space[9],
-        width: theme.space[9],
-      },
-      text: {
-        height: theme.space[1],
-      },
-      title: {
-        height: theme.space[5],
-      },
-      heading: {
-        height: theme.space[3],
-      },
-      button: {
-        borderRadius: theme.radii[1],
-        height: theme.space[5],
-        width: theme.space[8],
-      },
-    },
-  },
-  defaultVariants: {
-    variant: "text",
   },
 });
 
-export type SkeletonVariants = NonNullable<
-  HomemadeRecipeVariants<typeof skeletonRecipe>
->;
+globalStyle(`${skeleton} > *`, {
+  visibility: "hidden",
+});
+
+export const skeletonStandalone = style({
+  display: "block",
+  borderRadius: theme.radii[2],
+});

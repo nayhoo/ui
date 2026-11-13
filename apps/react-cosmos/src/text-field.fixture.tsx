@@ -16,7 +16,7 @@ export default () => {
   });
 
   const [variant] = useFixtureSelect("variant", {
-    options: ["outline", "ghost"],
+    options: ["bordered", "ghost"],
   });
 
   return (

@@ -13,9 +13,7 @@ export default () => {
 
   const [interactive] = useFixtureInput("interactive", false);
 
-  const [shape] = useFixtureSelect("shape", {
-    options: ["square", "circle"],
-  });
+  const [round] = useFixtureInput("round", false);
 
   const [size] = useFixtureSelect("size", {
     options: ["1", "2", "3"],
@@ -32,7 +30,7 @@ export default () => {
       fallback={fallback}
       inactive={inactive}
       interactive={interactive}
-      shape={shape}
+      round={round}
       size={size}
       src={src}
     />

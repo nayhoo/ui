@@ -1,24 +1,16 @@
 "use client";
 
 import { Skeleton } from "@nayhoo/ui/skeleton";
-import { useFixtureSelect } from "react-cosmos/client";
+import { Text } from "@nayhoo/ui/text";
+import { useFixtureInput } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name
 export default () => {
-  const [variant] = useFixtureSelect("variant", {
-    options: [
-      "avatar1",
-      "avatar2",
-      "avatar3",
-      "avatar4",
-      "avatar5",
-      "avatar6",
-      "text",
-      "title",
-      "heading",
-      "button",
-    ],
-  });
+  const [loaded] = useFixtureInput("loaded", false);
 
-  return <Skeleton variant={variant} />;
+  return (
+    <Skeleton loaded={loaded}>
+      <Text>Skeleton</Text>
+    </Skeleton>
+  );
 };

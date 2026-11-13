@@ -1,7 +1,4 @@
-import {
-  TextFieldVariants,
-  textFieldRecipe,
-} from "@/theme/styles/text-field.css";
+import { textField, TextFieldVariants } from "@/theme/styles/text-field.css";
 import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
@@ -17,13 +14,15 @@ export type TextFieldProps = ComponentProps<
 export const TextField = ({ asChild, ...props }: TextFieldProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
-    ...textFieldRecipe.variants(),
+    ...textField.variants(),
   );
-  const textField = textFieldRecipe(variants);
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(textField, rest.className)}>
+    <Comp
+      {...rest}
+      className={mergeClasses(textField(variants), rest.className)}
+    >
       {rest.children}
     </Comp>
   );

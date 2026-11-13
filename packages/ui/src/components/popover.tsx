@@ -21,7 +21,7 @@ export const PopoverContent = ({
 }: PopoverContentPrimitiveProps) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
-      sideOffset={0}
+      sideOffset={4}
       {...props}
       className={mergeClasses(menuContent({ onTop }), panel, props.className)}
     >

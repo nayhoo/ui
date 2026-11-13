@@ -1,12 +1,12 @@
 import { Spinner } from "@/components/spinner";
 import { iconButton, IconButtonVariants } from "@/theme/styles/icon-button.css";
-import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 
-export type IconButtonProps = ComponentProps<"button", IconButtonVariants>;
+export type IconButtonProps = React.ComponentProps<"button"> &
+  IconButtonVariants;
 
-export const IconButton = ({ asChild, ...props }: IconButtonProps) => {
+export const IconButton = (props: IconButtonProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...iconButton.variants(),

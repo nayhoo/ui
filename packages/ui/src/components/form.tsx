@@ -1,12 +1,7 @@
-import {
-  formField,
-  formLabel,
-  formMessageRecipe,
-  FormMessageVariants,
-} from "@/theme/styles/form.css";
-import { extractVariantsFromProps } from "@/utils/extract-variants";
-import { mergeClasses } from "@/utils/merge-classes";
+import { theme } from "@/theme";
 import * as FormPrimitive from "@radix-ui/react-form";
+import { Box } from "./box";
+import { Text } from "./text";
 
 export type FormProps = FormPrimitive.FormProps;
 
@@ -16,48 +11,47 @@ export type FormControlProps = FormPrimitive.FormControlProps;
 
 export const FormControl = FormPrimitive.Control;
 
-export type FormFieldProps = FormPrimitive.FormFieldProps;
+export type FormFieldProps = Omit<FormPrimitive.FormFieldProps, "asChild">;
 
-export const FormField = ({ ...props }: FormFieldProps) => {
+export const FormField = ({ children, ...props }: FormFieldProps) => {
   return (
-    <FormPrimitive.Field
-      {...props}
-      className={mergeClasses(formField, props.className)}
-    >
-      {props.children}
+    <FormPrimitive.Field {...props} asChild>
+      <Box display="grid" style={{ marginBottom: theme.space[2] }}>
+        {children}
+      </Box>
     </FormPrimitive.Field>
   );
 };
 
-export type FormLabelProps = FormPrimitive.FormLabelProps;
+export type FormLabelProps = Omit<FormPrimitive.FormLabelProps, "asChild">;
 
-export const FormLabel = ({ ...props }: FormLabelProps) => {
+export const FormLabel = ({ children, ...props }: FormLabelProps) => {
   return (
-    <FormPrimitive.Label
-      {...props}
-      className={mergeClasses(formLabel, props.className)}
-    >
-      {props.children}
+    <FormPrimitive.Label {...props} asChild>
+      <Text asChild color="subtle" weight="medium">
+        <label>{children}</label>
+      </Text>
     </FormPrimitive.Label>
   );
 };
 
-export type FormMessageProps = FormPrimitive.FormMessageProps &
-  FormMessageVariants;
+export type FormMessageProps = Omit<
+  FormPrimitive.FormMessageProps,
+  "asChild"
+> & {
+  error?: boolean;
+};
 
-export const FormMessage = ({ ...props }: FormMessageProps) => {
-  const [variants, rest] = extractVariantsFromProps(
-    props,
-    ...formMessageRecipe.variants(),
-  );
-  const formMessage = formMessageRecipe(variants);
-
+export const FormMessage = ({
+  children,
+  error,
+  ...props
+}: FormMessageProps) => {
   return (
-    <FormPrimitive.Message
-      {...rest}
-      className={mergeClasses(formMessage, rest.className)}
-    >
-      {rest.children}
+    <FormPrimitive.Message {...props} asChild>
+      <Text color={error ? "error" : "subtle"} size="1">
+        {children}
+      </Text>
     </FormPrimitive.Message>
   );
 };

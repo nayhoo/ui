@@ -4,13 +4,13 @@ import {
   button,
   buttonIconRecipe,
 } from "@/theme/styles/button.css";
-import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import { Slot } from "@radix-ui/react-slot";
 import { Text } from "./text";
 
-export type ButtonProps = ComponentProps<"button", ButtonVariants> &
+export type ButtonProps = React.ComponentProps<"button"> &
+  ButtonVariants &
   (
     | {
         leftIcon?: React.ReactNode;
@@ -22,12 +22,7 @@ export type ButtonProps = ComponentProps<"button", ButtonVariants> &
       }
   );
 
-export const Button = ({
-  asChild,
-  leftIcon,
-  rightIcon,
-  ...props
-}: ButtonProps) => {
+export const Button = ({ leftIcon, rightIcon, ...props }: ButtonProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...button.variants(),

@@ -11,7 +11,6 @@ import {
   FormSubmit,
 } from "@nayhoo/ui/form";
 import { Link } from "@nayhoo/ui/link";
-import { Text } from "@nayhoo/ui/text";
 import { TextField } from "@nayhoo/ui/text-field";
 import { theme } from "@nayhoo/ui/theme";
 import { useState } from "react";
@@ -80,14 +79,18 @@ export default () => {
           <TextField required type="password" />
         </FormControl>
         <Box style={{ marginTop: theme.space[2] }}>
-          <Link color="primary">
-            <Text size="1">Forget password?</Text>
-          </Link>
+          <Link size="1">Forget password?</Link>
         </Box>
       </FormField>
 
       <FormSubmit asChild>
-        <Button fullWidth loading={loading} style={{ marginTop: 10 }}>
+        <Button
+          fullWidth
+          loading={loading}
+          sentiment="accented"
+          style={{ marginTop: 10 }}
+          variant="solid"
+        >
           Log in
         </Button>
       </FormSubmit>

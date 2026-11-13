@@ -1,28 +1,19 @@
 import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
-import * as colors from "@radix-ui/colors";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
-export const textFieldRecipe = homemadeRecipe({
+export const textField = homemadeRecipe({
   base: {
     appearance: "none",
-    borderWidth: "0",
+    border: "1px solid",
+    borderRadius: theme.radii[2],
     boxSizing: "border-box",
-    fontFamily: "inherit",
-    margin: "0",
-    outline: "none",
-    padding: "0",
-    width: "100%",
-    WebkitTapHighlightColor: "rgba(0,0,0,0)",
-
-    backgroundColor: "transparent",
-    color: "inherit",
+    color: theme.color.content.primary.foreground,
+    fontFamily: theme.fontFamily.text,
     fontVariantNumeric: "tabular-nums",
+    width: "100%",
 
     selectors: {
-      "&:hover": {
-        // backgroundColor: theme.color.transparentHover,
-      },
       "&:-webkit-autofill": {},
       "&:-webkit-autofill::first-line": {
         // fontFamily: "$untitled",
@@ -34,31 +25,16 @@ export const textFieldRecipe = homemadeRecipe({
         boxSizing: "border-box",
       },
       "&:disabled": {
-        backgroundColor: colors.slate.slate2,
-        boxShadow: `inset 0 0 0 1px ${colors.slateA.slateA7}`,
-        // boxShadow: "none",
-        color: colors.slate.slate8,
+        opacity: 0.4,
         cursor: "not-allowed",
-        pointerEvents: "none",
-        // "&::placeholder": {
-        //   color: "$slate7",
-        // },
       },
-      "&:focus": {
-        outline: "1px solid #000000",
-        // "&:-webkit-autofill": {},
-      },
-      "&:read-only": {
-        backgroundColor: colors.slate.slate2,
-        // "&:focus": {
-        //   boxShadow: `inset 0px 0px 0px 1px ${vars.colors.slate.slate7}`,
-        // },
-      },
+      "&:read-only": {},
       "&[data-invalid]": {
-        // boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9}`,
+        borderColor:
+          theme.color.actionable.negative.bordered.borderColor.initial,
       },
       "&[data-placeholder]": {
-        // color: theme.color.textPlaceholder,
+        color: theme.color.content.subtle.foreground,
       },
     },
   },
@@ -66,12 +42,12 @@ export const textFieldRecipe = homemadeRecipe({
   variants: {
     size: {
       "1": {
-        borderRadius: theme.radii[1],
-        height: theme.space[5],
         fontSize: theme.fontSize[1],
+        letterSpacing: theme.letterSpacing[1],
+        lineHeight: theme.lineHeight[1],
         paddingLeft: theme.space[2],
         paddingRight: theme.space[2],
-        lineHeight: theme.space[5],
+        height: theme.space[5],
         selectors: {
           "&:-webkit-autofill::first-line": {
             fontSize: theme.fontSize[1],
@@ -79,38 +55,36 @@ export const textFieldRecipe = homemadeRecipe({
         },
       },
       "2": {
-        borderRadius: theme.radii[2],
-        fontSize: theme.fontSize[3],
-        lineHeight: theme.lineHeight[6],
-        height: theme.space[6],
+        fontSize: theme.fontSize[2],
+        letterSpacing: theme.letterSpacing[2],
+        lineHeight: theme.lineHeight[2],
         paddingLeft: theme.space[3],
         paddingRight: theme.space[3],
+        height: theme.space[6],
+        selectors: {
+          "&:-webkit-autofill::first-line": {
+            fontSize: theme.fontSize[2],
+          },
+        },
+      },
+      "3": {
+        fontSize: theme.fontSize[3],
+        letterSpacing: theme.letterSpacing[3],
+        lineHeight: theme.lineHeight[3],
+        paddingLeft: theme.space[4],
+        paddingRight: theme.space[4],
+        height: theme.space[7],
         selectors: {
           "&:-webkit-autofill::first-line": {
             fontSize: theme.fontSize[3],
           },
         },
       },
-      "3": {
-        borderRadius: theme.radii[2],
-        fontSize: theme.fontSize[4],
-        lineHeight: theme.space[7],
-        height: theme.space[7],
-        paddingLeft: theme.space[4],
-        paddingRight: theme.space[4],
-        selectors: {
-          "&:-webkit-autofill::first-line": {
-            fontSize: theme.fontSize[4],
-          },
-        },
-      },
     },
     error: {
       true: {
-        // boxShadow: `inset 0px 0px 0px 1px ${theme.color.error.error9} !important`, // TODO: is this possible without !important?
-        // "&:focus": {
-        //   // boxShadow: "inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8",
-        // },
+        borderColor:
+          theme.color.actionable.negative.bordered.borderColor.initial,
       },
     },
     cursor: {
@@ -127,20 +101,54 @@ export const textFieldRecipe = homemadeRecipe({
       },
     },
     variant: {
-      outline: {
-        // boxShadow: `inset 0px 0px 0px 1px ${theme.color.line}`,
+      bordered: {
+        backgroundColor:
+          theme.color.actionable.neutral.bordered.background.initial,
+        borderColor:
+          theme.color.actionable.neutral.bordered.borderColor.initial,
+
+        selectors: {
+          "&:hover:not(:disabled)": {
+            backgroundColor:
+              theme.color.actionable.neutral.bordered.background.hover,
+            borderColor:
+              theme.color.actionable.neutral.bordered.borderColor.hover,
+          },
+          "&:active:not(:disabled)": {
+            backgroundColor:
+              theme.color.actionable.neutral.bordered.background.active,
+            borderColor:
+              theme.color.actionable.neutral.bordered.borderColor.active,
+          },
+        },
       },
       ghost: {
-        boxShadow: "none",
+        backgroundColor:
+          theme.color.actionable.neutral.ghost.background.initial,
+        borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
+
+        selectors: {
+          "&:hover:not(:disabled)": {
+            backgroundColor:
+              theme.color.actionable.neutral.ghost.background.hover,
+            borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
+          },
+          "&:active:not(:disabled)": {
+            backgroundColor:
+              theme.color.actionable.neutral.ghost.background.active,
+            borderColor:
+              theme.color.actionable.neutral.ghost.borderColor.active,
+          },
+        },
       },
     },
   },
   defaultVariants: {
     size: "2",
-    variant: "outline",
+    variant: "bordered",
   },
 });
 
 export type TextFieldVariants = NonNullable<
-  HomemadeRecipeVariants<typeof textFieldRecipe>
+  HomemadeRecipeVariants<typeof textField>
 >;

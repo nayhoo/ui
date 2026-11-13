@@ -15,6 +15,7 @@ export const avatar = homemadeRecipe({
   base: {
     alignItems: "center",
     backgroundColor: theme.color.container.secondary.background,
+    borderRadius: theme.radii[2],
     color: theme.color.content.primary.foreground,
     display: "flex",
     flexShrink: 0,
@@ -54,11 +55,8 @@ export const avatar = homemadeRecipe({
         width: theme.space[7],
       },
     },
-    shape: {
-      square: {
-        borderRadius: theme.radii[2],
-      },
-      circle: {
+    round: {
+      true: {
         borderRadius: theme.radii.full,
       },
     },
@@ -97,7 +95,6 @@ export const avatar = homemadeRecipe({
     },
   },
   defaultVariants: {
-    shape: "circle",
     size: "2",
   },
 });
