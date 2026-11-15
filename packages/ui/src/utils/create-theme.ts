@@ -390,28 +390,6 @@ const t = {
         },
       },
 
-      focused: {
-        // onSolid: {
-        //   outlineColor: palette.white80a,
-        // },
-        outlineColor: palette.brown700,
-        outlineOffset: "0px",
-        outlineStyle: "dotted",
-        outlineWidth: "2px",
-      },
-
-      separable: {
-        primary: {
-          borderColor: palette.black40a,
-        },
-        secondary: {
-          borderColor: palette.black30a,
-        },
-        tertiary: {
-          borderColor: palette.black20a,
-        },
-      },
-
       selectable: {
         background: {
           selected: palette.brown200,
@@ -425,6 +403,7 @@ const t = {
       },
 
       border: {
+        default: palette.black30a,
         focused: "rgb(0,120,207)",
       },
     },
@@ -740,16 +719,6 @@ const t = {
         },
       },
 
-      focused: {
-        // onSolid: {
-        //   outlineColor: palette.white80a,
-        // },
-        outlineColor: palette.brown300,
-        outlineOffset: "0px",
-        outlineStyle: "dotted",
-        outlineWidth: "2px",
-      },
-
       selectable: {
         background: {
           selected: palette.brown800,
@@ -762,19 +731,8 @@ const t = {
         },
       },
 
-      separable: {
-        primary: {
-          borderColor: palette.white40a,
-        },
-        secondary: {
-          borderColor: palette.white30a,
-        },
-        tertiary: {
-          borderColor: palette.white20a,
-        },
-      },
-
       border: {
+        default: palette.white30a,
         focused: "rgb(0,120,207)",
       },
     },

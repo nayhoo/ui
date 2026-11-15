@@ -42,9 +42,9 @@ export const menuContent = homemadeRecipe({
 export type MenuContentVariants = HomemadeRecipeVariants<typeof menuContent>;
 
 export const menuSeparator = style({
-  backgroundColor: theme.color.separable.secondary.borderColor,
+  backgroundColor: theme.color.border.default,
   marginBottom: theme.space[1],
   marginTop: theme.space[1],
-  height: 1,
+  height: theme.border.width.default,
   width: "100%",
 });

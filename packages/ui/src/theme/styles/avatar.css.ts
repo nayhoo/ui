@@ -29,7 +29,7 @@ export const avatar = homemadeRecipe({
       "&::before": {
         borderWidth: theme.border.width.default,
         borderStyle: theme.border.style.default,
-        borderColor: theme.color.container.secondary.borderColor,
+        borderColor: theme.color.border.default,
         borderRadius: "inherit",
         bottom: 0,
         content: '""',

@@ -4,8 +4,8 @@ import { theme } from "@/theme/themes/theme-contract.css";
 export const nav = homemadeRecipe({
   base: {
     backgroundColor: theme.color.container.primary.background,
-    borderBottomWidth: "1px",
-    borderBottomStyle: "solid",
+    borderBottomWidth: theme.border.width.default,
+    borderBottomStyle: theme.border.style.default,
     top: 0,
     width: "100%",
     zIndex: theme.zIndex[4],
@@ -14,7 +14,7 @@ export const nav = homemadeRecipe({
   variants: {
     compact: {
       true: {
-        borderColor: theme.color.separable.primary.borderColor,
+        borderColor: theme.color.border.default,
       },
       false: {
         borderColor: "transparent",

@@ -1,23 +1,20 @@
-import { separator, SeparatorVariants } from "@/theme/styles/separator.css";
-import { extractVariantsFromProps } from "@/utils/extract-variants";
+import { separator } from "@/theme/styles/separator.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
-export type SeparatorProps = SeparatorPrimitive.SeparatorProps &
-  SeparatorVariants;
+export type SeparatorProps = SeparatorPrimitive.SeparatorProps;
 
-export const Separator = (props: SeparatorProps) => {
-  const [variants, rest] = extractVariantsFromProps(
-    props,
-    ...separator.variants(),
-  );
-
+export const Separator = ({
+  children,
+  className,
+  ...props
+}: SeparatorProps) => {
   return (
     <SeparatorPrimitive.Root
-      {...rest}
-      className={mergeClasses(separator(variants), rest.className)}
+      {...props}
+      className={mergeClasses(separator, className)}
     >
-      {rest.children}
+      {children}
     </SeparatorPrimitive.Root>
   );
 };

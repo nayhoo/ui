@@ -53,7 +53,9 @@ export type DialogContentVariants = HomemadeRecipeVariants<
 
 export const dialogFooter = style({
   backgroundColor: theme.color.container.secondary.background,
-  borderTop: `1px solid ${theme.color.container.secondary.borderColor}`,
+  borderTopWidth: theme.border.width.default,
+  borderTopStyle: theme.border.style.default,
+  borderTopColor: theme.color.border.default,
   bottom: 0,
   padding: `${theme.space[2]} ${theme.space[2]}`,
   position: "sticky",
@@ -62,7 +64,9 @@ export const dialogFooter = style({
 
 export const dialogHeader = style({
   backgroundColor: theme.color.container.secondary.background,
-  borderBottom: `1px solid ${theme.color.container.secondary.borderColor}`,
+  borderBottomWidth: theme.border.width.default,
+  borderBottomStyle: theme.border.style.default,
+  borderBottomColor: theme.color.border.default,
   padding: theme.space[2],
   position: "sticky",
   top: 0,

@@ -315,16 +315,6 @@ export const theme = createThemeContract({
       },
     },
 
-    focused: {
-      // onSolid: {
-      //   outlineColor: null,
-      // },
-      outlineColor: null,
-      outlineOffset: null,
-      outlineStyle: null,
-      outlineWidth: null,
-    },
-
     selectable: {
       background: {
         selected: null,
@@ -337,19 +327,8 @@ export const theme = createThemeContract({
       },
     },
 
-    separable: {
-      primary: {
-        borderColor: null,
-      },
-      secondary: {
-        borderColor: null,
-      },
-      tertiary: {
-        borderColor: null,
-      },
-    },
-
     border: {
+      default: null,
       focused: null,
     },
   },

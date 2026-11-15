@@ -5,6 +5,6 @@ export const panel = style({
   backgroundColor: theme.color.container.secondary.background,
   borderWidth: theme.border.width.default,
   borderStyle: theme.border.style.default,
-  borderColor: theme.color.container.secondary.borderColor,
+  borderColor: theme.color.border.default,
   borderRadius: theme.radii[2],
 });

@@ -1,38 +1,16 @@
-import { homemadeRecipe } from "@/lib/homemade-recipe.css";
 import { theme } from "@/theme/themes/theme-contract.css";
-import { HomemadeRecipeVariants } from "homemade-recipes";
+import { style } from "@vanilla-extract/css";
 
-export const separator = homemadeRecipe({
-  base: {
-    selectors: {
-      "&[data-orientation=horizontal]": {
-        height: theme.border.width.default,
-        width: "100%",
-      },
-      "&[data-orientation=vertical]": {
-        height: "100%",
-        width: theme.border.width.default,
-      },
+export const separator = style({
+  backgroundColor: theme.color.border.default,
+  selectors: {
+    "&[data-orientation=horizontal]": {
+      height: theme.border.width.default,
+      width: "100%",
     },
-  },
-
-  variants: {
-    variant: {
-      primary: {
-        backgroundColor: theme.color.separable.primary.borderColor,
-      },
-      secondary: {
-        backgroundColor: theme.color.separable.secondary.borderColor,
-      },
-      tertiary: {
-        backgroundColor: theme.color.separable.tertiary.borderColor,
-      },
+    "&[data-orientation=vertical]": {
+      height: "100%",
+      width: theme.border.width.default,
     },
-  },
-
-  defaultVariants: {
-    variant: "secondary",
   },
 });
-
-export type SeparatorVariants = HomemadeRecipeVariants<typeof separator>;
