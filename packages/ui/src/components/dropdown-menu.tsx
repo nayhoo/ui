@@ -4,7 +4,7 @@ import {
   menuLabel,
   menuSeparator,
 } from "@/theme/styles/menu.css";
-import { panel } from "@/theme/styles/panel.css";
+import { overlay } from "@/theme/styles/overlay.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Button } from "./button";
@@ -31,7 +31,11 @@ export const DropdownMenuContent = ({
       <DropdownMenuPrimitive.Content
         sideOffset={4}
         {...props}
-        className={mergeClasses(menuContent({ onTop }), panel, props.className)}
+        className={mergeClasses(
+          menuContent({ onTop }),
+          overlay,
+          props.className,
+        )}
       >
         {children}
       </DropdownMenuPrimitive.Content>

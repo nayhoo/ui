@@ -4,7 +4,7 @@ import {
   menuLabel,
   menuSeparator,
 } from "@/theme/styles/menu.css";
-import { panel } from "@/theme/styles/panel.css";
+import { overlay } from "@/theme/styles/overlay.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
@@ -47,7 +47,11 @@ export const SelectContent = ({ onTop, ...props }: SelectContentProps) => {
         position="popper"
         sideOffset={4}
         {...props}
-        className={mergeClasses(menuContent({ onTop }), panel, props.className)}
+        className={mergeClasses(
+          menuContent({ onTop }),
+          overlay,
+          props.className,
+        )}
       >
         <SelectPrimitive.Viewport>{props.children}</SelectPrimitive.Viewport>
       </SelectPrimitive.Content>

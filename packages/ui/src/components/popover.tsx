@@ -1,5 +1,5 @@
 import { menuContent, MenuContentVariants } from "@/theme/styles/menu.css";
-import { panel } from "@/theme/styles/panel.css";
+import { overlay } from "@/theme/styles/overlay.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
@@ -23,7 +23,7 @@ export const PopoverContent = ({
     <PopoverPrimitive.Content
       sideOffset={4}
       {...props}
-      className={mergeClasses(menuContent({ onTop }), panel, props.className)}
+      className={mergeClasses(menuContent({ onTop }), overlay, props.className)}
     >
       {children}
     </PopoverPrimitive.Content>

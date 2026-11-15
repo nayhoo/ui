@@ -1,12 +1,12 @@
 import { homemadeRecipe } from "@/lib/homemade-recipe.css";
-import { panel } from "@/theme/styles/panel.css";
+import { overlay } from "@/theme/styles/overlay.css";
 import { theme } from "@/theme/themes/theme-contract.css";
 import { style } from "@vanilla-extract/css";
 import { HomemadeRecipeVariants } from "homemade-recipes";
 
 export const dialogContent = homemadeRecipe({
   base: [
-    panel,
+    overlay,
     {
       left: "50%",
       marginTop: "-5vh",
@@ -52,7 +52,7 @@ export type DialogContentVariants = HomemadeRecipeVariants<
 >;
 
 export const dialogFooter = style({
-  backgroundColor: theme.color.container.secondary.background,
+  backgroundColor: theme.color.background.surface.overlay,
   borderTopWidth: theme.border.width.default,
   borderTopStyle: theme.border.style.default,
   borderTopColor: theme.color.border.default,
@@ -63,7 +63,7 @@ export const dialogFooter = style({
 });
 
 export const dialogHeader = style({
-  backgroundColor: theme.color.container.secondary.background,
+  backgroundColor: theme.color.background.surface.overlay,
   borderBottomWidth: theme.border.width.default,
   borderBottomStyle: theme.border.style.default,
   borderBottomColor: theme.color.border.default,

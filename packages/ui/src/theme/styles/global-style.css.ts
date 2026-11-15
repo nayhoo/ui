@@ -17,5 +17,5 @@ globalStyle("*:focus-visible", {
 });
 
 globalStyle("html, body", {
-  background: theme.color.container.primary.background,
+  background: theme.color.background.surface.default,
 });

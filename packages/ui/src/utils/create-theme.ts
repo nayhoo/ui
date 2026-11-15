@@ -24,51 +24,61 @@ const palette = {
   white65a: "rgba(255, 255, 255, 0.65)",
   white80a: "rgba(255, 255, 255, 0.8)",
   transparent: "transparent",
-  gray100: "rgb(230, 233, 235)",
-  gray200: "rgb(211, 213, 216)",
-  gray300: "rgb(177, 181, 185)",
-  gray400: "rgb(145, 149, 154)",
-  gray500: "rgb(114, 119, 125)",
-  gray600: "rgb(95, 100, 106)",
-  gray700: "rgb(76, 81, 87)",
-  gray800: "rgb(58, 63, 68)",
-  gray900: "rgb(41, 46, 51)",
-  brown100: "rgb(243, 238, 232)",
-  brown200: "rgb(237, 229, 216)",
-  brown300: "rgb(215, 186, 157)",
-  brown400: "rgb(184, 138, 103)",
-  brown500: "rgb(153, 108, 72)",
-  brown600: "rgb(125, 83, 47)",
-  brown700: "rgb(103, 63, 27)",
-  brown800: "rgb(66, 36, 7)",
-  brown900: "rgb(46, 25, 5)",
-  green100: "rgb(234, 245, 242)",
-  green200: "rgb(184, 229, 209)",
-  green300: "rgb(137, 204, 173)",
-  green400: "rgb(83, 176, 135)",
-  green500: "rgb(0, 135, 93)",
-  green600: "rgb(0, 107, 72)",
-  green700: "rgb(0, 86, 55)",
-  green800: "rgb(0, 63, 37)",
-  green900: "rgb(0, 41, 21)",
-  orange100: "rgb(255, 236, 217)",
-  orange200: "rgb(255, 198, 161)",
-  orange300: "rgb(247, 160, 106)",
-  orange400: "rgb(235, 123, 57)",
-  orange500: "rgb(199, 83, 0)",
-  orange600: "rgb(158, 66, 0)",
-  orange700: "rgb(129, 54, 0)",
-  orange800: "rgb(97, 41, 0)",
-  orange900: "rgb(66, 32, 0)",
-  red100: "rgb(255, 236, 234)",
-  red200: "rgb(255, 193, 186)",
-  red300: "rgb(255, 147, 138)",
-  red400: "rgb(255, 93, 87)",
-  red500: "rgb(229, 33, 53)",
-  red600: "rgb(186, 23, 41)",
-  red700: "rgb(145, 13, 30)",
-  red800: "rgb(105, 4, 19)",
-  red900: "rgb(69, 0, 2)",
+  neutral050: "#fafafa",
+  neutral100: "#f5f5f5",
+  neutral200: "#e5e5e5",
+  neutral300: "#d4d4d4",
+  neutral400: "#a3a3a3",
+  neutral500: "#737373",
+  neutral600: "#525252",
+  neutral700: "#404040",
+  neutral800: "#262626",
+  neutral900: "#171717",
+  neutral950: "#0a0a0a",
+  brand050: "#f9faf9",
+  brand100: "#f1f4f2",
+  brand200: "#dee5e0",
+  brand300: "#c4cfc8",
+  brand400: "#94a599",
+  brand500: "#6c8072",
+  brand600: "#56675b",
+  brand700: "#435147",
+  brand800: "#313c35",
+  brand900: "#222a24",
+  brand950: "#101512",
+  positive050: "#f0fdf4",
+  positive100: "#dcfce7",
+  positive200: "#bbf7d0",
+  positive300: "#86efac",
+  positive400: "#4ade80",
+  positive500: "#22c55e",
+  positive600: "#16a34a",
+  positive700: "#15803d",
+  positive800: "#166534",
+  positive900: "#14532d",
+  positive950: "#052e16",
+  caution050: "#fff7ed",
+  caution100: "#ffedd5",
+  caution200: "#fed7aa",
+  caution300: "#fdba74",
+  caution400: "#fb923c",
+  caution500: "#f97316",
+  caution600: "#ea580c",
+  caution700: "#c2410c",
+  caution800: "#9a3412",
+  caution900: "#7c2d12",
+  caution950: "#431407",
+  negative050: "#fef2f2",
+  negative100: "#fee2e2",
+  negative200: "#fecaca",
+  negative300: "#fca5a5",
+  negative400: "#f87171",
+  negative500: "#ef4444",
+  negative600: "#dc2626",
+  negative700: "#b91c1c",
+  negative800: "#991b1b",
+  negative900: "#7f1d1d",
+  negative950: "#450a0a",
 };
 
 const { color, shadow } = theme;
@@ -93,13 +103,13 @@ const t = {
         accented: {
           solid: {
             background: {
-              initial: palette.brown500,
-              active: palette.brown200,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.brown500}`,
+              initial: palette.brand500,
+              active: palette.brand200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.brand500}`,
             },
             borderColor: {
-              initial: palette.brown500,
-              active: palette.brown500,
+              initial: palette.brand500,
+              active: palette.brand500,
               hover: palette.black30a,
             },
             foreground: {
@@ -111,18 +121,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.brown200,
-              hover: palette.brown100,
+              active: palette.brand200,
+              hover: palette.brand100,
             },
             borderColor: {
-              initial: palette.brown500,
-              active: palette.brown500,
-              hover: palette.brown500,
+              initial: palette.brand500,
+              active: palette.brand500,
+              hover: palette.brand500,
             },
             foreground: {
-              initial: palette.brown600,
+              initial: palette.brand600,
               active: palette.black,
-              hover: palette.brown700,
+              hover: palette.brand700,
             },
           },
           ghost: {
@@ -137,22 +147,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.brown600,
+              initial: palette.brand600,
               active: palette.black,
-              hover: palette.brown700,
+              hover: palette.brand700,
             },
           },
         },
         neutral: {
           solid: {
             background: {
-              initial: palette.gray500,
-              active: palette.gray200,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.gray500}`,
+              initial: palette.neutral500,
+              active: palette.neutral200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.neutral500}`,
             },
             borderColor: {
-              initial: palette.gray500,
-              active: palette.gray500,
+              initial: palette.neutral500,
+              active: palette.neutral500,
               hover: palette.black30a,
             },
             foreground: {
@@ -164,18 +174,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.gray200,
-              hover: palette.gray100,
+              active: palette.neutral200,
+              hover: palette.neutral100,
             },
             borderColor: {
-              initial: palette.gray500,
-              active: palette.gray500,
-              hover: palette.gray500,
+              initial: palette.neutral500,
+              active: palette.neutral500,
+              hover: palette.neutral500,
             },
             foreground: {
-              initial: palette.gray600,
+              initial: palette.neutral600,
               active: palette.black,
-              hover: palette.gray700,
+              hover: palette.neutral700,
             },
           },
           ghost: {
@@ -190,22 +200,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.gray600,
+              initial: palette.neutral600,
               active: palette.black,
-              hover: palette.gray700,
+              hover: palette.neutral700,
             },
           },
         },
         caution: {
           solid: {
             background: {
-              initial: palette.orange500,
-              active: palette.orange200,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.orange500}`,
+              initial: palette.caution500,
+              active: palette.caution200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.caution500}`,
             },
             borderColor: {
-              initial: palette.orange500,
-              active: palette.orange500,
+              initial: palette.caution500,
+              active: palette.caution500,
               hover: palette.black30a,
             },
             foreground: {
@@ -217,18 +227,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.orange200,
-              hover: palette.orange100,
+              active: palette.caution200,
+              hover: palette.caution100,
             },
             borderColor: {
-              initial: palette.orange500,
-              active: palette.orange500,
-              hover: palette.orange500,
+              initial: palette.caution500,
+              active: palette.caution500,
+              hover: palette.caution500,
             },
             foreground: {
-              initial: palette.orange600,
+              initial: palette.caution600,
               active: palette.black,
-              hover: palette.orange700,
+              hover: palette.caution700,
             },
           },
           ghost: {
@@ -243,22 +253,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.orange600,
+              initial: palette.caution600,
               active: palette.black,
-              hover: palette.orange700,
+              hover: palette.caution700,
             },
           },
         },
         negative: {
           solid: {
             background: {
-              initial: palette.red500,
-              active: palette.red200,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.red500}`,
+              initial: palette.negative500,
+              active: palette.negative200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.negative500}`,
             },
             borderColor: {
-              initial: palette.red500,
-              active: palette.red500,
+              initial: palette.negative500,
+              active: palette.negative500,
               hover: palette.black30a,
             },
             foreground: {
@@ -270,18 +280,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.red200,
-              hover: palette.red100,
+              active: palette.negative200,
+              hover: palette.negative100,
             },
             borderColor: {
-              initial: palette.red500,
-              active: palette.red500,
-              hover: palette.red500,
+              initial: palette.negative500,
+              active: palette.negative500,
+              hover: palette.negative500,
             },
             foreground: {
-              initial: palette.red600,
+              initial: palette.negative600,
               active: palette.black,
-              hover: palette.red700,
+              hover: palette.negative700,
             },
           },
           ghost: {
@@ -296,22 +306,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.red600,
+              initial: palette.negative600,
               active: palette.black,
-              hover: palette.red700,
+              hover: palette.negative700,
             },
           },
         },
         positive: {
           solid: {
             background: {
-              initial: palette.green500,
-              active: palette.green200,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.green500}`,
+              initial: palette.positive500,
+              active: palette.positive200,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.positive500}`,
             },
             borderColor: {
-              initial: palette.green500,
-              active: palette.green500,
+              initial: palette.positive500,
+              active: palette.positive500,
               hover: palette.black30a,
             },
             foreground: {
@@ -323,18 +333,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.green200,
-              hover: palette.green100,
+              active: palette.positive200,
+              hover: palette.positive100,
             },
             borderColor: {
-              initial: palette.green500,
-              active: palette.green500,
-              hover: palette.green500,
+              initial: palette.positive500,
+              active: palette.positive500,
+              hover: palette.positive500,
             },
             foreground: {
-              initial: palette.green600,
+              initial: palette.positive600,
               active: palette.black,
-              hover: palette.green700,
+              hover: palette.positive700,
             },
           },
           ghost: {
@@ -349,21 +359,11 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.green600,
+              initial: palette.positive600,
               active: palette.black,
-              hover: palette.green700,
+              hover: palette.positive700,
             },
           },
-        },
-      },
-
-      container: {
-        primary: {
-          background: palette.white,
-        },
-        secondary: {
-          background: "rgb(245,247,248)",
-          borderColor: palette.gray500,
         },
       },
 
@@ -373,38 +373,46 @@ const t = {
           disabled: palette.black40a,
         },
         subtle: {
-          foreground: palette.gray700,
-          disabled: "rgba(76, 81, 87, 0.4)", // gray700a40
+          foreground: palette.neutral700,
+          disabled: "rgba(64, 64, 64, 0.4)", // neutral700a40
         },
         accent: {
-          foreground: palette.brown600,
+          foreground: palette.brand600,
         },
         visited: {
-          foreground: "rgb(73, 21, 82)", // purple800
+          foreground: "#6b21a8", // purple800
         },
         onSolid: {
           foreground: palette.white,
         },
         error: {
-          foreground: palette.red600,
+          foreground: palette.negative600,
         },
       },
 
       selectable: {
         background: {
-          selected: palette.brown200,
+          selected: palette.brand200,
         },
         borderColor: {
-          selected: palette.brown500,
+          selected: palette.brand500,
         },
         foreground: {
-          selected: palette.brown500,
+          selected: palette.brand500,
+        },
+      },
+
+      background: {
+        surface: {
+          default: palette.neutral050,
+          raised: palette.neutral100,
+          overlay: palette.neutral100,
         },
       },
 
       border: {
         default: palette.black30a,
-        focused: "rgb(0,120,207)",
+        focused: "#3b82f6", // blue500
       },
     },
 
@@ -422,13 +430,13 @@ const t = {
         accented: {
           solid: {
             background: {
-              initial: palette.brown500,
-              active: palette.brown800,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.brown500}`,
+              initial: palette.brand500,
+              active: palette.brand800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.brand500}`,
             },
             borderColor: {
-              initial: palette.brown500,
-              active: palette.brown500,
+              initial: palette.brand500,
+              active: palette.brand500,
               hover: palette.white30a,
             },
             foreground: {
@@ -440,18 +448,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.brown800,
-              hover: palette.brown900,
+              active: palette.brand800,
+              hover: palette.brand900,
             },
             borderColor: {
-              initial: palette.brown500,
-              active: palette.brown500,
-              hover: palette.brown500,
+              initial: palette.brand500,
+              active: palette.brand500,
+              hover: palette.brand500,
             },
             foreground: {
-              initial: palette.brown400,
+              initial: palette.brand400,
               active: palette.white,
-              hover: palette.brown300,
+              hover: palette.brand300,
             },
           },
           ghost: {
@@ -466,22 +474,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.brown400,
+              initial: palette.brand400,
               active: palette.white,
-              hover: palette.brown300,
+              hover: palette.brand300,
             },
           },
         },
         neutral: {
           solid: {
             background: {
-              initial: palette.gray500,
-              active: palette.gray800,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.gray500}`,
+              initial: palette.neutral500,
+              active: palette.neutral800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.neutral500}`,
             },
             borderColor: {
-              initial: palette.gray500,
-              active: palette.gray500,
+              initial: palette.neutral500,
+              active: palette.neutral500,
               hover: palette.white30a,
             },
             foreground: {
@@ -493,18 +501,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.gray800,
-              hover: palette.gray900,
+              active: palette.neutral800,
+              hover: palette.neutral900,
             },
             borderColor: {
-              initial: palette.gray500,
-              active: palette.gray500,
-              hover: palette.gray500,
+              initial: palette.neutral500,
+              active: palette.neutral500,
+              hover: palette.neutral500,
             },
             foreground: {
-              initial: palette.gray400,
+              initial: palette.neutral400,
               active: palette.white,
-              hover: palette.gray300,
+              hover: palette.neutral300,
             },
           },
           ghost: {
@@ -519,22 +527,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.gray400,
+              initial: palette.neutral400,
               active: palette.white,
-              hover: palette.gray300,
+              hover: palette.neutral300,
             },
           },
         },
         caution: {
           solid: {
             background: {
-              initial: palette.orange500,
-              active: palette.orange800,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.orange500}`,
+              initial: palette.caution500,
+              active: palette.caution800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.caution500}`,
             },
             borderColor: {
-              initial: palette.orange500,
-              active: palette.orange500,
+              initial: palette.caution500,
+              active: palette.caution500,
               hover: palette.white30a,
             },
             foreground: {
@@ -546,18 +554,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.orange800,
-              hover: palette.orange900,
+              active: palette.caution800,
+              hover: palette.caution900,
             },
             borderColor: {
-              initial: palette.orange500,
-              active: palette.orange500,
-              hover: palette.orange500,
+              initial: palette.caution500,
+              active: palette.caution500,
+              hover: palette.caution500,
             },
             foreground: {
-              initial: palette.orange400,
+              initial: palette.caution400,
               active: palette.white,
-              hover: palette.orange300,
+              hover: palette.caution300,
             },
           },
           ghost: {
@@ -572,22 +580,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.orange400,
+              initial: palette.caution400,
               active: palette.white,
-              hover: palette.orange300,
+              hover: palette.caution300,
             },
           },
         },
         negative: {
           solid: {
             background: {
-              initial: palette.red500,
-              active: palette.red800,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.red500}`,
+              initial: palette.negative500,
+              active: palette.negative800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.negative500}`,
             },
             borderColor: {
-              initial: palette.red500,
-              active: palette.red500,
+              initial: palette.negative500,
+              active: palette.negative500,
               hover: palette.white30a,
             },
             foreground: {
@@ -599,18 +607,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.red800,
-              hover: palette.red900,
+              active: palette.negative800,
+              hover: palette.negative900,
             },
             borderColor: {
-              initial: palette.red500,
-              active: palette.red500,
-              hover: palette.red500,
+              initial: palette.negative500,
+              active: palette.negative500,
+              hover: palette.negative500,
             },
             foreground: {
-              initial: palette.red400,
+              initial: palette.negative400,
               active: palette.white,
-              hover: palette.red300,
+              hover: palette.negative300,
             },
           },
           ghost: {
@@ -625,22 +633,22 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.red400,
+              initial: palette.negative400,
               active: palette.white,
-              hover: palette.red300,
+              hover: palette.negative300,
             },
           },
         },
         positive: {
           solid: {
             background: {
-              initial: palette.green500,
-              active: palette.green800,
-              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.green500}`,
+              initial: palette.positive500,
+              active: palette.positive800,
+              hover: `linear-gradient(${palette.black15a},${palette.black15a}) ${palette.positive500}`,
             },
             borderColor: {
-              initial: palette.green500,
-              active: palette.green500,
+              initial: palette.positive500,
+              active: palette.positive500,
               hover: palette.white30a,
             },
             foreground: {
@@ -652,18 +660,18 @@ const t = {
           bordered: {
             background: {
               initial: palette.transparent,
-              active: palette.green800,
-              hover: palette.green900,
+              active: palette.positive800,
+              hover: palette.positive900,
             },
             borderColor: {
-              initial: palette.green500,
-              active: palette.green500,
-              hover: palette.green500,
+              initial: palette.positive500,
+              active: palette.positive500,
+              hover: palette.positive500,
             },
             foreground: {
-              initial: palette.green400,
+              initial: palette.positive400,
               active: palette.white,
-              hover: palette.green300,
+              hover: palette.positive300,
             },
           },
           ghost: {
@@ -678,21 +686,11 @@ const t = {
               hover: palette.transparent,
             },
             foreground: {
-              initial: palette.green400,
+              initial: palette.positive400,
               active: palette.white,
-              hover: palette.green300,
+              hover: palette.positive300,
             },
           },
-        },
-      },
-
-      container: {
-        primary: {
-          background: "rgb(16,24,32)",
-        },
-        secondary: {
-          background: "rgb(26,34,41)",
-          borderColor: palette.gray500,
         },
       },
 
@@ -702,38 +700,46 @@ const t = {
           disabled: palette.white40a,
         },
         subtle: {
-          foreground: palette.gray300,
-          disabled: "rgba(177, 181, 185, 0.4)", // gray300a40
+          foreground: palette.neutral300,
+          disabled: "rgba(212, 212, 212, 0.4)", // neutral300a40
         },
         accent: {
-          foreground: palette.brown400,
+          foreground: palette.brand400,
         },
         visited: {
-          foreground: "rgb(240, 214, 245)", // purple200
+          foreground: "#e9d5ff", // purple200
         },
         onSolid: {
           foreground: palette.white,
         },
         error: {
-          foreground: palette.red400,
+          foreground: palette.negative400,
         },
       },
 
       selectable: {
         background: {
-          selected: palette.brown800,
+          selected: palette.brand800,
         },
         borderColor: {
-          selected: palette.brown500,
+          selected: palette.brand500,
         },
         foreground: {
-          selected: palette.brown500,
+          selected: palette.brand500,
+        },
+      },
+
+      background: {
+        surface: {
+          default: palette.neutral950,
+          raised: palette.neutral900,
+          overlay: palette.neutral900,
         },
       },
 
       border: {
         default: palette.white30a,
-        focused: "rgb(0,120,207)",
+        focused: "#3b82f6", // blue500
       },
     },
 

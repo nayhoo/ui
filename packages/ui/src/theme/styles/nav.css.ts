@@ -3,7 +3,7 @@ import { theme } from "@/theme/themes/theme-contract.css";
 
 export const nav = homemadeRecipe({
   base: {
-    backgroundColor: theme.color.container.primary.background,
+    backgroundColor: theme.color.background.surface.default,
     borderBottomWidth: theme.border.width.default,
     borderBottomStyle: theme.border.style.default,
     top: 0,

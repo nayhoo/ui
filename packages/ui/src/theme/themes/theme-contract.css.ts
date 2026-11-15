@@ -282,16 +282,6 @@ export const theme = createThemeContract({
       },
     },
 
-    container: {
-      primary: {
-        background: null,
-      },
-      secondary: {
-        background: null,
-        borderColor: null,
-      },
-    },
-
     content: {
       primary: {
         foreground: null,
@@ -324,6 +314,17 @@ export const theme = createThemeContract({
       },
       foreground: {
         selected: null,
+      },
+    },
+
+    background: {
+      surface: {
+        /** primary background */
+        default: null,
+        /** cards */
+        raised: null,
+        /** dialogs, dropdown menus, toasts etc. */
+        overlay: null,
       },
     },
 
