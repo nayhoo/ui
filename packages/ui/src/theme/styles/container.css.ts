@@ -4,7 +4,6 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 
 export const container = homemadeRecipe({
   base: {
-    boxSizing: "border-box",
     flexShrink: 0,
     marginLeft: "auto",
     marginRight: "auto",

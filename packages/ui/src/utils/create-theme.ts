@@ -423,6 +423,10 @@ const t = {
           selected: palette.brown500,
         },
       },
+
+      border: {
+        focused: "rgb(0,120,207)",
+      },
     },
 
     shadow: {
@@ -768,6 +772,10 @@ const t = {
         tertiary: {
           borderColor: palette.white20a,
         },
+      },
+
+      border: {
+        focused: "rgb(0,120,207)",
       },
     },
 

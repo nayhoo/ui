@@ -4,6 +4,18 @@ import { createGlobalTheme } from "@vanilla-extract/css";
 const { color, shadow, ...t } = theme;
 
 createGlobalTheme(":root", t, {
+  border: {
+    style: {
+      default: "solid",
+      focused: "solid",
+      selected: "solid",
+    },
+    width: {
+      default: "1px",
+      focused: "2px",
+      selected: "2px",
+    },
+  },
   fontFamily: {
     text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
     code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",

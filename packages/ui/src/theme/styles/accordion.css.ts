@@ -78,17 +78,14 @@ export const accordionContentText = style({
 });
 
 export const accordionHeader = style({
-  all: "unset",
-
   display: "flex",
 });
 
 export const accordionTrigger = style({
-  all: "unset",
-
   alignItems: "center",
   backgroundColor: theme.color.actionable.neutral.ghost.background.initial,
-  border: "1px solid",
+  borderWidth: theme.border.width.default,
+  borderStyle: theme.border.style.default,
   borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
   color: theme.color.content.primary.foreground,
   display: "flex",

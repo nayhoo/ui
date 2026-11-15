@@ -30,15 +30,13 @@ export const checkboxIndicator = homemadeRecipe({
 
 export const checkbox = homemadeRecipe({
   base: {
-    all: "unset",
-
     alignItems: "center",
     appearance: "none",
-    border: "1px solid",
+    borderWidth: theme.border.width.default,
+    borderStyle: theme.border.style.default,
     backgroundColor: theme.color.actionable.neutral.bordered.background.initial,
     color: theme.color.content.primary.foreground,
     borderColor: theme.color.actionable.neutral.bordered.borderColor.initial,
-    boxSizing: "border-box",
     display: "inline-flex",
     justifyContent: "center",
     lineHeight: "1",
@@ -49,12 +47,6 @@ export const checkbox = homemadeRecipe({
     WebkitTapHighlightColor: "rgba(0,0,0,0)",
 
     selectors: {
-      "&::before": {
-        boxSizing: "border-box",
-      },
-      "&::after": {
-        boxSizing: "border-box",
-      },
       "&:hover": {
         cursor: "pointer",
       },

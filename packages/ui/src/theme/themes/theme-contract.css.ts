@@ -1,8 +1,18 @@
 import { createThemeContract } from "@vanilla-extract/css";
 
-// Combine the individual contracts into one
-// based on the System UI Theme Specification https://github.com/system-ui/theme-specification?tab=readme-ov-file#key-reference
 export const theme = createThemeContract({
+  border: {
+    style: {
+      default: null,
+      focused: null,
+      selected: null,
+    },
+    width: {
+      default: null,
+      focused: null,
+      selected: null,
+    },
+  },
   color: {
     actionable: {
       accented: {
@@ -338,6 +348,10 @@ export const theme = createThemeContract({
         borderColor: null,
       },
     },
+
+    border: {
+      focused: null,
+    },
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-family
   fontFamily: {
@@ -413,9 +427,6 @@ export const theme = createThemeContract({
     /** modal */
     5: null,
   },
-  //   todo: border
-  //   todo: borderWidth
-  //   todo: borderStyle
   // https://www.radix-ui.com/themes/docs/theme/spacing
   space: {
     1: null,

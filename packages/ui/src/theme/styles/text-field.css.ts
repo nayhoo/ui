@@ -5,9 +5,9 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 export const textField = homemadeRecipe({
   base: {
     appearance: "none",
-    border: "1px solid",
+    borderWidth: theme.border.width.default,
+    borderStyle: theme.border.style.default,
     borderRadius: theme.radii[2],
-    boxSizing: "border-box",
     color: theme.color.content.primary.foreground,
     fontFamily: theme.fontFamily.text,
     fontVariantNumeric: "tabular-nums",
@@ -17,12 +17,6 @@ export const textField = homemadeRecipe({
       "&:-webkit-autofill": {},
       "&:-webkit-autofill::first-line": {
         // fontFamily: "$untitled",
-      },
-      "&::after": {
-        boxSizing: "border-box",
-      },
-      "&::before": {
-        boxSizing: "border-box",
       },
       "&:disabled": {
         opacity: 0.4,

@@ -5,8 +5,6 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 // 'switch' is not allowed as a variable declaration name.ts(1389)
 export const _switch = homemadeRecipe({
   base: {
-    all: "unset",
-
     backgroundColor: "rgb(114, 119, 125)",
     borderRadius: theme.radii.full,
     position: "relative",
@@ -46,8 +44,6 @@ export type SwitchVariants = NonNullable<
 
 export const switchThumb = homemadeRecipe({
   base: {
-    all: "unset",
-
     backgroundColor: "white",
     borderRadius: theme.radii.full,
     display: "block",

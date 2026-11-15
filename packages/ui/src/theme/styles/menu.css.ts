@@ -18,7 +18,6 @@ export const menuLabel = style({
 
 export const menuContent = homemadeRecipe({
   base: {
-    boxSizing: "border-box",
     minWidth: 120,
     padding: theme.space[1],
   },

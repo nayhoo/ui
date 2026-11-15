@@ -6,12 +6,12 @@ export const separator = homemadeRecipe({
   base: {
     selectors: {
       "&[data-orientation=horizontal]": {
-        height: 1,
+        height: theme.border.width.default,
         width: "100%",
       },
       "&[data-orientation=vertical]": {
         height: "100%",
-        width: 1,
+        width: theme.border.width.default,
       },
     },
   },

@@ -4,12 +4,10 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 
 export const iconButton = homemadeRecipe({
   base: {
-    all: "unset",
-
     alignItems: "center",
-    border: "1px solid",
+    borderWidth: theme.border.width.default,
+    borderStyle: theme.border.style.default,
     borderRadius: theme.radii[2],
-    boxSizing: "border-box",
     display: "inline-flex",
     flexShrink: 0,
     fontVariantNumeric: "tabular-nums",
@@ -21,12 +19,6 @@ export const iconButton = homemadeRecipe({
     WebkitTapHighlightColor: "rgba(0,0,0,0)",
 
     selectors: {
-      "&::after": {
-        boxSizing: "border-box",
-      },
-      "&::before": {
-        boxSizing: "border-box",
-      },
       "&:hover": {
         cursor: "pointer",
       },

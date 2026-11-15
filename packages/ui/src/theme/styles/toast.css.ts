@@ -213,7 +213,6 @@ export const checkmark = style({
   selectors: {
     "&::after": {
       content: '""',
-      boxSizing: "border-box",
       animation: `${checkmarkAnimation} 0.2s ease-out forwards`,
       opacity: "0",
       animationDelay: "200ms",
