@@ -14,7 +14,7 @@ export default () => {
 
         <Box display="flex" gap="2">
           <Button size="2">Log in</Button>
-          <Button size="2" variant="solid" sentiment="accented">
+          <Button size="2" variant="solid" sentiment="brand">
             Get started
           </Button>
         </Box>

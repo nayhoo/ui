@@ -9,6 +9,7 @@ export const spinner = homemadeRecipe({
     border: "2px solid currentColor",
     borderRadius: theme.radii.round,
     borderTop: "2px solid transparent",
+    flexShrink: 0,
   },
 
   variants: {

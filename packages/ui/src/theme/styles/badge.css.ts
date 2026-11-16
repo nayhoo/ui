@@ -7,6 +7,7 @@ export const badge = homemadeRecipe({
     alignItems: "center",
     appearance: "none",
     borderRadius: theme.radii.full,
+    color: theme.color.text.onSolid,
     display: "inline-flex",
     flexShrink: 0,
     fontFamily: theme.fontFamily.text,
@@ -19,30 +20,20 @@ export const badge = homemadeRecipe({
 
   variants: {
     sentiment: {
-      accented: {
-        backgroundColor:
-          theme.color.actionable.accented.solid.background.initial,
-        color: theme.color.actionable.accented.solid.foreground.initial,
+      brand: {
+        backgroundColor: theme.color.background.brand.default,
       },
       neutral: {
-        backgroundColor:
-          theme.color.actionable.neutral.solid.background.initial,
-        color: theme.color.actionable.neutral.solid.foreground.initial,
+        backgroundColor: theme.color.background.neutral.default,
       },
       caution: {
-        backgroundColor:
-          theme.color.actionable.caution.solid.background.initial,
-        color: theme.color.actionable.caution.solid.foreground.initial,
+        backgroundColor: theme.color.background.caution.default,
       },
       negative: {
-        backgroundColor:
-          theme.color.actionable.negative.solid.background.initial,
-        color: theme.color.actionable.negative.solid.foreground.initial,
+        backgroundColor: theme.color.background.negative.default,
       },
       positive: {
-        backgroundColor:
-          theme.color.actionable.positive.solid.background.initial,
-        color: theme.color.actionable.positive.solid.foreground.initial,
+        backgroundColor: theme.color.background.positive.default,
       },
     },
     size: {
@@ -62,7 +53,7 @@ export const badge = homemadeRecipe({
   },
 
   defaultVariants: {
-    sentiment: "accented",
+    sentiment: "brand",
     size: "1",
   },
 });

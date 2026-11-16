@@ -71,7 +71,7 @@ export const SelectItem = (props: Omit<SelectItemProps, "asChild">) => {
             <CheckIcon />
           </SelectPrimitive.ItemIndicator>
         }
-        sentiment="accented"
+        sentiment="brand"
         size="1"
         variant="ghost"
       >

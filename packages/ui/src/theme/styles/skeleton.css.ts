@@ -3,7 +3,7 @@ import { theme } from "@/theme/themes/theme-contract.css";
 import { globalStyle, style } from "@vanilla-extract/css";
 
 export const skeleton = style({
-  backgroundColor: theme.color.actionable.negative.ghost.background.hover,
+  backgroundColor: theme.color.background.ghost.hovered,
   borderColor: "transparent",
   boxShadow: "none",
   color: "transparent",
@@ -20,7 +20,7 @@ export const skeleton = style({
       animationDirection: "alternate",
       animationIterationCount: "infinite",
       animationTimingFunction: "ease-in-out",
-      backgroundColor: theme.color.actionable.negative.ghost.background.active,
+      backgroundColor: theme.color.background.ghost.pressed,
       bottom: 0,
       content: '""',
       left: 0,

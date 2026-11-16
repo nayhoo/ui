@@ -83,10 +83,10 @@ export const accordionHeader = style({
 
 export const accordionTrigger = style({
   alignItems: "center",
-  backgroundColor: theme.color.actionable.neutral.ghost.background.initial,
+  backgroundColor: theme.color.background.ghost.default,
   borderWidth: theme.border.width.default,
   borderStyle: theme.border.style.default,
-  borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
+  borderColor: theme.color.border.ghost,
   color: theme.color.text.default,
   display: "flex",
   flex: 1,
@@ -103,8 +103,7 @@ export const accordionTrigger = style({
   selectors: {
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: theme.color.actionable.neutral.ghost.background.hover,
-      borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
+      backgroundColor: theme.color.background.ghost.hovered,
     },
   },
 });

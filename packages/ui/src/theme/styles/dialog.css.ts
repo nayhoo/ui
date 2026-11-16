@@ -74,7 +74,7 @@ export const dialogHeader = style({
 });
 
 export const dialogBody = style({
-  padding: theme.space[4],
+  padding: `${theme.space[2]} ${theme.space[2]} ${theme.space[3]} ${theme.space[2]}`,
 });
 
 export const dialogOverlay = style({

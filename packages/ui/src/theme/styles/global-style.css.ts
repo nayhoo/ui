@@ -14,8 +14,10 @@ globalStyle("*:focus-visible", {
   outlineColor: theme.color.border.focused,
   outlineStyle: theme.border.style.focused,
   outlineWidth: theme.border.width.focused,
+  outlineOffset: "2px",
 });
 
 globalStyle("html, body", {
+  color: theme.color.text.default,
   background: theme.color.background.surface.default,
 });

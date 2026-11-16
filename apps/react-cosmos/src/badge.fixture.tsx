@@ -6,7 +6,7 @@ import { useFixtureInput, useFixtureSelect } from "react-cosmos/client";
 // eslint-disable-next-line react/display-name
 export default () => {
   const [sentiment] = useFixtureSelect("sentiment", {
-    options: ["accented", "neutral", "caution", "negative", "positive"],
+    options: ["brand", "neutral", "caution", "negative", "positive"],
   });
 
   const [label] = useFixtureInput("label", "This is a badge");

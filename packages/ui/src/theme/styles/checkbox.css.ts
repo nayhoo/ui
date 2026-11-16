@@ -34,9 +34,9 @@ export const checkbox = homemadeRecipe({
     appearance: "none",
     borderWidth: theme.border.width.default,
     borderStyle: theme.border.style.default,
-    backgroundColor: theme.color.actionable.neutral.bordered.background.initial,
+    backgroundColor: theme.color.background.ghost.default,
     color: theme.color.text.default,
-    borderColor: theme.color.actionable.neutral.bordered.borderColor.initial,
+    borderColor: theme.color.border.neutral,
     display: "inline-flex",
     justifyContent: "center",
     lineHeight: "1",
@@ -55,9 +55,8 @@ export const checkbox = homemadeRecipe({
         cursor: "not-allowed",
       },
       "&:hover:not(:disabled)": {
-        backgroundColor:
-          theme.color.actionable.neutral.bordered.background.hover,
-        borderColor: theme.color.actionable.neutral.bordered.borderColor.hover,
+        backgroundColor: theme.color.background.ghost.hovered,
+        color: theme.color.text.neutral.hovered,
       },
     },
   },

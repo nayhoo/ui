@@ -14,286 +14,6 @@ export const theme = createThemeContract({
     },
   },
   color: {
-    actionable: {
-      accented: {
-        solid: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        bordered: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        ghost: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-      },
-      neutral: {
-        solid: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        bordered: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        ghost: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-      },
-      caution: {
-        solid: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        bordered: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        ghost: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-      },
-      negative: {
-        solid: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        bordered: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        ghost: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-      },
-      positive: {
-        solid: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        bordered: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-        ghost: {
-          background: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          borderColor: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-          foreground: {
-            initial: null,
-            active: null,
-            hover: null,
-          },
-        },
-      },
-    },
-
-    selectable: {
-      background: {
-        selected: null,
-      },
-      borderColor: {
-        selected: null,
-      },
-      foreground: {
-        selected: null,
-      },
-    },
-
     background: {
       surface: {
         /** primary background */
@@ -303,11 +23,47 @@ export const theme = createThemeContract({
         /** dialogs, dropdown menus, toasts etc. */
         overlay: null,
       },
+      brand: {
+        default: null,
+        hovered: null,
+        pressed: null,
+      },
+      neutral: {
+        default: null,
+        hovered: null,
+        pressed: null,
+      },
+      positive: {
+        default: null,
+        hovered: null,
+        pressed: null,
+      },
+      caution: {
+        default: null,
+        hovered: null,
+        pressed: null,
+      },
+      negative: {
+        default: null,
+        hovered: null,
+        pressed: null,
+      },
+      ghost: {
+        default: null,
+        hovered: null,
+        pressed: null,
+      },
     },
 
     border: {
       default: null,
       focused: null,
+      brand: null,
+      neutral: null,
+      positive: null,
+      caution: null,
+      negative: null,
+      ghost: null,
     },
 
     text: {
@@ -317,10 +73,26 @@ export const theme = createThemeContract({
       visited: null,
       /** used on top of "solid" variant elements */
       onSolid: null,
-      brand: null,
-      positive: null,
-      caution: null,
-      negative: null,
+      brand: {
+        default: null,
+        hovered: null,
+      },
+      neutral: {
+        default: null,
+        hovered: null,
+      },
+      positive: {
+        default: null,
+        hovered: null,
+      },
+      caution: {
+        default: null,
+        hovered: null,
+      },
+      negative: {
+        default: null,
+        hovered: null,
+      },
     },
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-family

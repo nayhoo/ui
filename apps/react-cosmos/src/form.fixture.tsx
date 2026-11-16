@@ -87,7 +87,7 @@ export default () => {
         <Button
           fullWidth
           loading={loading}
-          sentiment="accented"
+          sentiment="brand"
           style={{ marginTop: 10 }}
           variant="solid"
         >

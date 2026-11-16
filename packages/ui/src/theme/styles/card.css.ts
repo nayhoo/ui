@@ -7,5 +7,5 @@ export const card = style({
   borderStyle: theme.border.style.default,
   borderColor: theme.color.border.default,
   borderRadius: theme.radii[2],
-  padding: theme.space[2],
+  padding: `${theme.space[2]} ${theme.space[2]} ${theme.space[3]} ${theme.space[2]}`,
 });

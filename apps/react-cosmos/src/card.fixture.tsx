@@ -12,10 +12,7 @@ export default () => {
     <Card>
       <Heading as="h5">This is a card component</Heading>
 
-      <Separator
-        variant="secondary"
-        style={{ margin: `${theme.space[4]} 0` }}
-      />
+      <Separator style={{ margin: `${theme.space[2]} 0` }} />
 
       <Text>This is a card component</Text>
     </Card>

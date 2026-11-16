@@ -14,7 +14,8 @@ export const iconButton = homemadeRecipe({
     justifyContent: "center",
     padding: theme.space[1],
     position: "relative",
-    transition: "all 100ms",
+    transitionProperty: "background-color, color, border-color",
+    transitionDuration: "100ms",
     userSelect: "none",
     WebkitTapHighlightColor: "rgba(0,0,0,0)",
 
@@ -51,48 +52,34 @@ export const iconButton = homemadeRecipe({
     },
     variant: {
       bordered: {
-        backgroundColor:
-          theme.color.actionable.neutral.bordered.background.initial,
-        color: theme.color.actionable.neutral.bordered.foreground.initial,
-        borderColor:
-          theme.color.actionable.neutral.bordered.borderColor.initial,
+        backgroundColor: theme.color.background.ghost.default,
+        color: theme.color.text.neutral.default,
+        borderColor: theme.color.border.neutral,
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.bordered.background.hover,
-            color: theme.color.actionable.neutral.bordered.foreground.hover,
-            borderColor:
-              theme.color.actionable.neutral.bordered.borderColor.hover,
+            backgroundColor: theme.color.background.neutral.hovered,
+            color: theme.color.text.neutral.hovered,
           },
           "&:active:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.bordered.background.active,
-            color: theme.color.actionable.neutral.bordered.foreground.active,
-            borderColor:
-              theme.color.actionable.neutral.bordered.borderColor.active,
+            backgroundColor: theme.color.background.neutral.pressed,
+            color: theme.color.text.default,
           },
         },
       },
       ghost: {
-        backgroundColor:
-          theme.color.actionable.neutral.ghost.background.initial,
-        color: theme.color.actionable.neutral.ghost.foreground.initial,
-        borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
+        backgroundColor: theme.color.background.ghost.default,
+        color: theme.color.text.neutral.default,
+        borderColor: theme.color.border.ghost,
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.ghost.background.hover,
-            color: theme.color.actionable.neutral.ghost.foreground.hover,
-            borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
+            backgroundColor: theme.color.background.ghost.hovered,
+            color: theme.color.text.neutral.hovered,
           },
           "&:active:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.ghost.background.active,
-            color: theme.color.actionable.neutral.ghost.foreground.active,
-            borderColor:
-              theme.color.actionable.neutral.ghost.borderColor.active,
+            backgroundColor: theme.color.background.ghost.pressed,
+            color: theme.color.text.default,
           },
         },
       },

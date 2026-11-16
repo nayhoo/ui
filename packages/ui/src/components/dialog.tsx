@@ -38,7 +38,7 @@ export type DialogProps = DialogPrimitive.DialogProps;
  *          <Button>Cancel</Button>
  *        </DialogClose>
  *
- *        <Button sentiment="accented" variant="solid">
+ *        <Button sentiment="brand" variant="solid">
  *          Submit
  *        </Button>
  *      </DialogFooter>

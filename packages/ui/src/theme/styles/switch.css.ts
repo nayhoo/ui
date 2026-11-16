@@ -5,14 +5,15 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 // 'switch' is not allowed as a variable declaration name.ts(1389)
 export const _switch = homemadeRecipe({
   base: {
-    backgroundColor: "rgb(114, 119, 125)",
+    backgroundColor: theme.color.background.neutral.default,
+    border: "none",
     borderRadius: theme.radii.full,
     position: "relative",
     WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
 
     selectors: {
       '&[data-state="checked"]': {
-        backgroundColor: theme.color.selectable.background.selected,
+        backgroundColor: theme.color.background.brand.default,
       },
     },
   },
@@ -21,15 +22,11 @@ export const _switch = homemadeRecipe({
     size: {
       "1": {
         height: theme.space[4],
-        paddingLeft: theme.space[1],
-        paddingRight: theme.space[1],
-        width: theme.space[4],
+        width: "24px",
       },
       "2": {
         height: theme.space[5],
-        paddingLeft: theme.space[2],
-        paddingRight: theme.space[2],
-        width: theme.space[5],
+        width: "40px",
       },
     },
   },

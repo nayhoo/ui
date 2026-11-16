@@ -14,7 +14,7 @@ export default () => {
   });
 
   const [sentiment] = useFixtureSelect("sentiment", {
-    options: ["accented", "neutral", "caution", "negative", "positive"],
+    options: ["brand", "neutral", "caution", "negative", "positive"],
   });
 
   const [variant] = useFixtureSelect("variant", {

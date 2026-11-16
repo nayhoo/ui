@@ -24,8 +24,7 @@ export const textField = homemadeRecipe({
       },
       "&:read-only": {},
       "&[data-invalid]": {
-        borderColor:
-          theme.color.actionable.negative.bordered.borderColor.initial,
+        borderColor: theme.color.border.negative,
       },
       "&[data-placeholder]": {
         color: theme.color.text.subtle,
@@ -90,50 +89,35 @@ export const textField = homemadeRecipe({
     },
     variant: {
       bordered: {
-        backgroundColor:
-          theme.color.actionable.neutral.bordered.background.initial,
-        borderColor:
-          theme.color.actionable.neutral.bordered.borderColor.initial,
+        backgroundColor: theme.color.background.ghost.default,
+        borderColor: theme.color.border.neutral,
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.bordered.background.hover,
-            borderColor:
-              theme.color.actionable.neutral.bordered.borderColor.hover,
+            backgroundColor: theme.color.background.neutral.hovered,
           },
           "&:active:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.bordered.background.active,
-            borderColor:
-              theme.color.actionable.neutral.bordered.borderColor.active,
+            backgroundColor: theme.color.background.neutral.pressed,
           },
         },
       },
       ghost: {
-        backgroundColor:
-          theme.color.actionable.neutral.ghost.background.initial,
-        borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
+        backgroundColor: theme.color.background.ghost.default,
+        borderColor: theme.color.border.ghost,
 
         selectors: {
           "&:hover:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.ghost.background.hover,
-            borderColor: theme.color.actionable.neutral.ghost.borderColor.hover,
+            backgroundColor: theme.color.background.ghost.hovered,
           },
           "&:active:not(:disabled)": {
-            backgroundColor:
-              theme.color.actionable.neutral.ghost.background.active,
-            borderColor:
-              theme.color.actionable.neutral.ghost.borderColor.active,
+            backgroundColor: theme.color.background.ghost.pressed,
           },
         },
       },
     },
     error: {
       true: {
-        borderColor:
-          theme.color.actionable.negative.bordered.borderColor.initial,
+        borderColor: theme.color.border.negative,
       },
     },
   },

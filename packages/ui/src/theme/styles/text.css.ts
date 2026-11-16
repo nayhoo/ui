@@ -23,13 +23,13 @@ export const text = homemadeRecipe({
         color: theme.color.text.subtle,
       },
       positive: {
-        color: theme.color.text.positive,
+        color: theme.color.text.positive.default,
       },
       caution: {
-        color: theme.color.text.caution,
+        color: theme.color.text.caution.default,
       },
       negative: {
-        color: theme.color.text.negative,
+        color: theme.color.text.negative.default,
       },
       inherit: {
         color: "inherit",

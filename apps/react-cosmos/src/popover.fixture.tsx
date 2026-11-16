@@ -13,7 +13,7 @@ export default () => {
       </PopoverTrigger>
 
       <PopoverContent>
-        <Text>Hi</Text>
+        <Text>I want to be with Ninten</Text>
       </PopoverContent>
     </Popover>
   );

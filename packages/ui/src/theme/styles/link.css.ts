@@ -4,7 +4,7 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 
 export const link = homemadeRecipe({
   base: {
-    color: theme.color.text.brand,
+    color: theme.color.text.brand.default,
     fontFamily: theme.fontFamily.text,
     textDecorationColor: "currentColor",
     textDecorationLine: "none",
