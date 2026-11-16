@@ -55,7 +55,7 @@ const slideUp = keyframes({
 });
 
 export const accordionContent = style({
-  color: theme.color.content.subtle.foreground,
+  color: theme.color.text.subtle,
   fontFamily: theme.fontFamily.text,
   fontSize: theme.fontSize[2],
   fontVariantNumeric: "tabular-nums",
@@ -87,7 +87,7 @@ export const accordionTrigger = style({
   borderWidth: theme.border.width.default,
   borderStyle: theme.border.style.default,
   borderColor: theme.color.actionable.neutral.ghost.borderColor.initial,
-  color: theme.color.content.primary.foreground,
+  color: theme.color.text.default,
   display: "flex",
   flex: 1,
   fontFamily: theme.fontFamily.text,

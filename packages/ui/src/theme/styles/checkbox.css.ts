@@ -35,7 +35,7 @@ export const checkbox = homemadeRecipe({
     borderWidth: theme.border.width.default,
     borderStyle: theme.border.style.default,
     backgroundColor: theme.color.actionable.neutral.bordered.background.initial,
-    color: theme.color.content.primary.foreground,
+    color: theme.color.text.default,
     borderColor: theme.color.actionable.neutral.bordered.borderColor.initial,
     display: "inline-flex",
     justifyContent: "center",

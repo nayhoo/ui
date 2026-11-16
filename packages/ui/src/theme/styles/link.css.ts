@@ -4,9 +4,9 @@ import { HomemadeRecipeVariants } from "homemade-recipes";
 
 export const link = homemadeRecipe({
   base: {
-    color: theme.color.content.accent.foreground,
+    color: theme.color.text.brand,
     fontFamily: theme.fontFamily.text,
-    textDecorationColor: theme.color.content.accent.foreground,
+    textDecorationColor: "currentColor",
     textDecorationLine: "none",
     textUnderlineOffset: "2px",
 
@@ -17,8 +17,7 @@ export const link = homemadeRecipe({
       },
 
       "&:visited": {
-        color: theme.color.content.visited.foreground,
-        textDecorationColor: theme.color.content.visited.foreground,
+        color: theme.color.text.visited,
       },
     },
   },

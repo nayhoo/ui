@@ -8,7 +8,7 @@ export const textField = homemadeRecipe({
     borderWidth: theme.border.width.default,
     borderStyle: theme.border.style.default,
     borderRadius: theme.radii[2],
-    color: theme.color.content.primary.foreground,
+    color: theme.color.text.default,
     fontFamily: theme.fontFamily.text,
     fontVariantNumeric: "tabular-nums",
     width: "100%",
@@ -28,7 +28,7 @@ export const textField = homemadeRecipe({
           theme.color.actionable.negative.bordered.borderColor.initial,
       },
       "&[data-placeholder]": {
-        color: theme.color.content.subtle.foreground,
+        color: theme.color.text.subtle,
       },
     },
   },
@@ -73,12 +73,6 @@ export const textField = homemadeRecipe({
             fontSize: theme.fontSize[3],
           },
         },
-      },
-    },
-    error: {
-      true: {
-        borderColor:
-          theme.color.actionable.negative.bordered.borderColor.initial,
       },
     },
     cursor: {
@@ -134,6 +128,12 @@ export const textField = homemadeRecipe({
               theme.color.actionable.neutral.ghost.borderColor.active,
           },
         },
+      },
+    },
+    error: {
+      true: {
+        borderColor:
+          theme.color.actionable.negative.bordered.borderColor.initial,
       },
     },
   },

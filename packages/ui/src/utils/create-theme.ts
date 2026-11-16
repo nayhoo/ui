@@ -367,29 +367,6 @@ const t = {
         },
       },
 
-      content: {
-        primary: {
-          foreground: palette.black,
-          disabled: palette.black40a,
-        },
-        subtle: {
-          foreground: palette.neutral700,
-          disabled: "rgba(64, 64, 64, 0.4)", // neutral700a40
-        },
-        accent: {
-          foreground: palette.brand600,
-        },
-        visited: {
-          foreground: "#6b21a8", // purple800
-        },
-        onSolid: {
-          foreground: palette.white,
-        },
-        error: {
-          foreground: palette.negative600,
-        },
-      },
-
       selectable: {
         background: {
           selected: palette.brand200,
@@ -413,6 +390,18 @@ const t = {
       border: {
         default: palette.black30a,
         focused: "#3b82f6", // blue500
+      },
+
+      text: {
+        default: palette.black,
+        subtle: palette.neutral700,
+        disabled: palette.black40a,
+        visited: "#6b21a8", // purple800
+        onSolid: palette.white,
+        brand: palette.brand600,
+        positive: palette.positive600,
+        caution: palette.caution600,
+        negative: palette.negative600,
       },
     },
 
@@ -694,29 +683,6 @@ const t = {
         },
       },
 
-      content: {
-        primary: {
-          foreground: palette.white,
-          disabled: palette.white40a,
-        },
-        subtle: {
-          foreground: palette.neutral300,
-          disabled: "rgba(212, 212, 212, 0.4)", // neutral300a40
-        },
-        accent: {
-          foreground: palette.brand400,
-        },
-        visited: {
-          foreground: "#e9d5ff", // purple200
-        },
-        onSolid: {
-          foreground: palette.white,
-        },
-        error: {
-          foreground: palette.negative400,
-        },
-      },
-
       selectable: {
         background: {
           selected: palette.brand800,
@@ -740,6 +706,18 @@ const t = {
       border: {
         default: palette.white30a,
         focused: "#3b82f6", // blue500
+      },
+
+      text: {
+        default: palette.white,
+        subtle: palette.neutral300,
+        disabled: palette.white40a,
+        visited: "#e9d5ff", // purple200
+        onSolid: palette.white,
+        brand: palette.brand400,
+        positive: palette.positive400,
+        caution: palette.caution400,
+        negative: palette.negative400,
       },
     },
 

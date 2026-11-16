@@ -49,7 +49,7 @@ export const FormMessage = ({
 }: FormMessageProps) => {
   return (
     <FormPrimitive.Message {...props} asChild>
-      <Text color={error ? "error" : "subtle"} size="1">
+      <Text color={error ? "negative" : "subtle"} size="1">
         {children}
       </Text>
     </FormPrimitive.Message>

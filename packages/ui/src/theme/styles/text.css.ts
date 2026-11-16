@@ -6,34 +6,36 @@ export const text = homemadeRecipe({
   base: {
     fontVariantNumeric: "tabular-nums",
     fontFamily: theme.fontFamily.text,
+
+    selectors: {
+      "&:disabled": {
+        color: theme.color.text.disabled,
+      },
+    },
   },
 
   variants: {
     color: {
-      primary: {
-        color: theme.color.content.primary.foreground,
-        selectors: {
-          "&:disabled": {
-            color: theme.color.content.primary.disabled,
-          },
-        },
+      default: {
+        color: theme.color.text.default,
       },
       subtle: {
-        color: theme.color.content.subtle.foreground,
-        selectors: {
-          "&:disabled": {
-            color: theme.color.content.subtle.disabled,
-          },
-        },
+        color: theme.color.text.subtle,
       },
-      error: {
-        color: theme.color.content.error.foreground,
+      positive: {
+        color: theme.color.text.positive,
+      },
+      caution: {
+        color: theme.color.text.caution,
+      },
+      negative: {
+        color: theme.color.text.negative,
       },
       inherit: {
         color: "inherit",
       },
       onSolid: {
-        color: theme.color.content.onSolid.foreground,
+        color: theme.color.text.onSolid,
       },
     },
     size: {
@@ -97,7 +99,7 @@ export const text = homemadeRecipe({
   },
 
   defaultVariants: {
-    color: "primary",
+    color: "default",
     size: "2",
     weight: "regular",
   },

@@ -282,29 +282,6 @@ export const theme = createThemeContract({
       },
     },
 
-    content: {
-      primary: {
-        foreground: null,
-        disabled: null,
-      },
-      subtle: {
-        foreground: null,
-        disabled: null,
-      },
-      accent: {
-        foreground: null,
-      },
-      visited: {
-        foreground: null,
-      },
-      onSolid: {
-        foreground: null,
-      },
-      error: {
-        foreground: null,
-      },
-    },
-
     selectable: {
       background: {
         selected: null,
@@ -331,6 +308,19 @@ export const theme = createThemeContract({
     border: {
       default: null,
       focused: null,
+    },
+
+    text: {
+      default: null,
+      subtle: null,
+      disabled: null,
+      visited: null,
+      /** used on top of "solid" variant elements */
+      onSolid: null,
+      brand: null,
+      positive: null,
+      caution: null,
+      negative: null,
     },
   },
   // https://www.radix-ui.com/themes/docs/theme/typography#font-family

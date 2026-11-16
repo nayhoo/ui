@@ -6,10 +6,10 @@ export const heading = homemadeRecipe({
   base: {
     fontVariantNumeric: "tabular-nums",
     fontFamily: theme.fontFamily.text,
-    color: theme.color.content.primary.foreground,
+    color: theme.color.text.default,
     selectors: {
       "&:disabled": {
-        color: theme.color.content.primary.disabled,
+        color: theme.color.text.disabled,
       },
     },
   },

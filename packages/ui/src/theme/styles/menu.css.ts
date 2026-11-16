@@ -6,7 +6,7 @@ import { homemadeRecipe } from "../../lib/homemade-recipe.css";
 export const menuLabel = style({
   display: "flex",
   justifyContent: "center",
-  color: theme.color.content.subtle.foreground,
+  color: theme.color.text.subtle,
   fontSize: theme.fontSize[1],
   letterSpacing: theme.letterSpacing[1],
   lineHeight: theme.lineHeight[1],

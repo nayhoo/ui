@@ -1,9 +1,11 @@
 import { Box } from "@nayhoo/ui/box";
 import { Text } from "@nayhoo/ui/text";
+import { text } from "@nayhoo/ui/theme";
+import { typedKeys } from "./utils/typedKeys";
 
-const colors = ["primary", "subtle", "error"] as const;
-const sizes = ["1", "2", "3", "4", "5", "6", "7", "8", "9"] as const;
-const weights = ["regular", "medium", "bold"] as const;
+const colors = typedKeys(text.classNames.variants.color);
+const sizes = typedKeys(text.classNames.variants.size);
+const weights = typedKeys(text.classNames.variants.weight);
 
 export default {
   default: () => {

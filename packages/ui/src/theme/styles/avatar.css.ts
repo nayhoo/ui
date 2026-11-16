@@ -16,7 +16,7 @@ export const avatar = homemadeRecipe({
     alignItems: "center",
     backgroundColor: theme.color.background.surface.raised,
     borderRadius: theme.radii[2],
-    color: theme.color.content.primary.foreground,
+    color: theme.color.text.default,
     display: "flex",
     flexShrink: 0,
     justifyContent: "center",

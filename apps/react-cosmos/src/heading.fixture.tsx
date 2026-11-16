@@ -33,8 +33,8 @@ export default {
   styleAs: () => {
     return (
       <Box display="flex" gap="4" direction="column">
-        {as.map((tag) => (
-          <Heading key={tag} styleAs={tag}>
+        {as.map((tag, i) => (
+          <Heading key={i} styleAs={tag}>
             h1 (styled as {tag})
           </Heading>
         ))}
