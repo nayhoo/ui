@@ -1,5 +1,21 @@
 # @nayhoo/ui
 
+## 0.26.0
+
+### Minor Changes
+
+- d3ea91e: added background color tokens. updated color palette
+- 1453891: added border tokens
+- d11dd88: added text color tokens
+
+### Patch Changes
+
+- d4923ee: updated button colors and re-added round prop
+- d602e18: added color tokens; revamped color usage
+- 7f8e9b9: Removed `sizes` tokens in place of `space` tokens. Updated button sizes and loading states
+- 4b8d3b7: Added letter spacing and line heights to `Text` and `Heading`
+- 66901a0: Updated theme token naming
+
 ## 0.25.4
 
 ### Patch Changes
