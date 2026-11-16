@@ -2,7 +2,6 @@
 
 import { Card } from "@nayhoo/ui/card";
 import { Heading } from "@nayhoo/ui/heading";
-import { Separator } from "@nayhoo/ui/separator";
 import { Text } from "@nayhoo/ui/text";
 import { theme } from "@nayhoo/ui/theme";
 
@@ -12,9 +11,9 @@ export default () => {
     <Card>
       <Heading as="h5">This is a card component</Heading>
 
-      <Separator style={{ margin: `${theme.space[2]} 0` }} />
-
-      <Text>This is a card component</Text>
+      <Text style={{ marginTop: theme.space[2] }}>
+        This is a card component
+      </Text>
     </Card>
   );
 };

@@ -1,5 +1,6 @@
 import { Box } from "@/components/box";
 import { IconButton } from "@/components/icon-button";
+import { theme } from "@/theme";
 import {
   dialogBody,
   dialogContent,
@@ -137,9 +138,11 @@ export type DialogTitleProps = {
 
 export const DialogTitle = ({ children }: DialogTitleProps) => {
   return (
-    <DialogPrimitive.Title asChild>
-      <Heading as="h5">{children}</Heading>
-    </DialogPrimitive.Title>
+    <Box style={{ marginLeft: theme.space[2] }}>
+      <DialogPrimitive.Title asChild>
+        <Heading as="h5">{children}</Heading>
+      </DialogPrimitive.Title>
+    </Box>
   );
 };
 

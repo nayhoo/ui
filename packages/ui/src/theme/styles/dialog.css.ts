@@ -57,7 +57,7 @@ export const dialogFooter = style({
   borderTopStyle: theme.border.style.default,
   borderTopColor: theme.color.border.default,
   bottom: 0,
-  padding: `${theme.space[2]} ${theme.space[2]}`,
+  padding: theme.space[2],
   position: "sticky",
   zIndex: theme.zIndex[5],
 });
@@ -74,7 +74,7 @@ export const dialogHeader = style({
 });
 
 export const dialogBody = style({
-  padding: `${theme.space[2]} ${theme.space[2]} ${theme.space[3]} ${theme.space[2]}`,
+  padding: `${theme.space[4]} ${theme.space[4]} ${theme.space[5]} ${theme.space[4]}`,
 });
 
 export const dialogOverlay = style({
