@@ -1,5 +1,4 @@
 import { theme } from "@/theme/themes/theme-contract.css";
-import * as colors from "@radix-ui/colors";
 import { keyframes, style } from "@vanilla-extract/css";
 
 const slideDown = keyframes({
@@ -57,10 +56,6 @@ export const toastRoot = style({
   },
 
   selectors: {
-    // "&::focus-visible": {
-    //   boxShadow: "0 0 0 2px black",
-    // },
-
     "&::after": {
       content: '""',
       position: "absolute",
@@ -124,56 +119,21 @@ export const toastRoot = style({
   },
 });
 
-export const toastInner = style({
-  padding: "15px",
-  borderRadius: "5px",
+export const toastCard = style({
+  padding: theme.space[3],
+  borderRadius: theme.radii[2],
+  borderWidth: theme.border.width.default,
+  borderStyle: theme.border.style.default,
+  borderColor: theme.color.border.default,
   height: "var(--height)",
-  backgroundColor: "white",
-  boxShadow:
-    "hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px",
-  display: "grid",
-  gridTemplateAreas: '"title action" "description action"',
-  gridTemplateColumns: "auto max-content",
-  columnGap: "10px",
-  rowGap: "5px",
-  alignItems: "center",
+  backgroundColor: theme.color.background.surface.overlay,
   position: "relative",
   selectors: {
-    '&:not([data-status="default"])': {
-      gridTemplateAreas: '"icon title action" "icon description action"',
-      gridTemplateColumns: "max-content auto max-content",
-    },
     '&:not([data-front="true"])': {
       height: "var(--front-height)",
     },
     '&[data-hovering="true"]': {
       height: "var(--height)",
-    },
-  },
-});
-
-export const toastClose = style({
-  position: "absolute",
-  left: "0px",
-  top: "0px",
-  transform: "translate(-35%, -35%)",
-  width: "15px !important",
-  height: "15px !important",
-  padding: "0px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "50% !important",
-  backgroundColor: colors.slate.slate1,
-  color: colors.slate.slate11,
-  transition: "color 200ms ease 0s, opacity 200ms ease 0s",
-  opacity: "0",
-  selectors: {
-    "&:hover": {
-      color: colors.slate.slate12,
-    },
-    [`${toastInner}:hover &`]: {
-      opacity: 1,
     },
   },
 });
@@ -203,7 +163,7 @@ export const checkmark = style({
   width: "20px",
   height: "20px",
   borderRadius: "10px",
-  backgroundColor: "rgb(0,135,93)",
+  backgroundColor: theme.color.background.positive.default,
   position: "relative",
   transform: "rotate(45deg)",
   animation: `${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`,
@@ -232,7 +192,7 @@ export const error = style({
   width: "20px",
   height: "20px",
   borderRadius: "10px",
-  backgroundColor: "rgb(229,33,53)",
+  backgroundColor: theme.color.background.negative.default,
   position: "relative",
   transform: "rotate(45deg)",
   animation: `${circleAnimation} 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`,

@@ -1,23 +1,21 @@
 // Credits: https://codesandbox.io/p/sandbox/radix-toast-stack-dpfx5f
 
+import { Box } from "@/components/box";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
-import { IconButton } from "@/components/icon-button";
 import { Text } from "@/components/text";
 import {
   checkmark,
   error,
-  toastClose,
-  toastInner,
+  toastCard,
   toastRoot,
   toastViewport,
 } from "@/theme/styles/toast.css";
-import { Cross2Icon } from "@radix-ui/react-icons";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import * as React from "react";
 
 type Toast = {
-  title?: string;
+  title: string;
   description?: string;
   status: "default" | "error" | "success";
   action?: React.ReactNode;
@@ -216,6 +214,30 @@ export const ToastProvider = ({
   );
 };
 
+export const ToastCard = ({ toast }: { toast: Toast }) => {
+  return (
+    <Box
+      data-status={toast.status}
+      display="flex"
+      className={toastCard}
+      gap="2"
+    >
+      <ToastStatusIcon status={toast.status} />
+      <Box direction="column" display="flex" style={{ flex: 1 }}>
+        <ToastPrimitives.Title asChild>
+          <Heading as="h6">{toast.title}</Heading>
+        </ToastPrimitives.Title>
+        {toast.description && (
+          <ToastPrimitives.Description asChild>
+            <Text color="subtle">{toast.description}</Text>
+          </ToastPrimitives.Description>
+        )}
+      </Box>
+      {toast.action}
+    </Box>
+  );
+};
+
 const Toast = ({ ...props }: ToastPrimitives.ToastProps & { toast: Toast }) => {
   const { onOpenChange, toast, id, ...toastProps } = props;
   const ref = React.useRef<HTMLLIElement>(null);
@@ -239,40 +261,22 @@ const Toast = ({ ...props }: ToastPrimitives.ToastProps & { toast: Toast }) => {
       className={toastRoot}
       onOpenChange={onOpenChange}
     >
-      <div className={toastInner} data-status={toast.status}>
-        <ToastStatusIcon status={toast.status} />
-        <ToastPrimitives.Title asChild style={{ gridArea: "title" }}>
-          <Heading as="h6">{toast.title}</Heading>
-        </ToastPrimitives.Title>
-        <ToastPrimitives.Description
-          asChild
-          style={{ gridArea: "description" }}
-        >
-          <Text color="subtle" size="2">
-            {toast.description}
-          </Text>
-        </ToastPrimitives.Description>
-        {toast.action}
-        <ToastPrimitives.Close
-          aria-label="Close"
-          asChild
-          className={toastClose}
-        >
-          <IconButton variant="bordered">
-            <Cross2Icon />
-          </IconButton>
-        </ToastPrimitives.Close>
-      </div>
+      <ToastCard toast={toast} />
     </ToastPrimitives.Root>
   );
 };
 
 const ToastStatusIcon = ({ status }: { status: Toast["status"] }) => {
   return status !== "default" ? (
-    <div style={{ gridArea: "icon", alignSelf: "start" }}>
+    <Box
+      align="center"
+      display="flex"
+      justify="center"
+      style={{ height: "24px", width: "24px" }}
+    >
       {status === "success" && <CheckmarkIcon />}
       {status === "error" && <ErrorIcon />}
-    </div>
+    </Box>
   ) : null;
 };
 
@@ -292,3 +296,5 @@ export const ToastAction = ({
     </ToastPrimitives.Action>
   );
 };
+
+export const ToastClose = ToastPrimitives.Close;
