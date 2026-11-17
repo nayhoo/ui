@@ -1,5 +1,15 @@
 # @nayhoo/ui
 
+## 0.27.0
+
+### Minor Changes
+
+- fcadee1: added `styleAs` prop to links for button and icon button variants
+
+### Patch Changes
+
+- ca56d4f: updated card and dialog spacing
+
 ## 0.26.0
 
 ### Minor Changes
