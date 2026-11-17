@@ -1,6 +1,3 @@
-import "@nayhoo/ui/style.css";
-import { AppProvider } from "./provider";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -8,9 +5,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body style={{ padding: "12px" }}>
-        <AppProvider>{children}</AppProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
