@@ -1,6 +1,5 @@
-import { theme } from "@/theme/themes/theme-contract.css";
-import type { SystemTheme } from "@/types/theme";
 import { createGlobalTheme } from "@vanilla-extract/css";
+import { theme } from "./theme-contract.css";
 
 const palette = {
   black: "rgb(0, 0, 0)",
@@ -81,111 +80,190 @@ const palette = {
   negative950: "#450a0a",
 };
 
-const { color, shadow } = theme;
-
-export const createTheme = (mode: SystemTheme) => {
-  createGlobalTheme(
-    `[data-theme="${mode}"]`,
-    {
-      color,
-      shadow,
+createGlobalTheme(":root", theme, {
+  border: {
+    style: {
+      default: "solid",
+      focused: "solid",
+      selected: "solid",
     },
-    {
-      ...t[mode],
-    },
-  );
-};
-
-const t = {
-  light: {
-    color: {
-      background: {
-        surface: {
-          default: palette.neutral050,
-          raised: palette.neutral100,
-          overlay: palette.neutral100,
-        },
-        brand: {
-          default: palette.brand500,
-          hovered: palette.brand100,
-          pressed: palette.brand200,
-        },
-        neutral: {
-          default: palette.neutral500,
-          hovered: palette.neutral100,
-          pressed: palette.neutral200,
-        },
-        positive: {
-          default: palette.positive500,
-          hovered: palette.positive100,
-          pressed: palette.positive200,
-        },
-        caution: {
-          default: palette.caution500,
-          hovered: palette.caution100,
-          pressed: palette.caution200,
-        },
-        negative: {
-          default: palette.negative500,
-          hovered: palette.negative100,
-          pressed: palette.negative200,
-        },
-        ghost: {
-          default: palette.transparent,
-          hovered: palette.black15a,
-          pressed: palette.black10a,
-        },
-      },
-
-      border: {
-        default: palette.black30a,
-        focused: "#3b82f6", // blue500
-        brand: palette.brand500,
-        neutral: palette.neutral500,
-        positive: palette.positive500,
-        caution: palette.caution500,
-        negative: palette.negative500,
-        ghost: palette.transparent,
-      },
-
-      text: {
-        default: palette.black,
-        subtle: palette.neutral700,
-        disabled: palette.black40a,
-        visited: "#6b21a8", // purple800
-        onSolid: palette.white,
-        brand: {
-          default: palette.brand600,
-          hovered: palette.brand700,
-        },
-        neutral: {
-          default: palette.neutral600,
-          hovered: palette.neutral700,
-        },
-        positive: {
-          default: palette.positive600,
-          hovered: palette.positive700,
-        },
-        caution: {
-          default: palette.caution600,
-          hovered: palette.caution700,
-        },
-        negative: {
-          default: palette.negative600,
-          hovered: palette.negative700,
-        },
-      },
-    },
-
-    shadow: {
-      1: "0 1px 3px 0 rgba(0,0,0,0.1)",
-      2: "0 2px 4px 0 rgba(0,0,0,0.1)",
-      3: "0 4px 8px 0 rgba(0,0,0,0.15)",
-      4: "0 6px 10px 0 rgba(0,0,0,0.2)",
-      5: "0 12px 40px 0 rgba(0,0,0,0.3)",
+    width: {
+      default: "1px",
+      focused: "2px",
+      selected: "2px",
     },
   },
-  dark: {
+  color: {
+    background: {
+      surface: {
+        default: palette.neutral050,
+        raised: palette.neutral100,
+        overlay: palette.neutral100,
+      },
+      brand: {
+        default: palette.brand500,
+        hovered: palette.brand100,
+        pressed: palette.brand200,
+      },
+      neutral: {
+        default: palette.neutral500,
+        hovered: palette.neutral100,
+        pressed: palette.neutral200,
+      },
+      positive: {
+        default: palette.positive500,
+        hovered: palette.positive100,
+        pressed: palette.positive200,
+      },
+      caution: {
+        default: palette.caution500,
+        hovered: palette.caution100,
+        pressed: palette.caution200,
+      },
+      negative: {
+        default: palette.negative500,
+        hovered: palette.negative100,
+        pressed: palette.negative200,
+      },
+      ghost: {
+        default: palette.transparent,
+        hovered: palette.black15a,
+        pressed: palette.black10a,
+      },
+    },
+
+    border: {
+      default: palette.black30a,
+      focused: "#3b82f6", // blue500
+      brand: palette.brand500,
+      neutral: palette.neutral500,
+      positive: palette.positive500,
+      caution: palette.caution500,
+      negative: palette.negative500,
+      ghost: palette.transparent,
+    },
+
+    text: {
+      default: palette.black,
+      subtle: palette.neutral700,
+      disabled: palette.black40a,
+      visited: "#6b21a8", // purple800
+      onSolid: palette.white,
+      brand: {
+        default: palette.brand600,
+        hovered: palette.brand700,
+      },
+      neutral: {
+        default: palette.neutral600,
+        hovered: palette.neutral700,
+      },
+      positive: {
+        default: palette.positive600,
+        hovered: palette.positive700,
+      },
+      caution: {
+        default: palette.caution600,
+        hovered: palette.caution700,
+      },
+      negative: {
+        default: palette.negative600,
+        hovered: palette.negative700,
+      },
+    },
+  },
+  fontFamily: {
+    text: "-apple-system, BlinkMacSystemFont, 'Segoe UI (Custom)', Roboto, 'Helvetica Neue', 'Open Sans (Custom)', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+    code: "'Menlo', 'Consolas (Custom)', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji'",
+    emphasis: "'Times New Roman', 'Times', serif",
+    quote: "'Times New Roman', 'Times', serif",
+  },
+  fontSize: {
+    1: "12px",
+    2: "14px",
+    3: "16px",
+    4: "18px",
+    5: "20px",
+    6: "24px",
+    7: "28px",
+    8: "35px",
+    9: "60px",
+  },
+  fontWeight: {
+    light: "300",
+    regular: "400",
+    medium: "500",
+    bold: "700",
+  },
+  letterSpacing: {
+    1: "0.0025em",
+    2: "0em",
+    3: "0em",
+    4: "-0.0025em",
+    5: "-0.005em",
+    6: "-0.00625em",
+    7: "-0.0075em",
+    8: "-0.01em",
+    9: "-0.025em",
+  },
+  lineHeight: {
+    1: "16px",
+    2: "20px",
+    3: "24px",
+    4: "26px",
+    5: "28px",
+    6: "30px",
+    7: "36px",
+    8: "40px",
+    9: "60px",
+  },
+  radii: {
+    1: "3px",
+    2: "4px",
+    3: "6px",
+    4: "8px",
+    5: "12px",
+    6: "16px",
+    round: "50%",
+    full: "9999px",
+  },
+  shadow: {
+    1: "0 1px 3px 0 rgba(0,0,0,0.1)",
+    2: "0 2px 4px 0 rgba(0,0,0,0.1)",
+    3: "0 4px 8px 0 rgba(0,0,0,0.15)",
+    4: "0 6px 10px 0 rgba(0,0,0,0.2)",
+    5: "0 12px 40px 0 rgba(0,0,0,0.3)",
+  },
+  space: {
+    1: "4px",
+    2: "8px",
+    3: "12px",
+    4: "16px",
+    5: "24px",
+    6: "32px",
+    7: "40px",
+    8: "48px",
+    9: "64px",
+  },
+  zIndex: {
+    1: "100",
+    2: "200",
+    3: "300",
+    4: "400",
+    5: "500",
+    6: "600",
+    max: "999",
+  },
+});
+
+const { color, shadow } = theme;
+
+createGlobalTheme(
+  ".dark",
+  {
+    color,
+    shadow,
+  },
+  {
     color: {
       background: {
         surface: {
@@ -264,7 +342,6 @@ const t = {
         },
       },
     },
-
     shadow: {
       1: "0 1px 3px 0 rgba(0,0,0,0.5)",
       2: "0 2px 4px 0 rgba(0,0,0,0.5)",
@@ -273,4 +350,4 @@ const t = {
       5: "0 12px 40px 0 rgba(0,0,0,0.65)",
     },
   },
-};
+);

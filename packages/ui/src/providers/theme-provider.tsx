@@ -80,7 +80,11 @@ const Theme = ({ children, scriptProps }: ThemeProviderProps) => {
 
     const d = document.documentElement;
 
-    d.setAttribute("data-theme", resolved);
+    if (resolved === "dark") {
+      d.classList.add("dark");
+    } else {
+      d.classList.remove("dark");
+    }
 
     const colorScheme = colorSchemes.some(
       (colorScheme) => colorScheme === resolved,
@@ -226,7 +230,11 @@ const script = (
   const el = document.documentElement;
 
   function updateDOM(theme: SystemTheme) {
-    el.setAttribute("data-theme", theme);
+    if (theme === "dark") {
+      el.classList.add("dark");
+    } else {
+      el.classList.remove("dark");
+    }
 
     setColorScheme(theme);
   }

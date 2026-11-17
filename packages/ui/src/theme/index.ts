@@ -60,10 +60,6 @@ export * from "./styles/toast.css";
 
 export * from "./styles/tooltip.css";
 
-export * from "./themes/base-theme.css";
-
-export * from "./themes/dark-theme.css";
-
-export * from "./themes/light-theme.css";
-
 export * from "./themes/theme-contract.css";
+
+export * from "./themes/themes.css";

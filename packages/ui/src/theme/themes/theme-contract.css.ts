@@ -95,14 +95,12 @@ export const theme = createThemeContract({
       },
     },
   },
-  // https://www.radix-ui.com/themes/docs/theme/typography#font-family
   fontFamily: {
     text: null,
     code: null,
     emphasis: null,
     quote: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
   fontSize: {
     1: null,
     2: null,
@@ -115,14 +113,12 @@ export const theme = createThemeContract({
     8: null,
     9: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/typography#font-weight
   fontWeight: {
     light: null,
     regular: null,
     medium: null,
     bold: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
   letterSpacing: {
     1: null,
     2: null,
@@ -134,7 +130,6 @@ export const theme = createThemeContract({
     8: null,
     9: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/typography#type-scale
   lineHeight: {
     1: null,
     2: null,
@@ -146,7 +141,6 @@ export const theme = createThemeContract({
     8: null,
     9: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/radius
   radii: {
     1: null,
     2: null,
@@ -169,7 +163,6 @@ export const theme = createThemeContract({
     /** modal */
     5: null,
   },
-  // https://www.radix-ui.com/themes/docs/theme/spacing
   space: {
     1: null,
     2: null,
