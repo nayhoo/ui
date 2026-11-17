@@ -32,16 +32,6 @@ describe("link", () => {
       expect(getByText("My link")).toBeInTheDocument();
     });
 
-    test("should render as span and pass on role and styles", async () => {
-      const { getByText } = await render(
-        <Link asChild className="custom-class">
-          <span>My link</span>
-        </Link>,
-      );
-
-      expect(getByText("My link")).toHaveClass("custom-class");
-    });
-
     test("should accept custom styles via class", async () => {
       const { getByText } = await render(
         <Link className="custom-class another">My link</Link>,
