@@ -1,24 +1,59 @@
+import {
+  button,
+  ButtonVariants,
+  iconButton,
+  IconButtonVariants,
+} from "@/theme";
 import { link, LinkVariants } from "@/theme/styles/link.css";
-import { ComponentProps } from "@/types/component-props";
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
-import { Slot } from "@radix-ui/react-slot";
 
-const defaultElement = "a";
+export type LinkProps = React.ComponentProps<"a"> &
+  (
+    | ({
+        styleAs: "Button";
+      } & ButtonVariants)
+    | ({
+        styleAs: "IconButton";
+      } & IconButtonVariants)
+    | ({
+        styleAs?: undefined;
+      } & LinkVariants)
+  );
 
-export type LinkProps = ComponentProps<typeof defaultElement, LinkVariants>;
+const getStyleAs = (props: LinkProps) => {
+  if (props.styleAs === "Button") {
+    const [variants, { styleAs, ...rest }] = extractVariantsFromProps(
+      props,
+      ...button.variants(),
+    );
 
-export const Link = ({ asChild, ...props }: LinkProps) => {
-  const [variants, rest] = extractVariantsFromProps(props, ...link.variants());
-  const Comp = asChild ? Slot : defaultElement;
+    return [button(variants), rest] as const;
+  }
+
+  if (props.styleAs === "IconButton") {
+    const [variants, { styleAs, ...rest }] = extractVariantsFromProps(
+      props,
+      ...iconButton.variants(),
+    );
+
+    return [iconButton(variants), rest] as const;
+  }
+
+  const [variants, { styleAs, ...rest }] = extractVariantsFromProps(
+    props,
+    ...link.variants(),
+  );
+
+  return [link(variants), rest] as const;
+};
+
+export const Link = ({ className, children, ...props }: LinkProps) => {
+  const [cn, rest] = getStyleAs(props);
 
   return (
-    <Comp
-      role="link"
-      {...rest}
-      className={mergeClasses(link(variants), rest.className)}
-    >
-      {rest.children}
-    </Comp>
+    <a role="link" {...rest} className={mergeClasses(cn, className)}>
+      {children}
+    </a>
   );
 };

@@ -19,6 +19,7 @@ export const button = homemadeRecipe({
     transitionDuration: "100ms",
     userSelect: "none",
     WebkitTapHighlightColor: "rgba(0,0,0,0)",
+    textDecoration: "none",
 
     selectors: {
       "&:hover": {
