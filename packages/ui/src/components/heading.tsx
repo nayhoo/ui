@@ -17,7 +17,7 @@ const extractElement = (as: HeadingVariants["as"]): React.ElementType => {
   return as;
 };
 
-export const Heading = ({ asChild, ...props }: HeadingProps) => {
+export const Heading = ({ asChild, styleAs, ...props }: HeadingProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...heading.variants(),
@@ -31,7 +31,7 @@ export const Heading = ({ asChild, ...props }: HeadingProps) => {
       className={mergeClasses(
         heading({
           ...variants,
-          as: rest.styleAs || variants.as,
+          as: styleAs || variants.as,
         }),
         rest.className,
       )}
