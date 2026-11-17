@@ -9,19 +9,11 @@ const Img = () => (
   />
 );
 
-export default {
-  default: () => {
-    return (
-      <AspectRatio>
-        <Img />
-      </AspectRatio>
-    );
-  },
-  video: () => {
-    return (
-      <AspectRatio ratio={16 / 9}>
-        <Img />
-      </AspectRatio>
-    );
-  },
+// eslint-disable-next-line react/display-name
+export default () => {
+  return (
+    <AspectRatio ratio={16 / 9}>
+      <Img />
+    </AspectRatio>
+  );
 };
