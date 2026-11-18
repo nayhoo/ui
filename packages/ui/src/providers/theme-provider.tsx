@@ -1,10 +1,10 @@
-import { Theme as ITheme, SystemTheme } from "@/types/theme";
+import type { SystemTheme, Theme } from "@/types/theme";
 import * as React from "react";
 
-const defaultTheme: ITheme = "system";
+const defaultTheme: Theme = "system";
 const storageKey = "nayhoo-theme";
 const systemThemes: SystemTheme[] = ["light", "dark"];
-const themes: ITheme[] = [...systemThemes, "system"];
+const themes: Theme[] = [...systemThemes, "system"];
 
 // inspired https://github.com/pacocoursey/next-themes/blob/main/next-themes/src/types.ts
 interface ScriptProps extends React.DetailedHTMLProps<
@@ -14,14 +14,14 @@ interface ScriptProps extends React.DetailedHTMLProps<
 
 export interface UseThemeProps {
   /** List of all available theme names */
-  themes: ITheme[];
+  themes: Theme[];
   /** Update the theme */
-  setTheme: (value: ITheme) => void;
+  setTheme: (value: Theme) => void;
   /** Active theme name */
-  theme?: ITheme | undefined;
-  /** If the active theme is "system", this returns whether the system preference resolved to "dark" or "light". Otherwise, identical to `theme` */
-  resolvedTheme?: ITheme | undefined;
-  /** Returns the System theme preference ("dark" or "light"), regardless what the active theme is */
+  theme?: Theme | undefined;
+  /** If the active theme is `"system"`, this returns whether the system preference resolved to `"dark"` or `"light"`. Otherwise, identical to `theme` */
+  resolvedTheme?: SystemTheme | undefined;
+  /** Returns the System theme preference (`"dark"` or `"light"`), regardless what the active theme is */
   systemTheme?: SystemTheme | undefined;
 }
 
@@ -34,13 +34,6 @@ export interface ThemeProviderProps extends React.PropsWithChildren {
 const colorSchemes: SystemTheme[] = ["light", "dark"];
 const MEDIA = "(prefers-color-scheme: dark)";
 const isServer = typeof window === "undefined";
-const ThemeContext = React.createContext<UseThemeProps | undefined>(undefined);
-const defaultContext: UseThemeProps = {
-  setTheme: () => {
-    // TODO: something about needs to be in a provider
-  },
-  themes,
-};
 
 const saveToLS = (storageKey: string, value: string) => {
   // Save to storage
@@ -51,31 +44,36 @@ const saveToLS = (storageKey: string, value: string) => {
   }
 };
 
-export const useTheme = () => React.useContext(ThemeContext) ?? defaultContext;
-
-export const ThemeProvider = ({ ...props }: ThemeProviderProps) => {
-  const context = React.useContext(ThemeContext);
-
-  // Ignore nested context providers, just passthrough children
-  if (context) return <>{props.children}</>;
-
-  return <Theme {...props} />;
+const defaultContext: UseThemeProps = {
+  setTheme: () => {
+    console.error("Must be called within a ThemeProvider");
+  },
+  themes,
 };
 
-const Theme = ({ children, scriptProps }: ThemeProviderProps) => {
+const ThemeContext = React.createContext<UseThemeProps | undefined>(undefined);
+
+export const useTheme = () => React.useContext(ThemeContext) ?? defaultContext;
+
+export const ThemeProvider = ({
+  children,
+  scriptProps,
+}: ThemeProviderProps) => {
   const [theme, setThemeState] = React.useState(() => getTheme());
   const [resolvedTheme, setResolvedTheme] = React.useState(() =>
     theme === "system" ? getSystemTheme() : theme,
   );
 
-  const applyTheme = React.useCallback((theme?: ITheme) => {
-    let resolved = theme;
+  const applyTheme = React.useCallback((theme?: Theme) => {
+    if (!theme) return;
 
-    if (!resolved) return;
+    let resolved: SystemTheme | undefined;
 
     // If theme is system, resolve it before setting theme
     if (theme === "system") {
       resolved = getSystemTheme();
+    } else {
+      resolved = theme;
     }
 
     const d = document.documentElement;
@@ -95,7 +93,7 @@ const Theme = ({ children, scriptProps }: ThemeProviderProps) => {
     if (colorScheme) d.style.colorScheme = colorScheme;
   }, []);
 
-  const setTheme = React.useCallback((value: ITheme) => {
+  const setTheme = React.useCallback((value: Theme) => {
     setThemeState(value);
     saveToLS(storageKey, value);
   }, []);
@@ -156,7 +154,7 @@ const Theme = ({ children, scriptProps }: ThemeProviderProps) => {
       setTheme,
       resolvedTheme: theme === "system" ? resolvedTheme : theme,
       themes,
-      systemTheme: resolvedTheme as SystemTheme | undefined,
+      systemTheme: resolvedTheme,
     }),
     [theme, setTheme, resolvedTheme],
   );
@@ -218,13 +216,13 @@ const getSystemTheme = (e?: MediaQueryList | MediaQueryListEvent) => {
   return systemTheme;
 };
 
-const isTheme = (value: string): value is ITheme =>
+const isTheme = (value: string): value is Theme =>
   themes.some((theme) => theme === value);
 
 // Credits: https://github.com/pacocoursey/next-themes/blob/main/next-themes/src/script.ts
 const script = (
   storageKey: string,
-  defaultTheme: ITheme,
+  defaultTheme: Theme,
   systemThemes: SystemTheme[],
 ) => {
   const el = document.documentElement;
