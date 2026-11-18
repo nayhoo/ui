@@ -13,10 +13,17 @@ export default () => {
   return (
     <ToastCard
       toast={{
-        title: "Hi",
-        description: "This is a toast",
+        title: "Scheduled: Catch up",
+        description: Intl.DateTimeFormat("en-AU", {
+          dateStyle: "full",
+          timeStyle: "short",
+        }).format(new Date()),
         status,
-        action: <Button>View</Button>,
+        action: (
+          <Button sentiment="brand" size="1">
+            Undo
+          </Button>
+        ),
       }}
     />
   );

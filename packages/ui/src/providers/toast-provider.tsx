@@ -4,13 +4,9 @@ import { Box } from "@/components/box";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Text } from "@/components/text";
-import {
-  checkmark,
-  error,
-  toastCard,
-  toastRoot,
-  toastViewport,
-} from "@/theme/styles/toast.css";
+import { theme } from "@/theme";
+import { toastCard, toastRoot, toastViewport } from "@/theme/styles/toast.css";
+import { CheckCircledIcon, CrossCircledIcon } from "@radix-ui/react-icons";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import * as React from "react";
 
@@ -30,14 +26,14 @@ type ToastContextProps = ((payload: AddToastPayload) => void) & {
 
 const defaultContext: ToastContextProps = Object.assign(
   () => {
-    // TODO: something about needs to be in a provider
+    console.error("Must be called within a ToastProvider");
   },
   {
     success: () => {
-      // TODO: something about needs to be in a provider
+      console.error("Must be called within a ToastProvider");
     },
     error: () => {
-      // TODO: something about needs to be in a provider
+      console.error("Must be called within a ToastProvider");
     },
   },
 );
@@ -65,7 +61,7 @@ const ANIMATION_OUT_DURATION = 350;
 export const ToastProvider = ({
   children,
   ...props
-}: ToastPrimitives.ToastProviderProps) => {
+}: Omit<ToastPrimitives.ToastProviderProps, "swipeDirection">) => {
   const [toasts, setToasts] = React.useState<Map<string, Toast>>(new Map());
   const toastElementsMapRef = React.useRef<Map<string, HTMLLIElement>>(
     new Map(),
@@ -183,7 +179,7 @@ export const ToastProvider = ({
           [sortToasts],
         )}
       >
-        <ToastPrimitives.Provider {...props}>
+        <ToastPrimitives.Provider {...props} swipeDirection="right">
           {children}
           {Array.from(toasts).map(([key, toast]) => (
             <Toast
@@ -223,7 +219,7 @@ export const ToastCard = ({ toast }: { toast: Toast }) => {
       gap="2"
     >
       <ToastStatusIcon status={toast.status} />
-      <Box direction="column" display="flex" style={{ flex: 1 }}>
+      <Box direction="column" display="flex" gap="1" style={{ flex: 1 }}>
         <ToastPrimitives.Title asChild>
           <Heading as="h6">{toast.title}</Heading>
         </ToastPrimitives.Title>
@@ -274,14 +270,23 @@ const ToastStatusIcon = ({ status }: { status: Toast["status"] }) => {
       justify="center"
       style={{ height: "24px", width: "24px" }}
     >
-      {status === "success" && <CheckmarkIcon />}
-      {status === "error" && <ErrorIcon />}
+      {status === "success" && (
+        <CheckCircledIcon
+          height={17}
+          width={17}
+          color={theme.color.text.positive.default}
+        />
+      )}
+      {status === "error" && (
+        <CrossCircledIcon
+          height={17}
+          width={17}
+          color={theme.color.text.negative.default}
+        />
+      )}
     </Box>
   ) : null;
 };
-
-const ErrorIcon = () => <div aria-hidden className={error} />;
-const CheckmarkIcon = () => <div aria-hidden className={checkmark} />;
 
 export const ToastAction = ({
   ...props
