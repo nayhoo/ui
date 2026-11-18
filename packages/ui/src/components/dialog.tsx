@@ -12,7 +12,7 @@ import {
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Cross1Icon } from "@radix-ui/react-icons";
+import { Cross2Icon } from "@radix-ui/react-icons";
 import { Heading } from "./heading";
 import { Text } from "./text";
 
@@ -125,7 +125,7 @@ export const DialogHeader = ({ children }: DialogHeaderProps) => {
 
       <DialogClose asChild>
         <IconButton style={{ marginLeft: "auto" }} variant="ghost">
-          <Cross1Icon />
+          <Cross2Icon />
         </IconButton>
       </DialogClose>
     </Box>
