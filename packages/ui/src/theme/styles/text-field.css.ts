@@ -29,6 +29,12 @@ export const textField = homemadeRecipe({
       "&[data-placeholder]": {
         color: theme.color.text.subtle,
       },
+      "&:focus-visible": {
+        outlineColor: theme.color.border.focused,
+        outlineStyle: theme.border.style.focused,
+        outlineWidth: theme.border.width.focused,
+        outlineOffset: "2px",
+      },
     },
   },
 

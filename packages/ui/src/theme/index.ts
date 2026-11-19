@@ -44,6 +44,8 @@ export * from "./styles/nav.css";
 
 export * from "./styles/overlay.css";
 
+export * from "./styles/select.css";
+
 export * from "./styles/separator.css";
 
 export * from "./styles/skeleton.css";

@@ -8,7 +8,7 @@ export const iconButton = homemadeRecipe({
     borderWidth: theme.border.width.default,
     borderStyle: theme.border.style.default,
     borderRadius: theme.radii[2],
-    display: "flex",
+    display: "inline-flex",
     flexShrink: 0,
     justifyContent: "center",
     position: "relative",
@@ -25,6 +25,12 @@ export const iconButton = homemadeRecipe({
       "&:disabled": {
         opacity: 0.4,
         cursor: "not-allowed",
+      },
+      "&:focus-visible": {
+        outlineColor: theme.color.border.focused,
+        outlineStyle: theme.border.style.focused,
+        outlineWidth: theme.border.width.focused,
+        outlineOffset: "2px",
       },
     },
   },

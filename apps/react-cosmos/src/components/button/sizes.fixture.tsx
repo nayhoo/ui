@@ -10,7 +10,7 @@ const sizes = typedKeys(button.classNames.variants.size);
 // eslint-disable-next-line react/display-name
 export default () => {
   return (
-    <Box display="flex" gap="4" direction="column" align="start">
+    <Box display="flex" gap="4" direction="column">
       {sizes.map((size) => (
         <Button key={size} size={size}>
           Size {size}

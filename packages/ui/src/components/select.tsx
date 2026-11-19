@@ -1,59 +1,116 @@
 import {
   menuContent,
-  MenuContentVariants,
+  menuItem,
   menuLabel,
   menuSeparator,
 } from "@/theme/styles/menu.css";
 import { overlay } from "@/theme/styles/overlay.css";
+import {
+  itemIndicator,
+  scrollButton,
+  selectTrigger,
+} from "@/theme/styles/select.css";
 import { mergeClasses } from "@/utils/merge-classes";
-import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Button } from "./button";
+import React from "react";
 
-export type SelectProps = SelectPrimitive.SelectProps;
+interface UseSelectProps {
+  size?: "1" | "2";
+  variant?: "bordered" | "ghost";
+  /** if used in an overlay element (dialog/nav) */
+  onOverlay?: boolean;
+}
 
-export const Select = SelectPrimitive.Root;
-
-export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps & {
-  placeholder?: React.ReactNode;
+const defaultContext: UseSelectProps = {
+  size: undefined,
+  variant: undefined,
+  onOverlay: undefined,
 };
 
-export const SelectTrigger = ({
-  placeholder,
-  ...props
-}: Omit<SelectTriggerProps, "asChild">) => {
+const SelectContext = React.createContext<UseSelectProps | undefined>(
+  undefined,
+);
+
+const useSelect = () => React.useContext(SelectContext) ?? defaultContext;
+
+export type SelectProps = SelectPrimitive.SelectProps & UseSelectProps;
+
+export const Select = ({ size, variant, onOverlay, ...props }: SelectProps) => {
+  const providerValue = React.useMemo(
+    () => ({
+      size,
+      variant,
+      onOverlay,
+    }),
+    [size, variant, onOverlay],
+  );
+
   return (
-    <SelectPrimitive.Trigger {...props} asChild>
-      <Button
-        rightIcon={
-          <SelectPrimitive.Icon>
-            <ChevronDownIcon />
-          </SelectPrimitive.Icon>
-        }
-      >
-        <SelectPrimitive.Value placeholder={placeholder} />
-      </Button>
+    <SelectContext.Provider value={providerValue}>
+      <SelectPrimitive.Root {...props} />
+    </SelectContext.Provider>
+  );
+};
+
+export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps;
+
+export const SelectTrigger = ({
+  children,
+  className,
+  ...props
+}: SelectTriggerProps) => {
+  const { size, variant } = useSelect();
+
+  console.log(props.value);
+
+  return (
+    <SelectPrimitive.Trigger
+      {...props}
+      asChild
+      className={mergeClasses(selectTrigger({ size, variant }), className)}
+    >
+      <SelectPrimitive.Icon>
+        {children}
+
+        <ChevronDownIcon />
+      </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
 };
 
-export type SelectContentProps = SelectPrimitive.SelectContentProps &
-  MenuContentVariants;
+export type SelectValueProps = SelectPrimitive.SelectValueProps;
 
-export const SelectContent = ({ onTop, ...props }: SelectContentProps) => {
+export const SelectValue = SelectPrimitive.Value;
+
+export type SelectContentProps = SelectPrimitive.SelectContentProps;
+
+export const SelectContent = ({
+  children,
+  className,
+  ...props
+}: SelectContentProps) => {
+  const { onOverlay } = useSelect();
+
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
-        position="popper"
-        sideOffset={4}
         {...props}
-        className={mergeClasses(
-          menuContent({ onTop }),
-          overlay,
-          props.className,
-        )}
+        className={mergeClasses(menuContent({ onOverlay }), overlay, className)}
       >
-        <SelectPrimitive.Viewport>{props.children}</SelectPrimitive.Viewport>
+        <SelectPrimitive.ScrollUpButton className={scrollButton}>
+          <ChevronUpIcon />
+        </SelectPrimitive.ScrollUpButton>
+
+        <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
+
+        <SelectPrimitive.ScrollDownButton className={scrollButton}>
+          <ChevronDownIcon />
+        </SelectPrimitive.ScrollDownButton>
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
   );
@@ -61,22 +118,23 @@ export const SelectContent = ({ onTop, ...props }: SelectContentProps) => {
 
 export type SelectItemProps = SelectPrimitive.SelectItemProps;
 
-export const SelectItem = (props: Omit<SelectItemProps, "asChild">) => {
+export const SelectItem = ({
+  children,
+  className,
+  ...props
+}: SelectItemProps) => {
+  const { size } = useSelect();
+
   return (
-    <SelectPrimitive.Item {...props} asChild>
-      <Button
-        fullWidth
-        rightIcon={
-          <SelectPrimitive.ItemIndicator>
-            <CheckIcon />
-          </SelectPrimitive.ItemIndicator>
-        }
-        sentiment="brand"
-        size="1"
-        variant="ghost"
-      >
-        <SelectPrimitive.ItemText>{props.children}</SelectPrimitive.ItemText>
-      </Button>
+    <SelectPrimitive.Item
+      {...props}
+      className={mergeClasses(menuItem({ size }), className)}
+    >
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+
+      <SelectPrimitive.ItemIndicator className={itemIndicator}>
+        <CheckIcon />
+      </SelectPrimitive.ItemIndicator>
     </SelectPrimitive.Item>
   );
 };
@@ -87,22 +145,27 @@ export const SelectGroup = SelectPrimitive.Group;
 
 export type SelectLabelProps = SelectPrimitive.SelectLabelProps;
 
-export const SelectLabel = (props: SelectLabelProps) => {
+export const SelectLabel = ({ className, ...props }: SelectLabelProps) => {
+  const { size } = useSelect();
+
   return (
     <SelectPrimitive.Label
       {...props}
-      className={mergeClasses(menuLabel, props.className)}
+      className={mergeClasses(menuLabel({ size }), className)}
     />
   );
 };
 
 export type SelectSeparatorProps = SelectPrimitive.SelectSeparatorProps;
 
-export const SelectSeparator = (props: SelectSeparatorProps) => {
+export const SelectSeparator = ({
+  className,
+  ...props
+}: SelectSeparatorProps) => {
   return (
     <SelectPrimitive.Separator
       {...props}
-      className={mergeClasses(menuSeparator, props.className)}
+      className={mergeClasses(menuSeparator, className)}
     />
   );
 };

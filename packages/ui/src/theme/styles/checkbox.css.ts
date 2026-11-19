@@ -58,6 +58,12 @@ export const checkbox = homemadeRecipe({
         backgroundColor: theme.color.background.ghost.hovered,
         color: theme.color.text.neutral.hovered,
       },
+      "&:focus-visible": {
+        outlineColor: theme.color.border.focused,
+        outlineStyle: theme.border.style.focused,
+        outlineWidth: theme.border.width.focused,
+        outlineOffset: "2px",
+      },
     },
   },
 

@@ -15,9 +15,14 @@ export const link = homemadeRecipe({
         cursor: "pointer",
         textDecorationLine: "underline",
       },
-
       "&:visited": {
         color: theme.color.text.visited,
+      },
+      "&:focus-visible": {
+        outlineColor: theme.color.border.focused,
+        outlineStyle: theme.border.style.focused,
+        outlineWidth: theme.border.width.focused,
+        outlineOffset: "2px",
       },
     },
   },

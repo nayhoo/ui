@@ -8,7 +8,7 @@ export const button = homemadeRecipe({
     borderWidth: theme.border.width.default,
     borderStyle: theme.border.style.default,
     borderRadius: theme.radii[2],
-    display: "flex",
+    display: "inline-flex",
     flexShrink: 0,
     fontFamily: theme.fontFamily.text,
     fontVariantNumeric: "tabular-nums",
@@ -28,6 +28,12 @@ export const button = homemadeRecipe({
       "&:disabled, &[data-disabled]": {
         opacity: 0.4,
         cursor: "not-allowed",
+      },
+      "&:focus-visible": {
+        outlineColor: theme.color.border.focused,
+        outlineStyle: theme.border.style.focused,
+        outlineWidth: theme.border.width.focused,
+        outlineOffset: "2px",
       },
     },
   },
@@ -124,11 +130,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.brand,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.brand.hovered,
             color: theme.color.text.default,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.brand.pressed,
           },
         },
@@ -145,11 +151,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.brand,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.brand.hovered,
             color: theme.color.text.brand.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.brand.pressed,
             color: theme.color.text.default,
           },
@@ -167,11 +173,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.ghost,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.hovered,
             color: theme.color.text.brand.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.pressed,
             color: theme.color.text.default,
           },
@@ -189,11 +195,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.neutral,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.neutral.hovered,
             color: theme.color.text.default,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.neutral.pressed,
           },
         },
@@ -210,11 +216,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.neutral,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.neutral.hovered,
             color: theme.color.text.neutral.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.neutral.pressed,
             color: theme.color.text.default,
           },
@@ -232,11 +238,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.ghost,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.hovered,
             color: theme.color.text.neutral.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.pressed,
             color: theme.color.text.default,
           },
@@ -254,11 +260,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.positive,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.positive.hovered,
             color: theme.color.text.default,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.positive.pressed,
           },
         },
@@ -275,11 +281,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.positive,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.positive.hovered,
             color: theme.color.text.positive.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.positive.pressed,
             color: theme.color.text.default,
           },
@@ -297,11 +303,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.ghost,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.hovered,
             color: theme.color.text.positive.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.pressed,
             color: theme.color.text.default,
           },
@@ -319,11 +325,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.caution,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.caution.hovered,
             color: theme.color.text.default,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.caution.pressed,
           },
         },
@@ -340,11 +346,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.caution,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.caution.hovered,
             color: theme.color.text.caution.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.caution.pressed,
             color: theme.color.text.default,
           },
@@ -362,11 +368,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.ghost,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.hovered,
             color: theme.color.text.caution.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.pressed,
             color: theme.color.text.default,
           },
@@ -384,11 +390,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.negative,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.negative.hovered,
             color: theme.color.text.default,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.negative.pressed,
           },
         },
@@ -405,11 +411,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.negative,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.negative.hovered,
             color: theme.color.text.negative.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.negative.pressed,
             color: theme.color.text.default,
           },
@@ -427,11 +433,11 @@ export const button = homemadeRecipe({
         borderColor: theme.color.border.ghost,
 
         selectors: {
-          "&:hover:not(:disabled, [data-disabled])": {
+          "&:hover:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.hovered,
             color: theme.color.text.negative.hovered,
           },
-          "&:active:not(:disabled, [data-disabled])": {
+          "&:active:not(:disabled)": {
             backgroundColor: theme.color.background.ghost.pressed,
             color: theme.color.text.default,
           },

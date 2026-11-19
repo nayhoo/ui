@@ -8,13 +8,7 @@ globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
   margin: 0,
   padding: 0,
-});
-
-globalStyle("*:focus-visible", {
-  outlineColor: theme.color.border.focused,
-  outlineStyle: theme.border.style.focused,
-  outlineWidth: theme.border.width.focused,
-  outlineOffset: "2px",
+  outline: "none",
 });
 
 globalStyle("html, body", {

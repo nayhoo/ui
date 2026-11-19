@@ -16,14 +16,18 @@ export type PopoverContentPrimitiveProps =
 
 export const PopoverContent = ({
   children,
-  onTop,
+  onOverlay,
   ...props
 }: PopoverContentPrimitiveProps) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
       sideOffset={4}
       {...props}
-      className={mergeClasses(menuContent({ onTop }), overlay, props.className)}
+      className={mergeClasses(
+        menuContent({ onOverlay }),
+        overlay,
+        props.className,
+      )}
     >
       {children}
     </PopoverPrimitive.Content>

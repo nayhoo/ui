@@ -15,6 +15,12 @@ export const _switch = homemadeRecipe({
       '&[data-state="checked"]': {
         backgroundColor: theme.color.background.brand.default,
       },
+      "&:focus-visible": {
+        outlineColor: theme.color.border.focused,
+        outlineStyle: theme.border.style.focused,
+        outlineWidth: theme.border.width.focused,
+        outlineOffset: "2px",
+      },
     },
   },
 

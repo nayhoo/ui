@@ -8,13 +8,25 @@ import {
   SelectLabel,
   SelectSeparator,
   SelectTrigger,
+  SelectValue,
 } from "@nayhoo/ui/select";
+import { useFixtureSelect } from "react-cosmos/client";
 
 // eslint-disable-next-line react/display-name
 export default () => {
+  const [size] = useFixtureSelect("size", {
+    options: ["1", "2"],
+  });
+
+  const [variant] = useFixtureSelect("variant", {
+    options: ["bordered", "ghost"],
+  });
+
   return (
-    <Select>
-      <SelectTrigger placeholder="Select a fruit…" />
+    <Select size={size} variant={variant}>
+      <SelectTrigger>
+        <SelectValue placeholder="Select a fruit…" />
+      </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Fruits</SelectLabel>
