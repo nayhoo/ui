@@ -1,5 +1,11 @@
 # @nayhoo/ui
 
+## 0.27.1
+
+### Patch Changes
+
+- 7f51f2d: fixed dark mode toasts and is now more aligned with the themes
+
 ## 0.27.0
 
 ### Minor Changes
