@@ -51,7 +51,7 @@ export default {
       <Box key={sentiment} display="flex" gap="4">
         {variants.map((variant) => (
           <Button key={variant} variant={variant} sentiment={sentiment}>
-            {variant} {sentiment}
+            {sentiment} {variant}
           </Button>
         ))}
       </Box>
