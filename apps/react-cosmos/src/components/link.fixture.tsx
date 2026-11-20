@@ -16,12 +16,7 @@ export default {
     <Link key="button" styleAs="Button">
       link (button)
     </Link>,
-    <Link
-      key="icon-button"
-      target="_blank"
-      rel="noreferrer"
-      styleAs="IconButton"
-    >
+    <Link key="icon-button" styleAs="IconButton">
       <svg
         width="15"
         height="15"
