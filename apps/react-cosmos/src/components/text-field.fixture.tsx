@@ -15,10 +15,10 @@ export default {
   error: () => <TextField error placeholder="error" />,
   sizes: () =>
     sizes.map((size) => (
-      <TextField key={size} size={size} placeholder={`size ${size}`} />
+      <TextField key={size} placeholder={`size ${size}`} size={size} />
     )),
   variants: () =>
     variants.map((variant) => (
-      <TextField key={variant} variant={variant} placeholder={variant} />
+      <TextField key={variant} placeholder={variant} variant={variant} />
     )),
 };
