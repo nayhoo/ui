@@ -1,5 +1,12 @@
 # @nayhoo/ui
 
+## 0.28.0
+
+### Minor Changes
+
+- ace13b4: exported Accordion, AspectRatio props; deprecated Badge label for children; fixed TextField size prop; Image loading is overrideable (defaulted to lazy); set Container width to 100%
+- a2c3d58: added top level props size, variant and onOverlay for dropdown menu, popover and select
+
 ## 0.27.1
 
 ### Patch Changes
