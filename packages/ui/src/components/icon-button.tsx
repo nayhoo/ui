@@ -6,26 +6,31 @@ import { mergeClasses } from "@/utils/merge-classes";
 export type IconButtonProps = React.ComponentProps<"button"> &
   IconButtonVariants;
 
-export const IconButton = (props: IconButtonProps) => {
+export const IconButton = ({
+  children,
+  className,
+  disabled,
+  ...props
+}: IconButtonProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...iconButton.variants(),
   );
 
-  const disabled = rest.disabled || Boolean(variants.loading);
+  const isDisabled = disabled || Boolean(variants.loading);
 
   return (
     <button
       {...rest}
-      className={mergeClasses(iconButton(variants), rest.className)}
-      disabled={disabled}
-      aria-disabled={disabled}
+      aria-disabled={isDisabled}
+      className={mergeClasses(iconButton(variants), className)}
+      disabled={isDisabled}
     >
       {variants.loading ? (
         <Spinner size={variants.size} />
       ) : (
         // TODO: make this iconName, determine size/color in here?
-        rest.children
+        children
       )}
     </button>
   );

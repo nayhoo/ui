@@ -6,12 +6,18 @@ import { Slot } from "@radix-ui/react-slot";
 
 const defaultElement = "input";
 
-export type TextFieldProps = ComponentProps<
-  typeof defaultElement,
-  TextFieldVariants
->;
+export type TextFieldProps = Omit<
+  ComponentProps<typeof defaultElement>,
+  "size"
+> &
+  TextFieldVariants;
 
-export const TextField = ({ asChild, ...props }: TextFieldProps) => {
+export const TextField = ({
+  asChild,
+  children,
+  className,
+  ...props
+}: TextFieldProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...textField.variants(),
@@ -19,11 +25,8 @@ export const TextField = ({ asChild, ...props }: TextFieldProps) => {
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp
-      {...rest}
-      className={mergeClasses(textField(variants), rest.className)}
-    >
-      {rest.children}
+    <Comp {...rest} className={mergeClasses(textField(variants), className)}>
+      {children}
     </Comp>
   );
 };

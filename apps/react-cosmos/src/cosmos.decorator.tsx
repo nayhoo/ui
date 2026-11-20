@@ -13,7 +13,15 @@ export default function GlobalDecorator(props: { children: React.ReactNode }) {
     <DarkMode>
       <ThemeProvider>
         <ToastProvider>
-          <Box style={{ margin: theme.space[4] }}>{props.children}</Box>
+          <Box
+            align="start"
+            display="flex"
+            gap="4"
+            direction="column"
+            style={{ margin: theme.space[2] }}
+          >
+            {props.children}
+          </Box>
         </ToastProvider>
       </ThemeProvider>
     </DarkMode>

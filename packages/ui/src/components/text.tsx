@@ -8,13 +8,13 @@ const defaultElement = "p";
 
 export type TextProps = ComponentProps<typeof defaultElement, TextVariants>;
 
-export const Text = ({ asChild, ...props }: TextProps) => {
+export const Text = ({ asChild, children, className, ...props }: TextProps) => {
   const [variants, rest] = extractVariantsFromProps(props, ...text.variants());
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp className={mergeClasses(text(variants), rest.className)} {...rest}>
-      {rest.children}
+    <Comp className={mergeClasses(text(variants), className)} {...rest}>
+      {children}
     </Comp>
   );
 };

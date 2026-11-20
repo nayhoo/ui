@@ -10,7 +10,7 @@ import { CheckIcon } from "@radix-ui/react-icons";
 
 export type CheckboxProps = CheckboxPrimitive.CheckboxProps & CheckboxVariants;
 
-export const Checkbox = ({ ...props }: CheckboxProps) => {
+export const Checkbox = ({ className, ...props }: CheckboxProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...checkbox.variants(),
@@ -19,7 +19,7 @@ export const Checkbox = ({ ...props }: CheckboxProps) => {
   return (
     <CheckboxPrimitive.Root
       {...rest}
-      className={mergeClasses(checkbox(variants), rest.className)}
+      className={mergeClasses(checkbox(variants), className)}
     >
       <CheckboxPrimitive.CheckboxIndicator>
         <CheckIcon className={checkboxIndicator({ size: variants.size })} />

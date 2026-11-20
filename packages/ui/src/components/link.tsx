@@ -48,7 +48,7 @@ const getStyleAs = (props: LinkProps) => {
   return [link(variants), rest] as const;
 };
 
-export const Link = ({ className, children, ...props }: LinkProps) => {
+export const Link = ({ children, className, ...props }: LinkProps) => {
   const [cn, rest] = getStyleAs(props);
 
   return (

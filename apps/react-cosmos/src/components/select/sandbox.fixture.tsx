@@ -10,56 +10,48 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@nayhoo/ui/select";
-import { useFixtureSelect } from "react-cosmos/client";
 
-// eslint-disable-next-line react/display-name
-export default () => {
-  const [size] = useFixtureSelect("size", {
-    options: ["1", "2"],
-  });
+const SelectFixture = () => (
+  <Select>
+    <SelectTrigger>
+      <SelectValue placeholder="Select a fruit…" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectGroup>
+        <SelectLabel>Fruits</SelectLabel>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="blueberry">Blueberry</SelectItem>
+        <SelectItem value="grapes">Grapes</SelectItem>
+        <SelectItem value="pineapple">Pineapple</SelectItem>
+      </SelectGroup>
 
-  const [variant] = useFixtureSelect("variant", {
-    options: ["bordered", "ghost"],
-  });
+      <SelectSeparator />
 
-  return (
-    <Select size={size} variant={variant}>
-      <SelectTrigger>
-        <SelectValue placeholder="Select a fruit…" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
-        </SelectGroup>
+      <SelectGroup>
+        <SelectLabel>Vegetables</SelectLabel>
+        <SelectItem value="aubergine">Aubergine</SelectItem>
+        <SelectItem value="broccoli">Broccoli</SelectItem>
+        <SelectItem value="carrot" disabled>
+          Carrot
+        </SelectItem>
+        <SelectItem value="courgette">Courgette</SelectItem>
+        <SelectItem value="leek">Leek</SelectItem>
+      </SelectGroup>
 
-        <SelectSeparator />
+      <SelectSeparator />
 
-        <SelectGroup>
-          <SelectLabel>Vegetables</SelectLabel>
-          <SelectItem value="aubergine">Aubergine</SelectItem>
-          <SelectItem value="broccoli">Broccoli</SelectItem>
-          <SelectItem value="carrot" disabled>
-            Carrot
-          </SelectItem>
-          <SelectItem value="courgette">Courgette</SelectItem>
-          <SelectItem value="leek">Leek</SelectItem>
-        </SelectGroup>
+      <SelectGroup>
+        <SelectLabel>Meat</SelectLabel>
+        <SelectItem value="beef">Beef</SelectItem>
+        <SelectItem value="chicken">Chicken</SelectItem>
+        <SelectItem value="lamb">Lamb</SelectItem>
+        <SelectItem value="pork">Pork</SelectItem>
+      </SelectGroup>
+    </SelectContent>
+  </Select>
+);
 
-        <SelectSeparator />
-
-        <SelectGroup>
-          <SelectLabel>Meat</SelectLabel>
-          <SelectItem value="beef">Beef</SelectItem>
-          <SelectItem value="chicken">Chicken</SelectItem>
-          <SelectItem value="lamb">Lamb</SelectItem>
-          <SelectItem value="pork">Pork</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-  );
+export default {
+  default: () => <SelectFixture />,
 };

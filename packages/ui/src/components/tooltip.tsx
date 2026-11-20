@@ -7,16 +7,14 @@ import {
 import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import React from "react";
 
-type TooltipPrimitiveProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
-
-export type TooltipProps = TooltipPrimitiveProps &
+export type TooltipProps = TooltipPrimitive.TooltipProps &
   TooltipPrimitive.TooltipContentProps &
   TooltipContentVariants;
 
 export function Tooltip({
   children,
+  className,
   content,
   open,
   defaultOpen,
@@ -48,7 +46,7 @@ export function Tooltip({
             align="center"
             sideOffset={4}
             {...rest}
-            className={mergeClasses(tooltipContent(variants), rest.className)}
+            className={mergeClasses(tooltipContent(variants), className)}
           >
             <Text
               color="onSolid"

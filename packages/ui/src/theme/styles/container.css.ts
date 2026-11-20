@@ -9,6 +9,7 @@ export const container = homemadeRecipe({
     marginRight: "auto",
     paddingLeft: theme.space[5],
     paddingRight: theme.space[5],
+    width: "100%",
   },
 
   variants: {

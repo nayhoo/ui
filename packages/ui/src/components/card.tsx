@@ -7,12 +7,12 @@ const defaultElement = "div";
 
 export type CardProps = ComponentProps<typeof defaultElement>;
 
-export const Card = ({ asChild, ...props }: CardProps) => {
+export const Card = ({ asChild, children, className, ...props }: CardProps) => {
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...props} className={mergeClasses(card, props.className)}>
-      {props.children}
+    <Comp {...props} className={mergeClasses(card, className)}>
+      {children}
     </Comp>
   );
 };

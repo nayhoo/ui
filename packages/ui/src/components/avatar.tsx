@@ -16,7 +16,13 @@ export type AvatarProps = AvatarPrimitive.AvatarProps &
     src?: string;
   };
 
-export const Avatar = ({ alt, fallback, src, ...props }: AvatarProps) => {
+export const Avatar = ({
+  alt,
+  className,
+  fallback,
+  src,
+  ...props
+}: AvatarProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...avatar.variants(),
@@ -25,11 +31,11 @@ export const Avatar = ({ alt, fallback, src, ...props }: AvatarProps) => {
   return (
     <AvatarPrimitive.Avatar
       {...rest}
-      className={mergeClasses(avatar(variants), rest.className)}
+      className={mergeClasses(avatar(variants), className)}
     >
       <AvatarPrimitive.AvatarImage
         alt={alt}
-        className={mergeClasses(avatarImage)}
+        className={avatarImage}
         src={src}
       />
 

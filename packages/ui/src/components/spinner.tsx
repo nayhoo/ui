@@ -4,7 +4,7 @@ import { mergeClasses } from "@/utils/merge-classes";
 
 export type SpinnerProps = React.ComponentProps<"div"> & SpinnerVariants;
 
-export const Spinner = (props: SpinnerProps) => {
+export const Spinner = ({ children, className, ...props }: SpinnerProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...spinner.variants(),
@@ -15,9 +15,9 @@ export const Spinner = (props: SpinnerProps) => {
       aria-label="Loading"
       role="status"
       {...rest}
-      className={mergeClasses(spinner(variants), rest.className)}
+      className={mergeClasses(spinner(variants), className)}
     >
-      {rest.children}
+      {children}
     </div>
   );
 };

@@ -11,7 +11,12 @@ export type ContainerProps = ComponentProps<
   ContainerVariants
 >;
 
-export const Container = ({ asChild, ...props }: ContainerProps) => {
+export const Container = ({
+  asChild,
+  children,
+  className,
+  ...props
+}: ContainerProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...container.variants(),
@@ -19,11 +24,8 @@ export const Container = ({ asChild, ...props }: ContainerProps) => {
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp
-      {...rest}
-      className={mergeClasses(container(variants), rest.className)}
-    >
-      {rest.children}
+    <Comp {...rest} className={mergeClasses(container(variants), className)}>
+      {children}
     </Comp>
   );
 };

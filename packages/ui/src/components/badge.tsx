@@ -8,16 +8,25 @@ const defaultElement = "span";
 
 export type BadgeProps = ComponentProps<
   typeof defaultElement,
-  BadgeVariants & { label: string }
+  BadgeVariants & {
+    /** @deprecated use `children` instead */
+    label?: string;
+  }
 >;
 
-export const Badge = ({ asChild, label, ...props }: BadgeProps) => {
+export const Badge = ({
+  asChild,
+  children,
+  className,
+  label,
+  ...props
+}: BadgeProps) => {
   const [variants, rest] = extractVariantsFromProps(props, ...badge.variants());
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(badge(variants), props.className)}>
-      {label}
+    <Comp {...rest} className={mergeClasses(badge(variants), className)}>
+      {label ?? children}
     </Comp>
   );
 };

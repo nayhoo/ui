@@ -17,7 +17,13 @@ const extractElement = (as: HeadingVariants["as"]): React.ElementType => {
   return as;
 };
 
-export const Heading = ({ asChild, styleAs, ...props }: HeadingProps) => {
+export const Heading = ({
+  asChild,
+  children,
+  className,
+  styleAs,
+  ...props
+}: HeadingProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...heading.variants(),
@@ -33,10 +39,10 @@ export const Heading = ({ asChild, styleAs, ...props }: HeadingProps) => {
           ...variants,
           as: styleAs || variants.as,
         }),
-        rest.className,
+        className,
       )}
     >
-      {rest.children}
+      {children}
     </Comp>
   );
 };

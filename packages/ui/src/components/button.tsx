@@ -22,7 +22,14 @@ export type ButtonProps = React.ComponentProps<"button"> &
       }
   );
 
-export const Button = ({ leftIcon, rightIcon, ...props }: ButtonProps) => {
+export const Button = ({
+  children,
+  className,
+  disabled,
+  leftIcon,
+  rightIcon,
+  ...props
+}: ButtonProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...button.variants(),
@@ -34,20 +41,20 @@ export const Button = ({ leftIcon, rightIcon, ...props }: ButtonProps) => {
 
   const isLoading = Boolean(variants.loading);
 
-  const disabled = rest.disabled || isLoading;
+  const isDisabled = disabled || isLoading;
 
   return (
     <button
       {...rest}
-      className={mergeClasses(button(variants), rest.className)}
-      disabled={disabled}
-      aria-disabled={disabled}
+      className={mergeClasses(button(variants), className)}
+      disabled={isDisabled}
+      aria-disabled={isDisabled}
     >
       {isLoading && !rightIcon && <Spinner size={variants.size} />}
       {!isLoading && leftIcon && <Slot className={icon}>{leftIcon}</Slot>}
 
       <Text asChild color="inherit" size={variants.size}>
-        <span>{rest.children}</span>
+        <span>{children}</span>
       </Text>
 
       {isLoading && rightIcon && <Spinner size={variants.size} />}
