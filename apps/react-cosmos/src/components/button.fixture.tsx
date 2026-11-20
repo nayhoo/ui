@@ -27,10 +27,10 @@ const Icon = () => (
 export default {
   default: () => <Button>default</Button>,
   icons: () => [
-    <Button key="right-icon" leftIcon={<Icon />}>
+    <Button key="left-icon" leftIcon={<Icon />}>
       left icon
     </Button>,
-    <Button key="left-icon" rightIcon={<Icon />}>
+    <Button key="right-icon" rightIcon={<Icon />}>
       right icon
     </Button>,
   ],
