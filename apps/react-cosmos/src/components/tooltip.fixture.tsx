@@ -24,8 +24,8 @@ const TooltipFixture = (props: TooltipProps) => (
 
 export default {
   default: () => <TooltipFixture />,
-  "disable hoverable content": () => <TooltipFixture disableHoverableContent />,
   "default open": () => <TooltipFixture defaultOpen />,
+  "disable hoverable content": () => <TooltipFixture disableHoverableContent />,
   multiline: () => (
     <TooltipFixture
       content="close close close close close close close close close close close close close close"
