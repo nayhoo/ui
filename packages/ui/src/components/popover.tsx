@@ -5,6 +5,18 @@ import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 export type PopoverProps = PopoverPrimitive.PopoverProps;
 
+/**
+ * @example
+ * <Popover>
+ *  <PopoverTrigger asChild>
+ *   <Button>Open popover</Button>
+ *  </PopoverTrigger>
+ *
+ *  <PopoverContent>
+ *   <Text>I want to be with Ninten</Text>
+ *  </PopoverContent>
+ * </Popover>
+ */
 export const Popover = PopoverPrimitive.Root;
 
 export type PopoverTriggerProps = PopoverPrimitive.PopoverTriggerProps;
@@ -16,6 +28,7 @@ export type PopoverContentPrimitiveProps =
 
 export const PopoverContent = ({
   children,
+  className,
   onOverlay,
   ...props
 }: PopoverContentPrimitiveProps) => (
@@ -23,11 +36,7 @@ export const PopoverContent = ({
     <PopoverPrimitive.Content
       sideOffset={4}
       {...props}
-      className={mergeClasses(
-        menuContent({ onOverlay }),
-        overlay,
-        props.className,
-      )}
+      className={mergeClasses(menuContent({ onOverlay }), overlay, className)}
     >
       {children}
     </PopoverPrimitive.Content>
