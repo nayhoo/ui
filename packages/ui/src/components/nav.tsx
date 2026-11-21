@@ -5,8 +5,8 @@ import { ComponentProps } from "@/types/component-props";
 import { mergeClasses } from "@/utils/merge-classes";
 import { useScrollPosition } from "@nayhoo/hooks";
 
-type NavProps = {
-  children: React.ReactNode;
+export type NavProps = {
+  children?: React.ReactNode;
   /**
    * @default
    * false
@@ -25,6 +25,8 @@ type NavProps = {
 } & ComponentProps<"nav">;
 
 export const Nav = ({
+  children,
+  className,
   compact = false,
   fixed = false,
   fullWidth = false,
@@ -45,7 +47,7 @@ export const Nav = ({
           },
           fixed,
         }),
-        props.className,
+        className,
       )}
     >
       <Container
@@ -55,7 +57,7 @@ export const Nav = ({
           width: "100%",
         }}
       >
-        {props.children}
+        {children}
       </Container>
     </nav>
   );

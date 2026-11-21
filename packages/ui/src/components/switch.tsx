@@ -8,10 +8,9 @@ import { extractVariantsFromProps } from "@/utils/extract-variants";
 import { mergeClasses } from "@/utils/merge-classes";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
-export type SwitchThumbProps = SwitchPrimitive.SwitchThumbProps &
-  SwitchThumbVariants;
+type SwitchThumbProps = SwitchPrimitive.SwitchThumbProps & SwitchThumbVariants;
 
-export const SwitchThumb = ({ ...props }: SwitchThumbProps) => {
+const SwitchThumb = ({ className, ...props }: SwitchThumbProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...switchThumb.variants(),
@@ -20,14 +19,14 @@ export const SwitchThumb = ({ ...props }: SwitchThumbProps) => {
   return (
     <SwitchPrimitive.Thumb
       {...rest}
-      className={mergeClasses(switchThumb(variants), rest.className)}
+      className={mergeClasses(switchThumb(variants), className)}
     />
   );
 };
 
 export type SwitchProps = SwitchPrimitive.SwitchProps & SwitchVariants;
 
-export const Switch = ({ ...props }: SwitchProps) => {
+export const Switch = ({ className, ...props }: SwitchProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ..._switch.variants(),
@@ -36,7 +35,7 @@ export const Switch = ({ ...props }: SwitchProps) => {
   return (
     <SwitchPrimitive.Root
       {...rest}
-      className={mergeClasses(_switch(variants), rest.className)}
+      className={mergeClasses(_switch(variants), className)}
     >
       <SwitchThumb size={variants.size} />
     </SwitchPrimitive.Root>

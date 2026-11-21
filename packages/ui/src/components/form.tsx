@@ -1,58 +1,46 @@
-import { theme } from "@/theme";
 import * as FormPrimitive from "@radix-ui/react-form";
 import { Box } from "./box";
 import { Text } from "./text";
 
 export type FormProps = FormPrimitive.FormProps;
 
-export const Form = FormPrimitive.Root;
+export const Form = (props: FormProps) => (
+  <Box asChild display="grid" gap="2">
+    <FormPrimitive.Root {...props} />
+  </Box>
+);
 
 export type FormControlProps = FormPrimitive.FormControlProps;
 
 export const FormControl = FormPrimitive.Control;
 
-export type FormFieldProps = Omit<FormPrimitive.FormFieldProps, "asChild">;
+export type FormFieldProps = FormPrimitive.FormFieldProps;
 
-export const FormField = ({ children, ...props }: FormFieldProps) => {
+export const FormField = (props: FormFieldProps) => {
   return (
-    <FormPrimitive.Field {...props} asChild>
-      <Box display="grid" style={{ marginBottom: theme.space[2] }}>
-        {children}
-      </Box>
-    </FormPrimitive.Field>
+    <Box asChild display="grid" gap="1">
+      <FormPrimitive.Field {...props} />
+    </Box>
   );
 };
 
-export type FormLabelProps = Omit<FormPrimitive.FormLabelProps, "asChild">;
+export type FormLabelProps = FormPrimitive.FormLabelProps;
 
-export const FormLabel = ({ children, ...props }: FormLabelProps) => {
+export const FormLabel = (props: FormLabelProps) => {
   return (
-    <FormPrimitive.Label {...props} asChild>
-      <Text asChild color="subtle" weight="medium">
-        <label>{children}</label>
-      </Text>
-    </FormPrimitive.Label>
+    <Text asChild color="subtle" weight="medium">
+      <FormPrimitive.Label {...props} />
+    </Text>
   );
 };
 
-export type FormMessageProps = Omit<
-  FormPrimitive.FormMessageProps,
-  "asChild"
-> & {
-  error?: boolean;
-};
+export type FormMessageProps = FormPrimitive.FormMessageProps;
 
-export const FormMessage = ({
-  children,
-  error,
-  ...props
-}: FormMessageProps) => {
+export const FormMessage = (props: FormMessageProps) => {
   return (
-    <FormPrimitive.Message {...props} asChild>
-      <Text color={error ? "negative" : "subtle"} size="1">
-        {children}
-      </Text>
-    </FormPrimitive.Message>
+    <Text asChild color="negative" size="1">
+      <FormPrimitive.Message {...props} />
+    </Text>
   );
 };
 
