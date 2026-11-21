@@ -22,7 +22,7 @@ export type DialogProps = DialogPrimitive.DialogProps;
  * @example
  *  <Dialog>
  *    <DialogTrigger asChild>
- *      <Button>Press me</Button>
+ *      <Button>Open dialog</Button>
  *    </DialogTrigger>
  *
  *    <DialogContent>
@@ -55,7 +55,11 @@ export const DialogClose = DialogPrimitive.Close;
 export type DialogContentProps = DialogPrimitive.DialogContentProps &
   DialogContentVariants;
 
-export const DialogContent = ({ children, ...props }: DialogContentProps) => {
+export const DialogContent = ({
+  children,
+  className,
+  ...props
+}: DialogContentProps) => {
   const [variants, rest] = extractVariantsFromProps(
     props,
     ...dialogContent.variants(),
@@ -66,7 +70,7 @@ export const DialogContent = ({ children, ...props }: DialogContentProps) => {
       <DialogPrimitive.Overlay className={dialogOverlay} />
       <DialogPrimitive.Content
         {...rest}
-        className={mergeClasses(dialogContent(variants), rest.className)}
+        className={mergeClasses(dialogContent(variants), className)}
       >
         {children}
       </DialogPrimitive.Content>
@@ -74,19 +78,13 @@ export const DialogContent = ({ children, ...props }: DialogContentProps) => {
   );
 };
 
-export type DialogDescriptionProps = Omit<
-  DialogPrimitive.DialogDescriptionProps,
-  "asChild"
->;
+export type DialogDescriptionProps = DialogPrimitive.DialogDescriptionProps;
 
-export const DialogDescription = ({
-  children,
-  ...props
-}: DialogDescriptionProps) => {
+export const DialogDescription = (props: DialogDescriptionProps) => {
   return (
-    <DialogPrimitive.Description {...props} asChild>
-      <Text color="subtle">{children}</Text>
-    </DialogPrimitive.Description>
+    <Text asChild color="subtle">
+      <DialogPrimitive.Description {...props} />
+    </Text>
   );
 };
 
@@ -132,16 +130,14 @@ export const DialogHeader = ({ children }: DialogHeaderProps) => {
   );
 };
 
-export type DialogTitleProps = {
-  children: string;
-};
+export type DialogTitleProps = DialogPrimitive.DialogTitleProps;
 
-export const DialogTitle = ({ children }: DialogTitleProps) => {
+export const DialogTitle = (props: DialogTitleProps) => {
   return (
     <Box style={{ marginLeft: theme.space[2] }}>
-      <DialogPrimitive.Title asChild>
-        <Heading as="h5">{children}</Heading>
-      </DialogPrimitive.Title>
+      <Heading as="h5" asChild>
+        <DialogPrimitive.Title {...props} />
+      </Heading>
     </Box>
   );
 };

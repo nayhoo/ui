@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@nayhoo/ui/button";
 import {
   Dialog,
@@ -13,12 +11,11 @@ import {
   DialogTrigger,
 } from "@nayhoo/ui/dialog";
 
-// eslint-disable-next-line react/display-name
-export default () => {
-  return (
+export default {
+  default: () => (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Press me</Button>
+        <Button>Open dialog</Button>
       </DialogTrigger>
 
       <DialogContent fullWidth size="1">
@@ -41,5 +38,5 @@ export default () => {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  );
+  ),
 };

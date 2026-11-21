@@ -7,7 +7,6 @@ export const tooltipContent = homemadeRecipe({
     backgroundColor: "rgb(0, 0, 0)",
     borderRadius: theme.radii[1],
     padding: `${theme.space[1]} ${theme.space[2]}`,
-
     zIndex: theme.zIndex[1],
   },
 
@@ -18,8 +17,20 @@ export const tooltipContent = homemadeRecipe({
         pb: 7,
       },
     },
+    onOverlay: {
+      true: {
+        // +1 nice
+        zIndex: `calc(${theme.zIndex[5]} + 1)`,
+      },
+      false: {
+        zIndex: theme.zIndex[1],
+      },
+    },
   },
-  defaultVariants: {},
+  defaultVariants: {
+    multiline: false,
+    onOverlay: false,
+  },
 });
 
 export type TooltipContentVariants = NonNullable<
