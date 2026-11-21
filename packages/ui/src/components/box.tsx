@@ -8,13 +8,13 @@ const defaultElement = "div";
 
 export type BoxProps = ComponentProps<typeof defaultElement, BoxVariants>;
 
-export const Box = ({ asChild, ...props }: BoxProps) => {
+export const Box = ({ asChild, children, className, ...props }: BoxProps) => {
   const [variants, rest] = extractVariantsFromProps(props, ...box.variants());
   const Comp = asChild ? Slot : defaultElement;
 
   return (
-    <Comp {...rest} className={mergeClasses(box(variants), rest.className)}>
-      {rest.children}
+    <Comp {...rest} className={mergeClasses(box(variants), className)}>
+      {children}
     </Comp>
   );
 };
