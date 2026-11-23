@@ -2,4 +2,4 @@
 "@nayhoo/ui": minor
 ---
 
-added props size, variant and onOverlay to DropdownMenu, Popover and Select
+added onOverlay prop to DropdownMenu, Popover and Select; added size to dropdown menu and select, and variant to select trigger
