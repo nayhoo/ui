@@ -133,15 +133,9 @@ importers:
       react-cosmos:
         specifier: ^7.4.1
         version: 7.4.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      react-cosmos-dark-mode:
-        specifier: ^0.1.4
-        version: 0.1.4(react-cosmos@7.4.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
       react-cosmos-next:
         specifier: ^7.4.0
         version: 7.4.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      react-cosmos-plugin-boolean-input:
-        specifier: ^7.4.0
-        version: 7.4.0
 
   apps/vite:
     dependencies:
@@ -4961,11 +4955,6 @@ packages:
     peerDependencies:
       react: '>=18'
 
-  react-cosmos-dark-mode@0.1.4:
-    resolution: {integrity: sha512-fABvZJHlg9newaiuN2KFwERk3OILKtJqOBMOLbxY9q2605qVoy7DKvs3MO2+WK7ml8YgDnbB2T/Cmaydd1jhTg==}
-    peerDependencies:
-      react-cosmos: ^7.1.0
-
   react-cosmos-dom@7.4.0:
     resolution: {integrity: sha512-122OatQTotr0X5DYLFOSi6m13O4h0YbDGLR/+wX9IrozxbdA6EI6V5Db6RvV0wGGcwlSchk1sA0sS15jXNg7tg==}
     peerDependencies:
@@ -4977,9 +4966,6 @@ packages:
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
-
-  react-cosmos-plugin-boolean-input@7.4.0:
-    resolution: {integrity: sha512-InNPAYExO4O/B6bFVR4L//m8R8QzGOddqmA0c8tag6n+DzWjW7qQZgHH+KRdxLjtTkgy+wJsASUl8dOcSoP8fw==}
 
   react-cosmos-renderer@7.4.0:
     resolution: {integrity: sha512-gXvGvf0w0QGLqvKBxnQ4w7kNcG5Yvs1ghHSUCtpqlzICo1+S/m7Mh6yPTIhEKw5tIFz8MdHgKGPKJK9N4IlwuQ==}
@@ -10515,10 +10501,6 @@ snapshots:
       js-base64: 3.9.2
       react: 19.1.1
 
-  react-cosmos-dark-mode@0.1.4(react-cosmos@7.4.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)):
-    dependencies:
-      react-cosmos: 7.4.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-
   react-cosmos-dom@7.4.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       react: 19.1.1
@@ -10533,8 +10515,6 @@ snapshots:
       react-cosmos-dom: 7.4.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-cosmos-renderer: 7.4.0(react@19.1.1)
       react-dom: 19.1.1(react@19.1.1)
-
-  react-cosmos-plugin-boolean-input@7.4.0: {}
 
   react-cosmos-renderer@7.4.0(react@19.1.1):
     dependencies:

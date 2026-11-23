@@ -4,6 +4,7 @@
   "version": "0.3.19",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "cosmos": "cosmos --expose-imports",
     "cosmos-export": "cosmos-export --expose-imports"
   },
@@ -19,8 +20,6 @@
     "@types/react-dom": "19.0.2",
     "@vanilla-extract/next-plugin": "^2.4.11",
     "react-cosmos": "^7.4.1",
-    "react-cosmos-dark-mode": "^0.1.4",
-    "react-cosmos-next": "^7.4.0",
-    "react-cosmos-plugin-boolean-input": "^7.4.0"
+    "react-cosmos-next": "^7.4.0"
   }
 }
