@@ -118,7 +118,7 @@ export type DialogHeaderProps = {
 
 export const DialogHeader = ({ children }: DialogHeaderProps) => {
   return (
-    <Box align="center" className={dialogHeader} display="flex">
+    <Box align="center" className={dialogHeader} display="flex" gap="2">
       {children}
 
       <DialogClose asChild>

@@ -1,5 +1,6 @@
 import {
   menuContent,
+  MenuContentVariants,
   menuItem,
   menuLabel,
   menuSeparator,
@@ -9,6 +10,7 @@ import {
   itemIndicator,
   scrollButton,
   selectTrigger,
+  SelectTriggerVariants,
 } from "@/theme/styles/select.css";
 import { mergeClasses } from "@/utils/merge-classes";
 import {
@@ -17,57 +19,21 @@ import {
   ChevronUpIcon,
 } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import React from "react";
 
-interface UseSelectProps {
-  size?: "1" | "2";
-  variant?: "bordered" | "ghost";
-  /** if used in an overlay element (dialog/nav) */
-  onOverlay?: boolean;
-}
+export type SelectProps = SelectPrimitive.SelectProps;
 
-const defaultContext: UseSelectProps = {
-  size: undefined,
-  variant: undefined,
-  onOverlay: undefined,
-};
+export const Select = SelectPrimitive.Root;
 
-const SelectContext = React.createContext<UseSelectProps | undefined>(
-  undefined,
-);
-
-const useSelect = () => React.useContext(SelectContext) ?? defaultContext;
-
-export type SelectProps = SelectPrimitive.SelectProps & UseSelectProps;
-
-export const Select = ({ size, variant, onOverlay, ...props }: SelectProps) => {
-  const providerValue = React.useMemo(
-    () => ({
-      size,
-      variant,
-      onOverlay,
-    }),
-    [size, variant, onOverlay],
-  );
-
-  return (
-    <SelectContext.Provider value={providerValue}>
-      <SelectPrimitive.Root {...props} />
-    </SelectContext.Provider>
-  );
-};
-
-export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps;
+export type SelectTriggerProps = SelectPrimitive.SelectTriggerProps &
+  SelectTriggerVariants;
 
 export const SelectTrigger = ({
   children,
   className,
+  size,
+  variant,
   ...props
 }: SelectTriggerProps) => {
-  const { size, variant } = useSelect();
-
-  console.log(props.value);
-
   return (
     <SelectPrimitive.Trigger
       {...props}
@@ -87,20 +53,23 @@ export type SelectValueProps = SelectPrimitive.SelectValueProps;
 
 export const SelectValue = SelectPrimitive.Value;
 
-export type SelectContentProps = SelectPrimitive.SelectContentProps;
+export type SelectContentProps = SelectPrimitive.SelectContentProps &
+  MenuContentVariants & { size?: "1" | "2" };
 
 export const SelectContent = ({
   children,
   className,
+  onOverlay,
+  size = "2",
   ...props
 }: SelectContentProps) => {
-  const { onOverlay } = useSelect();
-
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
+        sideOffset={4}
         {...props}
         className={mergeClasses(menuContent({ onOverlay }), overlay, className)}
+        data-size={size}
       >
         <SelectPrimitive.ScrollUpButton className={scrollButton}>
           <ChevronUpIcon />
@@ -123,12 +92,10 @@ export const SelectItem = ({
   className,
   ...props
 }: SelectItemProps) => {
-  const { size } = useSelect();
-
   return (
     <SelectPrimitive.Item
       {...props}
-      className={mergeClasses(menuItem({ size }), className)}
+      className={mergeClasses(menuItem, className)}
     >
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
 
@@ -146,12 +113,10 @@ export const SelectGroup = SelectPrimitive.Group;
 export type SelectLabelProps = SelectPrimitive.SelectLabelProps;
 
 export const SelectLabel = ({ className, ...props }: SelectLabelProps) => {
-  const { size } = useSelect();
-
   return (
     <SelectPrimitive.Label
       {...props}
-      className={mergeClasses(menuLabel({ size }), className)}
+      className={mergeClasses(menuLabel, className)}
     />
   );
 };
