@@ -2,4 +2,4 @@
 "@nayhoo/ui": minor
 ---
 
-Exported NavProps; Added default grid to forms
+Exported NavProps; Added default grid style to forms
